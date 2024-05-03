@@ -48,8 +48,10 @@ export default function Home() {
   };
 
   useEffect(() => {
-    mousePosition.x.set(window.innerWidth / 2 - (window.innerWidth * 0.25) / 2)
+    if(typeof window !== undefined){
+      mousePosition.x.set(window.innerWidth / 2 - (window.innerWidth * 0.25) / 2)
     mousePosition.y.set(window.innerHeight / 2 - (window.innerHeight * 0.25) / 2)
+    }
   }, [window.innerWidth, window.innerHeight])
 
   useEffect(() => {
