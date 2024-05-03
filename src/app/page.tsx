@@ -4,7 +4,8 @@ import styles from './page.module.css';
 import Lenis from '@studio-freight/lenis';
 import { useEffect, useState } from 'react';
 
-import Gallery from '../components/gallery';
+import Gallery from '../components/gallery/gallery';
+import Intro from '../components/intro/intro';
 import { useMotionValue, useSpring } from 'framer-motion';
 
 const imagesAndBackgrounds = [
@@ -52,7 +53,7 @@ export default function Home() {
       mousePosition.x.set(window.innerWidth / 2 - (window.innerWidth * 0.25) / 2)
     mousePosition.y.set(window.innerHeight / 2 - (window.innerHeight * 0.25) / 2)
     }
-  }, [window.innerWidth, window.innerHeight])
+  }, [])
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -84,7 +85,7 @@ export default function Home() {
       {/* <div className={styles.container}>
         hello
       </div> */}
-
+<Intro/>
       <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {
           return (
