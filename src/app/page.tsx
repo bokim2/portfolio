@@ -30,20 +30,27 @@ export default function Home() {
     mass: 0.1,
   };
 
-  const [xPosition, setXPosition] = useState(0);
-  const [yPosition, setYPosition] = useState(0);
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-    setXPosition(window.innerWidth / 2 - (window.innerWidth * 0.25) / 2);
-    setYPosition(window.innerHeight / 2 - (window.innerHeight * 0.25) / 2);
-    console.log('xposition', window.innerWidth / 2 - (window.innerWidth * 0.25) / 2)
-    }
-  }, []);
+  // const [xPosition, setXPosition] = useState(0);
+  // const [yPosition, setYPosition] = useState(0);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //   setXPosition(window.innerWidth / 2 - (window.innerWidth * 0.25) / 2);
+  //   setYPosition(window.innerHeight / 2 - (window.innerHeight * 0.25) / 2);
+  //   console.log('xposition', window.innerWidth / 2 - (window.innerWidth * 0.25) / 2)
+  //   }
+  // }, []);
+
+  
 
   const mousePosition = {
-    x: useSpring(xPosition, springValues),
-    y: useSpring(yPosition, springValues),
+    x: useSpring(0, springValues),
+    y: useSpring(0, springValues),
   };
+
+  useEffect(() => {
+    mousePosition.x.set(window.innerWidth / 2 - (window.innerWidth * 0.25) / 2)
+    mousePosition.y.set(window.innerHeight / 2 - (window.innerHeight * 0.25) / 2)
+  }, [window.innerWidth, window.innerHeight])
 
   useEffect(() => {
     const lenis = new Lenis();
