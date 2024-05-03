@@ -33,8 +33,11 @@ export default function Home() {
   const [xPosition, setXPosition] = useState(0);
   const [yPosition, setYPosition] = useState(0);
   useEffect(() => {
+    if (typeof window !== 'undefined') {
     setXPosition(window.innerWidth / 2 - (window.innerWidth * 0.25) / 2);
     setYPosition(window.innerHeight / 2 - (window.innerHeight * 0.25) / 2);
+    console.log('xposition', window.innerWidth / 2 - (window.innerWidth * 0.25) / 2)
+    }
   }, []);
 
   const mousePosition = {
