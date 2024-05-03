@@ -36,8 +36,8 @@ const imagesAndBackgrounds = [
       mass: .1,
     }
     const mousePosition = {
-      x: useSpring(0, springValues),
-      y: useSpring(0, springValues),
+      x: useSpring(window.innerWidth/2 - window.innerWidth * .25/2, springValues),
+      y: useSpring(window.innerHeight/2 - window.innerHeight * .25/2, springValues),
     }
 
     useEffect(() => {
