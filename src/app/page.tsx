@@ -23,6 +23,8 @@ const imagesAndBackgrounds = [
   },
 ];
 
+export type TimagesAndBackgrounds = typeof imagesAndBackgrounds;
+
 export default function Home() {
   // const [mousePosition, setMousePosition] =useState({ x: 0, y: 0 });
   const springValues = {

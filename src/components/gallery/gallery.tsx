@@ -1,10 +1,15 @@
 import styles from './gallery.module.scss';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { MotionValue, motion } from 'framer-motion';
 
-export default function index({ handle, mousePosition, name }) {
+type TGalleryProps = {
+  handle: string;
+  mousePosition: { x: MotionValue<any>; y: MotionValue<any> };
+  name: string;
+};
 
-  const {x,y} = mousePosition;
+export default function index({ handle, mousePosition, name }: TGalleryProps) {
+  const { x, y } = mousePosition;
   console.log('gallery', mousePosition);
 
   return (
@@ -12,7 +17,7 @@ export default function index({ handle, mousePosition, name }) {
       <div className={styles.imageContainer}>
         <Image src={`/images/${handle}/background.jpg`} alt={name} fill />
       </div>
-      <motion.div className={styles.vignette} style={{x, y}}>
+      <motion.div className={styles.vignette} style={{ x, y }}>
         {handle !== 'tahoe_1' ? (
           <Image src={`/images/${handle}/1.jpg`} alt={name} fill />
         ) : (
