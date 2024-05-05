@@ -35,7 +35,13 @@ background-color: red;
   // width: 30vw;
   // height: 30vw;
 
-  aspect-ratio: initial;
-  border-radius: 50%;
-  border: 1vw solid white;
+//   aspect-ratio: initial;
+//   border-radius: 50%;
+//   border: 1vw solid white;
+}
+
+
+.sepia {
+    filter: sepia(100%);
+    // filter: grayscale(100%);
 }

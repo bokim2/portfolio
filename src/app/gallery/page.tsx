@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
-import styles from './page.module.css';
+import styles from './galleryPage.module.css';
 import Lenis from '@studio-freight/lenis';
 import { useEffect, useState } from 'react';
 
-import Gallery from '../components/gallery/gallery';
-import Intro from '../components/intro/intro';
+import Gallery from '../../components/gallery/gallery';
+import Intro from '../../components/intro/intro';
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 
@@ -26,7 +26,7 @@ const imagesAndBackgrounds = [
 
 export type TimagesAndBackgrounds = typeof imagesAndBackgrounds;
 
-export default function Home() {
+export default function GalleryPage() {
   const [loading, setLoading] = useState(true);
   // const [mousePosition, setMousePosition] =useState({ x: 0, y: 0 });
   const springValues = {
@@ -101,8 +101,8 @@ export default function Home() {
         hello
       </div> */}
       {/* {loading && <LoaderPage setLoading={setLoading} />} */}
-      <Intro />
-      {/* <div className={styles.description} onMouseMove={mouseMove}>
+      {/* <Intro /> */}
+      <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {
           return (
             <Gallery
@@ -113,7 +113,7 @@ export default function Home() {
             />
           );
         })}
-      </div> */}
+      </div>
     </main>
   );
 }

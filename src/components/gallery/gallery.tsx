@@ -15,13 +15,13 @@ export default function index({ handle, mousePosition, name }: TGalleryProps) {
   return (
     <div className={styles.gallery}>
       <div className={styles.imageContainer}>
-        <Image src={`/images/${handle}/background.jpg`} alt={name} fill />
+        <Image src={`/images/${handle}/background.jpg`} alt={name} fill priority/>
       </div>
       <motion.div className={styles.vignette} style={{ x, y }}>
         {handle !== 'tahoe_1' ? (
-          <Image src={`/images/${handle}/1.jpg`} alt={name} fill />
+          <Image src={`/images/${handle}/1.jpg`} alt={name} fill priority/>
         ) : (
-          <Image src={`/images/${handle}/1.png`} alt={name} fill />
+          <Image src={`/images/${handle}/1.png`} alt={name} fill priority/>
         )}
       </motion.div>
     </div>
