@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 import Menu from '../components/menu/menu';
-import Transition from './transition';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         
         <Menu />
-        <Transition>{children}</Transition>
+        <main>{children}</main>
       {/* {children} */}
       {/* <div> */}
       {/* </div> */}

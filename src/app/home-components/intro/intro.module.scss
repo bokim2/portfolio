@@ -13,7 +13,8 @@
   height: 100%;
 
   // background-image: url('/images/intro/lightDesignBackground.jpg');
-  background-color: var(--clr-main-1);
+  background-color: var(--clr-main-1);  
+  // background-color: red;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,7 +32,8 @@
   align-self: center;
   overflow: hidden;
   //   border-radius: 99999vw;
-  background-color: rgb(238, 238, 246);
+  // background-color: rgb(238, 238, 246);
+  // background-color: red;
 
   @media (max-width: 600px) {
     width: 30%;

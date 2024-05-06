@@ -48,7 +48,7 @@ export default function Bio() {
             languages. 
             <br />
             <br />
-            My goal is to continually enhance my capabilities to
+            My goal is to continually improve my capabilities to
             craft innovative software solutions.
           </p>
         </div>

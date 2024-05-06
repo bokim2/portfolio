@@ -2,19 +2,18 @@
 
 .bio {
   width: 100%;
-  min-height: 100vh;
-  padding-inline: 20vw;
-  // display: grid;
-  // grid-template-columns: repeat(12, 1fr);
-  // grid-template-rows: repeat(6, 1fr);
+  min-height: 90vh;
+  // padding-inline: 20vw;
+
   display: flex;
+  gap:10vw;
 
   // justify-content: end;
   justify-content: space-around;
 
   @media (max-width: 600px) {
     // flex-direction: column;
-    padding-inline: 5vw;
+    // padding-inline: 5vw;
     display: block;
   }
 }
@@ -37,12 +36,18 @@
   padding: 1rem;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 600px) {
+
+  }
   
 }
 
 .headshotImgContainer {
+  
+  justify-content: space-around;
   padding: 5rem;
-  width: 40%;
+  width: 100%;
   position: relative;
   aspect-ratio: 1/1.3;
   align-self: center;
@@ -50,13 +55,11 @@
   overflow: hidden;
   //   border-radius: 99999vw;
   background-color: rgb(238, 238, 246);
+  // object-fit: cover;
 
   @media (max-width: 600px) {
-    // background-color: red;
-    // height: 10vw;
-    // width: 5vw;
-    // align-self: top;
-    justify-items: flex-start;
+    padding: 0.1rem; 
+    width: 30%;     
   }
 }
 
@@ -76,10 +79,6 @@
 }
 
 .bioTitleContainer {
-  // grid-column: 2 / 11;
-  // justify-content: end;
-  // align-content: end;
-  // width: 35%;
 
   display: flex;
   flex-direction: column;

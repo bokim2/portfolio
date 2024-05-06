@@ -28,12 +28,12 @@ export default function Biotech() {
           <h2 className={styles.biotechRole}>The Journey up to this point</h2>
           <div className={styles.biotechAbout}>
             <p className="">
-              {`In biotech, my primary area of specialization was upstream process development, particularly working with bioreactors. These are often referred to as "fermentation", a term historically originating from the use of microorganisms for the production of drinkable alcohol.`}
+              {`In biotech, my primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term historically originating from the use of microorganisms for the production of drinkable alcohol.`}
             </p>
             <br />
             My work involved cultivating genetically modified microbes to
             produce therapeutic proteins and enzymes. Additionally, I was
-            involved in the production of target molecules such as squalene, an
+            involved in the production of molecules such as squalene, an
             oil found in shark liver widely used in cosmetics, and Rebaudioside
             M (rebM), a zero-calorie sweetener derived from the stevia plant.
           </div>
