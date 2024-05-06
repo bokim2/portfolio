@@ -9,18 +9,31 @@ import Intro from '../home-components/intro/intro';
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 
-const imagesAndBackgrounds = [
+import moab1BackgroundImg from '../../../public/images/moab_1/background.jpg';
+import sf1BackgroundImg from '../../../public/images/sf_1/background.jpg';
+import tahoe1BackgroundImg from '../../../public/images/tahoe_1/background.jpg';
+import moab1 from '../../../public/images/moab_1/1.jpg';
+import sf1 from '../../../public/images/sf_1/1.jpg';
+import tahoe1 from '../../../public/images/tahoe_1/1.png';
+
+export const imagesAndBackgrounds = [
   {
     name: 'moab1',
     handle: 'moab_1',
+    imageImported: moab1,
+    backgroundImg: moab1BackgroundImg,
   },
   {
     name: 'sf1',
     handle: 'sf_1',
+    imageImported: sf1,
+    backgroundImg: sf1BackgroundImg,
   },
   {
     name: 'tahoe1',
     handle: 'tahoe_1',
+    imageImported: tahoe1,
+    backgroundImg: tahoe1BackgroundImg,
   },
 ];
 
@@ -103,16 +116,20 @@ export default function GalleryPage() {
       {/* {loading && <LoaderPage setLoading={setLoading} />} */}
       {/* <Intro /> */}
       <div className={styles.description} onMouseMove={mouseMove}>
-        {imagesAndBackgrounds.map(({ handle, name }, i) => {
-          return (
-            <Gallery
-              handle={handle}
-              name={name}
-              mousePosition={mousePosition}
-              key={i}
-            />
-          );
-        })}
+        {imagesAndBackgrounds.map(
+          ({ handle, name, imageImported, backgroundImg }, i) => {
+            return (
+              <Gallery
+                handle={handle}
+                name={name}
+                mousePosition={mousePosition}
+                imageImported={imageImported}
+                backgroundImg={backgroundImg}
+                key={i}
+              />
+            );
+          }
+        )}
       </div>
     </main>
   );

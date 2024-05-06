@@ -8,6 +8,9 @@ import Gallery from '../components/gallery/gallery';
 import Intro from './home-components/intro/intro';
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
+import Bio from './home-components/bio/bio';
+import Biotech from './home-components/biotech/biotech';
+import Projects from './home-components/projects/projects';
 
 const imagesAndBackgrounds = [
   {
@@ -101,7 +104,10 @@ export default function Home() {
         hello
       </div> */}
       {/* {loading && <LoaderPage setLoading={setLoading} />} */}
-      <Intro />
+      {/* <Intro /> */}
+      <Bio />
+      <Projects />
+      <Biotech />
       {/* <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {
           return (

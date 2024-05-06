@@ -14,8 +14,8 @@ export default function Intro() {
     <div className={styles.introContainer}>
       <div className={styles.background}>
       {/* <section className="introSection"> */}
-        <Bio/>
-        <Biotech/>
+        {/* <Bio/>
+        <Biotech/> */}
         {/* </section> */}
         {/* <motion.div className={styles.backgroundImgContainer}
         variants={imageVariants}

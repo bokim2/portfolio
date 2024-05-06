@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 import Menu from '../components/menu/menu';
+import SectionsNav from '@/components/sectionsNav/sectionsNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       {/* {children} */}
       {/* <div> */}
       {/* </div> */}
+      <SectionsNav />
       </body>
     </html>
   );

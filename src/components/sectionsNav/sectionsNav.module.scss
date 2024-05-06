@@ -1,0 +1,31 @@
+.sectionsNav {
+  background-color: lightpink;
+  position: fixed;
+  bottom: 0;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
+  nav {
+    background-color: lightblue;
+    width: 50%;
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  @media (max-width: 600px){
+    nav {
+        background-color: rgb(72, 72, 186);
+        min-width: 300px;
+    }
+  }
+}
+
+.section {
+    // background-color: red;
+    list-style: none;
+}

@@ -1,0 +1,11 @@
+.projects {
+    width: 100%;
+
+
+
+  @media (max-width: 600px) {
+    // flex-direction: column;
+    // padding-inline: 5vw;
+    display: block;
+  }
+}

@@ -1,12 +1,9 @@
-/* .main {
+.main {
     display: flex;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
 
-.container {
-    width: 60vw;
-    background-color: #f5f5f5;
-}
 
-.description {
-    width: 30vw;
-} */
+}
