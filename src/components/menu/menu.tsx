@@ -8,7 +8,7 @@ export default function Menu() {
     <div className={styles.menu}>
       <div className={`${styles.menuItem} ${styles.menuItem1}`}>
         {/* <Link href="/">ㅂ</Link> */}
-        <Link href="/">Bo Kim</Link>
+        <Link href="/">B</Link>
       </div>
 
       {/* menu button */}
@@ -49,7 +49,7 @@ export default function Menu() {
           </div>
         </Link>
 
-        <Link href="/gallery" target="_">
+        <Link href="/gallery" >
           <div className={styles.iconContainer}>
             <Image
               className={styles.icon}

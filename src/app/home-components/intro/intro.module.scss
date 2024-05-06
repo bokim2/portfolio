@@ -1,0 +1,54 @@
+.introContainer {
+  min-height: 100vh;
+  width: 100%;
+  // background-color: red;
+}
+
+.background {
+  padding-top: 10vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  width: 100%;
+  height: 100%;
+
+  // background-image: url('/images/intro/lightDesignBackground.jpg');
+  background-color: var(--clr-main-1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.backgroundImgContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15%;
+
+  //   height: 40%;
+  aspect-ratio: 1/1.3;
+  align-self: center;
+  overflow: hidden;
+  //   border-radius: 99999vw;
+  background-color: rgb(238, 238, 246);
+
+  @media (max-width: 600px) {
+    width: 30%;
+  }
+}
+
+.headshotImg {
+  // position: absolute;
+  // width: 30vw;
+  // height: 30vw;
+
+  //   aspect-ratio: initial;
+  //   border-radius: 50%;
+  //   border: 1vw solid white;
+}
+
+.sepia {
+  filter: sepia(100%);
+  // filter: grayscale(100%);
+}
