@@ -16,7 +16,7 @@ import moab1 from '../../../public/images/moab_1/1.jpg';
 import sf1 from '../../../public/images/sf_1/1.jpg';
 import tahoe1 from '../../../public/images/tahoe_1/1.png';
 
-export const imagesAndBackgrounds = [
+ const imagesAndBackgrounds = [
   {
     name: 'moab1',
     handle: 'moab_1',
