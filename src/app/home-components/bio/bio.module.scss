@@ -74,23 +74,23 @@
   //   border: 1vw solid white;
 }
 
-.sepia {
-  filter: sepia(100%);
-  // filter: grayscale(100%);
-}
 
 .bioTitleContainer {
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .75rem;
 
   .bioName {
-    font-size: 3rem;
+    // font-size: 3rem;
   }
 
   .bioRole {
-    font-size: 2rem;
+    // font-size: 2rem;
+  }
+
+  .bioParagraph {
+    padding-top: 2rem;
   }
 
   @media (max-width: 600px) {

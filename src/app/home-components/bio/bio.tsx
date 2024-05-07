@@ -16,7 +16,7 @@ const imageVariants = {
 export default function Bio() {
   return (
     <Wrapper backgroundColor="">
-      <section className={styles.bio} id='bio'>
+      <section className={styles.bio} id="bio">
         <div className={styles.headshotImgOuterContainer}>
           <motion.div
             className={styles.headshotImgContainer}
@@ -40,9 +40,9 @@ export default function Bio() {
         <div className={styles.bioAbout}>
           <div className={styles.bioTitleContainer}>
             <h1 className={styles.bioName}>Bo Kim</h1>
-            <h2 className={styles.bioRole}>Software Engineer & Scientist</h2>
+            <h3 className={styles.bioRole}>Software Engineer & Scientist</h3>
 
-            <p>
+            <p className={styles.bioParagraph}>
               As a software engineer with a passion for digital innovation and
               problem-solving, I transitioned from a decade-long career in
               biotech, where I worked in scientific research and process
@@ -55,9 +55,10 @@ export default function Bio() {
               languages.
               <br />
               <br />
-              My goal is to continually improve my capabilities to craft
-              innovative software solutions.
             </p>
+            <h4>
+              {`"Great challenges make life interesting; overcoming them makes life meaningful."`}
+            </h4>
           </div>
         </div>
       </section>

@@ -3,8 +3,11 @@ import React from 'react';
 
 import styles from './biotech.module.scss';
 import Image from 'next/image';
-import genencor4Img from '../../../../public/images/progressive/genencor4.jpg';
-import spotfire1Img from '../../../../public/images/intro/spotfire1.jpg';
+import genencor4Img from '../../../../public/images/biotech/genencor2.jpg';
+import spotfire1Img from '../../../../public/images/biotech/spotfire1.jpg';
+import biomek1Img from '../../../../public/images/biotech/biomek1.jpg';
+import biomek2Img from '../../../../public/images/biotech/biomek2.jpg';
+
 import Wrapper from '@/components/wrapper/wrapper';
 
 export default function Biotech() {
@@ -16,6 +19,7 @@ export default function Biotech() {
           <div className={styles.biotechSectionContainer}>
             <div className={styles.biotechTitleImageContainer}>
               <Image
+                className="sepia"
                 src={genencor4Img}
                 alt="first job, Genencor"
                 fill
@@ -23,23 +27,24 @@ export default function Biotech() {
               />
             </div>
             <div>
-              My first job, I worked on enzymes for biofuel production with this
-              team.{' '}
+              <p>My first job, I worked on enzymes for biofuel production.</p>
             </div>
           </div>
           <div className={styles.biotechTitleContainer}>
-            <h1 className={styles.biotechName}>Motivations</h1>
-            <h2 className={styles.biotechRole}>The Journey up to this point</h2>
+            <h6 className={styles.biotechName}>Motivations</h6>
+            <h3 className={styles.biotechRole}>The Journey up to this point</h3>
             <div className={styles.biotechAbout}>
               <p className="">
                 {`In biotech, my primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term historically originating from the use of microorganisms for the production of drinkable alcohol.`}
               </p>
               <br />
-              My work involved cultivating genetically modified microbes to
-              produce therapeutic proteins and enzymes. Additionally, I was
-              involved in the production of molecules such as squalene, an oil
-              found in shark liver widely used in cosmetics, and Rebaudioside M
-              (rebM), a zero-calorie sweetener derived from the stevia plant.
+              <p>
+                My work involved cultivating genetically modified microbes to
+                produce therapeutic proteins and enzymes. Additionally, I was
+                involved in the production of molecules such as squalene, an oil
+                found in shark liver used in cosmetics, and Rebaudioside M
+                (rebM), a zero-calorie sweetener derived from the stevia plant.
+              </p>
             </div>
           </div>
         </section>
@@ -48,24 +53,59 @@ export default function Biotech() {
         <section className={styles.biotech}>
           <div className={styles.biotechSectionContainer}>
             <div className={styles.biotechTitleImageContainer}>
-              <Image src={spotfire1Img} alt="first job" fill priority />
+              <Image src={spotfire1Img} alt="spotfire graphs" fill priority />
             </div>
             <div>
-              My first job, I worked on enzymes for biofuel production with this
-              team.{' '}
+              <p>
+                My first job, I worked on enzymes for biofuel production with
+                this team.{' '}
+              </p>
             </div>
           </div>
 
           <div className={styles.biotechTitleContainer}>
-            <h1 className={styles.biotechName}>Origin</h1>
-            <h2 className={styles.biotechRole}>
+            <h6 className={styles.biotechName}>Origin</h6>
+            <h3 className={styles.biotechRole}>
               Exposure to Biotech Related Software
-            </h2>
+            </h3>
             <div className={styles.biotechAbout}>
               <p className="">
                 My interest in software engineering started with a data
                 visualization software called Spotfire.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* third section */}
+        <section className={`${styles.biotech} ${styles.noReverse}`}>
+          <div className={styles.biotechSectionContainer}>
+            <div className={styles.biotechTitleImageContainer}>
+              <Image src={biomek1Img} alt="biomek software" fill priority />
+            </div>
+            <div>
+              <p>
+                The Biomek Liquid Handler automates liquid handling tasks across
+                a variety of applications, including protein assays and product
+                quantification, to improve efficiency and precision in biotech
+                labs.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.biotechSectionContainer}>
+            <div className={styles.biotechTitleImageContainer}>
+              <Image
+                src={biomek2Img}
+                alt="biomek software"
+                fill
+                objectFit="contain"
+                objectPosition="center top"
+                priority
+              />
+            </div>
+            <div>
+              <p>not pretty, but it got the job done.</p>
             </div>
           </div>
         </section>
