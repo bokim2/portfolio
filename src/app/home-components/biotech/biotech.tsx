@@ -14,24 +14,11 @@ export default function Biotech() {
   return (
     <Wrapper backgroundColor="">
       <div className={styles.biotechContainer} id="biotech">
+        <h2>Biotech</h2>
         {/* first section */}
         <section className={styles.biotech}>
-          <div className={styles.biotechSectionContainer}>
-            <div className={styles.biotechTitleImageContainer}>
-              <Image
-                className="sepia"
-                src={genencor4Img}
-                alt="first job, Genencor"
-                fill
-                priority
-              />
-            </div>
-            <div>
-              <p>My first job, I worked on enzymes for biofuel production.</p>
-            </div>
-          </div>
           <div className={styles.biotechTitleContainer}>
-            <h6 className={styles.biotechName}>Motivations</h6>
+            <h6 className={styles.biotechH6}>Motivations</h6>
             <h3 className={styles.biotechRole}>The Journey up to this point</h3>
             <div className={styles.biotechAbout}>
               <p className="">
@@ -47,22 +34,24 @@ export default function Biotech() {
               </p>
             </div>
           </div>
+          <div className={styles.biotechSectionContainer}>
+            <div className={styles.biotechTitleImageContainer}>
+              <Image
+                className="sepia"
+                src={genencor4Img}
+                alt="first job, Genencor"
+                fill
+                priority
+              />
+            </div>
+            <div>
+              <p>My first job, I worked on enzymes for biofuel production.</p>
+            </div>
+          </div>
         </section>
 
         {/* second section */}
         <section className={styles.biotech}>
-          <div className={styles.biotechSectionContainer}>
-            <div className={styles.biotechTitleImageContainer}>
-              <Image src={spotfire1Img} alt="spotfire graphs" fill priority />
-            </div>
-            <div>
-              <p>
-                My first job, I worked on enzymes for biofuel production with
-                this team.{' '}
-              </p>
-            </div>
-          </div>
-
           <div className={styles.biotechTitleContainer}>
             <h6 className={styles.biotechName}>Origin</h6>
             <h3 className={styles.biotechRole}>
@@ -72,6 +61,18 @@ export default function Biotech() {
               <p className="">
                 My interest in software engineering started with a data
                 visualization software called Spotfire.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.biotechSectionContainer}>
+            <div className={styles.biotechTitleImageContainer}>
+              <Image src={spotfire1Img} alt="spotfire graphs" fill priority />
+            </div>
+            <div>
+              <p>
+                My first job, I worked on enzymes for biofuel production with
+                this team.{' '}
               </p>
             </div>
           </div>

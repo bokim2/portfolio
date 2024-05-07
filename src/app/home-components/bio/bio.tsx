@@ -42,7 +42,7 @@ export default function Bio() {
             <h1 className={styles.bioName}>Bo Kim</h1>
             <h3 className={styles.bioRole}>Software Engineer & Scientist</h3>
 
-            <p className={styles.bioParagraph}>
+            <p className={`${styles.bioParagraph} large`}>
               As a software engineer with a passion for digital innovation and
               problem-solving, I transitioned from a decade-long career in
               biotech, where I worked in scientific research and process
