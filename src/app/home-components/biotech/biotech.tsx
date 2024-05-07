@@ -35,7 +35,7 @@ export default function Biotech() {
             <h3 className={styles.biotechRole}>The Journey up to this point</h3>
             <div className={styles.biotechAbout}>
               <p className="">
-                {`In biotech, my primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term historically originating from the use of microorganisms for the production of drinkable alcohol.`}
+                {`In biotech, my primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term originating from the historical use of microorganisms for the production of alcoholic beverages.`}
               </p>
               <br />
               <p>
@@ -99,7 +99,7 @@ export default function Biotech() {
                 src={biomek2Img}
                 alt="biomek software"
                 fill
-                objectFit="contain"
+                // objectFit="contain"
                 objectPosition="center top"
                 priority
               />

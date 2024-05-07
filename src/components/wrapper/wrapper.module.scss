@@ -1,7 +1,8 @@
 .wrapper {
   width: 100%;
-  max-width: 1200px;
-  padding: min(10vh, 10vw);
+  max-width: 1400px;
+  padding-inline: min(10vh, 10vw);
+  padding-block: 5vh;
 
   @media (max-width: 600px) {
     width: 80%;
