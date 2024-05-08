@@ -304,6 +304,21 @@ em {
 
 /* styles */
 
+.pageContainer {
+  padding-top: 10vh;
+}
+
+.outerContainer {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .sepia {
   filter: sepia(100%);
 }
@@ -312,4 +327,10 @@ em {
   /* background-color: red; */
   position: relative;
   transform: translateX(3ch);
+}
+
+.testDiv {
+  background-color: red;
+  height: 100px;
+  width: 100px;
 }
