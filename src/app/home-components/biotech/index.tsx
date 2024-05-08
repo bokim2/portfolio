@@ -5,10 +5,9 @@ import styles from './biotech.module.scss';
 import Image from 'next/image';
 import genencor4Img from '../../../../public/images/biotech/genencor2.jpg';
 import spotfire1Img from '../../../../public/images/biotech/spotfire1.jpg';
-import biomek1Img from '../../../../public/images/biotech/biomek1.jpg';
-import biomek2Img from '../../../../public/images/biotech/biomek2.jpg';
 
 import Wrapper from '@/components/wrapper/wrapper';
+import BiotechSoftware from './biotechSoftware';
 
 export default function Biotech() {
   return (
@@ -78,38 +77,7 @@ export default function Biotech() {
           </div>
         </section>
 
-        {/* third section */}
-        <section className={`${styles.biotech} ${styles.noReverse}`}>
-          <div className={styles.biotechSectionContainer}>
-            <div className={styles.biotechTitleImageContainer}>
-              <Image src={biomek1Img} alt="biomek software" fill priority />
-            </div>
-            <div>
-              <p>
-                The Biomek Liquid Handler automates liquid handling tasks across
-                a variety of applications, including protein assays and product
-                quantification, to improve efficiency and precision in biotech
-                labs.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.biotechSectionContainer}>
-            <div className={styles.biotechTitleImageContainer}>
-              <Image
-                src={biomek2Img}
-                alt="biomek software"
-                fill
-                // objectFit="contain"
-                objectPosition="center top"
-                priority
-              />
-            </div>
-            <div>
-              <p>not pretty, but it got the job done.</p>
-            </div>
-          </div>
-        </section>
+        <BiotechSoftware />
       </div>
     </Wrapper>
   );

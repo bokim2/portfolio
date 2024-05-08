@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './intro.module.scss';
-import Bio from '../bio/bio';
-import Biotech from '../biotech/biotech';
+import Bio from '../home-components/bio/bio';
+import Biotech from '../home-components/biotech';
 
 // const imageVariants = {
 //   initial: {filter: 'sepia(100%)'},
@@ -13,7 +13,7 @@ export default function Intro() {
   return (
     <div className={styles.introContainer}>
       <div className={styles.background}>
-      {/* <section className="introSection"> */}
+        {/* <section className="introSection"> */}
         {/* <Bio/>
         <Biotech/> */}
         {/* </section> */}
@@ -35,6 +35,5 @@ export default function Intro() {
         </motion.div> */}
       </div>
     </div>
-
   );
 }

@@ -1,20 +1,24 @@
 import React from 'react';
 
-import styles from './projects.module.scss';
+import styles from './projects-intro.module.scss';
 
 import Wrapper from '@/components/wrapper/wrapper';
 import Image from 'next/image';
 import seed_flask_d1 from '../../../../public/images/projects/seed_flask_d1.jpg';
 import rediscope_d1 from '../../../../public/images/projects/rediscope_d1.jpg';
+import Link from 'next/link';
 
-export default function Projects() {
+export default function ProjectsIntro() {
   return (
     <Wrapper backgroundColor="">
       <div className={styles.projects} id="projects">
         {/* project1 - seed flask 2.0 */}
         <div className={styles.project}>
+        <h2>Projects</h2>
           <div className={styles.projectText}>
+            <Link href='/projects-description'>
             <h3 className={styles.projectTitle}>Seed Flask 2.0</h3>
+            </Link>
             <p>
               Web app for recording and visualizing scientific data. Capture
               your strain information, start your flasks, and view previous

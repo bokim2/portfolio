@@ -5,12 +5,12 @@ import Lenis from '@studio-freight/lenis';
 import { useEffect, useState } from 'react';
 
 import Gallery from '../components/gallery/gallery';
-import Intro from './home-components/intro/intro';
+import Intro from './archive/intro';
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 import Bio from './home-components/bio/bio';
-import Biotech from './home-components/biotech/biotech';
-import Projects from './home-components/projects/projects';
+import Biotech from './home-components/biotech';
+import ProjectsIntro from './home-components/projects-intro/projects-intro';
 
 const imagesAndBackgrounds = [
   {
@@ -106,7 +106,7 @@ export default function Home() {
       {/* {loading && <LoaderPage setLoading={setLoading} />} */}
       {/* <Intro /> */}
       <Bio />
-      <Projects />
+      <ProjectsIntro />
       <Biotech />
       {/* <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {
