@@ -8,7 +8,7 @@
     // padding-block: 1rem;
     // padding: 0;
     // display: block;
-    gap: 1rem;
+    gap: 0rem;
   }
 }
 
@@ -21,10 +21,14 @@
   flex-direction: column;
   gap: 0.25rem;
   // padding-block: 1rem;
+
+  @media (max-width: 800px) {
+    gap: 0rem;
+  }
 }
 
 .projectImageContainer {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   position: relative;
   width: 100%;
   min-height: 20vw;
@@ -35,7 +39,7 @@
     object-fit: cover;
   }
 
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     min-height: 30vw;
   }
 }
