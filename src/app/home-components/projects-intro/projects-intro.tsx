@@ -14,16 +14,17 @@ export default function ProjectsIntro() {
       <div className={styles.projects} id="projects">
         {/* project1 - seed flask 2.0 */}
         <div className={styles.project}>
-        <h2>Projects</h2>
-          <div className={styles.projectText}>
-            <Link href='/projects-description'>
+          <h2>Projects</h2>
+          <Link href="/projects-description">
             <h3 className={styles.projectTitle}>Seed Flask 2.0</h3>
-            </Link>
+          </Link>
+          <div className={styles.projectText}>
             <p>
               Web app for recording and visualizing scientific data. Capture
               your strain information, start your flasks, and view previous
-              growth curves to plan your sample times. Create sample schedules, do easy dilutions with the dilution calculator. Securely log in with Auth0 (Google or GitHub) to observe and
-              save your data.
+              growth curves to plan your sample times. Create sample schedules,
+              do easy dilutions with the dilution calculator. Securely log in
+              with Auth0 (Google or GitHub) to observe and save your data.
             </p>
 
             <div className={styles.projectTechContainer}>
@@ -54,8 +55,10 @@ export default function ProjectsIntro() {
         </div>
         {/* project2 - rediscope */}
         <div className={styles.project}>
-          <div className={styles.projectText}>
+          <Link href="/projects-description">
             <h3 className={styles.projectTitle}>Rediscope 2.0</h3>
+          </Link>
+          <div className={styles.projectText}>
             <p>
               An open source Redis database metrics visualization tool. Use the
               customizable data collection intervals and set max data points for

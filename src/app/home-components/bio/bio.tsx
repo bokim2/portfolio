@@ -40,7 +40,10 @@ export default function Bio() {
         <div className={styles.bioAbout}>
           <div className={styles.bioTitleContainer}>
             <h1 className={styles.bioName}>Bo Kim</h1>
-            <h3 className={styles.bioRole}>Software Engineer & Scientist</h3>
+            <h3 className={styles.bioRole}>
+              Software Engineer{' '}
+              <span className={styles.scientistTitle}>& Scientist</span>
+            </h3>
 
             <p className={`${styles.bioParagraph} large`}>
               As a software engineer with a passion for digital innovation and

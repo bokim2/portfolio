@@ -19,7 +19,7 @@
 .projectText {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  // gap: 0.5rem;
   // padding-block: 1rem;
 
   @media (max-width: 800px) {
@@ -28,7 +28,7 @@
 }
 
 .projectImageContainer {
-  margin-top: 0.75rem;
+  // margin-top: 0.75rem;
   position: relative;
   width: 100%;
   min-height: 20vw;
@@ -47,7 +47,11 @@
 
 .projectTechContainer {
   // background-color: lavender;
-  // margin-block: 0.25rem;
+  margin-block: .75rem;
+
+  @media (max-width: 800px) {
+    margin-block: .625rem;
+  }
 
   ul {
     display: flex;
