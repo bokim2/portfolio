@@ -208,10 +208,11 @@ h1 {
   color: var(--text-9);
   font-weight: 500;
   font-size: 3.25rem;
-  line-height: 1;
-  margin: 0;
-
+  /* line-height: 1; */
+  margin-bottom: 1.5rem;
+  
   @media (max-width: 800px) {
+    /* margin-bottom: 2rem; */
     font-size: 2rem;
     /* line-height: 1.; */
   }
@@ -222,11 +223,13 @@ h2 {
   /* font-weight: 375; */
   font-weight: 500;
   font-size: 2.5rem;
-  line-height: 2;
-
+  margin-bottom: 2rem;
+  /* line-height: 2; */
+  
   @media (max-width: 800px) {
+    margin-bottom: 1.5rem;
     font-size: 1.75rem;
-    line-height: 1.75;
+    /* line-height: 1.75; */
   }
 }
 
@@ -235,11 +238,13 @@ h3 {
   /* font-weight: 375; */
   font-weight: 600;
   font-size: 1.5rem;
-  line-height: 2;
-
+  margin-bottom: .75rem;
+  /* line-height: 2; */
+  
   @media (max-width: 800px) {
+    margin-bottom: .375rem;
     font-size: 1.375rem;
-    line-height: 1.75;
+    /* line-height: 1.75; */
   }
 }
 
@@ -252,23 +257,28 @@ h4 {
 }
 
 h6 {
+  margin-bottom: .375rem;
   color: var(--text-13);
   /* font-weight: 300; */
   font-size: 1rem;
+  
+  /* line-height: 1.7; */
 
   @media (max-width: 800px) {
+    margin-bottom: .375rem;
     font-size: 0.875rem;
-    line-height: 1.25;
+    /* line-height: 1.25; */
   }
 }
 
 p {
+  line-height: 1.625;
   color: var(--text-13);
   /* font-weight: 400; */
 
   &.small {
     font-size: 0.825rem;
-    line-height: 1.3125px;
+    line-height: 1.3125;
   }
 
   &.large {
@@ -282,12 +292,12 @@ p {
 
     &.xsmall {
       font-size: 0.75rem;
-      line-height: 1.3125px;
+      line-height: 1.3125;
     }
 
     &.small {
       font-size: 0.875rem;
-      line-height: 1.3125px;
+      line-height: 1.3125;
     }
 
     &.large {
@@ -333,4 +343,12 @@ em {
   background-color: red;
   height: 100px;
   width: 100px;
+}
+
+.imageCaption {
+  padding-block: .325rem;
+  font-size: 0.75rem;
+  /* font-weight: 600; */
+  line-height: 1.25;
+  color: var(--text-5);
 }

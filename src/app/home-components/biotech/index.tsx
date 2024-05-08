@@ -44,7 +44,9 @@ export default function Biotech() {
               />
             </div>
             <div>
-              <p>My first job, I worked on enzymes for biofuel production.</p>
+              <p className={'imageCaption'}>
+                My first job, I worked on enzymes for biofuel production.
+              </p>
             </div>
           </div>
         </section>
@@ -57,7 +59,7 @@ export default function Biotech() {
               Exposure to Biotech Related Software
             </h3>
             <div className={styles.biotechAbout}>
-              <p className="">
+              <p>
                 My interest in software engineering started with a data
                 visualization software called Spotfire.
               </p>
@@ -69,7 +71,7 @@ export default function Biotech() {
               <Image src={spotfire1Img} alt="spotfire graphs" fill priority />
             </div>
             <div>
-              <p>
+              <p className={'imageCaption'}>
                 My first job, I worked on enzymes for biofuel production with
                 this team.{' '}
               </p>

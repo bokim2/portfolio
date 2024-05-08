@@ -28,6 +28,16 @@ export default function ProjectsIntro() {
               with Auth0 (Google or GitHub) to observe and save your data.
             </p>
 
+            <div className={styles.projectImageContainer}>
+              <Image
+                src={seed_flask_d1}
+                alt="seed flask 2.0"
+                objectPosition="center top"
+                fill
+                priority
+              />
+            </div>
+
             <div className={styles.projectTechContainer}>
               <ul>
                 <li>React</li>
@@ -43,16 +53,6 @@ export default function ProjectsIntro() {
               </ul>
             </div>
           </div>
-
-          <div className={styles.projectImageContainer}>
-            <Image
-              src={seed_flask_d1}
-              alt="seed flask 2.0"
-              objectPosition="center top"
-              fill
-              priority
-            />
-          </div>
         </div>
         {/* project2 - rediscope */}
         <div className={styles.project}>
@@ -66,6 +66,17 @@ export default function ProjectsIntro() {
               enhanced data resolution. Dockerized and deployed using AWS.
             </p>
 
+            <div className={styles.projectImageContainer}>
+              <Image
+                src={rediscope_d1}
+                alt="Rediscope 2.0"
+                fill
+                objectPosition="center top"
+                priority
+                style={{}}
+              />
+            </div>
+            
             <div className={styles.projectTechContainer}>
               <ul>
                 <li>React</li>
@@ -80,17 +91,6 @@ export default function ProjectsIntro() {
                 <li>AWS</li>
               </ul>
             </div>
-          </div>
-
-          <div className={styles.projectImageContainer}>
-            <Image
-              src={rediscope_d1}
-              alt="Rediscope 2.0"
-              fill
-              objectPosition="center top"
-              priority
-              style={{}}
-            />
           </div>
         </div>
 
