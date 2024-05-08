@@ -5,8 +5,8 @@
   height: 10vh;
   width: 100vw;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
   nav {
     background-color: lightblue;
@@ -17,15 +17,14 @@
     }
   }
 
-  @media (max-width: 600px){
+  @media (max-width: 800px) {
     nav {
-        background-color: rgb(72, 72, 186);
-        min-width: 300px;
+      background-color: rgb(72, 72, 186);
+      min-width: 300px;
     }
   }
 }
 
 .section {
-    // background-color: red;
- 
+  // background-color: red;
 }

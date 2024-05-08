@@ -58,11 +58,11 @@ export default function Bio() {
             </p>
             <h4 className={styles.bioQuote}>
               <span
-              className={styles.bioQuoteSpan}
+                className={styles.bioQuoteSpan}
                 style={{ position: 'relative', transform: 'translateX(-2ch)' }}
               >{`"Great challenges make life interesting; `}</span>
               <span
-              className={styles.bioQuoteSpan}
+                className={styles.bioQuoteSpan}
                 style={{ position: 'relative', transform: 'translateX(1ch)' }}
               >
                 {`overcoming them makes life meaningful."`}

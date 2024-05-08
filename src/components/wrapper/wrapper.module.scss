@@ -2,10 +2,15 @@
   width: 100%;
   max-width: 1400px;
   padding-inline: min(10vh, 10vw);
-  padding-block: 5vh;
+  padding-block: 2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     // width: 90%;
-    padding: 1.5rem;
+    padding: 2.5rem;
+  }
+
+  @media (max-width: 800px) {
+    // width: 90%;
+    padding: 0rem 1.5rem;
   }
 }

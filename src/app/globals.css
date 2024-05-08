@@ -211,7 +211,7 @@ h1 {
   line-height: 1;
   margin: 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     font-size: 2rem;
     /* line-height: 1.; */
   }
@@ -224,7 +224,7 @@ h2 {
   font-size: 2.5rem;
   line-height: 2;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     font-size: 1.5rem;
     line-height: 1.75;
   }
@@ -237,7 +237,7 @@ h3 {
   font-size: 1.5rem;
   line-height: 1.5;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     font-size: 1.25rem;
     line-height: 1.5;
   }
@@ -256,9 +256,9 @@ h6 {
   /* font-weight: 300; */
   font-size: 1rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     font-size: 0.875rem;
-    line-height: 1.;
+    line-height: 1;
   }
 }
 
@@ -276,9 +276,9 @@ p {
     line-height: 1.5;
   }
 
-  @media (max-width: 600px) {
-    font-size: 1rem;
-    line-height: 1.625;
+  @media (max-width: 800px) {
+    font-size: .9375rem;
+    line-height: 1.5;
 
     &.xsmall {
       font-size: 0.75rem;
@@ -291,7 +291,7 @@ p {
     }
 
     &.large {
-      font-size: 1.125rem;
+      font-size: 1rem;
       line-height: 1.5;
     }
   }
