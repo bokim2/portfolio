@@ -4,20 +4,20 @@ import styles from './sectionsNav.module.scss';
 export const sectionsLinks = [
   {
     name: 'bio',
-    link: '#bio',
+    link: '/#bio',
   },
   {
     name: 'projects',
-    link: '#projects',
+    link: '/#projects',
   },
   {
     name: 'biotech',
-    link: '#biotech',
+    link: '/#biotech',
   },
 
   {
     name: 'contact',
-    link: '#contact',
+    link: '/#contact',
   },
 ] as const;
 
