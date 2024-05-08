@@ -1,30 +1,19 @@
-'use client';
+
 import Wrapper from '@/components/wrapper/wrapper';
 import React from 'react';
-import { motion } from 'framer-motion';
+
 
 import styles from './projectsDescriptionPage.module.scss';
 import seed_flask_d1 from '../../../public/images/projects/seed_flask_d1.jpg';
 import Image from 'next/image';
+import SeedFlaskDescription from './seedFlaskDescription';
 
 export default function ProjectsDescriptionPage() {
   return (
     <div className="pageContainer">
-      <div className='outerContainer center'>
+      <div className='outerContainer center' id='seed-flask-description'>
       {/* <motion.div className='testDiv'>test</motion.div> */}
-        <motion.div className={styles.projectImageContainer}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, width: '100%'}}
-        transition={{ delay: 0.5, duration: 1 }}>
-          <Image
-            src={seed_flask_d1}
-            alt="seed flask 2.0"
-            // objectPosition="center top"
-            fill
-            priority
-          />
-        
-        </motion.div>
+      <SeedFlaskDescription />
       </div>
       <Wrapper>
         <div className={styles.projectsDescription} id="projects-description">
