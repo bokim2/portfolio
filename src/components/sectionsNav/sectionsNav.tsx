@@ -15,7 +15,7 @@ export default function SectionsNav() {
       <nav>
         <ul>
           {sectionsLinks.map((section, index) => (
-            <motion.li
+            <li
               key={section.link}
               className={styles.sectionNavLi}
               // initial={{ opacity: 0 }}
@@ -36,7 +36,7 @@ export default function SectionsNav() {
                   // }`}
                   className={`${styles.activeLinkStyle}`}
                   layoutId="activeSection"
-                  // initial={false}
+                  initial={false}
                   // animate={{ x: 0 }}
                   transition={{
                     type: 'spring',
@@ -49,7 +49,7 @@ export default function SectionsNav() {
               <Link href={section.link} className={`${styles.sectionLink} ${activeSection === section.name ? styles.activeSectionText : ''}`}>
                 {section.name}
               </Link>
-            </motion.li>
+            </li>
           ))}
         </ul>
       </nav>
