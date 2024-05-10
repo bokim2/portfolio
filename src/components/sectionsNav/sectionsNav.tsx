@@ -36,7 +36,7 @@ export default function SectionsNav() {
                   // }`}
                   className={`${styles.activeLinkStyle}`}
                   layoutId="activeSection"
-                  // initial={false}
+                  initial={false}
                   // animate={{ x: 0 }}
                   transition={{
                     type: 'spring',
