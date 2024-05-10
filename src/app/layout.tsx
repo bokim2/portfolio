@@ -4,6 +4,7 @@ import './globals.css';
 
 import Menu from '../components/menu/menu';
 import SectionsNav from '@/components/sectionsNav/sectionsNav';
+import ActiveSectionContextProvider from './context/activeSection';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,13 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        
-        <Menu />
-        <main>{children}</main>
-      {/* {children} */}
-      {/* <div> */}
-      {/* </div> */}
-      <SectionsNav />
+        <ActiveSectionContextProvider>
+          <Menu />
+          <main>{children}</main>
+          {/* {children} */}
+          {/* <div> */}
+          {/* </div> */}
+          <SectionsNav />
+        </ActiveSectionContextProvider>
       </body>
     </html>
   );

@@ -110,6 +110,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -358,5 +359,16 @@ em {
 
   @media (max-width: 800px) {
     padding-block: 0.5rem;
+  }
+}
+
+.activeSectionStyle {
+
+  border-radius: 0.5rem;
+  background-color: red;
+  color: blue; 
+
+  a {
+    padding: .5rem, .5rem;
   }
 }
