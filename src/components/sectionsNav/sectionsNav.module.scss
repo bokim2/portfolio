@@ -1,15 +1,18 @@
 .sectionsNav {
-  background-color: lightpink;
+  // background-color: blue;
   position: fixed;
-  bottom: 0;
-  height: 10vh;
-  width: 100vw;
+  z-index: 1000;
+  top: 0;
+  left: 50%;
+  height: 7vh;
+  width: 50vw;
+  transform: translate(-50%, 0);
   display: flex;
   justify-content: center;
   align-items: center;
 
   nav {
-    background-color: lightblue;
+    // background-color: lightblue;
     width: 50%;
     ul {
       display: flex;
@@ -17,10 +20,17 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
+    background-color: var(--clr-main-1);
+    width: 100%;
+    top: auto;
+    min-height: 50px;
+    height: 3.5vh;
+    bottom: 0;
+    // background-color: red;
     nav {
-      background-color: rgb(72, 72, 186);
-      min-width: 300px;
+      // min-width: 300px;
+      width: 80%;
     }
   }
 }

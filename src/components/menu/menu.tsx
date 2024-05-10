@@ -12,11 +12,11 @@ export default function Menu() {
       </div>
 
       {/* menu button */}
-      <button className={styles.menuButton}>
+      {/* <button className={styles.menuButton}>
         <div className={styles.menuLine}></div>
         <div className={styles.menuLine}></div>
         <div className={styles.menuLine}></div>
-      </button>
+      </button> */}
 
       <div className={`${styles.menuItem} ${styles.menuItem2}`}>
         <Link href="https://www.linkedin.com/in/bokim1/" target="_">
