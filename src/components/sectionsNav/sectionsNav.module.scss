@@ -13,10 +13,12 @@
 
   nav {
     // background-color: lightblue;
-    width: 50%;
+    width: 70%;
     ul {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      // justify-content: space-around;
+      gap: .5rem;
     }
   }
 
@@ -38,3 +40,24 @@
 .section {
   // background-color: red;
 }
+
+.sectionNavLi {
+  position: relative;
+  // z-index: 100;
+  padding: .25rem .75rem;
+  // overflow: hidden;
+  
+}
+
+.sectionLink {
+  // z-index: 1000;
+}
+
+.activeLinkStyle {
+  position: absolute;
+  inset: 0;
+  border-radius: 999vw;
+  background-color: purple;
+  z-index: -10;
+}
+
