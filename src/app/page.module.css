@@ -1,3 +1,7 @@
+#homePage {
+  /* scroll-behavior: smooth; */
+}
+
 .main {
     display: flex;
     flex-direction: column;

@@ -64,20 +64,20 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    const lenis = new Lenis();
+  // useEffect(() => {
+  //   const lenis = new Lenis();
 
-    // lenis.on('scroll', (e: Event) => {
-    //   // console.log(e);
-    // });
+  //   // lenis.on('scroll', (e: Event) => {
+  //   //   // console.log(e);
+  //   // });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  //   function raf(time: number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
 
-    requestAnimationFrame(raf);
-  }, []);
+  //   requestAnimationFrame(raf);
+  // }, []);
 
   useEffect(() => {
     const body = document.querySelector('body');
@@ -99,7 +99,7 @@ export default function Home() {
   };
 
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main}`} id='homePage'>
       {/* <div className={styles.container}>
         hello
       </div> */}

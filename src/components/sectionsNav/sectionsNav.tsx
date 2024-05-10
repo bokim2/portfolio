@@ -36,7 +36,7 @@ export default function SectionsNav() {
                   // }`}
                   className={`${styles.activeLinkStyle}`}
                   layoutId="activeSection"
-                  initial={false}
+                  // initial={false}
                   // animate={{ x: 0 }}
                   transition={{
                     type: 'spring',
@@ -46,7 +46,7 @@ export default function SectionsNav() {
                 ></motion.span>
               )}
 
-              <Link href={section.link} className={`${styles.sectionLink}`}>
+              <Link href={section.link} className={`${styles.sectionLink} ${activeSection === section.name ? styles.activeSectionText : ''}`}>
                 {section.name}
               </Link>
             </motion.li>
