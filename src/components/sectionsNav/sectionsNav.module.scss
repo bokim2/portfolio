@@ -23,7 +23,7 @@
   }
 
   @media (max-width: 1000px) {
-    background-color: var(--clr-main-1);
+    background-color: rgba(var(--clr-main-1));
     width: 100%;
     top: auto;
     min-height: 50px;
@@ -57,7 +57,7 @@
   position: absolute;
   inset: 0;
   border-radius: 999vw;
-  background-color: purple;
+  background-color: rgba((var(--clr-main-2)));
   z-index: -10;
 }
 
