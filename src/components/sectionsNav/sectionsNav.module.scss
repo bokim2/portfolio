@@ -70,6 +70,7 @@
 
 .activeLinkStyle {
   position: absolute;
+  top: 0;
   inset: 0;
   border-radius: 999vw;
   background-color: rgba((var(--clr-main-2)));
