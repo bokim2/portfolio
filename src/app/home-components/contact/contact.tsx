@@ -46,7 +46,7 @@ export default function Contact() {
             <h3 className={styles.contactRole}>Bo Kim</h3>
 
             <p className={`${styles.contactParagraph} large`}>
-              If you think I'd be a good fit for your team,
+              {"If you think I'd be a good fit for your team,"}
             </p>
             <h4 className={styles.contactQuote}>
               bokim.ce@gmail.com
