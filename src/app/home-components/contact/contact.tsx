@@ -37,23 +37,7 @@ export default function Contact() {
     <Wrapper backgroundColor="">
       <section className={styles.contact} id="contact" ref={ref}>
         <div className={styles.headshotImgOuterContainer}>
-          {/* <motion.div
-            className={styles.headshotImgContainer}
-            variants={imageVariants}
-            initial="initial"
-            animate="animate"
-          >
-            <Image
-              className={`${styles.headshotImg} `}
-              src={headshotImg}
-              alt="background"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="top"
-              priority
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </motion.div> */}
+        
         </div>
 
         <div className={styles.contactAbout}>
