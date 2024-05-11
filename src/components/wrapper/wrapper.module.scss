@@ -16,3 +16,13 @@
     padding-inline: 1.5rem;
   }
 }
+
+.wrapper:first-child {
+  margin-top: 0rem;
+  padding-top: 10vh;
+}
+
+.wrapper:last-child {
+  margin-bottom: 0rem;
+  padding-bottom: 10vh;
+}

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './intro.module.scss';
 import Bio from '../home-components/bio/bio';
-import Biotech from '../home-components/biotech';
+import Biotech from '../home-components/biotech-intro';
 
 // const imageVariants = {
 //   initial: {filter: 'sepia(100%)'},

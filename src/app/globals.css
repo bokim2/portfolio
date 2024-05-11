@@ -111,7 +111,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -374,3 +374,6 @@ em {
   }
 }
 
+.firstWrapper {
+  margin-top: 100rem;
+}
