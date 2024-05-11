@@ -8,8 +8,8 @@ import {
   SetStateAction,
 } from 'react';
 import { sectionsLinks } from '../lib/constants';
+import { TSectionLinks } from '../lib/types';
 
-type TSectionLinks = (typeof sectionsLinks)[number]['name'];
 
 type TActiveSectionContext = {
   activeSection: TSectionLinks;

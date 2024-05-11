@@ -1,0 +1,129 @@
+// use grid - contact is inside the Home component and the grid is the entire screen MINUS the nav bar
+
+
+.contact {
+  // padding-top: 10vh;
+  width: 100%;
+  min-height: 86vh;
+  // padding-inline: 20vw;
+
+  display: flex;
+  gap: min(10vw, 10rem);
+  scroll-margin-top: 15vh;
+
+  // justify-content: end;
+  // justify-content: space-around;
+
+  @media (max-width: 800px) {
+    // padding-block: 1rem;
+    padding: 0;
+    display: block;
+    gap: 0rem;
+  }
+}
+
+.contactAbout {
+  flex: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  // line-height: 2;
+
+  @media (max-width: 800px) {
+    // line-height: 1;
+    // font-size: .875rem;
+  }
+}
+
+.headshotImgOuterContainer {
+  flex: 1;
+  // padding: 1rem;
+  display: flex;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+}
+
+.headshotImgContainer {
+  justify-content: space-around;
+  padding: 5rem;
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1/1.3;
+  align-self: flex-start;
+
+  overflow: hidden;
+  //   border-radius: 99999vw;
+  background-color: rgb(238, 238, 246);
+  // object-fit: cover;
+
+  @media (max-width: 800px) {
+    // padding: 0.1rem;
+    width: 30%;
+  }
+}
+
+.headshotImg {
+  // position: absolute;
+  // width: 30vw;
+  // height: 30vw;
+
+  //   aspect-ratio: initial;
+  //   border-radius: 50%;
+  //   border: 1vw solid white;
+}
+
+.contactTitleContainer {
+  display: flex;
+  flex-direction: column;
+  // gap: 0.5rem;
+  // padding-block: 1rem;
+
+  @media (max-width: 800px) {
+    // font-size: 2rem;
+    gap: 0.125rem;
+    padding-block: 1rem;
+  }
+}
+
+.contactName {
+  // margin-block: 0.5rem;
+
+  @media (max-width: 800px) {
+    // margin-top: 1rem;
+  }
+}
+
+.contactRole {
+  
+  .scientistTitle {
+
+
+  @media (max-width: 800px) {
+  }
+  }
+}
+
+.contactParagraph {
+  padding-top: 1rem;
+
+  @media (max-width: 800px) {
+    padding-top: 0.5rem;
+  }
+}
+
+.contactQuote {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // gap: 0.25rem;
+  color: var(--text-5);
+  font-weight: 400;
+
+  @media (max-width: 800px) {
+    margin-top: 0rem;
+    font-size: 0.875rem;
+  }
+}

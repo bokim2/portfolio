@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import Lenis from '@studio-freight/lenis';
-import { useEffect, useState } from 'react';
+import { createRef, useEffect, useRef, useState } from 'react';
 
 import Gallery from '../components/gallery/gallery';
 import Intro from './archive/intro';
@@ -11,6 +11,7 @@ import { useMotionValue, useSpring } from 'framer-motion';
 import Bio from './home-components/bio/bio';
 import Biotech from './home-components/biotech';
 import ProjectsIntro from './home-components/projects-intro/projects-intro';
+import Contact from './home-components/contact/contact';
 
 const imagesAndBackgrounds = [
   {
@@ -105,9 +106,10 @@ export default function Home() {
       </div> */}
       {/* {loading && <LoaderPage setLoading={setLoading} />} */}
       {/* <Intro /> */}
-      <Bio />
+      <Bio/>
       <ProjectsIntro />
       <Biotech />
+      <Contact />
       {/* <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {
           return (

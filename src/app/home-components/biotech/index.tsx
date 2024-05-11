@@ -8,14 +8,18 @@ import spotfire1Img from '../../../../public/images/biotech/spotfire1.jpg';
 
 import Wrapper from '@/components/wrapper/wrapper';
 import BiotechSoftware from './biotechSoftware';
+import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 
 export default function Biotech() {
+  const { activeSection, setActiveSection, ref } =
+    useUpdateActiveSection('biotech');
+
   return (
     <Wrapper backgroundColor="">
-      <div className={styles.biotechContainer} id="biotech">
+      <div className={styles.biotechContainer} id="biotech" >
         <h2>Biotech</h2>
         {/* first section */}
-        <section className={styles.biotech}>
+        <section className={styles.biotech} ref={ref}>
           <div className={styles.biotechTitleContainer}>
             <h6 className={styles.biotechH6}>Motivations</h6>
             <h3 className={styles.biotechRole}>The Journey up to this point</h3>

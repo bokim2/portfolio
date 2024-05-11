@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import headshotImg from '../../../../public/images/intro/headshot.png';
 
@@ -7,6 +7,9 @@ import headshotImg from '../../../../public/images/intro/headshot.png';
 import styles from './bio.module.scss';
 import Wrapper from '@/components/wrapper/wrapper';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
+import { useActiveSectionContext } from '@/app/context/activeSection';
+import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 
 const imageVariants = {
   initial: { filter: 'sepia(100%)' },
@@ -14,9 +17,25 @@ const imageVariants = {
 };
 
 export default function Bio() {
+  // const bioRef = createRef<HTMLElement>();
+  //   const {activeSection, setActiveSection} = useActiveSectionContext();
+
+  //   const {ref, inView} = useInView({
+  //     threshold: 0.5,
+  //     triggerOnce: false,
+  //   })
+
+  // useEffect(() => {
+  //   console.log('bio inView', inView)
+  //   setActiveSection('bio')
+  // },[inView])
+
+  const { activeSection, setActiveSection, ref } =
+    useUpdateActiveSection('bio');
+
   return (
     <Wrapper backgroundColor="">
-      <section className={styles.bio} id="bio">
+      <section className={styles.bio} id="bio" ref={ref}>
         <div className={styles.headshotImgOuterContainer}>
           <motion.div
             className={styles.headshotImgContainer}

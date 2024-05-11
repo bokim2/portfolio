@@ -7,11 +7,15 @@ import Image from 'next/image';
 import seed_flask_d1 from '../../../../public/images/projects/seed_flask_d1.jpg';
 import rediscope_d1 from '../../../../public/images/projects/rediscope_d1.jpg';
 import Link from 'next/link';
+import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 
 export default function ProjectsIntro() {
+  const { activeSection, setActiveSection, ref } =
+  useUpdateActiveSection('projects');
+
   return (
     <Wrapper backgroundColor="">
-      <div className={styles.projects} id="projects">
+      <div className={styles.projects} id="projects" ref={ref}>
         {/* project1 - seed flask 2.0 */}
         <div className={styles.project}>
           <h2>Projects</h2>
