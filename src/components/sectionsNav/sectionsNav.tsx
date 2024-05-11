@@ -8,7 +8,8 @@ import { useActiveSectionContext } from '@/app/context/activeSection';
 import Link from 'next/link';
 
 export default function SectionsNav() {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, timeofLastClick,
+    setTimeOfLastClick, } = useActiveSectionContext();
 
   return (
     <div className={styles.sectionsNav}>
@@ -27,7 +28,9 @@ export default function SectionsNav() {
               //   stiffness: 380,
               //   damping: 30
               // }}
-              onClick={() => setActiveSection(section.name)}
+              onClick={() => {setActiveSection(section.name)
+              setTimeOfLastClick(Date.now())
+              }}
             >
               {activeSection === section.name && (
                 <motion.span

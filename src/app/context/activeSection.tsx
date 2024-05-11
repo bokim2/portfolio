@@ -10,10 +10,11 @@ import {
 import { sectionsLinks } from '../lib/constants';
 import { TSectionLinks } from '../lib/types';
 
-
 type TActiveSectionContext = {
   activeSection: TSectionLinks;
   setActiveSection: Dispatch<SetStateAction<TSectionLinks>>;
+  timeofLastClick: number;
+  setTimeOfLastClick: Dispatch<SetStateAction<number>>;
 };
 
 export const ActiveSectionContext = createContext<TActiveSectionContext | null>(
@@ -26,8 +27,17 @@ export default function ActiveSectionContextProvider({
   children: React.ReactNode;
 }) {
   const [activeSection, setActiveSection] = useState<TSectionLinks>('bio');
+  const [timeofLastClick, setTimeOfLastClick] = useState(0);
+
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        timeofLastClick,
+        setTimeOfLastClick,
+      }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   );
