@@ -34,7 +34,7 @@ export default function Contact() {
     useUpdateActiveSection('contact');
 
   return (
-    <Wrapper backgroundColor="">
+    <Wrapper >
       <section className={styles.contact} id="contact" ref={ref}>
         <div className={styles.headshotImgOuterContainer}>
         
