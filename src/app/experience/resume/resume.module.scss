@@ -21,11 +21,26 @@
   gap: 0.5rem;
 }
 
+.secondaryTitle {
+    margin-bottom: 0.25rem;
+    color: var(--text-2);
+     font-weight: 300; 
+    font-size: 1rem;
+  
+    /* line-height: 1.7; */
+  
+    @media (max-width: 800px) {
+      margin-bottom: 0.25rem;
+      font-size: 0.925rem;
+      /* line-height: 1.25; */
+    }
+}
+
 .h4Large {
   margin-bottom: 0.425rem;
   color: var(--text-6);
   /* font-weight: 375; */
-  font-weight: 600;
+  font-weight: 00;
   font-size: 1.375rem;
   /* line-height: 1.5; */
 

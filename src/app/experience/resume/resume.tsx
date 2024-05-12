@@ -33,7 +33,7 @@ const resumeData: TresumeData[] = [
     title: 'Rediscope',
     link: 'https://www.rediscope.com',
     type: 'Open Source Project',
-    summary: 'Redis Database Metrics Visualization Tool',
+    summary: 'Redis Metrics Visualization Web App',
     date: '2022 - 2023',
     description: [
       'Designed live metrics visualization with customizable data collection intervals and ability to set a maximum number of visualized data points for enhanced data resolution.',
@@ -89,8 +89,7 @@ const resumeData: TresumeData[] = [
   {
     title: 'Research Assistant',
     secondaryTitle: 'Process Technician II',
-    group:
-      'Applications Research Team, Automation and Data Visualization Team',
+    group: 'Applications Research Team, Automation and Data Visualization Team',
     type: 'Genencor International (now IFF)',
     summary: 'Enzymes for biofuels & detergent applications',
     location: 'Palo Alto, CA',
@@ -137,12 +136,15 @@ export default function Resume() {
               <li key={i} className={`${styles.resumeLi}`}>
                 {secondaryTitle && (
                   <h3>
-                    {title} - {secondaryTitle}
+                    {title}
+                    <span className={`${styles.secondaryTitle} `}>
+                      {' '}
+                      - {secondaryTitle}
+                    </span>
                   </h3>
                 )}
                 {link && !secondaryTitle ? (
                   <>
-                   
                     <a href={link} target="_blank">
                       <h4
                         className={`${styles.titleContainer} ${styles.h4Large}`}
@@ -152,18 +154,28 @@ export default function Resume() {
                       </h4>
                     </a>
                   </>
-                ): (
-                  <h4
-                  className={`${styles.titleContainer} ${styles.h4Large}`}
-                >
-                  {title}
-                </h4>
+                ) : (
+                  !secondaryTitle && (
+                    <h4
+                      className={`${styles.titleContainer} ${styles.h4Large}`}
+                    >
+                      {title}
+                    </h4>
+                  )
                 )}
                 <h4>{type}</h4>
                 <h5>{summary}</h5>
-                 {group && <h5 className={`${styles.noMargin}`}>{group}</h5>}
-               
-                {location && <h5>{location}</h5>}
+                {group && (
+                  <h6 className={`${styles.noMargin} fontWeight400`}>
+                    {group}
+                  </h6>
+                )}
+
+                {location && (
+                  <h6 className={`${styles.noMargin} fontWeight400`}>
+                    {location}
+                  </h6>
+                )}
                 <h6 className={`${styles.noMargin}`}>{date}</h6>
                 <ul className={`${styles.listUl}`}>
                   {description.map((item, i) => (

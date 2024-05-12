@@ -398,3 +398,7 @@ em {
 .firstWrapper {
   margin-top: 100rem;
 }
+
+.fontWeight400 {
+  font-weight: 300;
+}
