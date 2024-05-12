@@ -45,9 +45,9 @@ export default function SectionsNav() {
                   // }`}
                   className={`${styles.activeLinkStyle}`}
                   layoutId="activeSection"
-                  initial={{ y: 0 }} // Start from the current position
-                  animate={{ y: 0 }} // End at the current position, adjust as needed
-                  exit={{ y: 0 }}
+                  // initial={{ y: 0 }} // Start from the current position
+                  // animate={{ y: 0 }} // End at the current position, adjust as needed
+                  // exit={{ y: 0 }}
                   // animate={{ x: 0 }}
                   transition={{
                     type: 'spring',
