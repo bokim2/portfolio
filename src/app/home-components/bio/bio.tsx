@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/app/context/activeSection';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
+import AnimationHome from '../animation-home';
 
 const imageVariants = {
   initial: { filter: 'sepia(100%)' },
@@ -93,6 +94,7 @@ export default function Bio() {
           </div>
         </div>
       </section>
+      <AnimationHome />
     </Wrapper>
   );
 }
