@@ -117,8 +117,8 @@ export default function Resume() {
             location,
             date,
             description,
-          }) => (
-            <ul>
+          }, i) => (
+            <ul key={i}>
               <li>
                 {secondaryTitle ? (
                   <h3>
@@ -133,8 +133,8 @@ export default function Resume() {
                 {location && <h5>{location}</h5>}
                 <p>{date}</p>
                 <ul>
-                  {description.map((item) => (
-                    <li>{item}</li>
+                  {description.map((item,i) => (
+                    <li key={i}>{item}</li>
                   ))}
                 </ul>
               </li>
