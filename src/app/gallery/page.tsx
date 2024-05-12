@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import styles from './galleryPage.module.css';
+import styles from './galleryPage.module.scss';
 import Lenis from '@studio-freight/lenis';
 import { useEffect, useState } from 'react';
 
