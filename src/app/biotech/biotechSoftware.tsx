@@ -115,7 +115,7 @@ export default function BiotechSoftware() {
 
       {/* pics */}
       <Wrapper>
-        <section className={`${styles.biotech} ${styles.noReverse}`}>
+        <section className={`${styles.biotech} `}>
           <div
             className={`${styles.biotechFullImageContainer} ${styles.contain}`}
           >
