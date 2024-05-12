@@ -1,18 +1,15 @@
 'use client';
 import Image from 'next/image';
-import styles from './biotechPage.module.scss';
+import styles from './experiencePage.module.scss';
 import { useEffect, useState } from 'react';
-import BiotechSoftware from './biotechSoftware';
+import WorkSoftware from './biotechSoftware';
 
-
-
-export default function BiotechPage() {
+export default function ExperiencePage() {
   const [loading, setLoading] = useState(true);
-
 
   return (
     <main className={styles.main}>
-      <BiotechSoftware />
+      <WorkSoftware />
     </main>
   );
 }

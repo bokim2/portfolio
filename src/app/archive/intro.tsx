@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './intro.module.scss';
 import Bio from '../home-components/bio/bio';
-import Biotech from '../home-components/biotech-intro';
+import Work from '../home-components/experience-intro';
 
 // const imageVariants = {
 //   initial: {filter: 'sepia(100%)'},
@@ -15,7 +15,7 @@ export default function Intro() {
       <div className={styles.background}>
         {/* <section className="introSection"> */}
         {/* <Bio/>
-        <Biotech/> */}
+        <Work/> */}
         {/* </section> */}
         {/* <motion.div className={styles.backgroundImgContainer}
         variants={imageVariants}

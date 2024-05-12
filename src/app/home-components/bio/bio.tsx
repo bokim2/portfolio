@@ -67,8 +67,8 @@ export default function Bio() {
             <p className={`${styles.bioParagraph} large`}>
               As a software engineer with a passion for digital innovation and
               problem-solving, I transitioned from a decade-long career in
-              biotech, where I worked in scientific research and process
-              automation.
+              experience, where I experienceed in scientific research and
+              process automation.
               <br />
               <br />
               While my current focus is in the JavaScript ecosystem, including

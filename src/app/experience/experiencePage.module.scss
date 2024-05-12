@@ -1,4 +1,4 @@
-.biotechContainer {
+.experienceContainer {
   display: flex;
   flex-direction: column;
   // gap: 5rem;
@@ -14,7 +14,7 @@
   }
 }
 
-.biotech {
+.experience {
   padding-bottom: 5rem;
   gap: 5rem;
   width: 100%;
@@ -30,7 +30,7 @@
   }
 }
 
-.biotech:nth-child(odd) {
+.experience:nth-child(odd) {
   // flex-direction: row-reverse;
 
   &.noReverse {
@@ -43,7 +43,7 @@
   }
 }
 
-.biotechTitleContainer {
+.experienceTitleContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
   }
 }
 
-.biotechSectionContainer {
+.experienceSectionContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -68,9 +68,7 @@
   }
 }
 
-
-
-.biotechTitleImageContainer {
+.experienceTitleImageContainer {
   position: relative;
   // width: 40vw;
   min-height: 350px;
@@ -107,7 +105,7 @@
   }
 }
 
-.biotechFullImageContainer {
+.experienceFullImageContainer {
   position: relative;
   // width: 40vw;
   min-height: 350px;
@@ -144,7 +142,7 @@
   }
 }
 
-.biotechH6 {
+.experienceH6 {
   // margin-top: 10rem;
   // align-self: flex-end;
 }

@@ -8,7 +8,7 @@ import Intro from './archive/intro';
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 import Bio from './home-components/bio/bio';
-import BiotechIntro from './home-components/biotech-intro';
+import WorkIntro from './home-components/experience-intro';
 import ProjectsIntro from './home-components/projects-intro/projects-intro';
 import Contact from './home-components/contact/contact';
 
@@ -47,7 +47,7 @@ export default function Home() {
       {/* <Intro /> */}
       <Bio />
       <ProjectsIntro />
-      <BiotechIntro />
+      <WorkIntro />
       <Contact />
       {/* <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {

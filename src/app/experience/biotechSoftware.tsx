@@ -1,27 +1,27 @@
 import React from 'react';
 import Image from 'next/image';
 
-import styles from './biotechPage.module.scss';
-import spotfire1Img from '../../../public/images/biotech/spotfire1.jpg';
-import biomek1Img from '../../../public/images/biotech/biomek1.jpg';
-import biomek2Img from '../../../public/images/biotech/biomek2.jpg';
-import ambr1Img from '../../../public/images/biotech/ambr1.jpg';
-import ambr2Img from '../../../public/images/biotech/ambr2.jpg';
-import ambr3Img from '../../../public/images/biotech/ambr3.jpg';
+import styles from './experiencePage.module.scss';
+import spotfire1Img from '../../../public/images/experience/spotfire1.jpg';
+import biomek1Img from '../../../public/images/experience/biomek1.jpg';
+import biomek2Img from '../../../public/images/experience/biomek2.jpg';
+import ambr1Img from '../../../public/images/experience/ambr1.jpg';
+import ambr2Img from '../../../public/images/experience/ambr2.jpg';
+import ambr3Img from '../../../public/images/experience/ambr3.jpg';
 import amyris from '../../../public/images/progressive/amyris.jpg';
 import Wrapper from '@/components/wrapper/wrapper';
 
-export default function BiotechSoftware() {
+export default function WorkSoftware() {
   return (
     <Wrapper backgroundColor="" className="firstWrapper">
       {/* second section */}
-      <section className={styles.biotech}>
-        <div className={styles.biotechTitleContainer}>
-          <h6 className={styles.biotechName}>Origin</h6>
-          <h3 className={styles.biotechRole}>
-            Exposure to Biotech Related Software
+      <section className={styles.experience}>
+        <div className={styles.experienceTitleContainer}>
+          <h6 className={styles.experienceName}>Origin</h6>
+          <h3 className={styles.experienceRole}>
+            Exposure to Work Related Software
           </h3>
-          <div className={styles.biotechAbout}>
+          <div className={styles.experienceAbout}>
             <p>
               My interest in software engineering started with a data
               visualization software called Spotfire.
@@ -29,38 +29,38 @@ export default function BiotechSoftware() {
           </div>
         </div>
 
-        <div className={styles.biotechSectionContainer}>
-          <div className={styles.biotechTitleImageContainer}>
+        <div className={styles.experienceSectionContainer}>
+          <div className={styles.experienceTitleImageContainer}>
             <Image src={spotfire1Img} alt="spotfire graphs" fill priority />
           </div>
           <div>
             <p className={'imageCaption'}>
-              My first job, I worked on enzymes for biofuel production with this
-              team.{' '}
+              My first job, I experienceed on enzymes for biofuel production
+              with this team.{' '}
             </p>
           </div>
         </div>
       </section>
 
-      {/* <BiotechSoftware /> */}
+      {/* <WorkSoftware /> */}
       {/* third section */}
-      <section className={`${styles.biotech} ${styles.noReverse}`}>
-        <div className={styles.biotechSectionContainer}>
-          <div className={styles.biotechTitleImageContainer}>
+      <section className={`${styles.experience} ${styles.noReverse}`}>
+        <div className={styles.experienceSectionContainer}>
+          <div className={styles.experienceTitleImageContainer}>
             <Image src={biomek1Img} alt="biomek software" fill priority />
           </div>
           <div>
             <p className={'imageCaption'}>
               The Biomek Liquid Handler automates liquid handling tasks across a
               variety of applications, including protein assays and product
-              quantification, to improve efficiency and precision in biotech
+              quantification, to improve efficiency and precision in experience
               labs.
             </p>
           </div>
         </div>
 
-        <div className={styles.biotechSectionContainer}>
-          <div className={styles.biotechTitleImageContainer}>
+        <div className={styles.experienceSectionContainer}>
+          <div className={styles.experienceTitleImageContainer}>
             <Image
               src={biomek2Img}
               alt="biomek software"
@@ -79,23 +79,23 @@ export default function BiotechSoftware() {
       </section>
 
       {/* third section */}
-      <section className={`${styles.biotech} ${styles.noReverse}`}>
-        <div className={styles.biotechSectionContainer}>
-          <div className={styles.biotechTitleImageContainer}>
+      <section className={`${styles.experience} ${styles.noReverse}`}>
+        <div className={styles.experienceSectionContainer}>
+          <div className={styles.experienceTitleImageContainer}>
             <Image src={ambr1Img} alt="biomek software" fill priority />
           </div>
           <div>
             <p className={'imageCaption'}>
               The Biomek Liquid Handler automates liquid handling tasks across a
               variety of applications, including protein assays and product
-              quantification, to improve efficiency and precision in biotech
+              quantification, to improve efficiency and precision in experience
               labs.
             </p>
           </div>
         </div>
 
-        <div className={styles.biotechSectionContainer}>
-          <div className={styles.biotechTitleImageContainer}>
+        <div className={styles.experienceSectionContainer}>
+          <div className={styles.experienceTitleImageContainer}>
             <Image
               src={ambr2Img}
               alt="biomek software"
@@ -115,9 +115,9 @@ export default function BiotechSoftware() {
 
       {/* pics */}
       <Wrapper>
-        <section className={`${styles.biotech} `}>
+        <section className={`${styles.experience} `}>
           <div
-            className={`${styles.biotechFullImageContainer} ${styles.contain}`}
+            className={`${styles.experienceFullImageContainer} ${styles.contain}`}
           >
             <Image
               src={amyris}

@@ -171,7 +171,7 @@ a:not([class]) {
   color: currentColor;
 }
 
-/* Make images easier to work with */
+/* Make images easier to experience with */
 img,
 picture {
   max-width: 100%;
@@ -364,13 +364,12 @@ em {
 }
 
 .activeSectionStyle {
-
   border-radius: 0.5rem;
   background-color: red;
-  color: blue; 
+  color: blue;
 
   a {
-    padding: .5rem, .5rem;
+    padding: 0.5rem, 0.5rem;
   }
 }
 
