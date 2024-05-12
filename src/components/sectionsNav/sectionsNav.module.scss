@@ -70,7 +70,7 @@
 
 .activeLinkStyle {
   position: absolute;
-  top: 0;  // was having strange issues and the activeLink floating up upon page change.  
+  // top: 0;  // was having strange issues and the activeLink floating up upon page change.  
   inset: 0;
   border-radius: 999vw;
   background-color: rgba((var(--clr-main-2)));

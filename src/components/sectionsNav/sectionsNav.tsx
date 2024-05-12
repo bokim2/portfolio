@@ -33,6 +33,7 @@ export default function SectionsNav() {
               //   damping: 30
               // }}
               onClick={(e) => {
+                e.stopPropagation();
                 setActiveSection(section.name);
                 setTimeOfLastClick(Date.now());
               }}
