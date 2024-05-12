@@ -1,5 +1,15 @@
-import React, { createRef, useEffect } from 'react';
+// import dynamic from 'next/dynamic';
+// const AnimationHome = dynamic(() => import('../animation-home'), {
+//   loading: () => <h1>Loading...</h1>,
+//   ssr: true,
+// });
+'use client'
+import AnimationHome from '../animation-home';
+
+import React, { createRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import WebGL from 'three/addons/capabilities/WebGL.js';
+
 import headshotImg from '../../../../public/images/intro/headshot.png';
 
 // inside src/app/page.tsx - home component
@@ -10,7 +20,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/app/context/activeSection';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
-import AnimationHome from '../animation-home';
+// import AnimationHome from '../animation-home';
 
 const imageVariants = {
   initial: { filter: 'sepia(100%)' },
@@ -18,6 +28,11 @@ const imageVariants = {
 };
 
 export default function Bio() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   // const bioRef = createRef<HTMLElement>();
   //   const {activeSection, setActiveSection} = useActiveSectionContext();
 
@@ -94,7 +109,8 @@ export default function Bio() {
           </div>
         </div>
       </section>
-      <AnimationHome />
+      {isClient && typeof window !== 'undefined' && WebGL.isWebGLAvailable() && (
+        <AnimationHome />)}
     </Wrapper>
   );
 }
