@@ -1,4 +1,8 @@
 
+.experienceSection {
+    margin-block: 2rem;
+
+}
 
 .resumeUl {
 display: flex;
@@ -17,6 +21,37 @@ gap: 1.5rem;
 
 .listLi {
     list-style-type: disc;
+}
+
+
+// education certifications section
+
+.H3large{
+    margin-bottom: 0.625rem;
+    color: var(--text-9);
+    /* font-weight: 375; */
+    font-weight: 600;
+    font-size: 1.75rem;
+    /* line-height: 2; */
+  
+    @media (max-width: 800px) {
+      margin-bottom: 0.375rem;
+      font-size: 1.5rem;
+      /* line-height: 1.75; */
+    }
+}
+
+.education {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 1rem;
+    margin-block: 1.5rem;
+    // flex-wrap: wrap;
+
+}
+
+.certifications {
+    margin-block: 1.5rem;
 }
 
 // utility classes

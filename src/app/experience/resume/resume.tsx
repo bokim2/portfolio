@@ -109,7 +109,8 @@ const resumeData: TresumeData[] = [
 export default function Resume() {
   return (
     <Wrapper>
-      <section>
+      <section className={`${styles.experienceSection}`}>
+        <h2>Experience</h2>
         <ul className={`${styles.resumeUl}`}>
           {resumeData.map(
             (
@@ -158,12 +159,12 @@ export default function Resume() {
 function EducationCertifications() {
   return (
     <div>
-      <div>
-        <h3>Education</h3>
+      <div className={`${styles.education}`}>
+        <h3 className={`${styles.H3large}`}>Education</h3>
         <h4>University of California, Los Angeles</h4>
-        <h4>Bachelor of Science in Chemical Engineering</h4>
+        <h5>Bachelor of Science in Chemical Engineering</h5>
       </div>
-      <div>
+      <div className={`${styles.certifications}`}>
         <h3>Professional Certifications</h3>
         <h4>AWS Solutions Architect Associate (SAA-C03)</h4>
         <h5>Valid until June 07, 2026</h5>
