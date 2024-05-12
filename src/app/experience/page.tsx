@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import styles from './experiencePage.module.scss';
 import { useEffect, useState } from 'react';
-import WorkSoftware from './biotechSoftware';
-import Resume from './resume';
+import BiotechSoftware from './biotechSoftware';
+import Resume from './resume/resume';
 
 export default function ExperiencePage() {
   const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ export default function ExperiencePage() {
   return (
     <main className={styles.main}>
       <Resume />
-      <WorkSoftware />
+      <BiotechSoftware />
     </main>
   );
 }

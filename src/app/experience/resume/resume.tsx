@@ -1,6 +1,8 @@
 import Wrapper from '@/components/wrapper/wrapper';
 import React from 'react';
 
+import styles from './resume.module.scss';
+
 type TresumeData = {
   title: string;
   link?: string;
@@ -21,7 +23,7 @@ const resumeData: TresumeData[] = [
     description: [
       'Engineered a biotech geared application for tracking experimental conditions, key events, and results in a SQL database to minimize data redundancy through proper use of foreign keys. ',
       'Use of single page architecture and implementation of React Router for effective page navigation.  Improved user experience and reduced network traffic through reduced server calls.',
-      "Leveraged React’s Context API to store application data to directly access and update state without manually passing information through the component tree at each level.  Reduced code complexity and simplified state management, resulting in intuitive data flow.",
+      'Leveraged React’s Context API to store application data to directly access and update state without manually passing information through the component tree at each level.  Reduced code complexity and simplified state management, resulting in intuitive data flow.',
     ],
   },
   {
@@ -108,18 +110,22 @@ export default function Resume() {
   return (
     <Wrapper>
       <section>
+        <ul  className = {`${styles.resumeUl}`}>
         {resumeData.map(
-          ({
-            title,
-            secondaryTitle,
-            group,
-            type,
-            location,
-            date,
-            description,
-          }, i) => (
-            <ul key={i}>
-              <li>
+          (
+            {
+              title,
+              secondaryTitle,
+              link,
+              group,
+              type,
+              location,
+              date,
+              description,
+            },
+            i
+          ) => (
+              <li className={`${styles.resumeLi}`}>
                 {secondaryTitle ? (
                   <h3>
                     {title} - {secondaryTitle}
@@ -127,40 +133,39 @@ export default function Resume() {
                 ) : (
                   <h3>{title}</h3>
                 )}
-
-                <h4>{type}</h4>
-                {group && <h5>{group}</h5>}
+                {link && <h4>{link}</h4>}
+                <h4 >{type}</h4>
+                {group && <h5 className={`${styles.noMargin}`}>{group}</h5>}
                 {location && <h5>{location}</h5>}
-                <p>{date}</p>
-                <ul>
-                  {description.map((item,i) => (
-                    <li key={i}>{item}</li>
+                <h6 className={`${styles.noMargin}`}>{date}</h6>
+                <ul className={`${styles.listUl}`}>
+                  {description.map((item, i) => (
+                    <li key={i} className={`${styles.listLi}`}>{item}</li>
                   ))}
                 </ul>
               </li>
-            </ul>
           )
         )}
+            </ul>
       </section>
       <EducationCertifications />
     </Wrapper>
   );
 }
 
-function EducationCertifications (){
-    return (
-        <div>
-
-        <div>
-            <h3>Education</h3>
-            <h4>University of California, Los Angeles</h4>
-            <h4>Bachelor of Science in Chemical Engineering</h4>
-        </div>
-        <div>
-            <h3>Professional Certifications</h3>
-            <h4>AWS Solutions Architect Associate (SAA-C03)</h4>
-            <h5>Valid until June 07, 2026</h5>
-        </div>
-        </div>
-    )
+function EducationCertifications() {
+  return (
+    <div>
+      <div>
+        <h3>Education</h3>
+        <h4>University of California, Los Angeles</h4>
+        <h4>Bachelor of Science in Chemical Engineering</h4>
+      </div>
+      <div>
+        <h3>Professional Certifications</h3>
+        <h4>AWS Solutions Architect Associate (SAA-C03)</h4>
+        <h5>Valid until June 07, 2026</h5>
+      </div>
+    </div>
+  );
 }

@@ -11,13 +11,13 @@ import ambr3Img from '../../../public/images/experience/ambr3.jpg';
 import amyris from '../../../public/images/progressive/amyris.jpg';
 import Wrapper from '@/components/wrapper/wrapper';
 
-export default function WorkSoftware() {
+export default function BiotechSoftware() {
   return (
     <Wrapper backgroundColor="" className="firstWrapper">
       {/* second section */}
       <section className={styles.experience}>
         <div className={styles.experienceTitleContainer}>
-          <h6 className={styles.experienceName}>Origin</h6>
+          <h5 className={styles.experienceName}>Origin</h5>
           <h3 className={styles.experienceRole}>
             Exposure to Work Related Software
           </h3>

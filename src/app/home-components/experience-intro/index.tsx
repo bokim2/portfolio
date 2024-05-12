@@ -23,7 +23,7 @@ export default function WorkIntro() {
         {/* first section */}
         <section className={styles.experience} ref={ref}>
           <div className={styles.experienceTitleContainer}>
-            <h6 className={styles.experienceH6}>Motivations</h6>
+            <h5 className={styles.experienceH6}>Motivations</h5>
             <h3 className={styles.experienceRole}>
               The Journey up to this point
             </h3>

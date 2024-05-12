@@ -1,18 +1,4 @@
-.experienceContainer {
-  display: flex;
-  flex-direction: column;
-  // gap: 5rem;
-  // padding: 15vw;
-  // background-color: red;
-  margin-bottom: 10vh;
-  scroll-margin-top: 10vh;
 
-  @media (max-width: 800px) {
-    // flex-direction: column;
-    // display: block;
-    // gap: 1rem;
-  }
-}
 
 .experience {
   padding-bottom: 5rem;

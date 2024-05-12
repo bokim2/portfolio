@@ -1,0 +1,27 @@
+
+
+.resumeUl {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+
+.resumeLi {
+
+}
+
+.listUl {
+    padding-left: 1rem;
+
+}
+
+.listLi {
+    list-style-type: disc;
+}
+
+// utility classes
+
+.noMargin {
+    margin: 0;
+}
+
