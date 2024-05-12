@@ -110,22 +110,22 @@ export default function Resume() {
   return (
     <Wrapper>
       <section>
-        <ul  className = {`${styles.resumeUl}`}>
-        {resumeData.map(
-          (
-            {
-              title,
-              secondaryTitle,
-              link,
-              group,
-              type,
-              location,
-              date,
-              description,
-            },
-            i
-          ) => (
-              <li className={`${styles.resumeLi}`}>
+        <ul className={`${styles.resumeUl}`}>
+          {resumeData.map(
+            (
+              {
+                title,
+                secondaryTitle,
+                link,
+                group,
+                type,
+                location,
+                date,
+                description,
+              },
+              i
+            ) => (
+              <li key={i} className={`${styles.resumeLi}`}>
                 {secondaryTitle ? (
                   <h3>
                     {title} - {secondaryTitle}
@@ -134,19 +134,21 @@ export default function Resume() {
                   <h3>{title}</h3>
                 )}
                 {link && <h4>{link}</h4>}
-                <h4 >{type}</h4>
+                <h4>{type}</h4>
                 {group && <h5 className={`${styles.noMargin}`}>{group}</h5>}
                 {location && <h5>{location}</h5>}
                 <h6 className={`${styles.noMargin}`}>{date}</h6>
                 <ul className={`${styles.listUl}`}>
                   {description.map((item, i) => (
-                    <li key={i} className={`${styles.listLi}`}>{item}</li>
+                    <li key={i} className={`${styles.listLi}`}>
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </li>
-          )
-        )}
-            </ul>
+            )
+          )}
+        </ul>
       </section>
       <EducationCertifications />
     </Wrapper>
