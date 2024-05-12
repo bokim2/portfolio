@@ -2,9 +2,11 @@ import Wrapper from '@/components/wrapper/wrapper';
 import React from 'react';
 
 import styles from './resume.module.scss';
+import { FaExternalLinkSquareAlt } from 'react-icons/fa';
 
 type TresumeData = {
   title: string;
+  summary?: string;
   link?: string;
   secondaryTitle?: string;
   group?: string;
@@ -17,7 +19,8 @@ type TresumeData = {
 const resumeData: TresumeData[] = [
   {
     title: 'Seed Flask',
-    link: 'www.seedflask.com',
+    summary: 'Science Data Recording Web App',
+    link: 'https://www.seedflask.com',
     type: 'Solo Project',
     date: '2023 - 2024',
     description: [
@@ -28,8 +31,9 @@ const resumeData: TresumeData[] = [
   },
   {
     title: 'Rediscope',
-    link: 'www.rediscope.com',
+    link: 'https://www.rediscope.com',
     type: 'Open Source Project',
+    summary: 'Redis Database Metrics Visualization Tool',
     date: '2022 - 2023',
     description: [
       'Designed live metrics visualization with customizable data collection intervals and ability to set a maximum number of visualized data points for enhanced data resolution.',
@@ -44,6 +48,7 @@ const resumeData: TresumeData[] = [
     secondaryTitle: 'Senior Research Associate',
     group: 'Upstream Process Development Department',
     type: 'Applied Molecular Transport',
+    summary: 'Oral Biologics / Drug Carrier Technology',
     location: 'South San Francisco, CA',
     date: '2022 - 2020',
     description: [
@@ -57,6 +62,7 @@ const resumeData: TresumeData[] = [
     title: 'Associate Scientist III',
     type: 'Amyris',
     group: 'Fermentation Department - New Technology',
+    summary: 'Synthetic Biotechnology / Renewable Chemicals',
     location: 'Emeryville, CA',
     date: '2018 - 2020',
     description: [
@@ -69,13 +75,13 @@ const resumeData: TresumeData[] = [
   {
     title: 'Research Associate',
     type: 'Calysta',
+    summary: 'Sustainable protein for feed and food',
     group: 'Fermentation Department',
     location: 'Menlo Park, CA',
     date: '2015 - 2018',
     description: [
-      'High-Throughput Screening Lead:  Developed methanotroph growth and screening in 96WP format.  Increased microtiter screening capability and throughput by 4X.   The system has been successfully validated and routinely utilized by the Strain Engineering Team on-site.  ',
-
       'Renewable Plastics Project:  Lactate production utilizing methane gas as a primary carbon source.  Growth and Screening:  Developed safe and efficient small-scale batch cultivation methods.  ',
+      'High-Throughput Screening Lead:  Developed methanotroph growth and screening in 96WP format.  Increased microtiter screening capability and throughput by 4X.   The system has been successfully validated and routinely utilized by the Strain Engineering Team on-site.  ',
 
       'Optimized strain evaluation across various small-scale formats (microtiter plates, serum bottles, flasks) for growth and lactate production.  Improved growth rates and titer across formats by 2-3X, allowing for improved breakout in performance.  Reduced microtiter plate standard deviation and increased dynamic range of testing.  ',
     ],
@@ -84,8 +90,9 @@ const resumeData: TresumeData[] = [
     title: 'Research Assistant',
     secondaryTitle: 'Process Technician II',
     group:
-      'Grain Applications Research Team, Automation and Data Visualization Team',
+      'Applications Research Team, Automation and Data Visualization Team',
     type: 'Genencor International (now IFF)',
+    summary: 'Enzymes for biofuels & detergent applications',
     location: 'Palo Alto, CA',
     date: '2012 - 2015',
     description: [
@@ -109,13 +116,14 @@ const resumeData: TresumeData[] = [
 export default function Resume() {
   return (
     <Wrapper>
-      <section className={`${styles.experienceSection}`}>
+      <section className={`${styles.resumeSection}`}>
         <h2>Experience</h2>
         <ul className={`${styles.resumeUl}`}>
           {resumeData.map(
             (
               {
                 title,
+                summary,
                 secondaryTitle,
                 link,
                 group,
@@ -127,22 +135,40 @@ export default function Resume() {
               i
             ) => (
               <li key={i} className={`${styles.resumeLi}`}>
-                {secondaryTitle ? (
+                {secondaryTitle && (
                   <h3>
                     {title} - {secondaryTitle}
                   </h3>
-                ) : (
-                  <h3>{title}</h3>
                 )}
-                {link && <h4>{link}</h4>}
+                {link && !secondaryTitle ? (
+                  <>
+                   
+                    <a href={link} target="_blank">
+                      <h4
+                        className={`${styles.titleContainer} ${styles.h4Large}`}
+                      >
+                        {title}
+                        <FaExternalLinkSquareAlt />
+                      </h4>
+                    </a>
+                  </>
+                ): (
+                  <h4
+                  className={`${styles.titleContainer} ${styles.h4Large}`}
+                >
+                  {title}
+                </h4>
+                )}
                 <h4>{type}</h4>
-                {group && <h5 className={`${styles.noMargin}`}>{group}</h5>}
+                <h5>{summary}</h5>
+                 {group && <h5 className={`${styles.noMargin}`}>{group}</h5>}
+               
                 {location && <h5>{location}</h5>}
                 <h6 className={`${styles.noMargin}`}>{date}</h6>
                 <ul className={`${styles.listUl}`}>
                   {description.map((item, i) => (
                     <li key={i} className={`${styles.listLi}`}>
-                      {item}
+                      <p className="small">{item}</p>
                     </li>
                   ))}
                 </ul>
