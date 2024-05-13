@@ -17,8 +17,10 @@ import { useControls } from 'leva';
   });
 
 
+  // useGLTF.preload('/images/3d/flask.glb')
 
 export default function Model() {
+
   const { nodes } = useGLTF('/images/3d/flask.glb') as any;
 
   const { viewport } = useThree();
