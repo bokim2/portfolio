@@ -20,6 +20,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/app/context/activeSection';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
+import LaboratoryAnimation from './laboratory-animation';
 // import AnimationHome from '../animation-home';
 
 const imageVariants = {
@@ -114,7 +115,11 @@ export default function Bio() {
         typeof window !== 'undefined' &&
         WebGL.isWebGLAvailable() && <AnimationHome />}
       </div>
-      
+      <div className = {styles.animationHome}>
+       { isClient &&
+        typeof window !== 'undefined' &&
+        WebGL.isWebGLAvailable() && <LaboratoryAnimation />}
+      </div>
     </Wrapper>
   );
 }

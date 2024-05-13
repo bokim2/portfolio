@@ -16,9 +16,9 @@ export default function Scene() {
       style={{ backgroundColor: 'black' }}
     >
       <ambientLight intensity={3} />
-      <directionalLight position={[0, 3, 2]} intensity={3} />
-      <Environment preset="city" />
+      <directionalLight position={[-5, -5, 5]} intensity={1} />
       <Suspense fallback={null}>
+      <Environment preset="city" />
         <Model />
       </Suspense>
       <OrbitControls />

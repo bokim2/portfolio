@@ -1,4 +1,4 @@
-import { OrbitControls, useGLTF, Text, MeshTransmissionMaterial } from '@react-three/drei';
+import { OrbitControls, useGLTF, Text, MeshTransmissionMaterial, PerspectiveCamera } from '@react-three/drei';
 import { MeshProps, useThree } from '@react-three/fiber';
 import { MeshPhysicalMaterial } from 'three';
 
@@ -69,7 +69,8 @@ const materialPropsWithUseControls = process.env.NODE_ENV === "development"
   return (
     <group scale={viewport.height * .5}>
       {/* <group > */}
-      <Text  scale={[textDesiredHeightInMeters, textDesiredHeightInMeters, textDesiredHeightInMeters]} >Bo Kim</Text>
+      <PerspectiveCamera  position={[0, 0, 50]} fov={50} near={0.1} far={5000} />
+      <Text  scale={[textDesiredHeightInMeters, textDesiredHeightInMeters, textDesiredHeightInMeters]} position={[0, 0, 0]} rotation-x={-Math.PI/2}>Bo Kim</Text>
 
       {/* <mesh {...nodes.Beaker.children[0]}></mesh>
       <mesh {...nodes.Beaker.children[1]}></mesh> */}
