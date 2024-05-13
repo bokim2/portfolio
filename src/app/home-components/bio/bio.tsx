@@ -3,8 +3,8 @@
 //   loading: () => <h1>Loading...</h1>,
 //   ssr: true,
 // });
-'use client'
-import AnimationHome from '../animation-home';
+'use client';
+import AnimationHome from './animation-home';
 
 import React, { createRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -109,8 +109,12 @@ export default function Bio() {
           </div>
         </div>
       </section>
-      {isClient && typeof window !== 'undefined' && WebGL.isWebGLAvailable() && (
-        <AnimationHome />)}
+      <div className = {styles.animationHome}>
+       { isClient &&
+        typeof window !== 'undefined' &&
+        WebGL.isWebGLAvailable() && <AnimationHome />}
+      </div>
+      
     </Wrapper>
   );
 }

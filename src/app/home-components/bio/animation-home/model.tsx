@@ -51,6 +51,12 @@ const materialProps = {
     backside: materialControlProps.backside,
   };
 
+  const desiredHeightInMeters = 1;  // 15 cm in meters
+  const originalHeight = nodes.Beaker.children[1].geometry.boundingBox.max.y - nodes.Beaker.children[1].geometry.boundingBox.min.y;
+  const scaleFactor = desiredHeightInMeters / originalHeight;
+
+  const textDesiredHeightInMeters = desiredHeightInMeters * 0.1;
+
 const materialPropsWithUseControls = process.env.NODE_ENV === "development" 
 ? materialProps 
 : materialProps;
@@ -59,9 +65,9 @@ const materialPropsWithUseControls = process.env.NODE_ENV === "development"
   // console.log('beakerMesh', beakerMesh)
 
   return (
-    <group scale={viewport.width * .002}>
+    <group scale={viewport.height * .5}>
       {/* <group > */}
-      <Text scale={viewport.width * .2}>Bo Kim</Text>
+      <Text  scale={[textDesiredHeightInMeters, textDesiredHeightInMeters, textDesiredHeightInMeters]} >Bo Kim</Text>
 
       {/* <mesh {...nodes.Beaker.children[0]}></mesh>
       <mesh {...nodes.Beaker.children[1]}></mesh> */}
@@ -69,9 +75,15 @@ const materialPropsWithUseControls = process.env.NODE_ENV === "development"
 <mesh geometry={nodes.Beaker.children[1].geometry} material={nodes.Beaker.children[1].material} /> */}
 
 {/* <mesh geometry={nodes.Beaker.children[0].geometry} scale={viewport.width * .002} ><meshBasicMaterial color='light'/></mesh> */}
-<mesh scale={viewport.height * .0065 } geometry={nodes.Beaker.children[1].geometry}>
+
+{/* <mesh scale={viewport.height * .0065 } geometry={nodes.Beaker.children[1].geometry}>
  <MeshTransmissionMaterial {...materialProps} />
-    </mesh> 
+    </mesh>  */}
+
+
+<mesh scale={[scaleFactor, scaleFactor, scaleFactor]} geometry={nodes.Beaker.children[1].geometry}>
+  <MeshTransmissionMaterial {...materialProps} />
+</mesh>
     </group>
   );
 }
