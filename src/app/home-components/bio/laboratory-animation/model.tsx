@@ -32,7 +32,7 @@ export default function Model() {
   useEffect(() => {
     console.log('actions', actions, 'clips', clips);
     if (actions?.['Armature|Walk']) {
-      actions['Armature|Walk'].play().paused = false;
+      actions['Armature|Walk'].play().paused = true;
     }
   }, []);
 

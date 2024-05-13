@@ -13,11 +13,15 @@ export default function Scene() {
   return (
     <Canvas
       // camera={{ position: [0, 0, 50] }}
-      style={{ backgroundColor: 'black' }}
+      // style={{ backgroundColor: 'black' }}
+      style={{ backgroundColor: 'rgba(var(--clr-main-1))' }}
+
     >
-      <ambientLight intensity={3} />
-      <directionalLight position={[0, 3, 2]} intensity={3} />
-      <Environment preset="city" />
+      {/* <ambientLight intensity={.3} /> */}
+      <directionalLight position={[0, 3, 2]} intensity={.3}  />
+      {/* <Environment preset="city" /> */}
+      {/* <Environment preset="sunset" /> */}
+      <Environment preset="forest" background={true} backgroundIntensity={.01}/>
       <Suspense fallback={null}>
         <Model />
       </Suspense>

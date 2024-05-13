@@ -51,75 +51,81 @@ export default function Bio() {
     useUpdateActiveSection('bio');
 
   return (
-    <Wrapper backgroundColor="">
-      <section className={styles.bio} id="bio" ref={ref}>
-        <div className={styles.headshotImgOuterContainer}>
-          <motion.div
-            className={styles.headshotImgContainer}
-            variants={imageVariants}
-            initial="initial"
-            animate="animate"
-          >
-            <Image
-              className={`${styles.headshotImg} `}
-              src={headshotImg}
-              alt="background"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="top"
-              priority
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </motion.div>
-        </div>
-
-        <div className={styles.bioAbout}>
-          <div className={styles.bioTitleContainer}>
-            <h1 className={styles.bioName}>Bo Kim</h1>
-            <h3 className={styles.bioRole}>
-              Software Engineer{' '}
-              <span className={styles.scientistTitle}>& Scientist</span>
-            </h3>
-
-            <p className={`${styles.bioParagraph} large`}>
-              As a software engineer with a passion for digital innovation and
-              problem-solving, I transitioned from a decade-long career in
-              experience, where I experienceed in scientific research and
-              process automation.
-              <br />
-              <br />
-              While my current focus is in the JavaScript ecosystem, including
-              tools like React and Node.js, I am also looking to expand my
-              technical skills by learning new technologies and programming
-              languages.
-              <br />
-              <br />
-            </p>
-            <h4 className={styles.bioQuote}>
-              <span
-                className={styles.bioQuoteSpan}
-                style={{ position: 'relative', transform: 'translateX(-2ch)' }}
-              >{`"Great challenges make life interesting; `}</span>
-              <span
-                className={styles.bioQuoteSpan}
-                style={{ position: 'relative', transform: 'translateX(1ch)' }}
-              >
-                {`overcoming them makes life meaningful."`}
-              </span>
-            </h4>
-          </div>
-        </div>
-      </section>
-      <div className = {styles.animationHome}>
-       { isClient &&
-        typeof window !== 'undefined' &&
-        WebGL.isWebGLAvailable() && <AnimationHome />}
+    <>
+      <div className={styles.animationHome}>
+        {isClient &&
+          typeof window !== 'undefined' &&
+          WebGL.isWebGLAvailable() && <AnimationHome />}
       </div>
-      <div className = {styles.animationHome}>
+      <Wrapper backgroundColor="">
+        <section className={styles.bio} id="bio" ref={ref}>
+          <div className={styles.headshotImgOuterContainer}>
+            <motion.div
+              className={styles.headshotImgContainer}
+              variants={imageVariants}
+              initial="initial"
+              animate="animate"
+            >
+              <Image
+                className={`${styles.headshotImg} `}
+                src={headshotImg}
+                alt="background"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top"
+                priority
+                // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </motion.div>
+          </div>
+
+          <div className={styles.bioAbout}>
+            <div className={styles.bioTitleContainer}>
+              <h1 className={styles.bioName}>Bo Kim</h1>
+              <h3 className={styles.bioRole}>
+                Software Engineer{' '}
+                <span className={styles.scientistTitle}>& Scientist</span>
+              </h3>
+
+              <p className={`${styles.bioParagraph} large`}>
+                As a software engineer with a passion for digital innovation and
+                problem-solving, I transitioned from a decade-long career in
+                experience, where I experienceed in scientific research and
+                process automation.
+                <br />
+                <br />
+                While my current focus is in the JavaScript ecosystem, including
+                tools like React and Node.js, I am also looking to expand my
+                technical skills by learning new technologies and programming
+                languages.
+                <br />
+                <br />
+              </p>
+              <h4 className={styles.bioQuote}>
+                <span
+                  className={styles.bioQuoteSpan}
+                  style={{
+                    position: 'relative',
+                    transform: 'translateX(-2ch)',
+                  }}
+                >{`"Great challenges make life interesting; `}</span>
+                <span
+                  className={styles.bioQuoteSpan}
+                  style={{ position: 'relative', transform: 'translateX(1ch)' }}
+                >
+                  {`overcoming them makes life meaningful."`}
+                </span>
+              </h4>
+            </div>
+          </div>
+        </section>
+
+        {/* <div className = {styles.animationHome}>
        { isClient &&
         typeof window !== 'undefined' &&
         WebGL.isWebGLAvailable() && <LaboratoryAnimation />}
-      </div>
-    </Wrapper>
+      </div> */}
+      </Wrapper>
+    </>
   );
 }

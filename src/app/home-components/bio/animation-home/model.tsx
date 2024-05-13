@@ -1,6 +1,6 @@
-import { OrbitControls, useGLTF, Text, MeshTransmissionMaterial, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, useGLTF, Text, MeshTransmissionMaterial, PerspectiveCamera, CubeCamera, OrthographicCamera } from '@react-three/drei';
 import { MeshProps, useThree } from '@react-three/fiber';
-import { MeshPhysicalMaterial } from 'three';
+import { DoubleSide, MeshPhysicalMaterial } from 'three';
 
 
 import React from 'react';
@@ -44,6 +44,18 @@ export default function Model() {
     backside: true,
   };
 
+  const glassMaterialProps = {
+  color: 0xffffff,            // White color for the glass
+  transmission: 1,          // High transmission for glass-like transparency
+  roughness: 0.1,             // Low roughness for a smooth surface
+  reflectivity: 0.5,          // Moderate reflectivity
+  clearcoat: 1.0,             // A clear coat for additional glossiness
+  clearcoatRoughness: 0.05,   // Very smooth clearcoat
+  ior: 1.5,                   // Index of Refraction for glass is typically around 1.5
+  metalness: 0,               // Glass is not metallic
+  side: DoubleSide,     // Render both sides of the material
+};
+
 const materialProps = {
     thickness: materialControlProps.thickness,
     roughness: materialControlProps.roughness,
@@ -69,7 +81,7 @@ const materialPropsWithUseControls = process.env.NODE_ENV === "development"
   return (
     <group scale={viewport.height * .5}>
       {/* <group > */}
-      <PerspectiveCamera  position={[0, 0, 50]} fov={50} near={0.1} far={5000} />
+      <OrthographicCamera  position={[0, 0, 50]} near={0.1} far={500} />
       <Text  scale={[textDesiredHeightInMeters, textDesiredHeightInMeters, textDesiredHeightInMeters]} position={[0, 0, 0]} rotation-x={-Math.PI/2}>Bo Kim</Text>
 
       {/* <mesh {...nodes.Beaker.children[0]}></mesh>
@@ -86,6 +98,7 @@ const materialPropsWithUseControls = process.env.NODE_ENV === "development"
 
 <mesh scale={[scaleFactor, scaleFactor, scaleFactor]} geometry={nodes.Beaker.children[1].geometry}>
   <MeshTransmissionMaterial {...materialProps} />
+  {/* <meshPhysicalMaterial {...glassMaterialProps} /> */}
 </mesh>
     </group>
   );

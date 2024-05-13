@@ -1,4 +1,20 @@
+.main {
+}
 
+.columnsContainer {
+  position: relative;
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.bioreactorOuterContainer {
+ top: 0;
+// position: sticky;
+// height: 100vh;
+}
 
 .experience {
   padding-bottom: 5rem;
