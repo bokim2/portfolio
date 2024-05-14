@@ -81,7 +81,7 @@ const materialPropsWithUseControls = process.env.NODE_ENV === "development"
   return (
     <group scale={viewport.height * .5}>
       {/* <group > */}
-      <OrthographicCamera  position={[0, 0, 50]} near={0.1} far={500} />
+      <PerspectiveCamera  position={[0, 0, 50]} near={0.1} far={500} />
       <Text  scale={[textDesiredHeightInMeters, textDesiredHeightInMeters, textDesiredHeightInMeters]} position={[0, 0, 0]} rotation-x={-Math.PI/2}>Bo Kim</Text>
 
       {/* <mesh {...nodes.Beaker.children[0]}></mesh>
