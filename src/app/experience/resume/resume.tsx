@@ -3,6 +3,8 @@ import React from 'react';
 
 import styles from './resume.module.scss';
 import { FaExternalLinkSquareAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type TresumeData = {
   title: string;
@@ -14,6 +16,8 @@ type TresumeData = {
   location?: string;
   date: string;
   description: string[];
+  imagePath?: string;
+  imageStyle?: any;
 };
 
 const resumeData: TresumeData[] = [
@@ -28,6 +32,7 @@ const resumeData: TresumeData[] = [
       'Use of single page architecture and implementation of React Router for effective page navigation.  Improved user experience and reduced network traffic through reduced server calls.',
       'Leveraged React’s Context API to store application data to directly access and update state without manually passing information through the component tree at each level.  Reduced code complexity and simplified state management, resulting in intuitive data flow.',
     ],
+    imagePath: '/images/projects/seed_flask_d1.jpg',
   },
   {
     title: 'Rediscope',
@@ -42,6 +47,7 @@ const resumeData: TresumeData[] = [
       'Prepared for production, application dockerization for quick and reliable deployment on AWS Elastic Beanstalk.  Created a custom domain name using AWS Route53.',
       'Developed under tech accelerator OSLabs (opensourcelabs.io). ',
     ],
+    imagePath: '/images/experience/rediscope-team.jpg',
   },
   {
     title: 'Scientist',
@@ -57,6 +63,8 @@ const resumeData: TresumeData[] = [
       'Client-side team lead for Benchling implementation, a cloud-based platform for biotechnology research and development.  Established entity schemas and material relationships within an Entity-Relationship model framework using a SQL database. ',
       'Led development and testing in a staging environment and completed the migration of configurations (schemas, team structures, notebook templates, etc.) into the production environment.  ',
     ],
+    imagePath: '/images/progressive/amt.jpg',
+    imageStyle: { objectFit: 'cover' },
   },
   {
     title: 'Associate Scientist III',
@@ -71,6 +79,8 @@ const resumeData: TresumeData[] = [
       'Led well-plate seed development for the Amber250 platform.  Worked with software engineers to address UI, material flow, and identify data entry points. ',
       'Screening and Process Development:  Use of Biolector Pro for strain evaluations and process optimization.  This system utilizes microfluidic plates, provides online measurements of biomass, fluorescence, pH and DO controls feeding rates through micro-valves and microfluidic-channels.  ',
     ],
+    imagePath: '/images/progressive/amyris.jpg',
+    imageStyle: { objectPosition: 'top right' },
   },
   {
     title: 'Research Associate',
@@ -85,6 +95,8 @@ const resumeData: TresumeData[] = [
 
       'Optimized strain evaluation across various small-scale formats (microtiter plates, serum bottles, flasks) for growth and lactate production.  Improved growth rates and titer across formats by 2-3X, allowing for improved breakout in performance.  Reduced microtiter plate standard deviation and increased dynamic range of testing.  ',
     ],
+    imagePath: '/images/progressive/calysta.jpg',
+    imageStyle: { objectFit: 'cover' },
   },
   {
     title: 'Research Assistant',
@@ -109,6 +121,8 @@ const resumeData: TresumeData[] = [
 
       'Completed SSF shake flask scale up to 1 liter DASGIP bioreactor crossover.  Modeling applications to mimic anaerobic conditions observed in industry enabled determination of industry relevant breakout in fermentation performance. ',
     ],
+    imagePath: '/images/progressive/genencor1.jpg',
+    imageStyle: {objectFit: 'cover', objectPosition: '0% 20%'},
   },
 ];
 
@@ -130,6 +144,8 @@ export default function Resume() {
                 location,
                 date,
                 description,
+                imagePath,
+                imageStyle,
               },
               i
             ) => (
@@ -184,6 +200,17 @@ export default function Resume() {
                     </li>
                   ))}
                 </ul>
+                {imagePath && (
+                  <motion.div className={` ${styles.experienceImageContainer}`}>
+                    <Image
+                      src={imagePath}
+                      alt={imagePath}
+                      fill
+                      priority
+                      style={imageStyle || { width: '100%' }}
+                    />
+                  </motion.div>
+                )}
               </li>
             )
           )}

@@ -7,6 +7,7 @@ import styles from './experiencePage.module.scss';
 import BiotechSoftware from './biotechSoftware';
 import Resume from './resume/resume';
 import ExperienceAnimation from './experience-animation';
+import { PerspectiveCamera } from '@react-three/drei';
 
 export default function ExperiencePage() {
   const [loading, setLoading] = useState(true);
@@ -15,6 +16,8 @@ export default function ExperiencePage() {
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+
 
   return (
     <main className={styles.main}>
