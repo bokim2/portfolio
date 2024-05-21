@@ -80,7 +80,7 @@ const resumeData: TresumeData[] = [
       'Screening and Process Development:  Use of Biolector Pro for strain evaluations and process optimization.  This system utilizes microfluidic plates, provides online measurements of biomass, fluorescence, pH and DO controls feeding rates through micro-valves and microfluidic-channels.  ',
     ],
     imagePath: '/images/progressive/amyris.jpg',
-    imageStyle: { objectPosition: 'top right' , objectFit: 'cover'},
+    imageStyle: { objectPosition: 'top right', objectFit: 'cover' },
   },
   {
     title: 'Research Associate',
@@ -122,7 +122,7 @@ const resumeData: TresumeData[] = [
       'Completed SSF shake flask scale up to 1 liter DASGIP bioreactor crossover.  Modeling applications to mimic anaerobic conditions observed in industry enabled determination of industry relevant breakout in fermentation performance. ',
     ],
     imagePath: '/images/progressive/genencor1.jpg',
-    imageStyle: {objectFit: 'cover', objectPosition: '0% 20%'},
+    imageStyle: { objectFit: 'cover', objectPosition: '0% 20%' },
   },
 ];
 
@@ -150,69 +150,76 @@ export default function Resume() {
               i
             ) => (
               <li key={i} className={`${styles.resumeLi}`}>
-                {secondaryTitle && (
-                  <h3>
-                    {title}
-                    <span className={`${styles.secondaryTitle} `}>
-                      {' '}
-                      - {secondaryTitle}
-                    </span>
-                  </h3>
-                )}
-                {link && !secondaryTitle ? (
-                  <>
-                    <a href={link} target="_blank">
+                <div
+                  className={`${styles.resumeLiSection} ${styles.resumeLiTop}`}
+                >
+                  {secondaryTitle && (
+                    <h3>
+                      {title}
+                      <span className={`${styles.secondaryTitle} `}>
+                        {' '}
+                        - {secondaryTitle}
+                      </span>
+                    </h3>
+                  )}
+                  {link && !secondaryTitle ? (
+                    <>
+                      <a href={link} target="_blank">
+                        <h4
+                          className={`${styles.titleContainer} ${styles.h4Large}`}
+                        >
+                          {title}
+                          <FaExternalLinkSquareAlt />
+                        </h4>
+                      </a>
+                    </>
+                  ) : (
+                    !secondaryTitle && (
                       <h4
                         className={`${styles.titleContainer} ${styles.h4Large}`}
                       >
                         {title}
-                        <FaExternalLinkSquareAlt />
                       </h4>
-                    </a>
-                  </>
-                ) : (
-                  !secondaryTitle && (
-                    <h4
-                      className={`${styles.titleContainer} ${styles.h4Large}`}
+                    )
+                  )}
+                  <h4>{type}</h4>
+                  <h5>{summary}</h5>
+                  {group && (
+                    <h6 className={`${styles.noMargin} fontWeight400`}>
+                      {group}
+                    </h6>
+                  )}
+
+                  {location && (
+                    <h6 className={`${styles.noMargin} fontWeight400`}>
+                      {location}
+                    </h6>
+                  )}
+                  <h6 className={`${styles.noMargin}`}>{date}</h6>
+
+                  {/* <div> */}
+                  {imagePath && (
+                    <motion.div
+                      className={` ${styles.experienceImageContainer}`}
                     >
-                      {title}
-                    </h4>
-                  )
-                )}
-                <h4>{type}</h4>
-                <h5>{summary}</h5>
-                {group && (
-                  <h6 className={`${styles.noMargin} fontWeight400`}>
-                    {group}
-                  </h6>
-                )}
-
-                {location && (
-                  <h6 className={`${styles.noMargin} fontWeight400`}>
-                    {location}
-                  </h6>
-                )}
-                <h6 className={`${styles.noMargin}`}>{date}</h6>
-                
-                {imagePath && (
-                  <motion.div className={` ${styles.experienceImageContainer}`}>
-                    <Image
-                      src={imagePath}
-                      alt={imagePath}
-                      fill
-                      priority
-                      style={imageStyle || { width: '100%' }}
-                    />
-                  </motion.div>
-                )}
-                <ul className={`${styles.listUl}`}>
-                  {description.map((item, i) => (
-                    <li key={i} className={`${styles.listLi}`}>
-                      <p className="small">{item}</p>
-                    </li>
-                  ))}
-                </ul>
-
+                      <Image
+                        src={imagePath}
+                        alt={imagePath}
+                        fill
+                        priority
+                        style={imageStyle || { width: '100%' }}
+                      />
+                    </motion.div>
+                  )}
+                  {/* </div> */}
+                  <ul className={`${styles.listUl}`}>
+                    {description.map((item, i) => (
+                      <li key={i} className={`${styles.listLi}`}>
+                        <p className="small">{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </li>
             )
           )}

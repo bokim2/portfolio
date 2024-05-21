@@ -23,8 +23,9 @@
 .bioreactorOuterContainer {
   top: 0;
   // height: 100vh;
-
+  
   @media (max-width: 800px) {
+    margin-top: 7rem;
     position: sticky;
   }
 }
