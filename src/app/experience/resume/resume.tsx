@@ -80,7 +80,7 @@ const resumeData: TresumeData[] = [
       'Screening and Process Development:  Use of Biolector Pro for strain evaluations and process optimization.  This system utilizes microfluidic plates, provides online measurements of biomass, fluorescence, pH and DO controls feeding rates through micro-valves and microfluidic-channels.  ',
     ],
     imagePath: '/images/progressive/amyris.jpg',
-    imageStyle: { objectPosition: 'top right' },
+    imageStyle: { objectPosition: 'top right' , objectFit: 'cover'},
   },
   {
     title: 'Research Associate',
@@ -193,13 +193,7 @@ export default function Resume() {
                   </h6>
                 )}
                 <h6 className={`${styles.noMargin}`}>{date}</h6>
-                <ul className={`${styles.listUl}`}>
-                  {description.map((item, i) => (
-                    <li key={i} className={`${styles.listLi}`}>
-                      <p className="small">{item}</p>
-                    </li>
-                  ))}
-                </ul>
+                
                 {imagePath && (
                   <motion.div className={` ${styles.experienceImageContainer}`}>
                     <Image
@@ -211,6 +205,14 @@ export default function Resume() {
                     />
                   </motion.div>
                 )}
+                <ul className={`${styles.listUl}`}>
+                  {description.map((item, i) => (
+                    <li key={i} className={`${styles.listLi}`}>
+                      <p className="small">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+
               </li>
             )
           )}

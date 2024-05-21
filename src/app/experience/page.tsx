@@ -24,13 +24,13 @@ export default function ExperiencePage() {
       <div className={styles.columnsContainer}>
         {isClient &&
           typeof window !== 'undefined' &&
-          WebGL.isWebGLAvailable() && (
+          WebGL.isWebGLAvailable() ? (
             <div
               className={`${styles.column} ${styles.bioreactorOuterContainer}`}
             >
               <ExperienceAnimation />
             </div>
-          )}
+          ) : <div className={`${styles.column}`}></div>}
         <div className={styles.column}>
           <Resume />
         </div>
