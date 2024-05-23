@@ -130,7 +130,7 @@ export default function Resume() {
   return (
     <Wrapper>
       <section className={`${styles.resumeSection}`}>
-        <h2>Experience</h2>
+        <h2 className={`animatedH2 animated`}>Experience</h2>
         <ul className={`${styles.resumeUl}`}>
           {resumeData.map(
             (

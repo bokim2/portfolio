@@ -18,7 +18,7 @@ export default function ProjectsIntro() {
       <div className={styles.projects} id="projects" ref={ref}>
         {/* project1 - seed flask 2.0 */}
         <div className={styles.project}>
-          <h2>Projects</h2>
+          <h2 className={`animatedH2 animated`}>Projects</h2>
           {/* <Link href="/projects-description"> */}
           <Link href="/projects-description/#seed-flask-description">
             <h3 className={styles.projectTitle}>Seed Flask 2.0</h3>

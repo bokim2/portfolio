@@ -18,7 +18,7 @@ export default function WorkIntro() {
     <Wrapper backgroundColor="">
       <div className={styles.experienceContainer} id="experience">
         <Link href="/experience">
-          <h2>Experience</h2>
+          <h2 className={`animatedH2 animated`}>Experience</h2>
         </Link>
         {/* first section */}
         <section className={styles.experience} ref={ref}>
