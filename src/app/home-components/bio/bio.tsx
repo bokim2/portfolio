@@ -61,7 +61,7 @@ export default function Bio() {
         <section className={styles.bio} id="bio" ref={ref}>
           <div className={styles.headshotImgOuterContainer}>
             <motion.div
-              className={styles.headshotImgContainer}
+              className={`${styles.headshotImgContainer} imgBorderRadius`}
               variants={imageVariants}
               initial="initial"
               animate="animate"
@@ -82,24 +82,29 @@ export default function Bio() {
           <div className={styles.bioAbout}>
             <div className={styles.bioTitleContainer}>
               <h1 className={styles.bioName}>Bo Kim</h1>
-              <h3 className={styles.bioRole}>
+              <h2 className={styles.bioRole}>
                 Software Engineer{' '}
                 <span className={styles.scientistTitle}>& Scientist</span>
-              </h3>
+              </h2>
 
               <p className={`${styles.bioParagraph} large`}>
-                As a software engineer with a passion for digital innovation and
-                problem-solving, I transitioned from a decade-long career in
-                experience, where I experienceed in scientific research and
-                process automation.
+                {`I'm a software engineer with a passion for digital innovation and
+                problem-solving.  I am transitioning from a decade-long career in
+                biotechnology, where I worked in scientific research and
+                process automation.  `}
+                </p>
                 <br />
                 <br />
+                <p className={`${styles.bioParagraph} large`}>
                 While my current focus is in the JavaScript ecosystem, including
                 tools like React and Node.js, I am also looking to expand my
                 technical skills by learning new technologies and programming
-                languages.
+                languages.  
                 <br />
-                <br />
+    
+              </p>
+              <p className={`${styles.bioParagraph} large`}>
+              I love the process of learning difficult concepts and applications and building things out with intention.  I hope to bring a fresh and unique perspective and am looking forward to new technical challenges.  
               </p>
               <h4 className={styles.bioQuote}>
                 <span

@@ -29,7 +29,7 @@ export default function WorkIntro() {
             </h3>
             <div className={styles.experienceAbout}>
               <p className="">
-                {`In experience, my primary area of specialization was upstream process development, aka experienceing with bioreactors, often referred to as "fermentation", a term originating from the historical use of microorganisms for the production of alcoholic beverages.`}
+                {`In experience, my primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term originating from the historical use of microorganisms for the production of alcoholic beverages.`}
               </p>
               <br />
               <p>
@@ -53,7 +53,7 @@ export default function WorkIntro() {
             </div>
             <div>
               <p className={'imageCaption'}>
-                My first job, I experienceed on enzymes for biofuel production.
+                My first job, I worked on enzymes for biofuel production.
               </p>
             </div>
           </div>

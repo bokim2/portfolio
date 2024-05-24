@@ -42,7 +42,7 @@ export default function Contact() {
 
         <div className={styles.contactAbout}>
           <div className={styles.contactTitleContainer}>
-            <h1 className={styles.contactName}>Contact</h1>
+            <h2 className={`animatedH2 animated`}>Contact</h2>
             <h3 className={styles.contactRole}>Bo Kim</h3>
 
             <p className={`${styles.contactParagraph} large`}>

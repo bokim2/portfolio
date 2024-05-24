@@ -4,14 +4,14 @@ export const sectionsLinks = [
     link: '/#bio',
   },
   {
-    name: 'projects',
-    link: '/#projects',
-  },
-  {
     name: 'experience',
     link: '/#experience',
   },
-
+  
+  {
+    name: 'projects',
+    link: '/#projects',
+  },
   {
     name: 'contact',
     link: '/#contact',

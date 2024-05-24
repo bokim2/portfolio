@@ -46,8 +46,8 @@ export default function Home() {
       {/* {loading && <LoaderPage setLoading={setLoading} />} */}
       {/* <Intro /> */}
       <Bio />
-      <ProjectsIntro />
       <WorkIntro />
+      <ProjectsIntro />
       <Contact />
       {/* <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {

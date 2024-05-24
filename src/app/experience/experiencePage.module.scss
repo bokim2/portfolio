@@ -1,7 +1,9 @@
 .main {
+  padding-top: 7vh;
 }
 
 .columnsContainer {
+
   position: relative;
   display: flex;
 
@@ -11,8 +13,12 @@
 }
 
 .column {
-  width: 50vw;
-  flex: 1;
+  // width: 50vw;
+  flex: 0 0 50vw;
+  padding-right: 5vw;
+  max-width: 600px;
+
+
 
   @media (max-width: 800px) {
     flex: auto;
@@ -25,7 +31,7 @@
   // height: 100vh;
   
   @media (max-width: 800px) {
-    margin-top: 7rem;
+    margin-top: 7vh;
     position: sticky;
   }
 }

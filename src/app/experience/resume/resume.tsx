@@ -51,7 +51,7 @@ const resumeData: TresumeData[] = [
   },
   {
     title: 'Scientist',
-    secondaryTitle: 'Senior Research Associate',
+    secondaryTitle: 'Senior RA',
     group: 'Upstream Process Development Department',
     type: 'Applied Molecular Transport',
     summary: 'Oral Biologics / Drug Carrier Technology',
@@ -128,7 +128,8 @@ const resumeData: TresumeData[] = [
 
 export default function Resume() {
   return (
-    <Wrapper>
+    // <Wrapper>
+    <>
       <section className={`${styles.resumeSection}`}>
         <h2 className={`animatedH2 animated`}>Experience</h2>
         <ul className={`${styles.resumeUl}`}>
@@ -153,6 +154,7 @@ export default function Resume() {
                 <div
                   className={`${styles.resumeLiSection} ${styles.resumeLiTop}`}
                 >
+                  <div className={`${styles.titleColumns}`}>
                   {secondaryTitle && (
                     <h3>
                       {title}
@@ -182,6 +184,8 @@ export default function Resume() {
                       </h4>
                     )
                   )}
+                  <h6 className={`${styles.noMargin}`}>{date}</h6>
+                  </div>
                   <h4>{type}</h4>
                   <h5>{summary}</h5>
                   {group && (
@@ -195,7 +199,6 @@ export default function Resume() {
                       {location}
                     </h6>
                   )}
-                  <h6 className={`${styles.noMargin}`}>{date}</h6>
 
                   {/* <div> */}
                   {imagePath && (
@@ -226,7 +229,8 @@ export default function Resume() {
         </ul>
       </section>
       <EducationCertifications />
-    </Wrapper>
+     {/* </Wrapper> */}
+    </>
   );
 }
 

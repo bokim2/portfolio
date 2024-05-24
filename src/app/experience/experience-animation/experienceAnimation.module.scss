@@ -8,9 +8,11 @@
     // background-color: pink;
     // width: 50%;
     width: 100%;
-
+    
     @media(max-width: 800px) {
-        // position: fixed;
+        background-color: rgba(var(--clr-main-3));
+        position: fixed;
+        z-index: 10;
         height: 30svh;
       }
 }
