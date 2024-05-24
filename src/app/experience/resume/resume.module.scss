@@ -7,6 +7,7 @@
   width: 100%;
 
   @media (max-width: 800px) {
+    margin-top: 30vh;
     margin-inline: auto;
     padding-right: 0rem;
     width: 90%;
@@ -53,9 +54,10 @@
   gap: 1rem;
   // justify-content: space-between;
   align-items: center;
-
+  
   @media (max-width: 800px) {
-    display: block;
+    // display: block;
+    gap: .75rem;
   }
 }
 
@@ -105,6 +107,10 @@
     font-size: 1.5rem;
     /* line-height: 1.75; */
   }
+}
+
+.date {
+  color: var(--text-16);
 }
 
 .educationCertifications {

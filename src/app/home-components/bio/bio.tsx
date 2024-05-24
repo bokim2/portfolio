@@ -89,7 +89,7 @@ export default function Bio() {
 
               <p className={`${styles.bioParagraph} large`}>
                 {`I'm a software engineer with a passion for digital innovation and
-                problem-solving.  I am transitioning from a decade-long career in
+                problem-solving.  I am transitioning from a career in
                 biotechnology, where I worked in scientific research and
                 process automation.  `}
                 </p>
@@ -103,7 +103,7 @@ export default function Bio() {
     
               </p>
               <p className={`${styles.bioParagraph} large`}>
-              I love the process of learning difficult concepts and applications and building things out with intention.  I hope to bring a fresh and unique perspective and am looking forward to new technical challenges.  
+              I love the process of learning and building things out with intention.  I hope to bring a fresh and unique perspective and am looking forward to new technical challenges.  
               </p>
               <h4 className={styles.bioQuote}>
                 <span

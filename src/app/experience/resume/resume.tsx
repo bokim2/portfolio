@@ -100,7 +100,7 @@ const resumeData: TresumeData[] = [
   },
   {
     title: 'Research Assistant',
-    secondaryTitle: 'Process Technician II',
+    secondaryTitle: 'PT II',
     group: 'Applications Research Team, Automation and Data Visualization Team',
     type: 'Genencor International (now IFF)',
     summary: 'Enzymes for biofuels & detergent applications',
@@ -184,7 +184,7 @@ export default function Resume() {
                       </h4>
                     )
                   )}
-                  <h6 className={`${styles.noMargin}`}>{date}</h6>
+                  <h6 className={`${styles.noMargin} ${styles.date}`}>{date}</h6>
                   </div>
                   <h4>{type}</h4>
                   <h5>{summary}</h5>
