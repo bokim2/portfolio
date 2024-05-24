@@ -26,9 +26,9 @@ export default function ProjectsIntro() {
           <div className={styles.projectText}>
             <p>
               Web app for recording and visualizing scientific data. Capture
-              your strain information, start your flasks, and view previous
-              growth curves to plan your sample times. Create sample schedules,
-              do easy dilutions with the dilution calculator. Securely log in
+               strain information, start flasks, and view previous
+              growth curves to plan sample times, create sample schedules,
+              save time with the dilution calculator. Securely log in
               with Auth0 (Google or GitHub) to observe and save your data.
             </p>
 
