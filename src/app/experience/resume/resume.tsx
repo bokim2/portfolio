@@ -236,7 +236,7 @@ export default function Resume() {
 
 function EducationCertifications() {
   return (
-    <div>
+    <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
         <h3 className={`${styles.H3large}`}>Education</h3>
         <h4>University of California, Los Angeles</h4>

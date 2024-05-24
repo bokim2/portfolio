@@ -351,12 +351,20 @@ em {
 img {
   border-radius: 7.5px;
   overflow: hidden;
+
+  @media (max-width: 800px) {
+    border-radius: 5px;
+  }
 }
 /* styles */
 
 .imgBorderRadius {
   border-radius: 7.5px;
   overflow: hidden;
+
+  @media (max-width: 800px) {
+    border-radius: 5px;
+  }
 }
 
 .pageContainer {

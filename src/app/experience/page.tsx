@@ -8,6 +8,7 @@ import BiotechSoftware from './biotechSoftware';
 import Resume from './resume/resume';
 import ExperienceAnimation from './experience-animation';
 import { PerspectiveCamera } from '@react-three/drei';
+import Wrapper from '@/components/wrapper/wrapper';
 
 export default function ExperiencePage() {
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ export default function ExperiencePage() {
             // >
               <ExperienceAnimation />
             // </div>
-          ) : <div className={`${styles.column}`}>put placeholder image for when webGL is not working</div>}
+          ) : <Wrapper className={`${styles.column}`}>put placeholder image for when webGL is not working</Wrapper>}
         <div className={styles.column}>
           <Resume />
         </div>
