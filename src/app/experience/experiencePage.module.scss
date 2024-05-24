@@ -6,6 +6,8 @@
 
   position: relative;
   display: flex;
+  // align-items: center;
+  // justify-content: center;
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -15,8 +17,8 @@
 .column {
   // width: 50vw;
   flex: 0 0 50vw;
-  padding-right: 5vw;
-  max-width: 600px;
+  // padding-right: 5vw;
+  // max-width: 600px;
 
 
 

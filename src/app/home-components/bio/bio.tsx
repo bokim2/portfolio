@@ -93,14 +93,13 @@ export default function Bio() {
                 biotechnology, where I worked in scientific research and
                 process automation.  `}
                 </p>
-                <br />
-                <br />
+         
                 <p className={`${styles.bioParagraph} large`}>
                 While my current focus is in the JavaScript ecosystem, including
                 tools like React and Node.js, I am also looking to expand my
                 technical skills by learning new technologies and programming
                 languages.  
-                <br />
+  
     
               </p>
               <p className={`${styles.bioParagraph} large`}>

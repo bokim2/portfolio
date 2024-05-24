@@ -314,7 +314,7 @@ p {
 
   &.small {
     font-size: 0.9375rem;
-    line-height: 1.3125;
+    line-height: 1.5;
   }
 
   &.large {
@@ -431,6 +431,13 @@ img {
   }
 }
 
+.paragraph {
+  padding-top: 1rem;
+
+  @media (max-width: 800px) {
+    padding-top: 0.5rem;
+  }
+}
 
 /* animations */
 

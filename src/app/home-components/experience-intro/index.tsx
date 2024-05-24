@@ -28,17 +28,18 @@ export default function WorkIntro() {
               The Journey up to this point
             </h3>
             <div className={styles.experienceAbout}>
-              <p className="">
+              <p className="paragraph">
                 {`In experience, my primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term originating from the historical use of microorganisms for the production of alcoholic beverages.`}
               </p>
-              <br />
-              <p>
+        
+              <p className="paragraph">
                 My experience involved cultivating genetically modified microbes
                 to produce therapeutic proteins and enzymes. Additionally, I was
                 involved in the production of molecules such as squalene, an oil
                 found in shark liver used in cosmetics, and Rebaudioside M
                 (rebM), a zero-calorie sweetener derived from the stevia plant.
               </p>
+              
             </div>
           </div>
           <div className={styles.experienceSectionContainer}>
