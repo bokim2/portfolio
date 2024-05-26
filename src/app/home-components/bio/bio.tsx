@@ -95,7 +95,7 @@ export default function Bio() {
                 </p>
          
                 <p className={`${styles.bioParagraph} large`}>
-                While my current focus is in the JavaScript ecosystem, including
+                My current focus is in the JavaScript ecosystem, including
                 tools like React and Node.js, I am also looking to expand my
                 technical skills by learning new technologies and programming
                 languages.  
@@ -103,7 +103,7 @@ export default function Bio() {
     
               </p>
               <p className={`${styles.bioParagraph} large`}>
-              I love the process of learning and building things out with intention.  I hope to bring a fresh and unique perspective and am looking forward to new technical challenges.  
+           From my previous background, I hope to bring a fresh and unique perspective and am looking forward to new and interesting technical challenges.  
               </p>
               <h4 className={styles.bioQuote}>
                 <span

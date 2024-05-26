@@ -1,6 +1,6 @@
 .resumeSection {
   padding-right: 5vw;
-  max-width: 600px;
+  max-width: 800px;
   position: relative;
   z-index: 9;
   margin-block: 2rem;
@@ -61,17 +61,17 @@
   }
 }
 
-.h4Large {
-  margin-bottom: 0.425rem;
+.experienceTitle {
   color: var(--text-6);
   /* font-weight: 375; */
-  font-weight: 00;
-  font-size: 1.375rem;
+  // font-weight: 00;
+  // font-size: 1.375rem;
   /* line-height: 1.5; */
+  margin-bottom: 1rem;
 
   @media (max-width: 800px) {
     margin-bottom: 0.425rem;
-    font-size: 1.25rem;
+    // font-size: 1.25rem;
     /* line-height: 1.25; */
   }
 }
@@ -146,8 +146,8 @@
   position: relative;
   // height: 100%;
   width: 100%;
-  // aspect-ratio: 1/4;
-  min-height: 250px;
+  aspect-ratio: 6/4;
+  // min-height: 300px;
   // transform: translateX(50vw);
   // left: -100%;
   top: 0;

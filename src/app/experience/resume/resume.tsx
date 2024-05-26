@@ -33,6 +33,7 @@ const resumeData: TresumeData[] = [
       'Leveraged React’s Context API to store application data to directly access and update state without manually passing information through the component tree at each level.  Reduced code complexity and simplified state management, resulting in intuitive data flow.',
     ],
     imagePath: '/images/projects/seed_flask_d1.jpg',
+    imageStyle: { objectFit: 'contain' },
   },
   {
     title: 'Rediscope',
@@ -48,6 +49,7 @@ const resumeData: TresumeData[] = [
       'Developed under tech accelerator OSLabs (opensourcelabs.io). ',
     ],
     imagePath: '/images/experience/rediscope-team.jpg',
+    imageStyle: { objectFit: 'contain' },
   },
   {
     title: 'Scientist',
@@ -155,38 +157,40 @@ export default function Resume() {
                   className={`${styles.resumeLiSection} ${styles.resumeLiTop}`}
                 >
                   <div className={`${styles.titleColumns}`}>
-                  {secondaryTitle && (
-                    <h3>
-                      {title}
-                      <span className={`${styles.secondaryTitle} `}>
-                        {' '}
-                        - {secondaryTitle}
-                      </span>
-                    </h3>
-                  )}
-                  {link && !secondaryTitle ? (
-                    <>
-                      <a href={link} target="_blank">
-                        <h4
-                          className={`${styles.titleContainer} ${styles.h4Large}`}
+                    {secondaryTitle && (
+                      <h3>
+                        {title}
+                        <span className={`${styles.secondaryTitle} `}>
+                          {' '}
+                          - {secondaryTitle}
+                        </span>
+                      </h3>
+                    )}
+                    {link && !secondaryTitle ? (
+                      <>
+                        <a href={link} target="_blank">
+                          <h3
+                            className={`${styles.titleContainer} ${styles.experienceTitle}`}
+                          >
+                            {title}
+                            <FaExternalLinkSquareAlt />
+                          </h3>
+                        </a>
+                      </>
+                    ) : (
+                      !secondaryTitle && (
+                        <h3
+                          className={`${styles.titleContainer} ${styles.experienceTitle}`}
                         >
                           {title}
-                          <FaExternalLinkSquareAlt />
-                        </h4>
-                      </a>
-                    </>
-                  ) : (
-                    !secondaryTitle && (
-                      <h4
-                        className={`${styles.titleContainer} ${styles.h4Large}`}
-                      >
-                        {title}
-                      </h4>
-                    )
-                  )}
-                  <h6 className={`${styles.noMargin} ${styles.date}`}>{date}</h6>
+                        </h3>
+                      )
+                    )}
+                    <h6 className={`${styles.noMargin} ${styles.date}`}>
+                      {date}
+                    </h6>
                   </div>
-                  <h4>{type}</h4>
+                  <h4 style={{marginBottom: '0.125rem'}}>{type}</h4>
                   <h5>{summary}</h5>
                   {group && (
                     <h6 className={`${styles.noMargin} fontWeight400`}>
@@ -218,7 +222,7 @@ export default function Resume() {
                   <ul className={`${styles.listUl}`}>
                     {description.map((item, i) => (
                       <li key={i} className={`${styles.listLi}`}>
-                        <p className="small">{item}</p>
+                        <p className="">{item}</p>
                       </li>
                     ))}
                   </ul>
@@ -229,7 +233,7 @@ export default function Resume() {
         </ul>
       </section>
       <EducationCertifications />
-     {/* </Wrapper> */}
+      {/* </Wrapper> */}
     </>
   );
 }
