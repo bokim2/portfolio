@@ -1,10 +1,12 @@
 import Wrapper from '@/components/wrapper/wrapper';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './resume.module.scss';
-import { FaExternalLinkSquareAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { FaCaretDown, FaExternalLinkSquareAlt } from 'react-icons/fa';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { FaDroplet } from 'react-icons/fa6';
+import { PiCaretDoubleDownThin } from 'react-icons/pi';
 
 type TresumeData = {
   title: string;
@@ -129,6 +131,8 @@ const resumeData: TresumeData[] = [
 ];
 
 export default function Resume() {
+  const [toggleResumeDetails, setToggleResumeDetails] = useState(false);
+
   return (
     // <Wrapper>
     <>
@@ -190,7 +194,7 @@ export default function Resume() {
                       {date}
                     </h6>
                   </div>
-                  <h4 style={{marginBottom: '0.125rem'}}>{type}</h4>
+                  <h4 style={{ marginBottom: '0.125rem' }}>{type}</h4>
                   <h5>{summary}</h5>
                   {group && (
                     <h6 className={`${styles.noMargin} fontWeight400`}>
@@ -207,7 +211,10 @@ export default function Resume() {
                   {/* <div> */}
                   {imagePath && (
                     <motion.div
-                      className={` ${styles.experienceImageContainer}`}
+                      className={` ${styles.experienceImageContainer} imgBorderRadius`}
+                      // whileHover={{scale: 1.03}}
+                      // transition={{ duration: .2,
+                      // ease: 'backInOut'}}
                     >
                       <Image
                         src={imagePath}
@@ -219,13 +226,17 @@ export default function Resume() {
                     </motion.div>
                   )}
                   {/* </div> */}
-                  <ul className={`${styles.listUl}`}>
-                    {description.map((item, i) => (
-                      <li key={i} className={`${styles.listLi}`}>
-                        <p className="">{item}</p>
-                      </li>
-                    ))}
-                  </ul>
+                  {toggleResumeDetails ? (
+                    <ul className={`${styles.listUl}`}>
+                      {description.map((item, i) => (
+                        <li key={i} className={`${styles.listLi}`}>
+                          <p className="">{item}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <ToggleIcon />
+                  )}
                 </div>
               </li>
             )
@@ -238,13 +249,44 @@ export default function Resume() {
   );
 }
 
+function ToggleIcon() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const iconAnimations = useAnimation()
+
+  useEffect(() => {
+  console.log(isInView);
+  iconAnimations.start('visible')
+  iconAnimations.start('hidden')
+
+  if(isInView){
+  }
+  },[isInView])
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
+      transition={{ delay: .5, duration: 1.5, ease: 'easeInOut' }}
+      style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%'}}
+    >
+      {isInView ? <PiCaretDoubleDownThin size={24} /> : <FaDroplet size={24} />}
+    </motion.div>
+  );
+}
+
 function EducationCertifications() {
   return (
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
         <h2 className={''}>Education</h2>
         <h3>University of California, Los Angeles</h3>
-        <h4 className={`${styles.H4large}`}>Bachelor of Science in Chemical Engineering</h4>
+        <h4 className={`${styles.H4large}`}>
+          Bachelor of Science in Chemical Engineering
+        </h4>
       </div>
       <div className={`${styles.certifications}`}>
         <h2>Professional Certifications</h2>
