@@ -104,7 +104,7 @@ const resumeData: TresumeData[] = [
     title: 'Research Assistant',
     secondaryTitle: 'PT II',
     group: 'Applications Research Team, Automation and Data Visualization Team',
-    type: 'Genencor International (now IFF)',
+    type: 'Dupont (Genencor)',
     summary: 'Enzymes for biofuels & detergent applications',
     location: 'Palo Alto, CA',
     date: '2012 - 2015',
@@ -242,13 +242,13 @@ function EducationCertifications() {
   return (
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
-        <h3 className={`${styles.H3large}`}>Education</h3>
-        <h4>University of California, Los Angeles</h4>
-        <h5>Bachelor of Science in Chemical Engineering</h5>
+        <h2 className={''}>Education</h2>
+        <h3>University of California, Los Angeles</h3>
+        <h4 className={`${styles.H4large}`}>Bachelor of Science in Chemical Engineering</h4>
       </div>
       <div className={`${styles.certifications}`}>
-        <h3>Professional Certifications</h3>
-        <h4>AWS Solutions Architect Associate (SAA-C03)</h4>
+        <h2>Professional Certifications</h2>
+        <h3>AWS Solutions Architect Associate (SAA-C03)</h3>
         <h5>Valid until June 07, 2026</h5>
       </div>
     </div>

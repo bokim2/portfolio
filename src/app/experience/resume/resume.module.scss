@@ -94,12 +94,12 @@
 
 // education certifications section
 
-.H3large {
+.H4large {
   margin-bottom: 0.625rem;
   color: var(--text-9);
   /* font-weight: 375; */
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   /* line-height: 2; */
 
   @media (max-width: 800px) {
@@ -114,6 +114,8 @@
 }
 
 .educationCertifications {
+
+
  @media (max-width: 800px) {
   margin-inline: auto;
   padding-right: 0rem;
@@ -122,15 +124,18 @@
 }
 
 .education {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 1rem;
-  margin-block: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: 5rem;
   // flex-wrap: wrap;
 }
 
 .certifications {
-  margin-block: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: 5rem;
 }
 
 // utility classes
@@ -146,7 +151,7 @@
   position: relative;
   // height: 100%;
   width: 100%;
-  aspect-ratio: 6/4;
+  aspect-ratio: 5/3;
   // min-height: 300px;
   // transform: translateX(50vw);
   // left: -100%;
@@ -163,9 +168,12 @@
   }
 
   @media (max-width: 800px) {
+    // width: 95%;
+    margin-inline: auto;
     position: relative;
     left: auto;
     top: auto;
+    aspect-ratio: 5/3;
     // object-position: 50% 50%;
     img {
       width: 100%;
