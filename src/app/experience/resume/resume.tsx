@@ -3,10 +3,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './resume.module.scss';
 import { FaCaretDown, FaExternalLinkSquareAlt } from 'react-icons/fa';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import { FaDroplet } from 'react-icons/fa6';
 import { PiCaretDoubleDownThin } from 'react-icons/pi';
+import { useInView } from 'react-intersection-observer';
 
 type TresumeData = {
   title: string;
@@ -250,31 +251,63 @@ export default function Resume() {
 }
 
 function ToggleIcon() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const iconAnimations = useAnimation()
-
+  const { ref, inView: isInView } = useInView({ threshold: 0.5 });
+  const [showDroplet, setShowDroplet] = useState(true);
   useEffect(() => {
-  console.log(isInView);
-  iconAnimations.start('visible')
-  iconAnimations.start('hidden')
+    if (isInView) {
+      setShowDroplet(true);
+      const timer = setTimeout(() => {
+        setShowDroplet(false);
+      }, 500); // Delay of 0.5 seconds
 
-  if(isInView){
-  }
-  },[isInView])
+      return () => clearTimeout(timer);
+    } else {
+      setShowDroplet(true);
+    }
+  }, [isInView]);
 
   return (
-    <motion.div
-      ref={ref}
-      variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
-      transition={{ delay: .5, duration: 1.5, ease: 'easeInOut' }}
-      style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%'}}
-    >
-      {isInView ? <PiCaretDoubleDownThin size={24} /> : <FaDroplet size={24} />}
-    </motion.div>
+    <div ref={ref} style={{height: '30px'}}>
+      <AnimatePresence>
+        {showDroplet ? (
+          <motion.div
+            key="dropIcon"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, x: 5 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              height: '100%',
+            }}
+          >
+            <FaDroplet size={24} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="downArrow"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, x: 5 }}
+            transition={{ delay: .5, duration: 0.5 }}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              height: '100%',
+            }}
+          >
+            <PiCaretDoubleDownThin size={24} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
