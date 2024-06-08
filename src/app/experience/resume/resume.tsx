@@ -251,7 +251,7 @@ export default function Resume() {
 }
 
 function ToggleIcon() {
-  const { ref, inView: isInView } = useInView({ threshold: 0.5 });
+  const { ref, inView: isInView } = useInView({    triggerOnce: true, threshold: 1 });
   const [showDroplet, setShowDroplet] = useState(true);
   useEffect(() => {
     if (isInView) {
@@ -275,7 +275,7 @@ function ToggleIcon() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, x: 5 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.75 }}
             style={{
               cursor: 'pointer',
               display: 'flex',
@@ -293,7 +293,7 @@ function ToggleIcon() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, x: 5 }}
-            transition={{ delay: .5, duration: 0.5 }}
+            transition={{ delay: .75, duration: 0.75 }}
             style={{
               cursor: 'pointer',
               display: 'flex',
