@@ -11,6 +11,7 @@ import Bio from './home-components/bio/bio';
 import WorkIntro from './home-components/experience-intro';
 import ProjectsIntro from './home-components/projects-intro/projects-intro';
 import Contact from './home-components/contact/contact';
+import About from './home-components/about';
 
 const imagesAndBackgrounds = [
   {
@@ -47,6 +48,7 @@ export default function Home() {
       {/* <Intro /> */}
       <Bio />
       <WorkIntro />
+      <About />
       <ProjectsIntro />
       <Contact />
       {/* <div className={styles.description} onMouseMove={mouseMove}>

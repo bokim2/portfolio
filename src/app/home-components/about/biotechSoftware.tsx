@@ -1,19 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
 
-import styles from './experiencePage.module.scss';
-import spotfire1Img from '../../../public/images/experience/spotfire1.jpg';
-import biomek1Img from '../../../public/images/experience/biomek1.jpg';
-import biomek2Img from '../../../public/images/experience/biomek2.jpg';
-import ambr1Img from '../../../public/images/experience/ambr1.jpg';
-import ambr2Img from '../../../public/images/experience/ambr2.jpg';
-import ambr3Img from '../../../public/images/experience/ambr3.jpg';
-import amyris from '../../../public/images/progressive/amyris.jpg';
+import styles from '@/app/home-components/experience-intro/experience/experience.module.scss';
+import spotfire1Img from '@/../public/images/experience/spotfire1.jpg';
+import biomek1Img from '@/../public/images/experience/biomek1.jpg';
+import biomek2Img from '@/../public/images/experience/biomek2.jpg';
+import ambr1Img from '@/../public/images/experience/ambr1.jpg';
+import ambr2Img from '@/../public/images/experience/ambr2.jpg';
+import ambr3Img from '@/../public/images/experience/ambr3.jpg';
+import amyris from '@/../public/images/progressive/amyris.jpg';
 import Wrapper from '@/components/wrapper/wrapper';
 
 export default function BiotechSoftware() {
-  return (
-    <Wrapper backgroundColor="" className="firstWrapper">
+  return (<div className={`${styles.main}`}>
+    {/* <Wrapper backgroundColor="" className="firstWrapper"> */}
       {/* second section */}
       <section className={styles.experience}>
         <div className={styles.experienceTitleContainer}>
@@ -128,6 +128,7 @@ export default function BiotechSoftware() {
           </div>
         </section>
       </Wrapper>
-    </Wrapper>
+    {/* </Wrapper> */}
+    </div>
   );
 }

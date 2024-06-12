@@ -27,7 +27,7 @@ export default function RootLayout({
           {/* {children} */}
           {/* <div> */}
           {/* </div> */}
-          <SectionsNav />
+          {/* <SectionsNav /> */}
         </ActiveSectionContextProvider>
       </body>
     </html>

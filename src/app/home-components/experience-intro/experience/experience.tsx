@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import WebGL from 'three/addons/capabilities/WebGL.js';
-import styles from './experiencePage.module.scss';
-import BiotechSoftware from './biotechSoftware';
+import styles from './experience.module.scss';
+import BiotechSoftware from '../../about/biotechSoftware';
 import Resume from './resume/resume';
 import ExperienceAnimation from './experience-animation';
 import { PerspectiveCamera } from '@react-three/drei';
 import Wrapper from '@/components/wrapper/wrapper';
 
-export default function ExperiencePage() {
+export default function Experience() {
   const [loading, setLoading] = useState(true);
   const [isClient, setIsClient] = useState(false);
 
@@ -36,7 +36,7 @@ export default function ExperiencePage() {
           <Resume />
         </div>
       </div>
-      <BiotechSoftware />
+      {/* <BiotechSoftware /> */}
     </main>
   );
 }
