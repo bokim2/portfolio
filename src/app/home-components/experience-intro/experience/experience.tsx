@@ -18,31 +18,32 @@ export default function Experience() {
     setIsClient(true);
   }, []);
 
-// need to put placeholder image if webgl is not available
+  // need to put placeholder image if webgl is not available
 
   return (
-    
     // <main className={styles.main}>
-    <Wrapper>
       <div className={styles.columnsContainer}>
-      
         {isClient &&
-          typeof window !== 'undefined' &&
-          WebGL.isWebGLAvailable() ? (
-            // <div
-            //   className={`${styles.column} ${styles.bioreactorOuterContainer}`}
-            // >
-              <div className={styles.column}><ExperienceAnimation /></div>
-            // </div>
-          ) :
-          <div className={styles.column}>put placeholder image for when webGL is not working</div>}
-          
+        typeof window !== 'undefined' &&
+        WebGL.isWebGLAvailable() ? (
+          // <div
+          //   className={`${styles.column} ${styles.bioreactorOuterContainer}`}
+          // >
+          <div className={styles.column}>
+            <ExperienceAnimation />
+          </div>
+        ) : (
+          // </div>
+          <div className={styles.column}>
+            put placeholder image for when webGL is not working
+          </div>
+        )}
+
         <div className={styles.column}>
+            <Wrapper additionalClasses='inner'>
           <Resume />
+    </Wrapper>
         </div>
       </div>
-      {/* <BiotechSoftware /> */}
-    {/* </main> */}
-    </Wrapper>
   );
 }
