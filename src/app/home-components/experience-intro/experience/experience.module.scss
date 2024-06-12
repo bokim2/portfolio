@@ -1,11 +1,13 @@
 .main {
   padding-top: 7vh;
+  // background-color: red;
 }
 
 .columnsContainer {
 
   position: relative;
   display: flex;
+  gap: 10%;
   // align-items: center;
   // justify-content: center;
 
@@ -16,7 +18,7 @@
 
 .column {
   // width: 50vw;
-  flex: 0 0 50vw;
+  flex: 0 0 45%;
   // padding-right: 5vw;
   // max-width: 600px;
 

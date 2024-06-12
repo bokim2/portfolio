@@ -21,22 +21,28 @@ export default function Experience() {
 // need to put placeholder image if webgl is not available
 
   return (
-    <main className={styles.main}>
+    
+    // <main className={styles.main}>
+    <Wrapper>
       <div className={styles.columnsContainer}>
+      
         {isClient &&
           typeof window !== 'undefined' &&
           WebGL.isWebGLAvailable() ? (
             // <div
             //   className={`${styles.column} ${styles.bioreactorOuterContainer}`}
             // >
-              <ExperienceAnimation />
+              <div className={styles.column}><ExperienceAnimation /></div>
             // </div>
-          ) : <Wrapper className={`${styles.column}`}>put placeholder image for when webGL is not working</Wrapper>}
+          ) :
+          <div className={styles.column}>put placeholder image for when webGL is not working</div>}
+          
         <div className={styles.column}>
           <Resume />
         </div>
       </div>
       {/* <BiotechSoftware /> */}
-    </main>
+    {/* </main> */}
+    </Wrapper>
   );
 }

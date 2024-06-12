@@ -6,7 +6,7 @@ import { FaCaretDown, FaExternalLinkSquareAlt } from 'react-icons/fa';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import { FaDroplet } from 'react-icons/fa6';
-import { PiCaretDoubleDownThin } from 'react-icons/pi';
+import { PiCaretDoubleDownThin, PiCaretDoubleUpThin } from 'react-icons/pi';
 import { useInView } from 'react-intersection-observer';
 
 type TresumeData = {
@@ -227,16 +227,33 @@ export default function Resume() {
                     </motion.div>
                   )}
                   {/* </div> */}
-                  {toggleResumeDetails ? (
+                  {toggleResumeDetails ? (<>
                     <ul className={`${styles.listUl}`}>
                       {description.map((item, i) => (
                         <li key={i} className={`${styles.listLi}`}>
                           <p className="">{item}</p>
                         </li>
                       ))}
-                    </ul>
+                    </ul>  
+                    <motion.div
+            key="downArrow"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, x: 5 }}
+            transition={{ delay: 0.75, duration: 0.75 }}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              height: '100%',
+            }}
+          ><PiCaretDoubleUpThin size={24} /></motion.div>
+                    </>
                   ) : (
-                    <ToggleIcon />
+       
+                      <ToggleIcon setToggleResumeDetails={setToggleResumeDetails}/>
                   )}
                 </div>
               </li>
@@ -250,8 +267,15 @@ export default function Resume() {
   );
 }
 
-function ToggleIcon() {
-  const { ref, inView: isInView } = useInView({    triggerOnce: true, threshold: 1 });
+type TtoggleIconProps = {
+  setToggleResumeDetails: React.Dispatch<React.SetStateAction<boolean>>;
+};
+function ToggleIcon({ setToggleResumeDetails}: 
+  TtoggleIconProps): JSX.Element {
+  const { ref, inView: isInView } = useInView({
+    triggerOnce: true,
+    threshold: 1,
+  });
   const [showDroplet, setShowDroplet] = useState(true);
   useEffect(() => {
     if (isInView) {
@@ -267,7 +291,8 @@ function ToggleIcon() {
   }, [isInView]);
 
   return (
-    <div ref={ref} style={{height: '30px'}}>
+    
+    <div ref={ref} style={{ height: '30px' }} onClick={()=>setToggleResumeDetails((prev) => !prev)}>
       <AnimatePresence>
         {showDroplet ? (
           <motion.div
@@ -293,7 +318,7 @@ function ToggleIcon() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, x: 5 }}
-            transition={{ delay: .75, duration: 0.75 }}
+            transition={{ delay: 0.75, duration: 0.75 }}
             style={{
               cursor: 'pointer',
               display: 'flex',
@@ -315,14 +340,12 @@ function EducationCertifications() {
   return (
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
-        <h2 className={''}>Education</h2>
+        <h2 className={`marginSmall`}>Education</h2>
         <h3>University of California, Los Angeles</h3>
-        <h4 className={`${styles.H4large}`}>
-          Bachelor of Science in Chemical Engineering
-        </h4>
+        <h4 className={''}>Bachelor of Science in Chemical Engineering</h4>
       </div>
       <div className={`${styles.certifications}`}>
-        <h2>Professional Certifications</h2>
+        <h2 className={`marginSmall`}>Professional Certifications</h2>
         <h3>AWS Solutions Architect Associate (SAA-C03)</h3>
         <h5>Valid until June 07, 2026</h5>
       </div>

@@ -12,7 +12,7 @@ import amyris from '@/../public/images/progressive/amyris.jpg';
 import Wrapper from '@/components/wrapper/wrapper';
 
 export default function BiotechSoftware() {
-  return (<div className={`${styles.main}`}>
+  return (<div className={``}>
     {/* <Wrapper backgroundColor="" className="firstWrapper"> */}
       {/* second section */}
       <section className={styles.experience}>
