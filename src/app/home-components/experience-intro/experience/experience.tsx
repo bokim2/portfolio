@@ -22,6 +22,7 @@ export default function Experience() {
 
   return (
     // <main className={styles.main}>
+    <Wrapper additionalClasses='wider'>
       <div className={styles.columnsContainer}>
         {isClient &&
         typeof window !== 'undefined' &&
@@ -45,5 +46,6 @@ export default function Experience() {
     </Wrapper>
         </div>
       </div>
+        </Wrapper>
   );
 }

@@ -6,8 +6,11 @@ import { FaCaretDown, FaExternalLinkSquareAlt } from 'react-icons/fa';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import { FaDroplet } from 'react-icons/fa6';
-import { PiCaretDoubleDownThin, PiCaretDoubleUpThin } from 'react-icons/pi';
+import { PiCaretDoubleDownThin, PiCaretDoubleUpThin, PiDnaFill } from 'react-icons/pi';
 import { useInView } from 'react-intersection-observer';
+import { MdOutlineBiotech, MdOutlineScience } from 'react-icons/md';
+import { SiMoleculer } from 'react-icons/si';
+import { GiMolecule } from 'react-icons/gi';
 
 type TresumeData = {
   title: string;
@@ -40,7 +43,7 @@ const resumeData: TresumeData[] = [
   },
   {
     title: 'Rediscope',
-    link: 'https://www.rediscope.com',
+    link: 'https://rediscope.com',
     type: 'Open Source Project',
     summary: 'Redis Metrics Visualization Web App',
     date: '2022 - 2023',
@@ -139,7 +142,7 @@ export default function Resume() {
     <>
       <section className={`${styles.resumeSection}`}>
         <h2 className={`animatedH2 animated`}>Experience</h2>
-        <ul className={`${styles.resumeUl}`}>
+        <motion.ul  className={`${styles.resumeUl}`}>
           {resumeData.map(
             (
               {
@@ -249,17 +252,18 @@ export default function Resume() {
               width: '100%',
               height: '100%',
             }}
-          ><PiCaretDoubleUpThin size={24} /></motion.div>
+          ><PiCaretDoubleUpThin size={24} style={{marginTop: '.5rem'}} onClick={()=> setToggleResumeDetails(prev => !prev)}/></motion.div>
                     </>
                   ) : (
        
-                      <ToggleIcon setToggleResumeDetails={setToggleResumeDetails}/>
+                      <ToggleIcon setToggleResumeDetails={setToggleResumeDetails}
+                      listIndex={i}/>
                   )}
                 </div>
               </li>
             )
           )}
-        </ul>
+        </motion.ul>
       </section>
       <EducationCertifications />
       {/* </Wrapper> */}
@@ -269,8 +273,9 @@ export default function Resume() {
 
 type TtoggleIconProps = {
   setToggleResumeDetails: React.Dispatch<React.SetStateAction<boolean>>;
+  listIndex: number;
 };
-function ToggleIcon({ setToggleResumeDetails}: 
+function ToggleIcon({ setToggleResumeDetails, listIndex}: 
   TtoggleIconProps): JSX.Element {
   const { ref, inView: isInView } = useInView({
     triggerOnce: true,
@@ -310,7 +315,12 @@ function ToggleIcon({ setToggleResumeDetails}:
               height: '100%',
             }}
           >
-            <FaDroplet size={24} />
+            {listIndex == 0 && <FaDroplet size={24} />}
+            {listIndex == 1 && <MdOutlineBiotech size={24} />}
+            {listIndex == 2 && <MdOutlineScience size={24} />}
+            {listIndex == 3 && <PiDnaFill size={24} />}
+            {listIndex == 4 && <SiMoleculer size={24} />}
+            {listIndex == 5 && <GiMolecule size={24} />}
           </motion.div>
         ) : (
           <motion.div

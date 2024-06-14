@@ -4,7 +4,7 @@
 }
 
 .columnsContainer {
-
+  width: 100%;
   position: relative;
   display: flex;
   gap: 10%;
@@ -13,7 +13,7 @@
 
   @media (max-width: 800px) {
     // gap: 0%;
-    width: 100%;
+    // width: 100%;
     flex-direction: column;
   }
 }

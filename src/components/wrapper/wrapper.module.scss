@@ -18,6 +18,14 @@
   }
 }
 
+.wider {
+  width: 100%;
+  max-width: 1800px;
+  padding-inline: min(10vh, 10vw);
+  
+  // background-color: red;
+}
+
 .inner {
   width: 100%;
   padding-inline: 0;
