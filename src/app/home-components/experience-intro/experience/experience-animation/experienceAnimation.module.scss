@@ -10,6 +10,7 @@
     width: 100%;
     
     @media(max-width: 800px) {
+        margin-top: 7vh;
         background-color: rgba(var(--clr-main-3));
         position: fixed;
         z-index: 10;
