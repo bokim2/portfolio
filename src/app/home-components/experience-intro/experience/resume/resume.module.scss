@@ -17,16 +17,32 @@
 }
 
 .resumeUl {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 0.5rem;
 
   @media (max-width: 800px) {
     gap: 1.5rem;
   }
 }
 
+.spacer {
+  z-index: -1;
+  // position: absolute;
+  top: -12vh;
+  height: 12vh;
+  width: 100%;
+
+  @media(max-width: 800px) {
+    // top: -5vh;
+    height: 0vh;
+    
+  }
+}
+
 .resumeLi {
+  // padding-top: 5rem;
   position: relative;
 }
 

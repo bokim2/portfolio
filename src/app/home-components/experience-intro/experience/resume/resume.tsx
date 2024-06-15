@@ -6,7 +6,11 @@ import { FaCaretDown, FaExternalLinkSquareAlt } from 'react-icons/fa';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import { FaDroplet } from 'react-icons/fa6';
-import { PiCaretDoubleDownThin, PiCaretDoubleUpThin, PiDnaFill } from 'react-icons/pi';
+import {
+  PiCaretDoubleDownThin,
+  PiCaretDoubleUpThin,
+  PiDnaFill,
+} from 'react-icons/pi';
 import { useInView } from 'react-intersection-observer';
 import { MdOutlineBiotech, MdOutlineScience } from 'react-icons/md';
 import { SiMoleculer } from 'react-icons/si';
@@ -136,13 +140,35 @@ const resumeData: TresumeData[] = [
 
 export default function Resume() {
   const [toggleResumeDetails, setToggleResumeDetails] = useState(false);
+  const itemRefs = useRef<(HTMLElement | null)[]>([]);
+  const [scrollToIndex, setScrollToIndex] = useState<number | null>(null);
+
+  function handleToggle(index: number) {
+    setScrollToIndex(index);
+    setToggleResumeDetails((prev) => !prev);
+  }
+
+  useEffect(() => {
+    if (
+      scrollToIndex !== null &&
+      itemRefs.current[scrollToIndex] &&
+      itemRefs.current[scrollToIndex]
+    ) {
+      itemRefs.current[scrollToIndex]!.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+
+      });
+    }
+    setScrollToIndex(null);
+  }, [scrollToIndex]);
 
   return (
     // <Wrapper>
     <>
       <section className={`${styles.resumeSection}`}>
         <h2 className={`animatedH2 animated`}>Experience</h2>
-        <motion.ul  className={`${styles.resumeUl}`}>
+        <motion.ul className={`${styles.resumeUl}`}>
           {resumeData.map(
             (
               {
@@ -160,7 +186,16 @@ export default function Resume() {
               },
               i
             ) => (
-              <li key={i} className={`${styles.resumeLi}`}>
+              <li
+                key={i}
+                className={`${styles.resumeLi}`}
+                ref={(el: HTMLLIElement | null) => {
+                  if (el) {
+                    itemRefs.current[i] = el;
+                  }
+                }}
+              >
+                <div className={`${styles.spacer} `}></div>
                 <div
                   className={`${styles.resumeLiSection} ${styles.resumeLiTop}`}
                 >
@@ -230,34 +265,46 @@ export default function Resume() {
                     </motion.div>
                   )}
                   {/* </div> */}
-                  {toggleResumeDetails ? (<>
-                    <ul className={`${styles.listUl}`}>
-                      {description.map((item, i) => (
-                        <li key={i} className={`${styles.listLi}`}>
-                          <p className="">{item}</p>
-                        </li>
-                      ))}
-                    </ul>  
-                    <motion.div
-            key="downArrow"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, x: 5 }}
-            transition={{ delay: 0.75, duration: 0.75 }}
-            style={{
-              cursor: 'pointer',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%',
-              height: '100%',
-            }}
-          ><PiCaretDoubleUpThin size={24} style={{marginTop: '.5rem'}} onClick={()=> setToggleResumeDetails(prev => !prev)}/></motion.div>
+                  {toggleResumeDetails ? (
+                    <>
+                      <motion.ul
+                        layout
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.5 }}
+                        className={`${styles.listUl}`}
+                      >
+                        {description.map((item, i) => (
+                          <li key={i} className={`${styles.listLi}`}>
+                            <p className="">{item}</p>
+                          </li>
+                        ))}
+                      </motion.ul>
+                      <motion.div
+                        key="downArrow"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, x: 5 }}
+                        transition={{ delay: 0.75, duration: 0.75 }}
+                        style={{
+                          cursor: 'pointer',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      >
+                        <PiCaretDoubleUpThin
+                          size={24}
+                          // style={{ position: 'absolute', top: '0'}}
+                          onClick={() => handleToggle(i)}
+                        />
+                      </motion.div>
                     </>
                   ) : (
-       
-                      <ToggleIcon setToggleResumeDetails={setToggleResumeDetails}
-                      listIndex={i}/>
+                    <ToggleIcon handleToggle={handleToggle} listIndex={i} />
                   )}
                 </div>
               </li>
@@ -272,11 +319,13 @@ export default function Resume() {
 }
 
 type TtoggleIconProps = {
-  setToggleResumeDetails: React.Dispatch<React.SetStateAction<boolean>>;
+  handleToggle: (index: number) => void;
   listIndex: number;
 };
-function ToggleIcon({ setToggleResumeDetails, listIndex}: 
-  TtoggleIconProps): JSX.Element {
+function ToggleIcon({
+  handleToggle,
+  listIndex,
+}: TtoggleIconProps): JSX.Element {
   const { ref, inView: isInView } = useInView({
     triggerOnce: true,
     threshold: 1,
@@ -296,8 +345,11 @@ function ToggleIcon({ setToggleResumeDetails, listIndex}:
   }, [isInView]);
 
   return (
-    
-    <div ref={ref} style={{ height: '30px' }} onClick={()=>setToggleResumeDetails((prev) => !prev)}>
+    <div
+      ref={ref}
+      style={{ height: '30px' }}
+      onClick={() => handleToggle(listIndex)}
+    >
       <AnimatePresence>
         {showDroplet ? (
           <motion.div
