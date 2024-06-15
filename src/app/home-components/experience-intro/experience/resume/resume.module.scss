@@ -20,7 +20,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
 
   @media (max-width: 800px) {
     gap: 1.5rem;
@@ -29,15 +29,26 @@
 
 .spacer {
   z-index: -1;
-  // position: absolute;
-  top: -12vh;
-  height: 12vh;
+  position: absolute;
+  top: -10vh;
+  height: 10vh;
   width: 100%;
 
   @media(max-width: 800px) {
-    // top: -5vh;
-    height: 0vh;
+
+    top: -2vh;
+    height: 2vh;
+    // width: 100%;
     
+  }
+}
+
+// resume details block
+.resumeDetails {
+  // background-color: red;
+
+  .caretUp {
+    // background-color: blue;
   }
 }
 

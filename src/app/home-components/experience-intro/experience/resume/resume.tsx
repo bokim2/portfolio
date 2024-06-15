@@ -157,7 +157,6 @@ export default function Resume() {
       itemRefs.current[scrollToIndex]!.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
-
       });
     }
     setScrollToIndex(null);
@@ -189,13 +188,18 @@ export default function Resume() {
               <li
                 key={i}
                 className={`${styles.resumeLi}`}
-                ref={(el: HTMLLIElement | null) => {
+                // ref={(el: HTMLLIElement | null) => {
+                //   if (el) {
+                //     itemRefs.current[i] = el;
+                //   }
+                // }}
+              >
+                <div className={`${styles.spacer} `}
+                ref={(el: HTMLElement | null) => {
                   if (el) {
                     itemRefs.current[i] = el;
                   }
-                }}
-              >
-                <div className={`${styles.spacer} `}></div>
+                }}></div>
                 <div
                   className={`${styles.resumeLiSection} ${styles.resumeLiTop}`}
                 >
@@ -266,7 +270,7 @@ export default function Resume() {
                   )}
                   {/* </div> */}
                   {toggleResumeDetails ? (
-                    <>
+                    <div className={`${styles.resumeDetails}`}>
                       <motion.ul
                         layout
                         initial={{ opacity: 0 }}
@@ -282,7 +286,7 @@ export default function Resume() {
                         ))}
                       </motion.ul>
                       <motion.div
-                        key="downArrow"
+                        key="upArrow"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, x: 5 }}
@@ -297,12 +301,13 @@ export default function Resume() {
                         }}
                       >
                         <PiCaretDoubleUpThin
+                          className={`${styles.caretUp}`}
                           size={24}
                           // style={{ position: 'absolute', top: '0'}}
                           onClick={() => handleToggle(i)}
                         />
                       </motion.div>
-                    </>
+                    </div>
                   ) : (
                     <ToggleIcon handleToggle={handleToggle} listIndex={i} />
                   )}
@@ -353,7 +358,7 @@ function ToggleIcon({
       <AnimatePresence>
         {showDroplet ? (
           <motion.div
-            key="dropIcon"
+            key="animationIcon"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, x: 5 }}
@@ -377,6 +382,7 @@ function ToggleIcon({
         ) : (
           <motion.div
             key="downArrow"
+            className={`${styles.caretDown}`}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, x: 5 }}
