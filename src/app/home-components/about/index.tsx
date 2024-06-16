@@ -29,7 +29,7 @@ export default function About() {
               </h3>
               <div className={styles.experienceAbout}>
                 <p className="paragraph">
-                  {`In experience, my primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term originating from the historical use of microorganisms for the production of alcoholic beverages.`}
+                  {`My primary area of specialization was upstream process development, aka working with bioreactors, often referred to as "fermentation", a term originating from the historical use of microorganisms for the production of alcoholic beverages.`}
                 </p>
 
                 <p className="paragraph">

@@ -24,7 +24,7 @@ export default function BiotechSoftware() {
           <div className={styles.experienceAbout}>
             <p>
               My interest in software engineering started with a data
-              visualization software called Spotfire.
+              visualization software called Spotfire.  
             </p>
           </div>
         </div>

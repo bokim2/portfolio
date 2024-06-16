@@ -46,7 +46,7 @@ export default function ProjectsIntro() {
               <ul>
                 <li>React</li>
                 <li>React Router</li>
-                <li>React Query</li>
+                <li>Tanstack Query</li>
                 <li>Redux Toolkit</li>
                 <li>Styled Components</li>
                 <li>Node.js</li>
@@ -65,9 +65,9 @@ export default function ProjectsIntro() {
           </Link>
           <div className={styles.projectText}>
             <p>
-              An open source Redis database metrics visualization tool. Use the
-              customizable data collection intervals and set max data points for
-              enhanced data resolution. Dockerized and deployed using AWS.
+              An open-source Redis database metrics visualization tool. Use the
+              customizable data collection intervals and visualized data points for
+              enhanced data resolution. Containerized using Docker and deployed using AWS.
             </p>
 
             <div className={styles.projectImageContainer}>

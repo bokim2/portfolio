@@ -4,7 +4,7 @@ import styles from './page.module.css';
 import { createRef, useEffect, useRef, useState } from 'react';
 
 import Gallery from '../components/gallery/gallery';
-import Intro from './archive/intro';
+
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 import Bio from './home-components/bio/bio';

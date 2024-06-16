@@ -30,6 +30,12 @@
   }
 }
 
+.bioreactorColumn {
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
 .bioreactorOuterContainer {
   top: 0;
   // height: 100vh;

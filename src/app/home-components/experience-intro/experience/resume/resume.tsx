@@ -25,6 +25,8 @@ type TresumeData = {
   type: string;
   location?: string;
   date: string;
+  techStack?: string[];
+  intro?: string;
   description: string[];
   imagePath?: string;
   imageStyle?: any;
@@ -37,6 +39,23 @@ const resumeData: TresumeData[] = [
     link: 'https://www.seedflask.com',
     type: 'Solo Project',
     date: '2023 - 2024',
+    intro: `Web app for recording and visualizing scientific data. Capture
+    strain information, start flasks, and view previous
+   growth curves to plan sample times, create sample schedules,
+   save time with the dilution calculator. Securely log in
+   with Auth0 (Google or GitHub) to observe and save your data.`,
+    techStack: [
+      'React',
+      'React Router',
+      'Tanstack Query',
+      'Redux Toolkit',
+      'Styled Components',
+      'Node.js',
+      'Express',
+      'PostgresSQL',
+      'React ChartJS',
+      'Heroku',
+    ],
     description: [
       'Engineered a biotech geared application for tracking experimental conditions, key events, and results in a SQL database to minimize data redundancy through proper use of foreign keys. ',
       'Use of single page architecture and implementation of React Router for effective page navigation.  Improved user experience and reduced network traffic through reduced server calls.',
@@ -51,6 +70,21 @@ const resumeData: TresumeData[] = [
     type: 'Open Source Project',
     summary: 'Redis Metrics Visualization Web App',
     date: '2022 - 2023',
+    intro: `An open-source Redis database metrics visualization tool. Use the
+    customizable data collection intervals and visualized data points for
+    enhanced data resolution. Containerized using Docker and deployed using AWS.`,
+    techStack: [
+      'React',
+      'React Router',
+      'Styled Components',
+      'Node.js',
+      'Express',
+      'PostgresSQL',
+      'React ChartJS',
+      'Node-Redis',
+      'Docker',
+      'AWS',
+    ],
     description: [
       'Designed live metrics visualization with customizable data collection intervals and ability to set a maximum number of visualized data points for enhanced data resolution.',
       'Initiated a PostgreSQL database for relational data storage and accessibility in an ACID compliant structure with strict schemas, enabling secure concurrent connections from multiple clients.',
@@ -179,6 +213,8 @@ export default function Resume() {
                 type,
                 location,
                 date,
+                intro,
+                techStack,
                 description,
                 imagePath,
                 imageStyle,
@@ -194,12 +230,14 @@ export default function Resume() {
                 //   }
                 // }}
               >
-                <div className={`${styles.spacer} `}
-                ref={(el: HTMLElement | null) => {
-                  if (el) {
-                    itemRefs.current[i] = el;
-                  }
-                }}></div>
+                <div
+                  className={`${styles.spacer} `}
+                  ref={(el: HTMLElement | null) => {
+                    if (el) {
+                      itemRefs.current[i] = el;
+                    }
+                  }}
+                ></div>
                 <div
                   className={`${styles.resumeLiSection} ${styles.resumeLiTop}`}
                 >
@@ -251,6 +289,8 @@ export default function Resume() {
                     </h6>
                   )}
 
+                  {intro && <p className={`${styles.intro}`}>{intro}</p>}
+
                   {/* <div> */}
                   {imagePath && (
                     <motion.div
@@ -268,6 +308,17 @@ export default function Resume() {
                       />
                     </motion.div>
                   )}
+
+                  {techStack && (
+                    <div className={styles.projectTechContainer}>
+                      <ul>
+                        {techStack.map((tech, i) => (
+                          <li key={i}>{tech}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   {/* </div> */}
                   {toggleResumeDetails ? (
                     <div className={`${styles.resumeDetails}`}>

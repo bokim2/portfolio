@@ -86,25 +86,22 @@ export default function Bio() {
                 Software Engineer{' '}
                 <span className={styles.scientistTitle}>& Scientist</span>
               </h2>
-
-              <p className={`${styles.bioParagraph} large`}>
-                {`I'm a software engineer with a passion for digital innovation and
-                problem-solving.  I am transitioning from a career in
-                biotechnology, where I worked in scientific research and
-                process automation.  `}
-                </p>
-         
+              <div>
                 <p className={`${styles.bioParagraph} large`}>
-                My current focus is in the JavaScript ecosystem, including
-                tools like React and Node.js, I am also looking to expand my
-                technical skills by learning new technologies and programming
-                languages.  
-  
-    
-              </p>
-              <p className={`${styles.bioParagraph} large`}>
-           From my previous background, I hope to bring a fresh and unique perspective and am looking forward to new and interesting technical challenges.  
-              </p>
+                  {`I'm a full-stack developer and former fermentation scientist (no, not beer, click to find out which molecules!).  
+                `}
+                </p>
+{/* 
+                <p className={`${styles.bioParagraph} large`}>
+                  {`I'm JavaScript centric currently but am always looking to expand my
+                  technical skills. `}
+                </p>
+                <p className={`${styles.bioParagraph} large`}>
+                  From my previous background, I hope to bring a fresh and
+                  unique perspective and am looking forward to new and
+                  interesting technical challenges.
+                </p> */}
+              </div>
               <h4 className={styles.bioQuote}>
                 <span
                   className={styles.bioQuoteSpan}

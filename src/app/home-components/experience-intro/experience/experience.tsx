@@ -30,7 +30,7 @@ export default function Experience() {
           // <div
           //   className={`${styles.column} ${styles.bioreactorOuterContainer}`}
           // >
-          <div className={styles.column}>
+          <div className={`${styles.column} ${ styles.bioreactorColumn}`}>
             <ExperienceAnimation />
           </div>
         ) : (
