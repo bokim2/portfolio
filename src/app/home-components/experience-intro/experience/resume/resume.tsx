@@ -35,7 +35,7 @@ type TresumeData = {
 const resumeData: TresumeData[] = [
   {
     title: 'Seed Flask',
-    summary: 'Science Data Recording Web App',
+    summary: 'Scientific Data Recording Web App',
     link: 'https://www.seedflask.com',
     type: 'Solo Project',
     date: '2023 - 2024',
@@ -174,12 +174,17 @@ const resumeData: TresumeData[] = [
 
 export default function Resume() {
   const [toggleResumeDetails, setToggleResumeDetails] = useState(false);
+  const resumeRef = useRef<HTMLElement | null>(null);
   const itemRefs = useRef<(HTMLElement | null)[]>([]);
   const [scrollToIndex, setScrollToIndex] = useState<number | null>(null);
+  const controls = useAnimation();
 
-  function handleToggle(index: number) {
+  async function handleToggle(index: number) {
+    await controls.start({ opacity: 0.2  });
     setScrollToIndex(index);
+
     setToggleResumeDetails((prev) => !prev);
+    controls.start({ opacity: 1, transition: { duration: 1 } });
   }
 
   useEffect(() => {
@@ -199,7 +204,10 @@ export default function Resume() {
   return (
     // <Wrapper>
     <>
-      <section className={`${styles.resumeSection}`}>
+      <motion.section className={`${styles.resumeSection}`} ref={resumeRef}
+      animate={controls}
+      initial={{opacity: .2}}
+      >
         <h2 className={`animatedH2 animated`}>Experience</h2>
         <motion.ul className={`${styles.resumeUl}`}>
           {resumeData.map(
@@ -367,7 +375,7 @@ export default function Resume() {
             )
           )}
         </motion.ul>
-      </section>
+      </motion.section>
       <EducationCertifications />
       {/* </Wrapper> */}
     </>

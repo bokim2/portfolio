@@ -102,7 +102,7 @@ export default function Bio() {
                   interesting technical challenges.
                 </p> */}
               </div>
-              <h4 className={styles.bioQuote}>
+              {/* <h4 className={styles.bioQuote}>
                 <span
                   className={styles.bioQuoteSpan}
                   style={{
@@ -116,7 +116,7 @@ export default function Bio() {
                 >
                   {`overcoming them makes life meaningful."`}
                 </span>
-              </h4>
+              </h4> */}
             </div>
           </div>
         </section>
