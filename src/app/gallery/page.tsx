@@ -5,7 +5,7 @@ import Lenis from '@studio-freight/lenis';
 import { useEffect, useState } from 'react';
 
 import Gallery from '../../components/gallery/gallery';
-import Intro from '../archive/intro';
+// import Intro from '../archive/intro';
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 
