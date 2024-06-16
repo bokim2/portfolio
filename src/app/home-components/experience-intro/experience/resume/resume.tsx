@@ -206,7 +206,7 @@ export default function Resume() {
     <>
       <motion.section className={`${styles.resumeSection}`} ref={resumeRef}
       animate={controls}
-      initial={{opacity: .2}}
+      initial={{opacity: 1}}
       >
         <h2 className={`animatedH2 animated`}>Experience</h2>
         <motion.ul className={`${styles.resumeUl}`}>
@@ -229,7 +229,7 @@ export default function Resume() {
               },
               i
             ) => (
-              <li
+              <motion.li
                 key={i}
                 className={`${styles.resumeLi}`}
                 // ref={(el: HTMLLIElement | null) => {
@@ -371,7 +371,7 @@ export default function Resume() {
                     <ToggleIcon handleToggle={handleToggle} listIndex={i} />
                   )}
                 </div>
-              </li>
+              </motion.li>
             )
           )}
         </motion.ul>
