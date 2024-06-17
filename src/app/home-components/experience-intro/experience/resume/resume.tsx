@@ -297,7 +297,7 @@ export default function Resume() {
                     </h6>
                   )}
 
-                  {intro && <p className={`${styles.intro}`}>{intro}</p>}
+                  {intro && <p className={``}>{intro}</p>}
 
                   {/* <div> */}
                   {imagePath && (
