@@ -88,7 +88,7 @@ export default function Bio() {
               </h2>
               <div>
                 <p className={`${styles.bioParagraph} large`}>
-                  {`I'm a full-stack developer and former fermentation scientist (no, not beer, click to find out which molecules!).  
+                  {`I'm a full-stack developer and former fermentation scientist (no, not beer, find out which molecules!).  
                 `}
                 </p>
 {/* 

@@ -15,6 +15,7 @@ import { useInView } from 'react-intersection-observer';
 import { MdOutlineBiotech, MdOutlineScience } from 'react-icons/md';
 import { SiMoleculer } from 'react-icons/si';
 import { GiMolecule } from 'react-icons/gi';
+import Overlay from '@/components/overlay/overlay';
 
 type TresumeData = {
   title: string;
@@ -174,17 +175,23 @@ const resumeData: TresumeData[] = [
 
 export default function Resume() {
   const [toggleResumeDetails, setToggleResumeDetails] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
   const resumeRef = useRef<HTMLElement | null>(null);
   const itemRefs = useRef<(HTMLElement | null)[]>([]);
   const [scrollToIndex, setScrollToIndex] = useState<number | null>(null);
   const controls = useAnimation();
 
   async function handleToggle(index: number) {
-    await controls.start({ opacity: 0.2  });
-    setScrollToIndex(index);
+    setShowOverlay(true);
+    console.log('handleToggle clicked');
+    // await controls.start({ opacity: 0.2 });
 
-    setToggleResumeDetails((prev) => !prev);
-    controls.start({ opacity: 1, transition: { duration: 1 } });
+    setTimeout(() => {
+      setScrollToIndex(index);
+      setToggleResumeDetails((prev) => !prev);
+    }, 100);
+
+    // controls.start({ opacity: 1, transition: { duration: 1 } });
   }
 
   useEffect(() => {
@@ -204,9 +211,15 @@ export default function Resume() {
   return (
     // <Wrapper>
     <>
-      <motion.section className={`${styles.resumeSection}`} ref={resumeRef}
-      animate={controls}
-      initial={{opacity: 1}}
+      <AnimatePresence>
+        {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
+      </AnimatePresence>
+      {/* {<Overlay onClose={()=> setShowOverlay(true)}/>} */}
+      <motion.section
+        className={`${styles.resumeSection}`}
+        ref={resumeRef}
+        // animate={controls}
+        // initial={{ opacity: 1 }}
       >
         <h2 className={`animatedH2 animated`}>Experience</h2>
         <motion.ul className={`${styles.resumeUl}`}>

@@ -8,6 +8,7 @@ import spotfire1Img from '../../../../public/images/experience/spotfire1.jpg';
 import Link from 'next/link';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 import BiotechSoftware from './biotechSoftware';
+import ThisPortfolio from './thisPortfolio';
 
 
 export default function About() {
@@ -61,6 +62,7 @@ export default function About() {
           </section>
 
           <BiotechSoftware />
+          <ThisPortfolio />
     </Wrapper>
   )
 }

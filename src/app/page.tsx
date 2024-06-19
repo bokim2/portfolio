@@ -51,7 +51,7 @@ export default function Home() {
       <WorkIntro />
       <ParallaxGallery />
       <About />
-      <ProjectsIntro />
+      {/* <ProjectsIntro /> */}
       <Contact />
       {/* <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {
