@@ -9,7 +9,7 @@ import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 import Bio from './home-components/bio/bio';
 import WorkIntro from './home-components/experience-intro';
-import ProjectsIntro from './home-components/projects-intro/projects-intro';
+
 import Contact from './home-components/contact/contact';
 import About from './home-components/about/about';
 import ParallaxGallery from './home-components/parallax-gallery/parallaxGallery';
