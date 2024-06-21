@@ -1,5 +1,5 @@
 .container {
-  height: 250vh;
+  height: 200vh;
   width: 100%;
   position: relative;
   // background-color: lightblue;
@@ -11,6 +11,10 @@
     height: 100vh;
     // background-color: yellow;
     overflow: hidden;
+  }
+
+  @media(max-width: 800px) {
+    display: none;
   }
 }
 

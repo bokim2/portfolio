@@ -46,6 +46,7 @@ const resumeData: TresumeData[] = [
    save time with the dilution calculator. Securely log in
    with Auth0 (Google or GitHub) to observe and save your data.`,
     techStack: [
+      'Typescript',
       'React',
       'React Router',
       'Tanstack Query',
@@ -55,6 +56,7 @@ const resumeData: TresumeData[] = [
       'Express',
       'PostgresSQL',
       'React ChartJS',
+      'Zod',
       'Heroku',
     ],
     description: [
@@ -78,6 +80,8 @@ const resumeData: TresumeData[] = [
       'React',
       'React Router',
       'Styled Components',
+      'Yup',
+      'Formik',
       'Node.js',
       'Express',
       'PostgresSQL',
