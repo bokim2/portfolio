@@ -11,7 +11,7 @@
   --text-10: #282a2d;
   --text-11: #2e3134;
   --text-12: #3c4043;
-  /* --text-13: #5f6368; */
+  --text-13: #5f6368;
   --text-14: #7d7e82;
   --text-15: #97989c;
   --text-16: #b1b2b6;
@@ -345,6 +345,11 @@ p {
       line-height: 1.5;
     }
   }
+}
+
+.lightText {
+  color: var(--text-14);
+
 }
 
 em {

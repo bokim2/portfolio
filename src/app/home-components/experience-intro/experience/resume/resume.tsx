@@ -107,7 +107,7 @@ const resumeData: TresumeData[] = [
     type: 'Applied Molecular Transport',
     summary: 'Oral Biologics / Drug Carrier Technology',
     location: 'South San Francisco, CA',
-    date: '2022 - 2020',
+    date: '2020 - 2022',
     description: [
       'Upstream process development for production of fusion proteins based on AMT’s carrier technology platform.  Fermentation process development and production for animal studies for lead therapeutic proteins, early-stage pipeline, and developmental candidates.',
       'Implemented Thermo Scientific single-use 30L, a direct scale down model used to operationalize and optimize the manufacturing 300L. Fermentation recipe transfer, scale-up, and validation. ',

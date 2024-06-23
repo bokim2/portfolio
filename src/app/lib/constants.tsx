@@ -15,7 +15,7 @@ export const sectionsLinks = [
     name: 'about',
     link: '/#about',
   },
-  
+
   {
     name: 'projects',
     link: '/#projects',
@@ -25,3 +25,5 @@ export const sectionsLinks = [
     link: '/#contact',
   },
 ] as const;
+
+// ABOUT section

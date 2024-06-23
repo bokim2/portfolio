@@ -49,7 +49,7 @@ export default function Home() {
       {/* <Intro /> */}
       <Bio />
       <WorkIntro />
-      <ParallaxGallery />
+      {/* <ParallaxGallery /> */}
       <About />
       {/* <ProjectsIntro /> */}
       <Contact />

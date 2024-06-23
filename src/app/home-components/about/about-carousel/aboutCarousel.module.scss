@@ -1,0 +1,40 @@
+// aboutCarousel
+
+.aboutCarousel {
+  margin-block: 5rem;
+  width: 100%;
+
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+    width: 90%;
+    
+    background-color: aquamarine;
+    padding: 2vw;
+
+    @media (max-width: 800px) {
+        display: block;
+        gap: 0;
+        padding: 0;
+    }
+}
+
+.cardColumn {
+
+}
+
+.cardImageContainer {
+    border: 10px solid red;
+    // width: 15vw;
+    // height: 30vh;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img {
+      object-fit: cover;
+    }
+  }

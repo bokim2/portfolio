@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 import BiotechSoftware from './biotechSoftware';
 import ThisPortfolio from './thisPortfolio';
-import AboutCarousel from './aboutCarousel';
+import AboutCarousel from './about-carousel/aboutCarousel';
 
 export default function About() {
   const { activeSection, setActiveSection, ref } =
@@ -17,10 +17,9 @@ export default function About() {
 
   return (
     <Wrapper>
-      <Link href="/experience">
+      {/* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>
       </Link>
-      {/* first section */}
       <section className={styles.experience} ref={ref}>
         <div className={styles.experienceTitleContainer}>
           <h5 className={styles.experienceH6}>Motivations</h5>
@@ -57,7 +56,7 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
       <AboutCarousel />
       <BiotechSoftware />
       <ThisPortfolio />
