@@ -16,10 +16,10 @@ export default function AboutCarousel() {
 
 function Carousel() {
   return (
-    <div>
+    <>
       {ABOUT_ME.map((item, i) => (
         <Card key={i} item={item} i={i} />
       ))}
-    </div>
+    </>
   );
 }
