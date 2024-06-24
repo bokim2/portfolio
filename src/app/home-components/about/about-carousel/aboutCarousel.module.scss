@@ -30,15 +30,42 @@
 .cardColumn {
 }
 
+.imageColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: min(1vh, 1vw);
+}
+
 .cardImageContainer {
+  position: relative;
   border: 10px solid red;
   // width: 15vw;
   // height: 30vh;
   width: 100%;
-  height: 100%;
-  position: relative;
+    // height: 100%;
+  aspect-ratio: 6/4;
 
   img {
-    object-fit: cover;
+      object-fit: cover;
+      object-fit: contain;
   }
+}
+
+.imageArrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.right {
+    right: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+}
+
+.imageDots {
 }
