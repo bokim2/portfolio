@@ -1,10 +1,10 @@
 import Image from 'next/image';
-
-import styles from './aboutCarousel.module.scss';
-
 import { useState } from 'react';
+
+import { motion } from 'framer-motion';
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs';
 import { GoDot, GoDotFill } from 'react-icons/go';
+import styles from './aboutCarousel.module.scss';
 
 import biomek1Img from '@/../public/images/experience/biomek1.jpg';
 import genencorFun from '@/../public/images/carousel/1.jpg';
@@ -13,6 +13,7 @@ import biostatB from '@/../public/images/carousel/biostatB.jpg';
 import dasgip from '@/../public/images/carousel/dasgip.jpg';
 import ambr250 from '@/../public/images/carousel/ambr250.jpg';
 import suf from '@/../public/images/carousel/suf.jpg';
+import CardControls from './cardControls';
 
 export const ABOUT_ME = [
   {
@@ -49,7 +50,7 @@ export const ABOUT_ME = [
     title: 'interest in software engineering',
     subtitle: "what I've worked with",
     equipment: [],
-    images: [{pic1: ''}],
+    images: [{ pic1: '' }],
     text: [
       <>
         My primary area of specialization was upstream process development, aka
@@ -75,6 +76,19 @@ type TCard = {
 export default function Card({ item, i }: TCard) {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  function handleIndexChange(incrementValue: number) {
+    console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
+    if (incrementValue > 0) {
+      if (activeIndex >= item.images.length - 1) return;
+
+      setActiveIndex((prev) => prev + incrementValue);
+    } else {
+      if (activeIndex <= 0) return;
+
+      setActiveIndex((prev) => prev + incrementValue);
+    }
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.cardColumn}>
@@ -94,20 +108,19 @@ export default function Card({ item, i }: TCard) {
               //   objectFit="cover"
               key={i}
             />
-            <BsFillCaretLeftFill
-              className={`${styles.imageArrows} ${styles.left}`}
-            />
-            <BsFillCaretRightFill
-              className={`${styles.imageArrows} ${styles.right}`}
-            />
+            <CardControls handleIndexChange={handleIndexChange} />
           </div>
         ) : null}
         <div className={`${styles.imageDots}`}>
           {item?.images?.map((count, i) =>
             activeIndex == i ? (
-              <GoDotFill key={i} onClick={() => setActiveIndex(i)} />
+              <motion.div key={i} whileHover={{ scale: 1.2 }}>
+                <GoDotFill onClick={() => setActiveIndex(i)} />
+              </motion.div>
             ) : (
-              <GoDot key={i} onClick={() => setActiveIndex(i)} />
+              <motion.div key={i} whileHover={{ scale: 1.2 }}>
+                <GoDot onClick={() => setActiveIndex(i)} />
+              </motion.div>
             )
           )}
         </div>

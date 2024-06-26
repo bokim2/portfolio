@@ -42,17 +42,25 @@ export default function Home() {
 
   return (
     <main className={`${styles.main}`} id="homePage">
+      {/* <Bio /> */}
+      {/* <WorkIntro /> */}
+      {/* <ParallaxGallery /> */}
+      <About />
+      {/* <ProjectsIntro /> */}
+      {/* <Contact /> */}
+
+
       {/* <div className={styles.container}>
         hello
       </div> */}
       {/* {loading && <LoaderPage setLoading={setLoading} />} */}
       {/* <Intro /> */}
-      <Bio />
-      <WorkIntro />
+      {/* <Bio /> */}
+      {/* <WorkIntro /> */}
       {/* <ParallaxGallery /> */}
-      <About />
+      {/* <About /> */}
       {/* <ProjectsIntro /> */}
-      <Contact />
+      {/* <Contact /> */}
       {/* <div className={styles.description} onMouseMove={mouseMove}>
         {imagesAndBackgrounds.map(({ handle, name }, i) => {
           return (

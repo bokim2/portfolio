@@ -20,9 +20,13 @@
 
   --clr-main-1: 247, 246, 251; /* nav */
   --clr-main-2: 238, 238, 245; /* slightly darker than nav, profile pic background */
-  --clr-main-3: 255,255,255; /* background - white-ish */
+  --clr-main-3: 255, 255, 255; /* background - white-ish */
 
- 
+  
+  --clr-accent-1: #FF0000;  /* onClick highlight */
+
+
+
 
   --max-width: 1100px;
   --border-radius: 12px;
@@ -147,8 +151,6 @@ ol[role='list'] {
 body {
   min-height: 100vh;
   line-height: 1.5;
-
-
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -247,7 +249,7 @@ h2 {
     margin-bottom: 1.5rem;
     font-size: 1.625rem;
     line-height: 1.25;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
   }
 }
 
@@ -349,7 +351,6 @@ p {
 
 .lightText {
   color: var(--text-14);
-
 }
 
 em {
@@ -439,7 +440,6 @@ img {
 .imageContainer {
   position: relative;
 
-
   width: 100%;
   height: 100%;
   img {
@@ -470,13 +470,11 @@ img {
   background-size: 100%;
   background-position: left;
   /* animation: title-H2-color-animation 500s infinite alternate; */
-  transition:  transform .15s ease-in-out;
+  transition: transform 0.15s ease-in-out;
 
   &:hover {
     transform: scale(1.02) translateX(1.5%);
-    
   }
-  
 }
 
 @keyframes title-H2-color-animation {
