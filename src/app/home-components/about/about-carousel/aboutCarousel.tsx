@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './aboutCarousel.module.scss';
-import Card, { ABOUT_ME } from './card';
+import Card, { CARD_DATA } from './card';
 import CardSelector from './cardSelector';
 
 
@@ -24,7 +24,7 @@ export default function AboutCarousel() {
       <CardSelector selectedCardIndex={selectedCardIndex} 
       handleSelectorChange={handleSelectorChange}/>
       {selectedCardIndex !== null && (
-        <Card item={ABOUT_ME[selectedCardIndex]} i={selectedCardIndex} />
+        <Card item={CARD_DATA[selectedCardIndex]} i={selectedCardIndex} />
       )}
       {/* <Carousel /> */}
     </div>
@@ -34,7 +34,7 @@ export default function AboutCarousel() {
 function Carousel() {
   return (
     <>
-      {ABOUT_ME.map((item, i) => (
+      {CARD_DATA.map((item, i) => (
         <Card key={i} item={item} i={i} />
       ))}
     </>
