@@ -71,9 +71,14 @@ export default function Bio() {
                 src={headshotImg}
                 alt="background"
                 layout="fill"
-                objectFit="cover"
-                objectPosition="top"
+                // objectFit="cover"
+                // objectPosition="top"
                 priority
+
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "top"
+                }}
                 // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </motion.div>

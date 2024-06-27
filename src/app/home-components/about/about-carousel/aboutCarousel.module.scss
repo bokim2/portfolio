@@ -5,6 +5,24 @@
   width: 100%;
 }
 
+
+// card selector
+
+.cardSelector {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardSelectorOptions {
+    // width: 20vw;
+    border: 5px solid pink;
+
+}
+
+// card
+
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr;

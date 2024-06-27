@@ -79,18 +79,24 @@ export default function Card({ item, i }: TCard) {
   function handleIndexChange(incrementValue: number) {
     console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
     if (incrementValue > 0) {
-      if (activeIndex >= item.images.length - 1) return;
+      if (activeIndex >= item.images.length - 1) {
+        setActiveIndex(0);
+        return;
+      }
 
       setActiveIndex((prev) => prev + incrementValue);
     } else {
-      if (activeIndex <= 0) return;
+      if (activeIndex <= 0) {
+        setActiveIndex(item.images.length - 1);
+        return;
+      }
 
       setActiveIndex((prev) => prev + incrementValue);
     }
   }
 
   return (
-    <div className={styles.card}>
+    <motion.div className={styles.card}>
       <div className={styles.cardColumn}>
         <h3>{item?.title}</h3>
         <h4>{item?.subtitle}</h4>
@@ -125,6 +131,6 @@ export default function Card({ item, i }: TCard) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
