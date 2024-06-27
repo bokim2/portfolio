@@ -5,33 +5,43 @@
   width: 100%;
 }
 
-
 // card selector
 
 .cardSelector {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2vw;
+
+  margin-block: 2vh;
 }
 
 .cardSelectorOptions {
-    // width: 20vw;
-    border: 5px solid pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  aspect-ratio: 1 / 1;
+  border: 5px solid pink;
 
 }
 
 // card
 
 .card {
+  background-color: aquamarine;
+  border: 5px solid green;
+  padding: 2vw;
+}
+
+.cardInner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2vw;
   width: 100%;
 
-  background-color: aquamarine;
-  border: 5px solid green;
-  padding: 2vw;
+
 
   margin-bottom: 2vh;
 
@@ -45,7 +55,33 @@
   }
 }
 
+.cardTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+
+}
+
 .cardColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.cardSubtitle {
+  font-weight: 700;
+}
+
+.cardText {
+  // font-size: ;
+}
+
+.cardTextAndSecondImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2vh;
+    align-items: center;
 }
 
 .imageColumn {
@@ -68,10 +104,28 @@
   aspect-ratio: 6/4;
 
   img {
-    object-fit: cover;
+    // object-fit: cover;
     object-fit: contain;
   }
 }
+
+.cardImageContainerSecondary {
+    position: relative;
+    border: 4px solid yellow;
+    cursor: pointer;
+  
+    // width: 15vw;
+    // height: 30vh;
+    // width: 50%;
+    width: 60%;
+    // height: 100%;
+    aspect-ratio: 6/4;
+  
+    img {
+    //   object-fit: cover;
+      object-fit: contain;
+    }
+  }
 
 .arrowLeftContainer {
   position: absolute;
@@ -112,7 +166,5 @@
 
 .imageDots {
   cursor: pointer;
-    display: flex;
+  display: flex;
 }
-
-

@@ -8,7 +8,7 @@ type TCardSelector = {
   handleSelectorChange: (selectedIndex: number) => void;
 };
 
-const SELECTOR_OPTIONS = ['past', 'current', 'future'];
+const SELECTOR_OPTIONS = ['past', 'present', 'future'];
 
 export default function CardSelector({
   selectedCardIndex,
@@ -19,11 +19,11 @@ export default function CardSelector({
       {SELECTOR_OPTIONS.map((option, i) => (
         <div
           key={i}
-          className={`${styles.cardSelectorOptions}`}
+          className={`${styles.cardSelectorOptions} imgBorderRadius`}
           // layoutId="cardSelection"
           onClick={() => handleSelectorChange(i)}
         >
-          {SELECTOR_OPTIONS[i]}
+          <p className={`large`}>{SELECTOR_OPTIONS[i]}</p>
         </div>
       ))}
     </div>

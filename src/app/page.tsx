@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <main className={`${styles.main}`} id="homePage">
-      <Bio />
+      {/* <Bio /> */}
       {/* <WorkIntro /> */}
       {/* <ParallaxGallery /> */}
       <About />

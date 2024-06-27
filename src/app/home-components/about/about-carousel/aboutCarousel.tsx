@@ -8,17 +8,18 @@ import CardSelector from './cardSelector';
 
 
 export default function AboutCarousel() {
-  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null);
+  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
 
   function handleSelectorChange(selectedIndex: number) {
     setSelectedCardIndex(selectedIndex);
   }
   return (
     <div className={`${styles.aboutCarousel}`}>
-      <h3>{`Why the transition to software engineering?`}</h3>
+      <h2>About</h2>
+      {/* <h3>{`Why the transition to software engineering?`}</h3>
       <h4
         className={`lightText`}
-      >{`Here are some of the technologies I've worked with over the years and what I liked about them.`}</h4>
+      >{`Here are some of the technologies I've worked with over the years and what I liked about them.`}</h4> */}
 
       <CardSelector selectedCardIndex={selectedCardIndex} 
       handleSelectorChange={handleSelectorChange}/>

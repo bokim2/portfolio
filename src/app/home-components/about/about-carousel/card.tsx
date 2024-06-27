@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 
 import { motion } from 'framer-motion';
@@ -6,14 +6,33 @@ import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs';
 import { GoDot, GoDotFill } from 'react-icons/go';
 import styles from './aboutCarousel.module.scss';
 
-import biomek1Img from '@/../public/images/experience/biomek1.jpg';
 import genencorFun from '@/../public/images/carousel/1.jpg';
 import genencor2 from '@/../public/images/progressive/genencor3.jpg';
+
 import biostatB from '@/../public/images/carousel/biostatB.jpg';
+import mfcs from '@/../public/images/carousel/mfcs.jpg';
+
+import biomek1 from '@/../public/images/carousel/biomek1.jpg';
+import biomek2 from '@/../public/images/carousel/biomek2.jpg';
+
+
 import dasgip from '@/../public/images/carousel/dasgip.jpg';
 import ambr250 from '@/../public/images/carousel/ambr250.jpg';
 import suf from '@/../public/images/carousel/suf.jpg';
 import CardControls from './cardControls';
+
+type Timages = {
+  pic1: StaticImageData;
+  pic2?: StaticImageData | undefined;
+};
+
+type TAboutMeCard = {
+  title: string;
+  subtitle: string;
+  equipment?: string[];
+  images: Timages[];
+  text: JSX.Element[];
+};
 
 export const ABOUT_ME = [
   {
@@ -22,11 +41,11 @@ export const ABOUT_ME = [
     equipment: [],
     images: [
       { pic1: genencorFun, pic2: genencor2, pic1StyleOverrides: '' },
-      { pic1: biostatB },
-      { pic1: biomek1Img },
-      { pic1: dasgip },
-      { pic1: ambr250 },
-      { pic1: suf },
+      { pic1: biostatB, pic2: mfcs },
+      { pic1: biomek1, pic2: biomek2 },
+      { pic1: dasgip, pic2: undefined },
+      { pic1: ambr250, pic2: undefined },
+      { pic1: suf, pic2: undefined },
     ],
 
     text: [
@@ -50,7 +69,7 @@ export const ABOUT_ME = [
     title: 'interest in software engineering',
     subtitle: "what I've worked with",
     equipment: [],
-    images: [{ pic1: '' }],
+    images: [{ pic1: '', pic2: undefined }],
     text: [
       <>
         My primary area of specialization was upstream process development, aka
@@ -66,7 +85,7 @@ export const ABOUT_ME = [
       </>,
     ],
   },
-] as const;
+] as TAboutMeCard[];
 
 type TCard = {
   item: (typeof ABOUT_ME)[number];
@@ -96,41 +115,62 @@ export default function Card({ item, i }: TCard) {
   }
 
   return (
-    <motion.div className={styles.card}>
-      <div className={styles.cardColumn}>
+    <div className={styles.card}>
+      <div className={styles.cardTitles}>
         <h3>{item?.title}</h3>
-        <h4>{item?.subtitle}</h4>
-
-        <p>{item?.text?.[activeIndex]}</p>
+        <p className={`xlarge ${styles.cardSubtitle}`}>{item?.subtitle}</p>
       </div>
 
-      <div className={`${styles.cardColumn} ${styles.imageColumn}`}>
-        {item?.images?.length > 0 ? (
-          <div className={styles.cardImageContainer}>
-            <Image
-              src={item?.images?.[activeIndex]?.pic1}
-              alt={item?.title}
-              layout="fill"
-              //   objectFit="cover"
-              key={i}
-            />
-            <CardControls handleIndexChange={handleIndexChange} />
-          </div>
-        ) : null}
-        <div className={`${styles.imageDots}`}>
-          {item?.images?.map((count, i) =>
-            activeIndex == i ? (
-              <motion.div key={i} whileHover={{ scale: 1.2 }}>
-                <GoDotFill onClick={() => setActiveIndex(i)} />
-              </motion.div>
+      <motion.div className={styles.cardInner}>
+        <div className={styles.cardColumn}>
+          <div className={`${styles.cardTextAndSecondImage}`}>
+            <p className={`large ${styles.cardText}`}>
+              {item?.text?.[activeIndex]}
+            </p>
+
+            {/* second pi&& vs ??cture */}
+            {item?.images?.[activeIndex]?.pic2 ? (
+              <div className={styles.cardImageContainerSecondary}>
+                <Image
+                  src={item?.images?.[activeIndex]?.pic2 as StaticImageData}
+                  alt={item?.title}
+                  layout="fill"
+                />
+              </div>
             ) : (
-              <motion.div key={i} whileHover={{ scale: 1.2 }}>
-                <GoDot onClick={() => setActiveIndex(i)} />
-              </motion.div>
-            )
-          )}
+              <>s</>
+            )}
+          </div>
         </div>
-      </div>
-    </motion.div>
+
+        <div className={`${styles.cardColumn} ${styles.imageColumn}`}>
+          {item?.images?.length > 0 ? (
+            <div className={styles.cardImageContainer}>
+              <Image
+                src={item?.images?.[activeIndex]?.pic1}
+                alt={item?.title}
+                layout="fill"
+                //   objectFit="cover"
+                key={i}
+              />
+              <CardControls handleIndexChange={handleIndexChange} />
+            </div>
+          ) : null}
+          <div className={`${styles.imageDots}`}>
+            {item?.images?.map((count, i) =>
+              activeIndex == i ? (
+                <motion.div key={i} whileHover={{ scale: 1.2 }}>
+                  <GoDotFill onClick={() => setActiveIndex(i)} />
+                </motion.div>
+              ) : (
+                <motion.div key={i} whileHover={{ scale: 1.2 }}>
+                  <GoDot onClick={() => setActiveIndex(i)} />
+                </motion.div>
+              )
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </div>
   );
 }

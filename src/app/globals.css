@@ -328,6 +328,11 @@ p {
     line-height: 1.5;
   }
 
+  &.xlarge {
+    font-size: 1.375rem;
+    line-height: 1.5;
+  }
+
   @media (max-width: 800px) {
     font-size: 0.9375rem;
     line-height: 1.5;
@@ -344,6 +349,11 @@ p {
 
     &.large {
       font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    &.xlarge {
+      font-size: 1.25rem;
       line-height: 1.5;
     }
   }
