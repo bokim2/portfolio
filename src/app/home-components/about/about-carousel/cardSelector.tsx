@@ -18,6 +18,7 @@ export default function CardSelector({
     <div className={`${styles.cardSelector}`}>
       {SELECTOR_OPTIONS.map((option, i) => (
         <div
+          key={i}
           className={`${styles.cardSelectorOptions}`}
           // layoutId="cardSelection"
           onClick={() => handleSelectorChange(i)}
