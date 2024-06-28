@@ -52,7 +52,8 @@ export default function CardControls({ handleIndexChange }: TCardControls) {
               opacity: 0.4,
             },
 
-            hover: { opacity: 1, scale: 1.2, transition: { ease: 'easeIn' } },
+            hover: { opacity: 1, scale: 1.2, transition: { ease: 'easeIn' 
+          } },
             tap: { scale: 0.9, color: 'var(--clr-accent-1)' },
           }}
           className={`${styles.arrowWrapper} ${styles.right}`}
