@@ -9,7 +9,7 @@
     // width: 90%;
 
     // padding-inline: 2.5rem;
-    padding-inline: 5vw;
+    padding-inline: min(5vh, 5vw);
   }
   
   @media (max-width: 800px) {
