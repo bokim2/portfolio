@@ -8,13 +8,14 @@
   @media (max-width: 1000px) {
     // width: 90%;
 
-    padding-inline: 2.5rem;
+    // padding-inline: 2.5rem;
+    padding-inline: 5vw;
   }
-
+  
   @media (max-width: 800px) {
     // width: 90%;
     margin-block: 1rem;
-    padding-inline: 1.5rem;
+    // padding-inline: 1.5rem;
   }
 }
 
@@ -23,14 +24,24 @@
 .wider {
   width: 100%;
   max-width: 1800px;
-  padding-inline: min(10vh, 10vw);
+  // padding-inline: min(10vh, 10vw);
   
   // background-color: red;
+  padding-inline: min(5vh, 5vw);
+  
+  
+  @media (max-width: 1000px) {
+    // padding-inline: min(2.5vh, 2.5vw);
+    // width: 90%;
 
+    // padding-inline: 2.5rem;
+  }
+  
   @media (max-width: 800px) {
+    // padding-inline: 5vw;
     // width: 90%;
     padding-block: 1rem;
-    padding-inline: 0rem;
+    // padding-inline: 0rem;
   }
 }
 
