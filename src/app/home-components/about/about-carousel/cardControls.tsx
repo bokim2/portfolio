@@ -14,7 +14,7 @@ type TCardControls = {
 
 export default function CardControls({ handleIndexChange }: TCardControls) {
   return (
-    <>
+    <div className={styles.cardControls}>
       <motion.div
         initial="initial"
         whileHover="hover"
@@ -63,6 +63,6 @@ export default function CardControls({ handleIndexChange }: TCardControls) {
           />
         </motion.div>
       </motion.div>
-    </>
+    </div>
   );
 }

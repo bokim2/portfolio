@@ -58,13 +58,13 @@ export const CARD_DATA = [
       pic1: genencorFun,
       pic2: genencor2,
       pic1StyleOverrides: {
-        // transform: 'scale(2)', 
-        // backgroundColor: 'red', 
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
         // opacity: .2
       },
       pic2StyleOverrides: {
-                // transform: 'scale(2)', 
-        // backgroundColor: 'red', 
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
         // opacity: .2
       },
       text: [
@@ -186,6 +186,7 @@ export default function Card({ item, i }: TCard) {
 
   return (
     <div className={styles.card}>
+      <CardControls handleIndexChange={handleIndexChange} />
       <div className={styles.cardTitles}>
         <h3>{item?.[activeIndex]?.title ?? ''}</h3>
         <p className={`xlarge ${styles.cardSubtitle}`}>
@@ -208,7 +209,7 @@ export default function Card({ item, i }: TCard) {
             </div>
 
             {/* second pic */}
-            {item?.[activeIndex]?.pic2 ? (
+            {/* {item?.[activeIndex]?.pic2 ? (
               <div className={styles.cardImageContainerSecondary}>
                 <Image
                   src={item?.[activeIndex]?.pic2 as StaticImageData}
@@ -219,24 +220,43 @@ export default function Card({ item, i }: TCard) {
               </div>
             ) : (
               <>s</>
-            )}
+            )} */}
           </div>
         </div>
 
-        <div className={`${styles.cardColumn} ${styles.imageColumn}`}>
+        <div 
+        className={`${styles.cardColumn} ${styles.imageColumn}`}
+        onClick={() => handleIndexChange(1)}
+        >
           {item?.length > 0 ? (
-            <div className={styles.cardImageContainer}>
-              <Image
-                src={item?.[activeIndex]?.pic1}
-                alt={item?.[activeIndex]?.title as string}
-                layout="fill"
-                //   objectFit="cover"
-                style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                key={i}
-              />
-              <CardControls handleIndexChange={handleIndexChange} />
-            </div>
+            <>
+              <div
+                className={styles.cardImageContainer}
+                
+                // whileHover={{'.pic2': {opacity: 1}}}
+              >
+                <Image
+                  className={styles.pic1}
+                  src={item?.[activeIndex]?.pic1}
+                  alt={item?.[activeIndex]?.title as string}
+                  layout="fill"
+                  //   objectFit="cover"
+                  style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                  key={i}
+                />
+
+                <Image
+                  className={styles.pic2}
+                  src={item?.[activeIndex]?.pic2 as StaticImageData}
+                  alt={item?.[activeIndex]?.title as string}
+                  layout="fill"
+                  style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                />
+              </div>
+            </>
           ) : null}
+        </div>
+      </motion.div>
           <div className={`${styles.imageDots}`}>
             {item?.map((count, i) =>
               activeIndex == i ? (
@@ -250,8 +270,6 @@ export default function Card({ item, i }: TCard) {
               )
             )}
           </div>
-        </div>
-      </motion.div>
     </div>
   );
 }
