@@ -164,6 +164,8 @@ type TCard = {
 
 export default function Card({ item, i }: TCard) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   function handleIndexChange(incrementValue: number) {
     console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
@@ -186,16 +188,20 @@ export default function Card({ item, i }: TCard) {
 
   return (
     <div className={styles.card}>
-      <CardControls handleIndexChange={handleIndexChange} />
-      <div className={styles.cardTitles}>
-        <h3>{item?.[activeIndex]?.title ?? ''}</h3>
-        <p className={`xlarge ${styles.cardSubtitle}`}>
-          {item?.[activeIndex]?.subtitle ?? ''}
-        </p>
-      </div>
+      <CardControls
+        handleIndexChange={handleIndexChange}
+        isHovered={isHovered}
+        isClicked={isClicked}
+      />
 
       <motion.div className={styles.cardInner}>
         <div className={styles.cardColumn}>
+          <div className={styles.cardTitles}>
+            <h3>{item?.[activeIndex]?.title ?? ''}</h3>
+            <p className={`xlarge ${styles.cardSubtitle}`}>
+              {item?.[activeIndex]?.subtitle ?? ''}
+            </p>
+          </div>
           <div className={`${styles.cardTextAndSecondImage}`}>
             <div className={`${styles.cardTextContainer}`}>
               {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
@@ -224,15 +230,18 @@ export default function Card({ item, i }: TCard) {
           </div>
         </div>
 
-        <div 
-        className={`${styles.cardColumn} ${styles.imageColumn}`}
-        onClick={() => handleIndexChange(1)}
+        <div
+          className={`${styles.cardColumn} ${styles.imageColumn}`}
+          onClick={() => handleIndexChange(1)}
         >
           {item?.length > 0 ? (
             <>
               <div
                 className={styles.cardImageContainer}
-                
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onMouseDown={() => setIsClicked(true)}
+                onMouseUp={() => setIsClicked(false)}
                 // whileHover={{'.pic2': {opacity: 1}}}
               >
                 <Image
@@ -257,19 +266,19 @@ export default function Card({ item, i }: TCard) {
           ) : null}
         </div>
       </motion.div>
-          <div className={`${styles.imageDots}`}>
-            {item?.map((count, i) =>
-              activeIndex == i ? (
-                <motion.div key={i} whileHover={{ scale: 1.2 }}>
-                  <GoDotFill onClick={() => setActiveIndex(i)} />
-                </motion.div>
-              ) : (
-                <motion.div key={i} whileHover={{ scale: 1.2 }}>
-                  <GoDot onClick={() => setActiveIndex(i)} />
-                </motion.div>
-              )
-            )}
-          </div>
+      <div className={`${styles.imageDots}`}>
+        {item?.map((count, i) =>
+          activeIndex == i ? (
+            <motion.div key={i} whileHover={{ scale: 1.2 }}>
+              <GoDotFill onClick={() => setActiveIndex(i)} />
+            </motion.div>
+          ) : (
+            <motion.div key={i} whileHover={{ scale: 1.2 }}>
+              <GoDot onClick={() => setActiveIndex(i)} />
+            </motion.div>
+          )
+        )}
+      </div>
     </div>
   );
 }

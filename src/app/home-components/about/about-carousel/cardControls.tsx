@@ -10,14 +10,17 @@ import styles from './aboutCarousel.module.scss';
 
 type TCardControls = {
   handleIndexChange: (incrementValue: number) => void;
+  isHovered: boolean;
+  isClicked: boolean;
 };
 
-export default function CardControls({ handleIndexChange }: TCardControls) {
+export default function CardControls({ handleIndexChange, isHovered , isClicked}: TCardControls) {
   return (
     <div className={styles.cardControls}>
       <motion.div
         initial="initial"
         whileHover="hover"
+        // animate={isHovered ? 'hover' : 'initial'}
         whileTap="tap"
         className={`${styles.arrowLeftContainer}`}
         onClick={() => handleIndexChange(-1)}
@@ -42,6 +45,7 @@ export default function CardControls({ handleIndexChange }: TCardControls) {
       <motion.div
         initial="initial"
         whileHover="hover"
+        animate={isClicked ? 'tap' : isHovered ? 'hover' : 'initial'}
         whileTap="tap"
         className={`${styles.arrowRightContainer}`}
         onClick={() => handleIndexChange(1)}
