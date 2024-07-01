@@ -13,6 +13,7 @@ import WorkIntro from './home-components/experience-intro';
 import Contact from './home-components/contact/contact';
 import About from './home-components/about/about';
 import ParallaxGallery from './home-components/parallax-gallery/parallaxGallery';
+import Skills from './home-components/skills/skills';
 
 const imagesAndBackgrounds = [
   {
@@ -43,6 +44,7 @@ export default function Home() {
   return (
     <main className={`${styles.main}`} id="homePage">
       <Bio />
+      <Skills/>
       <WorkIntro />
       {/* <ParallaxGallery /> */}
       <About />
