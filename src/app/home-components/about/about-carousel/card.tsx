@@ -79,7 +79,7 @@ export const CARD_DATA = [
           </em>
           , often referred to as{' '}
           <em>
-            <b>"fermentation"</b>
+            <b>&quot;fermentation&quot;</b>
           </em>
           .
         </>,
