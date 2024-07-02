@@ -16,7 +16,9 @@ export default function About() {
     useUpdateActiveSection('about');
 
   return (
-    <Wrapper additionalClasses='wider'>
+    <Wrapper 
+    // additionalClasses='wider'
+    >
       {/* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>
       </Link>

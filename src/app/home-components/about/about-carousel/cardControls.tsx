@@ -14,13 +14,17 @@ type TCardControls = {
   isClicked: boolean;
 };
 
-export default function CardControls({ handleIndexChange, isHovered , isClicked}: TCardControls) {
+export default function CardControls({
+  handleIndexChange,
+  isHovered,
+  isClicked,
+}: TCardControls) {
   return (
     <div className={styles.cardControls}>
       <motion.div
         initial="initial"
         whileHover="hover"
-        // animate={isHovered ? 'hover' : 'initial'}
+        animate={isClicked ? 'tap' : isHovered ? 'hover' : 'initial'}
         whileTap="tap"
         className={`${styles.arrowLeftContainer}`}
         onClick={() => handleIndexChange(-1)}
@@ -31,7 +35,12 @@ export default function CardControls({ handleIndexChange, isHovered , isClicked}
               opacity: 0.4,
             },
 
-            hover: { opacity: 1, scale: 1.2, transition: { ease: 'easeIn' } },
+            hover: {
+              color: 'var(--clr-accent-2)',
+              opacity: 1,
+              scale: 1.2,
+              transition: { ease: 'easeIn' },
+            },
             tap: { scale: 0.9, color: 'var(--clr-accent-1)' },
           }}
           className={`${styles.arrowWrapper} ${styles.left}`}
@@ -56,8 +65,12 @@ export default function CardControls({ handleIndexChange, isHovered , isClicked}
               opacity: 0.4,
             },
 
-            hover: { opacity: 1, scale: 1.2, transition: { ease: 'easeIn' 
-          } },
+            hover: {
+              color: 'var(--clr-accent-2)',
+              opacity: 1,
+              scale: 1.2,
+              transition: { ease: 'easeIn' },
+            },
             tap: { scale: 0.9, color: 'var(--clr-accent-1)' },
           }}
           className={`${styles.arrowWrapper} ${styles.right}`}

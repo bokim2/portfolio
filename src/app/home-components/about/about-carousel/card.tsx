@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 
 import { motion } from 'framer-motion';
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs';
@@ -8,6 +8,7 @@ import styles from './aboutCarousel.module.scss';
 
 import genencorFun from '@/../public/images/carousel/1.jpg';
 import genencor2 from '@/../public/images/progressive/genencor3.jpg';
+import egyptWine from '@/../public/images/carousel/egyptWine.jpg';
 
 import biostatB from '@/../public/images/carousel/biostatB.jpg';
 import mfcs from '@/../public/images/carousel/mfcs.jpg';
@@ -44,6 +45,7 @@ type TSlide = {
   equipment?: string;
   pic1: StaticImageData;
   pic2?: StaticImageData | undefined;
+  pic3?: StaticImageData | undefined;
   pic1StyleOverrides?: CSSProperties;
   pic2StyleOverrides?: CSSProperties;
   text?: string[];
@@ -56,7 +58,8 @@ export const CARD_DATA = [
       subtitle: 'biotech',
       equipment: '',
       pic1: genencorFun,
-      pic2: genencor2,
+      pic2: egyptWine,
+      pic3: egyptWine,
       pic1StyleOverrides: {
         // transform: 'scale(2)',
         // backgroundColor: 'red',
@@ -68,12 +71,22 @@ export const CARD_DATA = [
         // opacity: .2
       },
       text: [
-        `My primary area of specialization was upstream process development, aka
-        working with bioreactors, often referred to as "fermentation",
-        a term originating from the historical use of microorganisms for the
-        production of alcoholic beverages.`,
-        `test, next paragraph lorem25`,
-        `more test`,
+        <>
+          My primary area of specialization was upstream process development,
+          aka working with{' '}
+          <em>
+            <b>bioreactors</b>
+          </em>
+          , often referred to as{' '}
+          <em>
+            <b>"fermentation"</b>
+          </em>
+          .
+        </>,
+        <>
+          The term originated from the historical use of microorganisms for the
+          production of alcoholic beverages.
+        </>,
       ],
     },
     {
@@ -166,6 +179,10 @@ export default function Card({ item, i }: TCard) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  
+  useEffect(() => {
+  console.log(i)
+  }, [i])
 
   function handleIndexChange(incrementValue: number) {
     console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
@@ -194,78 +211,154 @@ export default function Card({ item, i }: TCard) {
         isClicked={isClicked}
       />
 
-      <motion.div className={styles.cardInner}>
-        <div className={styles.cardColumn}>
-          <div className={styles.cardTitles}>
-            <h3>{item?.[activeIndex]?.title ?? ''}</h3>
-            <p className={`xlarge ${styles.cardSubtitle}`}>
-              {item?.[activeIndex]?.subtitle ?? ''}
-            </p>
-          </div>
-          <div className={`${styles.cardTextAndSecondImage}`}>
-            <div className={`${styles.cardTextContainer}`}>
-              {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
-                <>
-                  <p key={i} className={`large`}>
-                    {singleParagraph}
-                  </p>
-                  {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />}
-                </>
-              ))}
+      {activeIndex % 2 !== 0 ? (
+        <motion.div className={styles.cardInner}>
+          <div className={styles.cardColumn}>
+            <div className={styles.cardTitles}>
+              <h3>{item?.[activeIndex]?.title ?? ''}</h3>
+              <p className={`xlarge ${styles.cardSubtitle}`}>
+                {item?.[activeIndex]?.subtitle ?? ''}
+              </p>
             </div>
-
-            {/* second pic */}
-            {/* {item?.[activeIndex]?.pic2 ? (
-              <div className={styles.cardImageContainerSecondary}>
-                <Image
-                  src={item?.[activeIndex]?.pic2 as StaticImageData}
-                  alt={item?.[activeIndex]?.title as string}
-                  layout="fill"
-                  style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                />
+            <div className={`${styles.cardTextAndSecondImage}`}>
+              <div className={`${styles.cardTextContainer}`}>
+                {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
+                  <>
+                    <p key={i} className={`large`}>
+                      {singleParagraph}
+                    </p>
+                    {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />}
+                  </>
+                ))}
               </div>
-            ) : (
-              <>s</>
-            )} */}
+              {/* second pic */}
+              {item?.[activeIndex]?.pic3 && (
+                <div className={styles.cardImageContainerSecondary}>
+                  <Image
+                    src={item?.[activeIndex]?.pic3 as StaticImageData}
+                    alt={item?.[activeIndex]?.title as string}
+                    layout="fill"
+                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                  />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
 
-        <div
-          className={`${styles.cardColumn} ${styles.imageColumn}`}
-          onClick={() => handleIndexChange(1)}
-        >
-          {item?.length > 0 ? (
-            <>
-              <div
-                className={styles.cardImageContainer}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onMouseDown={() => setIsClicked(true)}
-                onMouseUp={() => setIsClicked(false)}
-                // whileHover={{'.pic2': {opacity: 1}}}
-              >
-                <Image
-                  className={styles.pic1}
-                  src={item?.[activeIndex]?.pic1}
-                  alt={item?.[activeIndex]?.title as string}
-                  layout="fill"
-                  //   objectFit="cover"
-                  style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                  key={i}
-                />
+          <div
+            className={`${styles.cardColumn} ${styles.imageColumn}`}
+            onClick={() => handleIndexChange(1)}
+          >
+            {item?.length > 0 ? (
+              <>
+                <motion.div
+                  whileHover={{
+                    boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
+                  }}
+                  className={`${styles.cardImageContainer} imgBorderRadius`}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  onMouseDown={() => setIsClicked(true)}
+                  onMouseUp={() => setIsClicked(false)}
+                  // whileHover={{'.pic2': {opacity: 1}}}
+                >
+                  <Image
+                    className={styles.pic1}
+                    src={item?.[activeIndex]?.pic1}
+                    alt={item?.[activeIndex]?.title as string}
+                    layout="fill"
+                    //   objectFit="cover"
+                    style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                    key={i}
+                  />
 
-                <Image
-                  className={styles.pic2}
-                  src={item?.[activeIndex]?.pic2 as StaticImageData}
-                  alt={item?.[activeIndex]?.title as string}
-                  layout="fill"
-                  style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                />
+                  <Image
+                    className={styles.pic2}
+                    src={item?.[activeIndex]?.pic2 as StaticImageData}
+                    alt={item?.[activeIndex]?.title as string}
+                    layout="fill"
+                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                  />
+                </motion.div>
+              </>
+            ) : null}
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div className={styles.cardInner}>
+          <div
+            className={`${styles.cardColumn} ${styles.imageColumn}`}
+            onClick={() => handleIndexChange(-1)}
+          >
+            {item?.length > 0 ? (
+              <>
+                <motion.div
+                  whileHover={{
+                    boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
+                  }}
+                  className={`${styles.cardImageContainer} imgBorderRadius`}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  onMouseDown={() => setIsClicked(true)}
+                  onMouseUp={() => setIsClicked(false)}
+                  // whileHover={{'.pic2': {opacity: 1}}}
+                >
+                  <Image
+                    className={styles.pic1}
+                    src={item?.[activeIndex]?.pic1}
+                    alt={item?.[activeIndex]?.title as string}
+                    layout="fill"
+                    //   objectFit="cover"
+                    style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                    key={i}
+                  />
+
+                  <Image
+                    className={styles.pic2}
+                    src={item?.[activeIndex]?.pic2 as StaticImageData}
+                    alt={item?.[activeIndex]?.title as string}
+                    layout="fill"
+                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                  />
+                </motion.div>
+              </>
+            ) : null}
+          </div>
+
+          <div className={styles.cardColumn}>
+            <div className={styles.cardTitles}>
+              <h3>{item?.[activeIndex]?.title ?? ''}</h3>
+              <p className={`xlarge ${styles.cardSubtitle}`}>
+                {item?.[activeIndex]?.subtitle ?? ''}
+              </p>
+            </div>
+            <div className={`${styles.cardTextAndSecondImage}`}>
+              <div className={`${styles.cardTextContainer}`}>
+                {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
+                  <>
+                    <p key={i} className={`large`}>
+                      {singleParagraph}
+                    </p>
+                    {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />}
+                  </>
+                ))}
               </div>
-            </>
-          ) : null}
-        </div>
-      </motion.div>
+              {/* second pic */}
+              {item?.[activeIndex]?.pic3 && (
+                <div className={styles.cardImageContainerSecondary}>
+                  <Image
+                    src={item?.[activeIndex]?.pic3 as StaticImageData}
+                    alt={item?.[activeIndex]?.title as string}
+                    layout="fill"
+                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      )}
+
       <div className={`${styles.imageDots}`}>
         {item?.map((count, i) =>
           activeIndex == i ? (

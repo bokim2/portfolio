@@ -36,6 +36,7 @@ $card-inline-padding: 4vw;
   position: relative;
   display: flex;
   flex-direction: column;
+
   height: 100%;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   border-radius: 10px;
@@ -46,17 +47,18 @@ $card-inline-padding: 4vw;
 }
 
 .cardInner {
-  padding: $card-inline-padding;
+  padding: calc($card-inline-padding/1.25) $card-inline-padding;
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2vw;
+  gap: 5vw;
   width: 100%;
 
   // margin-bottom: 2vh;
+
 
   @media (max-width: 800px) {
     display: block;
@@ -112,11 +114,13 @@ $card-inline-padding: 4vw;
 }
 
 .cardTextAndSecondImage {
+  // background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 2vh;
   align-items: center;
+  flex-grow: 1;
 }
 
 .imageColumn {
@@ -163,7 +167,15 @@ $card-inline-padding: 4vw;
 }
 
 .cardImageContainerSecondary {
-  // position: relative;
+  flex-grow: 1;
+  min-height: 100px;
+  aspect-ratio: 12/4;
+//  border: 5px solid blue;
+//  padding: 5px;
+//  height: 100px;
+  // height: 10%;
+  // aspect-ratio: 6/4;
+  position: relative;
   // border: 4px solid yellow;
   // cursor: pointer;
 
@@ -172,19 +184,19 @@ $card-inline-padding: 4vw;
   // aspect-ratio: 6/4;
 
   img {
-    //   object-fit: cover;
-    object-fit: cover;
+      object-fit: cover;
+    // object-fit: contain;
   }
 
   @media (max-width: 800px) {
     // to hide second picture on mobile
-    // display: none;
+    display: none;
   }
 }
 
 .arrowLeftContainer {
   position: absolute;
-  z-index: 11;
+  z-index: 10;
   width: 50%;
   height: 100%;
   // background-color: red;
