@@ -180,9 +180,9 @@ export default function Card({ item, i }: TCard) {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   
-  useEffect(() => {
-  console.log(i)
-  }, [i])
+  // useEffect(() => {
+  // console.log(i)
+  // }, [i])
 
   function handleIndexChange(incrementValue: number) {
     console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
