@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { CSSProperties, useEffect, useState } from 'react';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs';
 import { GoDot, GoDotFill } from 'react-icons/go';
 import styles from './aboutCarousel.module.scss';
@@ -179,7 +179,7 @@ export default function Card({ item, i }: TCard) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  
+
   // useEffect(() => {
   // console.log(i)
   // }, [i])
@@ -359,19 +359,33 @@ export default function Card({ item, i }: TCard) {
         </motion.div>
       )}
 
-      <div className={`${styles.imageDots}`}>
-        {item?.map((count, i) =>
-          activeIndex == i ? (
-            <motion.div key={i} whileHover={{ scale: 1.2 }}>
-              <GoDotFill onClick={() => setActiveIndex(i)} />
-            </motion.div>
-          ) : (
-            <motion.div key={i} whileHover={{ scale: 1.2 }}>
-              <GoDot onClick={() => setActiveIndex(i)} />
-            </motion.div>
-          )
-        )}
-      </div>
+      {/* <AnimatePresence> */}
+        <div className={`${styles.imageDots}`}>
+          {item?.map((count, i) =>
+            activeIndex == i ? (
+              <motion.div
+                key={`active-${i}`}
+                // initial={{ scale: 1 }}
+                // animate={{ scale: 1 }}
+                whileHover={{ scale: 1.35 }}
+                // transition={{ duration: 0.2 }}
+              >
+                <GoDotFill onClick={() => setActiveIndex(i)} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key={`inactive${i}`}
+                // initial={{ scale: 1 }}
+                // animate={{ scale: 1 }}
+                whileHover={{ scale: 1.35 }}
+                // transition={{ duration: 0.2 }}
+              >
+                <GoDot onClick={() => setActiveIndex(i)} />
+              </motion.div>
+            )
+          )}
+        </div>
+      {/* </AnimatePresence> */}
     </div>
   );
 }
