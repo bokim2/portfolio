@@ -9,30 +9,43 @@ import styles from './aboutCarousel.module.scss';
 // }
 
 type TCardControls = {
+  key: string;
+  activeIndex: number;
   handleIndexChange: (incrementValue: number) => void;
-  isHovered: boolean;
-  isClicked: boolean;
+  isHovered: 'left' | 'right' | null;
+  isClicked: 'left' | 'right' | null;
 };
 
 export default function CardControls({
+  key,
   handleIndexChange,
   isHovered,
   isClicked,
 }: TCardControls) {
+  console.log('isHovered', isHovered);
   return (
     <div className={styles.cardControls}>
       <motion.div
+        key={`${key}_left`}
         initial="initial"
         whileHover="hover"
-        animate={isClicked ? 'tap' : isHovered ? 'hover' : 'initial'}
+        animate={
+          isClicked === 'left'
+            ? 'tap'
+            : isHovered === 'left'
+            ? 'hover'
+            : 'initial'
+        }
         whileTap="tap"
         className={`${styles.arrowLeftContainer}`}
         onClick={() => handleIndexChange(-1)}
       >
         <motion.div
+          key="left"
           variants={{
             initial: {
               opacity: 0.4,
+              color: 'initial',
             },
 
             hover: {
@@ -52,9 +65,16 @@ export default function CardControls({
       </motion.div>
 
       <motion.div
+        key={`${key}_right`}
         initial="initial"
         whileHover="hover"
-        animate={isClicked ? 'tap' : isHovered ? 'hover' : 'initial'}
+        animate={
+          isClicked === 'right'
+            ? 'tap'
+            : isHovered === 'right'
+            ? 'hover'
+            : 'initial'
+        }
         whileTap="tap"
         className={`${styles.arrowRightContainer}`}
         onClick={() => handleIndexChange(1)}

@@ -172,13 +172,13 @@ export const CARD_DATA = [
 
 type TCard = {
   item: (typeof CARD_DATA)[number];
-  i: number;
+  cardIndex: number;
 };
 
-export default function Card({ item, i }: TCard) {
+export default function Card({ item, cardIndex }: TCard) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
+  const [isClicked, setIsClicked] = useState<'left' | 'right' | null>(null);
 
   // useEffect(() => {
   // console.log(i)
@@ -206,11 +206,14 @@ export default function Card({ item, i }: TCard) {
   return (
     <div className={styles.card}>
       <CardControls
+        key={`${cardIndex}_${activeIndex}`}
+        activeIndex={activeIndex}
         handleIndexChange={handleIndexChange}
         isHovered={isHovered}
         isClicked={isClicked}
       />
 
+      {/* odd pictures on card */}
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>
           <div className={styles.cardColumn}>
@@ -252,14 +255,17 @@ export default function Card({ item, i }: TCard) {
             {item?.length > 0 ? (
               <>
                 <motion.div
+                  key={`${cardIndex}_${activeIndex}`}
                   whileHover={{
                     boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
                   }}
                   className={`${styles.cardImageContainer} imgBorderRadius`}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  onMouseDown={() => setIsClicked(true)}
-                  onMouseUp={() => setIsClicked(false)}
+                  onMouseEnter={() => {
+                    setIsHovered('right');
+                  }}
+                  onMouseLeave={() => setIsHovered(null)}
+                  onMouseDown={() => setIsClicked('right')}
+                  onMouseUp={() => setIsClicked(null)}
                   // whileHover={{'.pic2': {opacity: 1}}}
                 >
                   <Image
@@ -269,7 +275,7 @@ export default function Card({ item, i }: TCard) {
                     layout="fill"
                     //   objectFit="cover"
                     style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                    key={i}
+                    // key={`${cardIndex}_${activeIndex}_pic1`}
                   />
 
                   <Image
@@ -278,6 +284,7 @@ export default function Card({ item, i }: TCard) {
                     alt={item?.[activeIndex]?.title as string}
                     layout="fill"
                     style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                    // key={`${cardIndex}_${activeIndex}_pic2`}
                   />
                 </motion.div>
               </>
@@ -297,10 +304,12 @@ export default function Card({ item, i }: TCard) {
                     boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
                   }}
                   className={`${styles.cardImageContainer} imgBorderRadius`}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  onMouseDown={() => setIsClicked(true)}
-                  onMouseUp={() => setIsClicked(false)}
+                  onMouseEnter={() => {
+                    setIsHovered('left');
+                  }}
+                  onMouseLeave={() => setIsHovered(null)}
+                  onMouseDown={() => setIsClicked('left')}
+                  onMouseUp={() => setIsClicked(null)}
                   // whileHover={{'.pic2': {opacity: 1}}}
                 >
                   <Image
@@ -310,7 +319,7 @@ export default function Card({ item, i }: TCard) {
                     layout="fill"
                     //   objectFit="cover"
                     style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                    key={i}
+                    // key={i}
                   />
 
                   <Image
@@ -360,31 +369,31 @@ export default function Card({ item, i }: TCard) {
       )}
 
       {/* <AnimatePresence> */}
-        <div className={`${styles.imageDots}`}>
-          {item?.map((count, i) =>
-            activeIndex == i ? (
-              <motion.div
-                key={`active-${i}`}
-                // initial={{ scale: 1 }}
-                // animate={{ scale: 1 }}
-                whileHover={{ scale: 1.35 }}
-                // transition={{ duration: 0.2 }}
-              >
-                <GoDotFill onClick={() => setActiveIndex(i)} />
-              </motion.div>
-            ) : (
-              <motion.div
-                key={`inactive${i}`}
-                // initial={{ scale: 1 }}
-                // animate={{ scale: 1 }}
-                whileHover={{ scale: 1.35 }}
-                // transition={{ duration: 0.2 }}
-              >
-                <GoDot onClick={() => setActiveIndex(i)} />
-              </motion.div>
-            )
-          )}
-        </div>
+      <div className={`${styles.imageDots}`}>
+        {item?.map((count, i) =>
+          activeIndex == i ? (
+            <motion.div
+              key={`active-${i}`}
+              // initial={{ scale: 1 }}
+              // animate={{ scale: 1 }}
+              whileHover={{ scale: 1.35 }}
+              // transition={{ duration: 0.2 }}
+            >
+              <GoDotFill onClick={() => setActiveIndex(i)} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key={`inactive${i}`}
+              // initial={{ scale: 1 }}
+              // animate={{ scale: 1 }}
+              whileHover={{ scale: 1.35 }}
+              // transition={{ duration: 0.2 }}
+            >
+              <GoDot onClick={() => setActiveIndex(i)} />
+            </motion.div>
+          )
+        )}
+      </div>
       {/* </AnimatePresence> */}
     </div>
   );

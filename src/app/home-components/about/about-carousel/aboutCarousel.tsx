@@ -24,7 +24,7 @@ export default function AboutCarousel() {
       <CardSelector selectedCardIndex={selectedCardIndex} 
       handleSelectorChange={handleSelectorChange}/>
       {selectedCardIndex !== null && (
-        <Card item={CARD_DATA[selectedCardIndex]} i={selectedCardIndex} />
+        <Card item={CARD_DATA[selectedCardIndex]} cardIndex={selectedCardIndex} />
       )}
       {/* <Carousel /> */}
     </div>
@@ -35,7 +35,7 @@ function Carousel() {
   return (
     <>
       {CARD_DATA.map((item, i) => (
-        <Card key={i} item={item} i={i} />
+        <Card key={i} item={item} cardIndex={i} />
       ))}
     </>
   );
