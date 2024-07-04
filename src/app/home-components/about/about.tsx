@@ -17,7 +17,7 @@ export default function About() {
 
   return (
     <Wrapper 
-    // additionalClasses='wider'
+    additionalClasses={`wrapper mobileLessPadding`}
     >
       {/* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>

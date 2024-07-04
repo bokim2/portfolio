@@ -40,6 +40,7 @@
   @media (max-width: 800px) {
     // padding-inline: 5vw;
     // width: 90%;
+    
     padding-block: 1rem;
     // padding-inline: 0rem;
   }
@@ -60,4 +61,11 @@
 .wrapper:last-child {
   margin-bottom: 0rem;
   padding-bottom: 10vh;
+}
+
+.mobileLessPadding {
+  
+  @media (max-width: 800px) {
+    padding-inline: min(2.5vh, 2.5vw);
+  }
 }
