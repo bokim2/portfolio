@@ -419,14 +419,16 @@ img {
 }
 
 .imageCaption {
-  padding-block: 0.325rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
   font-size: 0.925rem;
 
   line-height: 1.25;
   color: var(--text-5);
 
   @media (max-width: 800px) {
-    padding-block: 0.5rem;
+    padding-block: 0.45rem;
+    font-size: 0.825rem;
   }
 }
 

@@ -26,18 +26,6 @@ import suf from '@/../public/images/carousel/suf.jpg';
 import sufProfile from '@/../public/images/carousel/sufProfile.jpg';
 import CardControls from './cardControls';
 
-// type Timages = {
-//   pic1: StaticImageData;
-//   pic2?: StaticImageData | undefined;
-// };
-
-// type TAboutMeCard = {
-//   title: string;
-//   subtitle: string;
-//   equipment?: string[];
-//   slides: Timages[];
-//   text: JSX.Element[];
-// };
 
 type TSlide = {
   title?: string;
@@ -48,8 +36,18 @@ type TSlide = {
   pic3?: StaticImageData | undefined;
   pic1StyleOverrides?: CSSProperties;
   pic2StyleOverrides?: CSSProperties;
+  pic1ImageCaption?: string;
+  pic2ImageCaption?: string;
   text?: string[];
 };
+
+`
+My experience involved cultivating genetically modified microbes to
+produce therapeutic proteins and enzymes. Additionally, I was involved
+in the production of molecules such as squalene, an oil found in shark
+liver used in cosmetics, and Rebaudioside M (rebM), a zero-calorie
+sweetener naturally derived from the stevia plant.
+`;
 
 export const CARD_DATA = [
   [
@@ -59,7 +57,7 @@ export const CARD_DATA = [
       equipment: '',
       pic1: genencorFun,
       pic2: egyptWine,
-      pic3: egyptWine,
+      // pic3: egyptWine,
       pic1StyleOverrides: {
         // transform: 'scale(2)',
         // backgroundColor: 'red',
@@ -70,6 +68,9 @@ export const CARD_DATA = [
         // backgroundColor: 'red',
         // opacity: .2
       },
+      pic1ImageCaption:
+        'My first job, I worked on enzymes for biofuel production.',
+      pic2ImageCaption: 'Fermentation - not beer.',
       text: [
         <>
           My primary area of specialization was upstream process development,
@@ -90,85 +91,49 @@ export const CARD_DATA = [
       ],
     },
     {
-      title: 'the journey up to this point2',
-      subtitle: 'biotech2',
+      title: 'Automation',
+      subtitle: 'Biomek liquid handler',
+      equipment: '',
+      pic1: biomek1,
+      pic2: biomek2,
+      pic1ImageCaption: 'Biomek liquid handler - automation for assays.  ',
+      pic2ImageCaption: 'Biomek software - ex: a simple method',
+      text: [
+        <>
+          For a single protein engineering project, tens of thousands of
+          variants can be generated and tested.{' '}
+        </>,
+        <>
+          This was my first experience with automation. Later on, I would work
+          with miniturized fermentation systems and bioreactors with liquid handling
+          capabilities.
+        </>,
+
+        ,
+      ],
+    },
+    {
+      title: 'Evolution of Bioreactors',
+      subtitle: 'Satorius Biostat B',
       equipment: '',
       pic1: biostatB,
       pic2: mfcs,
+      pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
+      pic2ImageCaption: 'MFCS software - difficult to set up or modify',
       text: [
-        `
-          My experience involved cultivating genetically modified microbes to
-          produce therapeutic proteins and enzymes. Additionally, I was involved
-          in the production of molecules such as squalene, an oil found in shark
-          liver used in cosmetics, and Rebaudioside M (rebM), a zero-calorie
-          sweetener naturally derived from the stevia plant.
-`,
+     <>
+
+     </>,
       ],
     },
-    { pic1: biomek1, pic2: biomek2 },
+
     { pic1: dasgip, pic2: dasgipSw },
     { pic1: ambr250, pic2: ambr250Sw },
     { pic1: suf, pic2: sufProfile },
   ],
 ] as TSlide[][];
 
-// export const ABOUT_ME = [
-//   {
-//     title: 'the journey up to this point',
-//     subtitle: 'biotech',
-//     equipment: [],
-//     slides: [
-//       {
-//         pic1: genencorFun,
-//         pic2: genencor2,
-//         pic1StyleOverrides: '',
-//         pic2StyleOverrides: '',
-//       },
-//       { pic1: biostatB, pic2: mfcs },
-//       { pic1: biomek1, pic2: biomek2 },
-//       { pic1: dasgip, pic2: dasgipSw },
-//       { pic1: ambr250, pic2: ambr250Sw },
-//       { pic1: suf, pic2: sufProfile },
-//     ],
 
-//     text: [
-//       <>
-//         My primary area of specialization was upstream process development, aka
-//         working with bioreactors, often referred to as &quot;fermentation&quot;,
-//         a term originating from the historical use of microorganisms for the
-//         production of alcoholic beverages.
-//         <br />
-//       </>,
-//       <>
-//         My experience involved cultivating genetically modified microbes to
-//         produce therapeutic proteins and enzymes. Additionally, I was involved
-//         in the production of molecules such as squalene, an oil found in shark
-//         liver used in cosmetics, and Rebaudioside M (rebM), a zero-calorie
-//         sweetener naturally derived from the stevia plant.
-//       </>,
-//     ],
-//   },
-//   {
-//     title: 'interest in software engineering',
-//     subtitle: "what I've worked with",
-//     equipment: [],
-//     slides: [{ pic1: '', pic2: undefined }],
-//     text: [
-//       <>
-//         My primary area of specialization was upstream process development, aka
-//         working with bioreactors, often referred to as &quot;fermentation&quot;,
-//         a term originating from the historical use of microorganisms for the
-//         production of alcoholic beverages.
-//         <br />
-//         My experience involved cultivating genetically modified microbes to
-//         produce therapeutic proteins and enzymes. Additionally, I was involved
-//         in the production of molecules such as squalene, an oil found in shark
-//         liver used in cosmetics, and Rebaudioside M (rebM), a zero-calorie
-//         sweetener naturally derived from the stevia plant.
-//       </>,
-//     ],
-//   },
-// ] as TAboutMeCard[];
 
 type TCard = {
   item: (typeof CARD_DATA)[number];
@@ -254,39 +219,51 @@ export default function Card({ item, cardIndex }: TCard) {
           >
             {item?.length > 0 ? (
               <>
-                <motion.div
-                  key={`${cardIndex}_${activeIndex}`}
-                  whileHover={{
-                    boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
-                  }}
-                  className={`${styles.cardImageContainer} imgBorderRadius`}
-                  onMouseEnter={() => {
-                    setIsHovered('right');
-                  }}
-                  onMouseLeave={() => setIsHovered(null)}
-                  onMouseDown={() => setIsClicked('right')}
-                  onMouseUp={() => setIsClicked(null)}
-                  // whileHover={{'.pic2': {opacity: 1}}}
-                >
-                  <Image
-                    className={styles.pic1}
-                    src={item?.[activeIndex]?.pic1}
-                    alt={item?.[activeIndex]?.title as string}
-                    layout="fill"
-                    //   objectFit="cover"
-                    style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                    // key={`${cardIndex}_${activeIndex}_pic1`}
-                  />
+                <div className={styles.imageAndCaptionContainer}>
+                  <motion.div
+                    key={`${cardIndex}_${activeIndex}`}
+                    whileHover={{
+                      boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
+                    }}
+                    className={`${styles.cardImageContainer} imgBorderRadius`}
+                    onMouseEnter={() => {
+                      setIsHovered('right');
+                    }}
+                    onMouseLeave={() => setIsHovered(null)}
+                    onMouseDown={() => setIsClicked('right')}
+                    onMouseUp={() => setIsClicked(null)}
+                    // whileHover={{'.pic2': {opacity: 1}}}
+                  >
+                    <Image
+                      className={styles.pic1}
+                      src={item?.[activeIndex]?.pic1}
+                      alt={item?.[activeIndex]?.title as string}
+                      layout="fill"
+                      //   objectFit="cover"
+                      style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                      // key={`${cardIndex}_${activeIndex}_pic1`}
+                    />
 
-                  <Image
-                    className={styles.pic2}
-                    src={item?.[activeIndex]?.pic2 as StaticImageData}
-                    alt={item?.[activeIndex]?.title as string}
-                    layout="fill"
-                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                    // key={`${cardIndex}_${activeIndex}_pic2`}
-                  />
-                </motion.div>
+                    <Image
+                      className={styles.pic2}
+                      src={item?.[activeIndex]?.pic2 as StaticImageData}
+                      alt={item?.[activeIndex]?.title as string}
+                      layout="fill"
+                      style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                      // key={`${cardIndex}_${activeIndex}_pic2`}
+                    />
+                  </motion.div>
+
+                  {!isHovered ? (
+                    <p className={'imageCaption'}>
+                      {item?.[activeIndex]?.pic1ImageCaption}
+                    </p>
+                  ) : (
+                    <p className={'imageCaption'}>
+                      {item?.[activeIndex]?.pic2ImageCaption}
+                    </p>
+                  )}
+                </div>
               </>
             ) : null}
           </div>
@@ -299,37 +276,48 @@ export default function Card({ item, cardIndex }: TCard) {
           >
             {item?.length > 0 ? (
               <>
-                <motion.div
-                  whileHover={{
-                    boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
-                  }}
-                  className={`${styles.cardImageContainer} imgBorderRadius`}
-                  onMouseEnter={() => {
-                    setIsHovered('left');
-                  }}
-                  onMouseLeave={() => setIsHovered(null)}
-                  onMouseDown={() => setIsClicked('left')}
-                  onMouseUp={() => setIsClicked(null)}
-                  // whileHover={{'.pic2': {opacity: 1}}}
-                >
-                  <Image
-                    className={styles.pic1}
-                    src={item?.[activeIndex]?.pic1}
-                    alt={item?.[activeIndex]?.title as string}
-                    layout="fill"
-                    //   objectFit="cover"
-                    style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                    // key={i}
-                  />
+                <div className={styles.imageAndCaptionContainer}>
+                  <motion.div
+                    whileHover={{
+                      boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
+                    }}
+                    className={`${styles.cardImageContainer} imgBorderRadius`}
+                    onMouseEnter={() => {
+                      setIsHovered('left');
+                    }}
+                    onMouseLeave={() => setIsHovered(null)}
+                    onMouseDown={() => setIsClicked('left')}
+                    onMouseUp={() => setIsClicked(null)}
+                    // whileHover={{'.pic2': {opacity: 1}}}
+                  >
+                    <Image
+                      className={styles.pic1}
+                      src={item?.[activeIndex]?.pic1}
+                      alt={item?.[activeIndex]?.title as string}
+                      layout="fill"
+                      //   objectFit="cover"
+                      style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                      // key={i}
+                    />
 
-                  <Image
-                    className={styles.pic2}
-                    src={item?.[activeIndex]?.pic2 as StaticImageData}
-                    alt={item?.[activeIndex]?.title as string}
-                    layout="fill"
-                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                  />
-                </motion.div>
+                    <Image
+                      className={styles.pic2}
+                      src={item?.[activeIndex]?.pic2 as StaticImageData}
+                      alt={item?.[activeIndex]?.title as string}
+                      layout="fill"
+                      style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                    />
+                  </motion.div>
+                  {!isHovered ? (
+                    <p className={'imageCaption'}>
+                      {item?.[activeIndex]?.pic1ImageCaption}
+                    </p>
+                  ) : (
+                    <p className={'imageCaption'}>
+                      {item?.[activeIndex]?.pic2ImageCaption}
+                    </p>
+                  )}
+                </div>
               </>
             ) : null}
           </div>

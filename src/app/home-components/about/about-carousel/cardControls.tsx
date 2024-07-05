@@ -51,7 +51,7 @@ export default function CardControls({
             hover: {
               color: 'var(--clr-accent-2)',
               opacity: 1,
-              scale: 1.2,
+              scale: 1.3,
               transition: { ease: 'easeIn' },
             },
             tap: { scale: 0.9, color: 'var(--clr-accent-1)' },
@@ -88,7 +88,7 @@ export default function CardControls({
             hover: {
               color: 'var(--clr-accent-2)',
               opacity: 1,
-              scale: 1.2,
+              scale: 1.3,
               transition: { ease: 'easeIn' },
             },
             tap: { scale: 0.9, color: 'var(--clr-accent-1)' },
