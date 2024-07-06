@@ -1,3 +1,16 @@
+.about {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardGrid {
+  display: flex;
+  flex-direction: column;
+}
+
 .experienceContainer {
   display: flex;
   flex-direction: column;

@@ -6,13 +6,17 @@ import Card, { CARD_DATA } from './card';
 import CardSelector from './cardSelector';
 
 
+type TaboutCarousel = {
 
-export default function AboutCarousel() {
-  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
+  selectedCardIndex: number, 
+  handleSelectorChange: (selectedIndex: number) => void;
+};
+export default function AboutCarousel({ selectedCardIndex, handleSelectorChange}: TaboutCarousel) {
+  // const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
 
-  function handleSelectorChange(selectedIndex: number) {
-    setSelectedCardIndex(selectedIndex);
-  }
+  // function handleSelectorChange(selectedIndex: number) {
+  //   setSelectedCardIndex(selectedIndex);
+  
   return (
     <div className={`${styles.aboutCarousel}`}>
       <h2>About</h2>

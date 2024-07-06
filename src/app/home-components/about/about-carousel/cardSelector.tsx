@@ -8,12 +8,17 @@ type TCardSelector = {
   handleSelectorChange: (selectedIndex: number) => void;
 };
 
-const SELECTOR_OPTIONS = ['past', 'present', 'future'];
+// const SELECTOR_OPTIONS = ['past', 'present', 'future'];
+const SELECTOR_OPTIONS = ['origins', 'current', 'next'];
 
 export default function CardSelector({
   selectedCardIndex,
   handleSelectorChange,
 }: TCardSelector) {
+
+  function scrollToSection(id: string){
+    document.getElementById(id)?.scrollIntoView({behavior: 'smooth'})
+  }
   return (
     <motion.div
       className={`${styles.cardSelector}`}
@@ -23,23 +28,29 @@ export default function CardSelector({
       // initial='initial'
       // animate='animate'
     >
+      {/* <div className={`${styles.innerCardSelector}`}> */}
+
       {SELECTOR_OPTIONS.map((option, i) => (
         <motion.div
-          // variants={{
+        // variants={{
           //   initial: { opacity: 0.5, y: -5 },
           //   animate: { opacity: 1, y: 0, transition: {
-          //     // ease: 'easeIn', duration: .2 
-          //   }},
-          // }}
-     
-          key={i}
-          className={`${styles.cardSelectorOptions} imgBorderRadius`}
-          // layoutId="cardSelection"
-          onClick={() => handleSelectorChange(i)}
-        >
+            //     // ease: 'easeIn', duration: .2 
+            //   }},
+            // }}
+            
+            key={i}
+            className={`${styles.cardSelectorOptions} `}
+            // layoutId="cardSelection"
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              scrollToSection('about')
+              handleSelectorChange(i)}}
+            >
           <p className={`large`}>{SELECTOR_OPTIONS[i]}</p>
         </motion.div>
       ))}
+      {/* </div> */}
     </motion.div>
   );
 }

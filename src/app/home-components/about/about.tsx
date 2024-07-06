@@ -1,5 +1,6 @@
+'use client';
 import Wrapper from '@/components/wrapper/wrapper';
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './about.module.scss';
 import Image from 'next/image';
@@ -10,16 +11,26 @@ import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 import BiotechSoftware from './biotechSoftware';
 import ThisPortfolio from './thisPortfolio';
 import AboutCarousel from './about-carousel/aboutCarousel';
+import CardGrid from './cardGrid/cardGrid';
+import CardSelector from './about-carousel/cardSelector';
 
 export default function About() {
   const { activeSection, setActiveSection, ref } =
     useUpdateActiveSection('about');
+  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
+
+  function handleSelectorChange(selectedIndex: number) {
+    setSelectedCardIndex(selectedIndex);
+  }
 
   return (
-    <Wrapper 
-    additionalClasses={`wrapper mobileLessPadding`}
-    >
-      {/* <Link href="/experience">
+    <div className={styles.about} id='about'>
+      <CardSelector
+        selectedCardIndex={selectedCardIndex}
+        handleSelectorChange={handleSelectorChange}
+      />
+      <Wrapper additionalClasses={`wrapper mobileLessPadding`}>
+        {/* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>
       </Link>
       <section className={styles.experience} ref={ref}>
@@ -59,9 +70,16 @@ export default function About() {
           </div>
         </div>
       </section> */}
-      <AboutCarousel />
-      <BiotechSoftware />
-      <ThisPortfolio />
-    </Wrapper>
+        <CardGrid
+          selectedCardIndex={selectedCardIndex}
+          handleSelectorChange={handleSelectorChange}
+        />
+      </Wrapper>
+      {/* <AboutCarousel /> */}
+      <Wrapper>
+        <BiotechSoftware />
+        <ThisPortfolio />
+      </Wrapper>
+    </div>
   );
 }
