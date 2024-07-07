@@ -422,25 +422,53 @@ export default function SingleCardForGrid({
                     onMouseUp={() => setIsClicked(null)}
                     // whileHover={{'.pic2': {opacity: 1}}}
                   >
-                    {!isHovered ? (
-                      <Image
-                        className={styles.pic1}
-                        src={item?.[activeIndex]?.pic1}
-                        alt={item?.[activeIndex]?.title as string}
-                        layout="fill"
-                        //   objectFit="cover"
-                        style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                        // key={i}
-                      />
-                    ) : (
-                      <Image
-                        className={styles.pic2}
-                        src={item?.[activeIndex]?.pic2 as StaticImageData}
-                        alt={item?.[activeIndex]?.title as string}
-                        layout="fill"
-                        style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                      />
-                    )}
+                    {/* {!isHovered ? ( */}
+                    <AnimatePresence>
+                      <motion.div
+                        key={`${cardIndex}_${activeIndex}_pic1_even`}
+                        className={styles.cardImageContainer}
+                        initial={{ opacity: 1, y: '0%' }}
+                        animate={{
+                          opacity: isHovered ? 0 : 1,
+                          y: isHovered ? '-100%' : '0%',
+                          transition: { duration: 0.5 },
+                        }}
+                        style={{ position: 'absolute', width: '100%', height: '100%' }}
+                      >
+                        <Image
+                          className={styles.pic1}
+                          src={item?.[activeIndex]?.pic1}
+                          alt={item?.[activeIndex]?.title as string}
+                          layout="fill"
+                          //   objectFit="cover"
+                          style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                          // key={i}
+                        />
+                      </motion.div>
+                      {/* ) : ( */}
+                      <motion.div
+                        key={`${cardIndex}_${activeIndex}_pic2_even`}
+                        className={styles.cardImageContainer}
+                        initial={{ opacity: 0, y: '100%' }}
+                        animate={{
+                          opacity: isHovered ? 1 : 0,
+                          y: isHovered ? '0%' : '100%',
+                          backgroundColor: 'red',
+                          transition: { duration: 0.5 },
+                        }}
+                        style={{ position: 'absolute', width: '100%', height: '100%' }}
+                      >
+                        {'asdfadsf'}
+                        <Image
+                          className={styles.pic2}
+                          src={item?.[activeIndex]?.pic2 as StaticImageData}
+                          alt={item?.[activeIndex]?.title as string}
+                          layout="fill"
+                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+                    {/* )} */}
                   </motion.div>
                   {!isHovered ? (
                     <p className={'imageCaption'}>
