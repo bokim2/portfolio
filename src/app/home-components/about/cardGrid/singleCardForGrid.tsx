@@ -206,18 +206,22 @@ export const SINGLE_CARD_DATA = [
   [],
 ] as TSlide[][];
 
+const slideVariants = {
+  enter: { x: '100%', opacity: 0 },
+  center: { x: 0, opacity: 1 },
+  exit: { x: '-100%', opacity: 0 },
+};
+
 type TCard = {
   item: (typeof SINGLE_CARD_DATA)[number];
   activeIndex: number;
   cardIndex: number;
- 
 };
 
 export default function SingleCardForGrid({
   item,
   cardIndex,
   activeIndex,
- 
 }: TCard) {
   // const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
@@ -302,24 +306,84 @@ export default function SingleCardForGrid({
                     onMouseUp={() => setIsClicked(null)}
                     // whileHover={{'.pic2': {opacity: 1}}}
                   >
-                    <Image
-                      className={styles.pic1}
-                      src={item?.[activeIndex]?.pic1}
-                      alt={item?.[activeIndex]?.title as string}
-                      layout="fill"
-                      //   objectFit="cover"
-                      style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                      // key={`${cardIndex}_${activeIndex}_pic1`}
-                    />
+                    <AnimatePresence>
+                      {/* {!isHovered ? ( */}
+                      <motion.div
+                        key={`${cardIndex}_${activeIndex}_pic1`}
+                        className={styles.cardImageContainer}
+                        initial={{ opacity: 1, x: '0%' }}
+                        animate={{
+                          opacity: isHovered ? 0 : 1,
+                          x: isHovered ? '-100%' : '0%',
+                        }}
+                        exit={{ opacity: 0, x: '-100%' }}
+                        transition={{ duration: 0.5 }}
+                        style={{
+                          position: 'absolute',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      >
+                        <Image
+                          className={styles.pic1}
+                          src={item?.[activeIndex]?.pic1}
+                          alt={item?.[activeIndex]?.title as string}
+                          layout="fill"
+                          //   objectFit="cover"
+                          style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                          // key={`${cardIndex}_${activeIndex}_pic1`}
+                        />
+                      </motion.div>
 
-                    <Image
-                      className={styles.pic2}
-                      src={item?.[activeIndex]?.pic2 as StaticImageData}
-                      alt={item?.[activeIndex]?.title as string}
-                      layout="fill"
-                      style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                      // key={`${cardIndex}_${activeIndex}_pic2`}
-                    />
+                      <motion.div
+                        key={`${cardIndex}_${activeIndex}_middleImage`}
+                        className={styles.cardImageContainer}
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{
+                          opacity: isHovered ? 1 : 0,
+                          x: isHovered ? '50%' : '100%',
+                        }}
+                        // exit={{ opacity: 0, x: '100%' }}
+                        transition={{ duration: 0.2 }}
+                        style={{
+                          position: 'absolute',
+                          // backgroundColor: 'red',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      ></motion.div>
+
+                      <motion.div
+                        key={`${cardIndex}_${activeIndex}_pic2`}
+                        className={styles.cardImageContainer}
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{
+                          opacity: isHovered ? 1 : 0,
+                          x: isHovered ? '0%' : '50%',
+                          transition: {
+                            duration: 0.5,
+                            delay: isHovered ? 0.2 : -0.1,
+                          },
+                        }}
+                        // exit={{ opacity: 0, x: '100%', transition: { duration: 22, delay: 5 } }}
+
+                        style={{
+                          position: 'absolute',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      >
+                        <Image
+                          className={styles.pic2}
+                          src={item?.[activeIndex]?.pic2 as StaticImageData}
+                          alt={item?.[activeIndex]?.title as string}
+                          layout="fill"
+                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                          // key={`${cardIndex}_${activeIndex}_pic2`}
+                        />
+                      </motion.div>
+                      {/* )} */}
+                    </AnimatePresence>
                   </motion.div>
 
                   {!isHovered ? (
@@ -358,23 +422,25 @@ export default function SingleCardForGrid({
                     onMouseUp={() => setIsClicked(null)}
                     // whileHover={{'.pic2': {opacity: 1}}}
                   >
-                    <Image
-                      className={styles.pic1}
-                      src={item?.[activeIndex]?.pic1}
-                      alt={item?.[activeIndex]?.title as string}
-                      layout="fill"
-                      //   objectFit="cover"
-                      style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                      // key={i}
-                    />
-
-                    <Image
-                      className={styles.pic2}
-                      src={item?.[activeIndex]?.pic2 as StaticImageData}
-                      alt={item?.[activeIndex]?.title as string}
-                      layout="fill"
-                      style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                    />
+                    {!isHovered ? (
+                      <Image
+                        className={styles.pic1}
+                        src={item?.[activeIndex]?.pic1}
+                        alt={item?.[activeIndex]?.title as string}
+                        layout="fill"
+                        //   objectFit="cover"
+                        style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
+                        // key={i}
+                      />
+                    ) : (
+                      <Image
+                        className={styles.pic2}
+                        src={item?.[activeIndex]?.pic2 as StaticImageData}
+                        alt={item?.[activeIndex]?.title as string}
+                        layout="fill"
+                        style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                      />
+                    )}
                   </motion.div>
                   {!isHovered ? (
                     <p className={'imageCaption'}>

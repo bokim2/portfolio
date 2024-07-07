@@ -198,18 +198,18 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
     object-fit: cover;
   }
 
-  .pic2 {
-    opacity: 0;
-  }
+  // .pic2 {
+  //   opacity: 0;
+  // }
 
   @media (max-width: 800px) {
     pointer-events: none;
   }
 }
 
-.cardImageContainer:hover .pic2 {
-  opacity: 1;
-}
+// .cardImageContainer:hover .pic2 {
+//   opacity: 1;
+// }
 
 .pic1,
 .pic2 {
