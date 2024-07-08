@@ -1,7 +1,9 @@
-import Image, { StaticImageData } from 'next/image';
-import { CSSProperties, useEffect, useState } from 'react';
+'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import { CSSProperties, useEffect, useRef, useState } from 'react';
+
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs';
 import { GoDot, GoDotFill } from 'react-icons/go';
 import styles from '../about-carousel/aboutCarousel.module.scss';
@@ -226,10 +228,25 @@ export default function SingleCardForGrid({
   // const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
   const [isClicked, setIsClicked] = useState<'left' | 'right' | null>(null);
+  const [scrollCardImgTriggered, setScrollCardImgTriggered] = useState<boolean>(false)
+
+  const scrollCardRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: scrollCardRef, 
+    offset: ['start end', 'end start']
+  });
 
   // useEffect(() => {
   // console.log(i)
   // }, [i])
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log("Page scroll: ", latest)
+    if(latest >= 0.5 && !scrollCardImgTriggered) {
+      setIsHovered('right')
+      setScrollCardImgTriggered(true)
+    }
+  })
 
   function handleIndexChange(incrementValue: number) {
     //   console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
@@ -249,7 +266,7 @@ export default function SingleCardForGrid({
   }
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} >
       {/* odd pictures on card */}
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>
@@ -294,28 +311,33 @@ export default function SingleCardForGrid({
                 <div className={styles.imageAndCaptionContainer}>
                   <motion.div
                     key={`${cardIndex}_${activeIndex}`}
-                    initial={{transform: 'scale(1)'}}
+                    initial={{ transform: 'scale(1)' }}
                     whileHover={{
                       boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
                       transform: 'scale(1.02)',
                     }}
                     className={`${styles.cardImageContainer} imgBorderRadius`}
-                    onClick={()=> {
-                      isHovered === null ? setIsHovered('right') : setIsHovered(null)}}
+                    ref={scrollCardRef}
+                    onClick={() => {
+                      isHovered === null
+                        ? setIsHovered('right')
+                        : setIsHovered(null);
+                    }}
                     // onMouseEnter={() => {
                     //   setIsHovered('right');
                     // }}
                     // onMouseLeave={() => setIsHovered(null)}
-                    whileTap={{                      boxShadow: '2px 4px 7px var(--clr-accent-3)', transform: 'scale(.98)'}}
+                    whileTap={{
+                      boxShadow: '2px 4px 7px var(--clr-accent-3)',
+                      transform: 'scale(.98)',
+                    }}
                     onMouseDown={() => {
-                      
-                      setIsClicked('right')
+                      setIsClicked('right');
                     }}
                     onMouseUp={() => setIsClicked(null)}
                     // whileHover={{'.pic2': {opacity: 1}}}
                   >
                     <AnimatePresence>
-            
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic1`}
                         className={styles.cardImageContainer}
@@ -326,7 +348,6 @@ export default function SingleCardForGrid({
                         }}
                         exit={{ opacity: 0, x: '-100%' }}
                         transition={{ duration: 0.5 }}
-                        
                         style={{
                           position: 'absolute',
                           width: '100%',
@@ -344,12 +365,10 @@ export default function SingleCardForGrid({
                         />
                       </motion.div>
 
-
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic2`}
                         className={styles.cardImageContainer}
                         initial={{ opacity: 0, x: '100%' }}
-   
                         animate={{
                           opacity: isHovered ? 1 : 0,
                           x: isHovered ? '0%' : '100%',
@@ -357,7 +376,6 @@ export default function SingleCardForGrid({
                             duration: 0.5,
                           },
                         }}
-
                         style={{
                           position: 'absolute',
                           width: '100%',
@@ -373,7 +391,6 @@ export default function SingleCardForGrid({
                           // key={`${cardIndex}_${activeIndex}_pic2`}
                         />
                       </motion.div>
-
                     </AnimatePresence>
                   </motion.div>
 
@@ -401,20 +418,26 @@ export default function SingleCardForGrid({
               <>
                 <div className={styles.imageAndCaptionContainer}>
                   <motion.div
-                  initial={{transform: 'scale(1)'}}
+                    initial={{ transform: 'scale(1)' }}
                     whileHover={{
                       boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
                       transform: 'scale(1.02)',
                     }}
                     className={`${styles.cardImageContainer} imgBorderRadius`}
+                    ref={scrollCardRef}
                     // onMouseEnter={() => {
                     //   setIsHovered('left');
                     // }}
                     // onMouseLeave={() => setIsHovered(null)}
-                    onClick={()=> {
-                      isHovered === null ? setIsHovered('left') : setIsHovered(null)}}
-               
-                      whileTap={{                      boxShadow: '-2px 4px 7px var(--clr-accent-3)', transform: 'scale(.98)'}}
+                    onClick={() => {
+                      isHovered === null
+                        ? setIsHovered('left')
+                        : setIsHovered(null);
+                    }}
+                    whileTap={{
+                      boxShadow: '-2px 4px 7px var(--clr-accent-3)',
+                      transform: 'scale(.98)',
+                    }}
                     onMouseDown={() => setIsClicked('left')}
                     onMouseUp={() => setIsClicked(null)}
                     // whileHover={{'.pic2': {opacity: 1}}}
@@ -430,7 +453,11 @@ export default function SingleCardForGrid({
                           x: isHovered ? '100%' : '0%',
                           transition: { duration: 0.5 },
                         }}
-                        style={{ position: 'absolute', width: '100%', height: '100%' }}
+                        style={{
+                          position: 'absolute',
+                          width: '100%',
+                          height: '100%',
+                        }}
                       >
                         <Image
                           className={styles.pic1}
@@ -453,7 +480,11 @@ export default function SingleCardForGrid({
                           // backgroundColor: 'red',
                           transition: { duration: 0.5 },
                         }}
-                        style={{ position: 'absolute', width: '100%', height: '100%' }}
+                        style={{
+                          position: 'absolute',
+                          width: '100%',
+                          height: '100%',
+                        }}
                       >
                         {'asdfadsf'}
                         <Image

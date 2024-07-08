@@ -43,8 +43,8 @@ export default function Home() {
 
   return (
     <main className={`${styles.main}`} id="homePage">
-      <Bio />
-      <Skills/>
+      {/* <Bio />
+      <Skills/> */}
       <WorkIntro />
       <About />
 
