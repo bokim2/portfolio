@@ -55,7 +55,7 @@ export const SINGLE_CARD_DATA = [
       subtitle: 'biotech',
       equipment: '',
       pic1: genencorFun,
-      pic2: egyptWine,
+      pic2: genencor2,
       // pic3: egyptWine,
       pic1StyleOverrides: {
         // transform: 'scale(2)',
@@ -294,20 +294,28 @@ export default function SingleCardForGrid({
                 <div className={styles.imageAndCaptionContainer}>
                   <motion.div
                     key={`${cardIndex}_${activeIndex}`}
+                    initial={{transform: 'scale(1)'}}
                     whileHover={{
                       boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
+                      transform: 'scale(1.02)',
                     }}
                     className={`${styles.cardImageContainer} imgBorderRadius`}
-                    onMouseEnter={() => {
-                      setIsHovered('right');
+                    onClick={()=> {
+                      isHovered === null ? setIsHovered('right') : setIsHovered(null)}}
+                    // onMouseEnter={() => {
+                    //   setIsHovered('right');
+                    // }}
+                    // onMouseLeave={() => setIsHovered(null)}
+                    whileTap={{                      boxShadow: '2px 4px 7px var(--clr-accent-3)', transform: 'scale(.98)'}}
+                    onMouseDown={() => {
+                      
+                      setIsClicked('right')
                     }}
-                    onMouseLeave={() => setIsHovered(null)}
-                    onMouseDown={() => setIsClicked('right')}
                     onMouseUp={() => setIsClicked(null)}
                     // whileHover={{'.pic2': {opacity: 1}}}
                   >
                     <AnimatePresence>
-                      {/* {!isHovered ? ( */}
+            
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic1`}
                         className={styles.cardImageContainer}
@@ -318,6 +326,7 @@ export default function SingleCardForGrid({
                         }}
                         exit={{ opacity: 0, x: '-100%' }}
                         transition={{ duration: 0.5 }}
+                        
                         style={{
                           position: 'absolute',
                           width: '100%',
@@ -335,37 +344,19 @@ export default function SingleCardForGrid({
                         />
                       </motion.div>
 
-                      <motion.div
-                        key={`${cardIndex}_${activeIndex}_middleImage`}
-                        className={styles.cardImageContainer}
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{
-                          opacity: isHovered ? 1 : 0,
-                          x: isHovered ? '50%' : '100%',
-                        }}
-                        // exit={{ opacity: 0, x: '100%' }}
-                        transition={{ duration: 0.2 }}
-                        style={{
-                          position: 'absolute',
-                          // backgroundColor: 'red',
-                          width: '100%',
-                          height: '100%',
-                        }}
-                      ></motion.div>
 
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic2`}
                         className={styles.cardImageContainer}
                         initial={{ opacity: 0, x: '100%' }}
+   
                         animate={{
                           opacity: isHovered ? 1 : 0,
-                          x: isHovered ? '0%' : '50%',
+                          x: isHovered ? '0%' : '100%',
                           transition: {
                             duration: 0.5,
-                            delay: isHovered ? 0.2 : -0.1,
                           },
                         }}
-                        // exit={{ opacity: 0, x: '100%', transition: { duration: 22, delay: 5 } }}
 
                         style={{
                           position: 'absolute',
@@ -382,7 +373,7 @@ export default function SingleCardForGrid({
                           // key={`${cardIndex}_${activeIndex}_pic2`}
                         />
                       </motion.div>
-                      {/* )} */}
+
                     </AnimatePresence>
                   </motion.div>
 
@@ -410,27 +401,33 @@ export default function SingleCardForGrid({
               <>
                 <div className={styles.imageAndCaptionContainer}>
                   <motion.div
+                  initial={{transform: 'scale(1)'}}
                     whileHover={{
                       boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
+                      transform: 'scale(1.02)',
                     }}
                     className={`${styles.cardImageContainer} imgBorderRadius`}
-                    onMouseEnter={() => {
-                      setIsHovered('left');
-                    }}
-                    onMouseLeave={() => setIsHovered(null)}
+                    // onMouseEnter={() => {
+                    //   setIsHovered('left');
+                    // }}
+                    // onMouseLeave={() => setIsHovered(null)}
+                    onClick={()=> {
+                      isHovered === null ? setIsHovered('left') : setIsHovered(null)}}
+               
+                      whileTap={{                      boxShadow: '-2px 4px 7px var(--clr-accent-3)', transform: 'scale(.98)'}}
                     onMouseDown={() => setIsClicked('left')}
                     onMouseUp={() => setIsClicked(null)}
                     // whileHover={{'.pic2': {opacity: 1}}}
                   >
                     {/* {!isHovered ? ( */}
-                    <AnimatePresence>
+                    <AnimatePresence initial={false}>
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic1_even`}
                         className={styles.cardImageContainer}
-                        initial={{ opacity: 1, y: '0%' }}
+                        initial={{ opacity: 1, x: '0%' }}
                         animate={{
                           opacity: isHovered ? 0 : 1,
-                          y: isHovered ? '-100%' : '0%',
+                          x: isHovered ? '100%' : '0%',
                           transition: { duration: 0.5 },
                         }}
                         style={{ position: 'absolute', width: '100%', height: '100%' }}
@@ -449,11 +446,11 @@ export default function SingleCardForGrid({
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic2_even`}
                         className={styles.cardImageContainer}
-                        initial={{ opacity: 0, y: '100%' }}
+                        initial={{ opacity: 0, x: '-100%' }}
                         animate={{
                           opacity: isHovered ? 1 : 0,
-                          y: isHovered ? '0%' : '100%',
-                          backgroundColor: 'red',
+                          x: isHovered ? '0%' : '-100%',
+                          // backgroundColor: 'red',
                           transition: { duration: 0.5 },
                         }}
                         style={{ position: 'absolute', width: '100%', height: '100%' }}
