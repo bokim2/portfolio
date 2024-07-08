@@ -203,7 +203,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // }
 
   @media (max-width: 800px) {
-    pointer-events: none;
+    // pointer-events: none;
   }
 }
 
@@ -240,7 +240,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
   @media (max-width: 800px) {
     // to hide second picture on mobile
-    display: none;
+    // display: none;
   }
 }
 
