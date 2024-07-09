@@ -1,6 +1,7 @@
 'use client';
 import Wrapper from '@/components/wrapper/wrapper';
 import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import styles from './about.module.scss';
 import Image from 'next/image';
@@ -20,19 +21,19 @@ export default function About() {
     useUpdateActiveSection('about');
   const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
 
-  const [selectedCaredReady, setSelectedCardReady] = useState<boolean>(true);
+  const [selectedCardReady, setSelectedCardReady] = useState<boolean>(true);
   // const controls = useAnimation();
   // const aboutRef = useRef<HTMLDivElement>(null);
 
   async function scrollToTop() {}
 
   function handleSelectorChange(selectedIndex: number) {
-    setSelectedCardReady(false)
-    console.log('in handleSelectorChange')
+    setSelectedCardReady(false);
+    console.log('in handleSelectorChange');
     setTimeout(() => {
-      console.log('entering settimeout')
+      console.log('entering settimeout');
       setSelectedCardIndex(selectedIndex);
-      setSelectedCardReady(true)
+      setSelectedCardReady(true);
     }, 500);
     // if (aboutRef.current) {
     //   aboutRef.current.scrollIntoView({behavior: 'smooth'})
@@ -46,13 +47,17 @@ export default function About() {
 
   return (
     <>
-    <div className={styles.about} id="about" >
-      <CardSelector
-        selectedCardIndex={selectedCardIndex}
-        handleSelectorChange={handleSelectorChange}
+      <div className={styles.about} id="about">
+        <div
+          id="beforeAbout"
+          style={{ backgroundColor: 'blue', height: '10px', width: '10px' }}
         />
-      <Wrapper additionalClasses={`wrapper mobileLessPadding`}>
-        {/* <Link href="/experience">
+        <CardSelector
+          selectedCardIndex={selectedCardIndex}
+          handleSelectorChange={handleSelectorChange}
+        />
+        <Wrapper additionalClasses={`wrapper mobileLessPadding`}>
+          {/* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>
         </Link>
         <section className={styles.experience} ref={ref}>
@@ -92,22 +97,24 @@ export default function About() {
         </div>
         </div>
       </section> */}
-          <div id="beforeAbout" style={{backgroundColor: 'blue', height: '100px', width: '100px'}}/>
-       {/* {<CardGrid
+
+          {/* {<CardGrid
           selectedCardIndex={selectedCardIndex}
           handleSelectorChange={handleSelectorChange}
           />} */}
-       {selectedCaredReady && <CardGrid
-          selectedCardIndex={selectedCardIndex}
-          handleSelectorChange={handleSelectorChange}
-          />}
-      </Wrapper>
-      {/* <AboutCarousel /> */}
-      <Wrapper>
-        <BiotechSoftware />
-        <ThisPortfolio />
-      </Wrapper>
-    </div>
-          </>
+          {selectedCardReady && (
+            <CardGrid
+              selectedCardIndex={selectedCardIndex}
+              handleSelectorChange={handleSelectorChange}
+            />
+          )}
+        </Wrapper>
+        {/* <AboutCarousel /> */}
+        <Wrapper>
+          <BiotechSoftware />
+          <ThisPortfolio />
+        </Wrapper>
+      </div>
+    </>
   );
 }

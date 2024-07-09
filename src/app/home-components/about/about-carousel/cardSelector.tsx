@@ -16,7 +16,9 @@ export default function CardSelector({
   handleSelectorChange,
 }: TCardSelector) {
   function scrollToSection(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   return (
     <motion.div
@@ -42,11 +44,17 @@ export default function CardSelector({
           className={`${styles.cardSelectorOptions} `}
           // layoutId="cardSelection"
           whileHover={{ scale: 1.1 }}
-          onClick={() => {
+          onClick={(e) => {
+            // e.preventDefault();
+            // e.stopPropagation();
             // console.log('before scrolling to about')
             scrollToSection('beforeAbout');
             // console.log('after scrolling to about')
+
             handleSelectorChange(i);
+            // if (i !== selectedCardIndex) {
+            //   handleSelectorChange(i);
+            // }
           }}
 
           // setTimeout(()=>{
