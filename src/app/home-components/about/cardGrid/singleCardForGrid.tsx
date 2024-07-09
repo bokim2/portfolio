@@ -134,7 +134,7 @@ export const SINGLE_CARD_DATA = [
       subtitle: 'testinggggggg',
       equipment: '',
       pic1: genencorFun,
-      pic2: egyptWine,
+      pic2: suf,
       // pic3: egyptWine,
       pic1StyleOverrides: {
         // transform: 'scale(2)',
