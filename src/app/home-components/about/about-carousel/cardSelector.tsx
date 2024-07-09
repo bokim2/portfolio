@@ -9,7 +9,7 @@ type TCardSelector = {
 };
 
 // const SELECTOR_OPTIONS = ['past', 'present', 'future'];
-const SELECTOR_OPTIONS = ['origin', 'current', 'next'];
+const SELECTOR_OPTIONS = ['origins', 'current', 'next'];
 
 export default function CardSelector({
   selectedCardIndex,
@@ -44,8 +44,14 @@ export default function CardSelector({
             // layoutId="cardSelection"
             whileHover={{ scale: 1.1 }}
             onClick={() => {
-              scrollToSection('about')
+              // console.log('before scrolling to about')
+              // scrollToSection('about')
+              // console.log('after scrolling to about')
               handleSelectorChange(i)}}
+
+              // setTimeout(()=>{
+              //   console.log('i', i)
+              //   handleSelectorChange(i)}, 2000)}}
             >
           <p className={`large`}>{SELECTOR_OPTIONS[i]}</p>
         </motion.div>
