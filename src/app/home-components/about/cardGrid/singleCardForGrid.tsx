@@ -286,7 +286,7 @@ export const SINGLE_CARD_DATA = [
           </em> */}
         </>,
         <>
-          After a decade in biotech, I've worked with most of the industry
+          After a decade in biotech, I have worked with most of the industry
           standard tools in my area of specialization and developments in this
           area is slower (game changing new tools every couple of years) than
           you'd find in a industry like tech.
@@ -327,7 +327,7 @@ export const SINGLE_CARD_DATA = [
         </>,
         <>
           In my opinion, a lot of the focus in biotech is more in molecular
-          biology / strain engineering these days. After all, you can't make a
+          biology / strain engineering these days. After all, you can not make a
           bad strain produce a lot of product, no matter what you do in
           fermentation.
         </>,
