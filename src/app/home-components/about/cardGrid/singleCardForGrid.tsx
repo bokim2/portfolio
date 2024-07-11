@@ -38,7 +38,7 @@ import ambr2 from '@/../public/images/carousel/ambr2.jpg';
 import suf from '@/../public/images/carousel/suf.jpg';
 import suf2 from '@/../public/images/carousel/suf2.jpg';
 import sufProfile from '@/../public/images/carousel/sufProfile.jpg';
-import sufSw1 from '@/../public/images/carousel/sufSw1.jpg';
+import sufSw2 from '@/../public/images/carousel/sufSw2.jpg';
 import MF_thermo_suf from '@/../public/images/carousel/MF_thermo_suf.jpg';
 
 // Current CARD
@@ -148,7 +148,7 @@ export const SINGLE_CARD_DATA = [
     { pic1: dasgip, pic2: dasgipSw },
     { pic1: biolector1, pic2: MF_biolector_feed_profile },
     { pic1: ambr250, pic2: ambr1 },
-    { pic1: suf2, pic2: sufSw1 },
+    { pic1: suf2, pic2: sufSw2 },
   ],
 
   // second card
