@@ -289,7 +289,7 @@ export const SINGLE_CARD_DATA = [
           After a decade in biotech, I have worked with most of the industry
           standard tools in my area of specialization and developments in this
           area is slower (game changing new tools every couple of years) than
-          you'd find in a industry like tech.
+          you would find in a industry like tech.
         </>,
       ],
     },
@@ -357,7 +357,7 @@ export const SINGLE_CARD_DATA = [
       pic2ImageCaption: '3 months',
       text: [
         <>
-          serious constraints due to what's possible at industrial scale.
+          serious constraints due to what is possible at industrial scale.
           Commercial scale plants often have poorer control over conditions than
           bench scale, ex: poorer mixing, temperature control.
           {/* <em>
