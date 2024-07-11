@@ -368,8 +368,8 @@ export const SINGLE_CARD_DATA = [
           cost has taken center stage. biotech processes are expensive!
           experimenting with media composition is limited, whatever goes in
           costs $$, or may need to be removed at the end of the process (or can
-          interfere with purification). they say 90% of biotech production cost is in
-          the recovery / filtration process.
+          interfere with purification). they say 90% of biotech production cost
+          is in the recovery / filtration process.
         </>,
       ],
     },
@@ -452,9 +452,7 @@ export const SINGLE_CARD_DATA = [
           dedication, attention to detail, emphasis on open communication. i
           believe in Kaizen, continuous improvement.
         </>,
-        <>
-        also hope to bring a unique perspective from my time in biotech.
-        </>,
+        <>also hope to bring a unique perspective from my time in biotech.</>,
         ,
       ],
     },
@@ -475,13 +473,14 @@ export const SINGLE_CARD_DATA = [
         objectFit: 'contain',
         // transform: 'scale(2)',
         // backgroundColor: 'red',
-
       },
       pic1ImageCaption: 'remote instruction.',
       pic2ImageCaption: '3 months',
       text: [
         <>
-          I love an open, inclusive, and engaging work culture.  I worked in the Bay Area during my time in biotech and enjoyed it.  I hope to be based in California, Colorado, or Washington.   
+          I love an open, inclusive, and engaging work culture. I worked in the
+          Bay Area during my time in biotech and enjoyed it. I hope to be based
+          in California, Colorado, or Washington.
         </>,
         <></>,
         ,
