@@ -180,6 +180,13 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   flex-grow: 1;
 }
 
+.textParagraphs {
+  // display: flex;
+  // flex-direction: column;
+  // gap: 10em;
+  margin-bottom: 1rem;
+}
+
 .imageColumn {
   display: flex;
   flex-direction: column;

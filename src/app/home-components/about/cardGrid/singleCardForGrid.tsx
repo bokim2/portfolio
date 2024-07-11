@@ -3,7 +3,12 @@
 import Image, { StaticImageData } from 'next/image';
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from 'framer-motion';
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs';
 import { GoDot, GoDotFill } from 'react-icons/go';
 import styles from '../about-carousel/aboutCarousel.module.scss';
@@ -21,11 +26,27 @@ import biomek2 from '@/../public/images/carousel/biomek2.jpg';
 import dasgip from '@/../public/images/carousel/dasgip.jpg';
 import dasgipSw from '@/../public/images/carousel/dasgipSw.jpg';
 
+import biolector1 from '@/../public/images/carousel/biolector1.jpg';
+import biolector2 from '@/../public/images/carousel/biolector2.jpg';
+import MF_biolector_feed_profile from '@/../public/images/carousel/MF_biolector_feed_profile.jpg';
+
 import ambr250 from '@/../public/images/carousel/ambr250.jpg';
 import ambr250Sw from '@/../public/images/carousel/ambr250Sw.jpg';
+import ambr1 from '@/../public/images/carousel/ambr1.jpg';
+import ambr2 from '@/../public/images/carousel/ambr2.jpg';
 
 import suf from '@/../public/images/carousel/suf.jpg';
+import suf2 from '@/../public/images/carousel/suf2.jpg';
 import sufProfile from '@/../public/images/carousel/sufProfile.jpg';
+import sufSw1 from '@/../public/images/carousel/sufSw1.jpg';
+import MF_thermo_suf from '@/../public/images/carousel/MF_thermo_suf.jpg';
+
+// Current CARD
+import codesmith from '@/../public/images/carousel/current/codesmith.jpg';
+import codesmith2 from '@/../public/images/carousel/current/codesmith2.jpg';
+
+import aws from '@/../public/images/carousel/current/aws.jpg';
+
 import CardControls from '../about-carousel/cardControls';
 
 type TSlide = {
@@ -120,90 +141,368 @@ export const SINGLE_CARD_DATA = [
       pic1: biostatB,
       pic2: mfcs,
       pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
-      pic2ImageCaption: 'MFCS software - difficult to set up or modify',
+      pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
       text: [<></>],
     },
 
     { pic1: dasgip, pic2: dasgipSw },
-    { pic1: ambr250, pic2: ambr250Sw },
-    { pic1: suf, pic2: sufProfile },
+    { pic1: biolector1, pic2: MF_biolector_feed_profile },
+    { pic1: ambr250, pic2: ambr1 },
+    { pic1: suf2, pic2: sufSw1 },
   ],
+
+  // second card
   [
     {
-      title: 'TESTIMG SCROLLL<L',
-      subtitle: 'testinggggggg',
+      title: 'Bootcamp',
+      subtitle: 'Codesmith',
       equipment: '',
-      pic1: genencorFun,
-      pic2: suf,
+      pic1: codesmith,
+      pic2: codesmith2,
       // pic3: egyptWine,
       pic1StyleOverrides: {
+        objectFit: 'contain',
         // transform: 'scale(2)',
         // backgroundColor: 'red',
         // opacity: .2
       },
       pic2StyleOverrides: {
+        objectFit: 'contain',
         // transform: 'scale(2)',
         // backgroundColor: 'red',
         // opacity: .2
       },
-      pic1ImageCaption:
-        'My first job, I ggggg on enzymes for biofuel production.',
-      pic2ImageCaption: 'Fermentation - not beer.',
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
       text: [
         <>
-          My primary area of specialization was upstream process development,
-          aka working with{' '}
+          At the bootcamp, I was exposed to pieces of how to put a basic web
+          application together. The curriculum was
           <em>
-            <b>bioreactors</b>
+            <b> full stack</b>
           </em>
-          , often referred to as{' '}
-          <em>
-            <b>&quot;fermentation&quot;</b>
-          </em>
-          .
+          , React, Redux, Express, MongoDB, Postgres, Webpack.
         </>,
         <>
-          The term originated from the historical use of microorganisms for the
-          production of alcoholic beverages.
+          I knew once I was done with the bootcamp, that I had a long way to go,
+          and was excited to start self-learning.
         </>,
       ],
     },
     {
-      title: 'Automation',
-      subtitle: 'Biomek liquid handler',
+      title: 'AWS',
+      subtitle: 'Solutions Architect Associate',
       equipment: '',
-      pic1: biomek1,
+      pic1: aws,
       pic2: biomek2,
-      pic1ImageCaption: 'Biomek liquid handler - automation for assays.  ',
-      pic2ImageCaption: 'Biomek software - ex: a simple method',
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
       text: [
         <>
-          For a single protein engineering project, tens of thousands of
-          variants can be generated and tested.{' '}
+          Studying to pass the exam took a couple months. At the end of the
+          process, I was able to understand more about system design and the
+          bottlenecks in current infrastructures and things that had be created
+          to compensate those areas (ex: Cloudfront, ).{' '}
         </>,
-        <>
-          This was my first experience with automation. Later on, I would work
-          with miniturized fermentation systems and bioreactors with liquid
-          handling capabilities.
-        </>,
-
+        <></>,
         ,
       ],
     },
+
     {
-      title: 'Evolution of Bioreactors',
-      subtitle: 'Satorius Biostat B',
+      title: 'Self-learning',
+      subtitle: '',
       equipment: '',
-      pic1: biostatB,
-      pic2: mfcs,
-      pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
-      pic2ImageCaption: 'MFCS software - difficult to set up or modify',
-      text: [<></>],
+      pic1: codesmith,
+      pic2: codesmith2,
+      // pic3: egyptWine,
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
+      text: [
+        <>
+          started looking at backend, started learning python for algos. but
+          eventually backed off to work on frontend to build a portfolio. was
+          surprised to find that i really enjoyed frontend, and stayed there for
+          a while.
+          {/* <em>
+            <b> full stack</b>
+          </em> */}
+        </>,
+        <></>,
+      ],
+    },
+    {
+      title: 'Why software engineering',
+      subtitle: '',
+      equipment: '',
+      pic1: codesmith,
+      pic2: codesmith2,
+      // pic3: egyptWine,
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
+      text: [
+        <>
+          my favorite part of working in biotech in the bay area was getting to
+          work with cutting edge equipment and software and also seeing the
+          iteration and progression of these tools over time.
+          {/* <em>
+            <b> full stack</b>
+          </em> */}
+        </>,
+        <>
+          After a decade in biotech, I've worked with most of the industry
+          standard tools in my area of specialization and developments in this
+          area is slower (game changing new tools every couple of years) than
+          you'd find in a industry like tech.
+        </>,
+      ],
     },
 
-    { pic1: dasgip, pic2: dasgipSw },
-    { pic1: ambr250, pic2: ambr250Sw },
-    { pic1: suf, pic2: sufProfile },
+    {
+      title: 'bioreactors - their role I',
+      subtitle: 'a testing platform',
+      equipment: '',
+      pic1: codesmith,
+      pic2: codesmith2,
+      // pic3: egyptWine,
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
+      text: [
+        <>
+          Over time, there has been more and more emphasis on throughput and
+          miniaturization in the fermentation space. This is because a large
+          part of bioreactor usage is for screening strains / variants with the
+          same fermentation recipe.
+          {/* <em>
+            <b> full stack</b>
+          </em> */}
+        </>,
+        <>
+          In my opinion, a lot of the focus in biotech is more in molecular
+          biology / strain engineering these days. After all, you can't make a
+          bad strain produce a lot of product, no matter what you do in
+          fermentation.
+        </>,
+      ],
+    },
+
+    {
+      title: 'bioreactors - their role II',
+      subtitle: 'a industrial scale model',
+      equipment: '',
+      pic1: codesmith,
+      pic2: codesmith2,
+      // pic3: egyptWine,
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
+      text: [
+        <>
+          serious constraints due to what's possible at industrial scale.
+          Commercial scale plants often have poorer control over conditions than
+          bench scale, ex: poorer mixing, temperature control.
+          {/* <em>
+            <b> full stack</b>
+          </em> */}
+        </>,
+        <>
+          cost has taken center stage. biotech processes are expensive!
+          experimenting with media composition is limited, whatever goes in
+          costs $$, or may need to be removed at the end of the process (or can
+          interfere with purification). they say 90% of biotech production cost is in
+          the recovery / filtration process.
+        </>,
+      ],
+    },
+    // {
+    //   title: 'Evolution of Bioreactors',
+    //   subtitle: 'Satorius Biostat B',
+    //   equipment: '',
+    //   pic1: biostatB,
+    //   pic2: mfcs,
+    //   pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
+    //   pic2ImageCaption: 'MFCS software - difficult to set up or modify',
+    //   text: [<></>],
+    // },
+
+    // { pic1: dasgip, pic2: dasgipSw },
+    // { pic1: biolector1, pic2: biolector2 },
+    // { pic1: ambr250, pic2: ambr250Sw },
+    // { pic1: suf, pic2: sufSw1 },
+  ],
+
+  // third card
+  [
+    {
+      title: 'Areas of Interest',
+      subtitle: '',
+      equipment: '',
+      pic1: codesmith,
+      pic2: codesmith2,
+      // pic3: egyptWine,
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
+      text: [
+        <>
+          open to a lot. it could be cool to work on things like technical
+          software, data visualization (because how data is visualized really
+          matters!), 3D, etc.
+          {/* <em>
+            <b> full stack</b>
+          </em> */}
+        </>,
+        <>
+          I do believe in trying things out and seeing what the best fit is.{' '}
+        </>,
+      ],
+    },
+    {
+      title: 'What I can bring',
+      subtitle: 'diverse background',
+      equipment: '',
+      pic1: aws,
+      pic2: biomek2,
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
+      text: [
+        <>
+          dedication, attention to detail, emphasis on open communication. i
+          believe in Kaizen, continuous improvement.
+        </>,
+        <>
+        also hope to bring a unique perspective from my time in biotech.
+        </>,
+        ,
+      ],
+    },
+
+    {
+      title: 'environment',
+      subtitle: 'culture',
+      equipment: '',
+      pic1: aws,
+      pic2: biomek2,
+      pic1StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic2StyleOverrides: {
+        objectFit: 'contain',
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
+      pic1ImageCaption: 'remote instruction.',
+      pic2ImageCaption: '3 months',
+      text: [
+        <>
+          I love an open, inclusive, and engaging work culture.  I worked in the Bay Area during my time in biotech and enjoyed it.  I hope to be based in California, Colorado, or Washington.   
+        </>,
+        <></>,
+        ,
+      ],
+    },
+
+    // {
+    //   title: 'Evolution of Bioreactors',
+    //   subtitle: 'Satorius Biostat B',
+    //   equipment: '',
+    //   pic1: biostatB,
+    //   pic2: mfcs,
+    //   pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
+    //   pic2ImageCaption: 'MFCS software - difficult to set up or modify',
+    //   text: [<></>],
+    // },
+
+    // { pic1: dasgip, pic2: dasgipSw },
+    // { pic1: biolector1, pic2: biolector2 },
+    // { pic1: ambr250, pic2: ambr250Sw },
+    // { pic1: suf, pic2: sufSw1 },
   ],
   [],
 ] as TSlide[][];
@@ -228,25 +527,26 @@ export default function SingleCardForGrid({
   // const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
   const [isClicked, setIsClicked] = useState<'left' | 'right' | null>(null);
-  const [scrollCardImgTriggered, setScrollCardImgTriggered] = useState<boolean>(false)
+  const [scrollCardImgTriggered, setScrollCardImgTriggered] =
+    useState<boolean>(false);
 
   const scrollCardRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
-    target: scrollCardRef, 
-    offset: ['start end', 'end start']
+    target: scrollCardRef,
+    offset: ['start end', 'end start'],
   });
 
   // useEffect(() => {
   // console.log(i)
   // }, [i])
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Page scroll: ", latest)
-    if(latest >= 0.5 && !scrollCardImgTriggered) {
-      setIsHovered('right')
-      setScrollCardImgTriggered(true)
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    console.log('Page scroll: ', latest);
+    if (latest >= 0.5 && !scrollCardImgTriggered) {
+      setIsHovered('right');
+      setScrollCardImgTriggered(true);
     }
-  })
+  });
 
   function handleIndexChange(incrementValue: number) {
     //   console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
@@ -266,7 +566,7 @@ export default function SingleCardForGrid({
   }
 
   return (
-    <div className={styles.card} >
+    <div className={styles.card}>
       {/* odd pictures on card */}
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>
@@ -486,7 +786,6 @@ export default function SingleCardForGrid({
                           height: '100%',
                         }}
                       >
-                        {'asdfadsf'}
                         <Image
                           className={styles.pic2}
                           src={item?.[activeIndex]?.pic2 as StaticImageData}
@@ -523,10 +822,10 @@ export default function SingleCardForGrid({
               <div className={`${styles.cardTextContainer}`}>
                 {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
                   <>
-                    <p key={i} className={`large`}>
+                    <p key={i} className={`${styles.textParagraphs} large`}>
                       {singleParagraph}
                     </p>
-                    {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />}
+                    {/* {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />} */}
                   </>
                 ))}
               </div>

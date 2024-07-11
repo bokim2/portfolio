@@ -16,6 +16,33 @@ import CardGrid from './cardGrid/cardGrid';
 import CardSelector from './about-carousel/cardSelector';
 import { useAnimation } from 'framer-motion';
 
+
+type T_ABOUT_INTRO = React.ReactNode[];
+
+const ABOUT_INTRO= [
+  <>
+    <h2>Origins</h2>
+    <ul>
+      <li>what i did in biotech</li>
+      <li>cool equipment and software that got me interested in software engineering</li>
+    </ul>
+  </>,
+    <>
+    <h2>current</h2>
+    <ul>
+      <li>what ive been working on, portfolio, AWS cert, projects</li>
+      <li>where i hope to be, what type of role</li>
+    </ul>
+  </>,
+      <>
+      <h2>next</h2>
+      <ul>
+        <li>my interests in software developement</li>
+        <li>cool equipment and software that got me interested in software engineering</li>
+      </ul>
+    </>,
+];
+
 export default function About() {
   const { activeSection, setActiveSection, ref } =
     useUpdateActiveSection('about');
@@ -48,14 +75,26 @@ export default function About() {
   return (
     <>
       <div className={styles.about} id="about">
-        <div
+       <div
           id="beforeAbout"
+          className={styles.beforeAbout}
           style={{ backgroundColor: 'blue', height: '10px', width: '10px' }}
-        />
-        <CardSelector
+        /> <CardSelector
           selectedCardIndex={selectedCardIndex}
           handleSelectorChange={handleSelectorChange}
         />
+        
+        <div className={styles.beforeCardSpacer}>
+          <h1>About</h1>
+          this section is more just for fun, so feel free to check it out or
+          skip it.
+
+          {/* {ABOUT_INTRO?.map((text, i)=> {
+           return  <div key={i}>{text}</div>
+          })} */}
+
+          {selectedCardIndex !== null && <div key={selectedCardIndex}>{ABOUT_INTRO[selectedCardIndex]}</div>}
+        </div>
         <Wrapper additionalClasses={`wrapper mobileLessPadding`}>
           {/* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>
