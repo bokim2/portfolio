@@ -475,7 +475,7 @@ export const SINGLE_CARD_DATA = [
         objectFit: 'contain',
         // transform: 'scale(2)',
         // backgroundColor: 'red',
-        // opacity: .2
+
       },
       pic1ImageCaption: 'remote instruction.',
       pic2ImageCaption: '3 months',
