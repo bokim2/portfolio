@@ -46,6 +46,19 @@ import codesmith from '@/../public/images/carousel/current/codesmith.jpg';
 import codesmith2 from '@/../public/images/carousel/current/codesmith2.jpg';
 
 import aws from '@/../public/images/carousel/current/aws.jpg';
+import awsVPN from '@/../public/images/carousel/current/awsVPN.jpg';
+
+import ambr15 from '@/../public/images/carousel/current/ambr15.jpg';
+import dna from '@/../public/images/carousel/current/dna.jpg';
+
+import interest3d from '@/../public/images/carousel/current/interest3d.jpg';
+
+import commercialScale from '@/../public/images/carousel/current/commercialScale.jpg';
+import manyBioreactors from '@/../public/images/carousel/current/manyBioreactors.jpg';
+
+import mosaic from '@/../public/images/carousel/current/mosaic.jpg';
+import bubbleDark from '@/../public/images/carousel/current/bubbleDark.jpg';
+import genencor4 from '@/../public/images/progressive/genencor4.jpg';
 
 import CardControls from '../about-carousel/cardControls';
 
@@ -181,7 +194,7 @@ export const SINGLE_CARD_DATA = [
           <em>
             <b> full stack</b>
           </em>
-          , React, Redux, Express, MongoDB, Postgres, Webpack.
+          , React, Redux, Express, MongoDB, Postgres.
         </>,
         <>
           I knew once I was done with the bootcamp, that I had a long way to go,
@@ -194,7 +207,7 @@ export const SINGLE_CARD_DATA = [
       subtitle: 'Solutions Architect Associate',
       equipment: '',
       pic1: aws,
-      pic2: biomek2,
+      pic2: awsVPN,
       pic1StyleOverrides: {
         objectFit: 'contain',
         // transform: 'scale(2)',
@@ -221,158 +234,158 @@ export const SINGLE_CARD_DATA = [
       ],
     },
 
-    {
-      title: 'Self-learning',
-      subtitle: '',
-      equipment: '',
-      pic1: codesmith,
-      pic2: codesmith2,
-      // pic3: egyptWine,
-      pic1StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic2StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
-      text: [
-        <>
-          started looking at backend, started learning python for algos. but
-          eventually backed off to work on frontend to build a portfolio. was
-          surprised to find that i really enjoyed frontend, and stayed there for
-          a while.
-          {/* <em>
-            <b> full stack</b>
-          </em> */}
-        </>,
-        <></>,
-      ],
-    },
-    {
-      title: 'Why software engineering',
-      subtitle: '',
-      equipment: '',
-      pic1: codesmith,
-      pic2: codesmith2,
-      // pic3: egyptWine,
-      pic1StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic2StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
-      text: [
-        <>
-          my favorite part of working in biotech in the bay area was getting to
-          work with cutting edge equipment and software and also seeing the
-          iteration and progression of these tools over time.
-          {/* <em>
-            <b> full stack</b>
-          </em> */}
-        </>,
-        <>
-          After a decade in biotech, I have worked with most of the industry
-          standard tools in my area of specialization and developments in this
-          area is slower (game changing new tools every couple of years) than
-          you would find in a industry like tech.
-        </>,
-      ],
-    },
+    // {
+    //   title: 'Self-learning',
+    //   subtitle: '',
+    //   equipment: '',
+    //   pic1: codesmith,
+    //   pic2: codesmith2,
+    //   // pic3: egyptWine,
+    //   pic1StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic2StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic1ImageCaption: 'remote instruction.',
+    //   pic2ImageCaption: '3 months',
+    //   text: [
+    //     <>
+    //       started looking at backend, started learning python for algos. but
+    //       eventually backed off to work on frontend to build a portfolio. was
+    //       surprised to find that i really enjoyed frontend, and stayed there for
+    //       a while.
+    //       {/* <em>
+    //         <b> full stack</b>
+    //       </em> */}
+    //     </>,
+    //     <></>,
+    //   ],
+    // },
+    // {
+    //   title: 'Why software engineering',
+    //   subtitle: '',
+    //   equipment: '',
+    //   pic1: codesmith,
+    //   pic2: codesmith2,
+    //   // pic3: egyptWine,
+    //   pic1StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic2StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic1ImageCaption: 'remote instruction.',
+    //   pic2ImageCaption: '3 months',
+    //   text: [
+    //     <>
+    //       my favorite part of working in biotech in the bay area was getting to
+    //       work with cutting edge equipment and software and also seeing the
+    //       iteration and progression of these tools over time.
+    //       {/* <em>
+    //         <b> full stack</b>
+    //       </em> */}
+    //     </>,
+    //     <>
+    //       After a decade in biotech, I have worked with most of the industry
+    //       standard tools in my area of specialization and developments in this
+    //       area is slower (game changing new tools every couple of years) than
+    //       you would find in a industry like tech.
+    //     </>,
+    //   ],
+    // },
 
-    {
-      title: 'bioreactors - their role I',
-      subtitle: 'a testing platform',
-      equipment: '',
-      pic1: codesmith,
-      pic2: codesmith2,
-      // pic3: egyptWine,
-      pic1StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic2StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
-      text: [
-        <>
-          Over time, there has been more and more emphasis on throughput and
-          miniaturization in the fermentation space. This is because a large
-          part of bioreactor usage is for screening strains / variants with the
-          same fermentation recipe.
-          {/* <em>
-            <b> full stack</b>
-          </em> */}
-        </>,
-        <>
-          In my opinion, a lot of the focus in biotech is more in molecular
-          biology / strain engineering these days. After all, you can not make a
-          bad strain produce a lot of product, no matter what you do in
-          fermentation.
-        </>,
-      ],
-    },
+    // {
+    //   title: 'bioreactors - their role I',
+    //   subtitle: 'a testing platform',
+    //   equipment: '',
+    //   pic1: manyBioreactors,
+    //   pic2: dna,
+    //   // pic3: egyptWine,
+    //   pic1StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic2StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic1ImageCaption: 'remote instruction.',
+    //   pic2ImageCaption: '3 months',
+    //   text: [
+    //     <>
+    //       Over time, there has been more and more emphasis on throughput and
+    //       miniaturization in the fermentation space. This is because a large
+    //       part of bioreactor usage is for screening strains / variants with the
+    //       same fermentation recipe.
+    //       {/* <em>
+    //         <b> full stack</b>
+    //       </em> */}
+    //     </>,
+    //     <>
+    //       In my opinion, a lot of the focus in biotech is more in molecular
+    //       biology / strain engineering these days. After all, you can not make a
+    //       bad strain produce a lot of product, no matter what you do in
+    //       fermentation.
+    //     </>,
+    //   ],
+    // },
 
-    {
-      title: 'bioreactors - their role II',
-      subtitle: 'a industrial scale model',
-      equipment: '',
-      pic1: codesmith,
-      pic2: codesmith2,
-      // pic3: egyptWine,
-      pic1StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic2StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
-      text: [
-        <>
-          serious constraints due to what is possible at industrial scale.
-          Commercial scale plants often have poorer control over conditions than
-          bench scale, ex: poorer mixing, temperature control.
-          {/* <em>
-            <b> full stack</b>
-          </em> */}
-        </>,
-        <>
-          cost has taken center stage. biotech processes are expensive!
-          experimenting with media composition is limited, whatever goes in
-          costs $$, or may need to be removed at the end of the process (or can
-          interfere with purification). they say 90% of biotech production cost
-          is in the recovery / filtration process.
-        </>,
-      ],
-    },
+    // {
+    //   title: 'bioreactors - their role II',
+    //   subtitle: 'a industrial scale model',
+    //   equipment: '',
+    //   pic1: commercialScale,
+    //   pic2: codesmith2,
+    //   // pic3: egyptWine,
+    //   pic1StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic2StyleOverrides: {
+    //     objectFit: 'contain',
+    //     // transform: 'scale(2)',
+    //     // backgroundColor: 'red',
+    //     // opacity: .2
+    //   },
+    //   pic1ImageCaption: 'remote instruction.',
+    //   pic2ImageCaption: '3 months',
+    //   text: [
+    //     <>
+    //       serious constraints due to what is possible at industrial scale.
+    //       Commercial scale plants often have poorer control over conditions than
+    //       bench scale, ex: poorer mixing, temperature control.
+    //       {/* <em>
+    //         <b> full stack</b>
+    //       </em> */}
+    //     </>,
+    //     <>
+    //       cost has taken center stage. biotech processes are expensive!
+    //       experimenting with media composition is limited, whatever goes in
+    //       costs $$, or may need to be removed at the end of the process (or can
+    //       interfere with purification). they say 90% of biotech production cost
+    //       is in the recovery / filtration process.
+    //     </>,
+    //   ],
+    // },
     // {
     //   title: 'Evolution of Bioreactors',
     //   subtitle: 'Satorius Biostat B',
@@ -388,19 +401,16 @@ export const SINGLE_CARD_DATA = [
     // { pic1: biolector1, pic2: biolector2 },
     // { pic1: ambr250, pic2: ambr250Sw },
     // { pic1: suf, pic2: sufSw1 },
-  ],
-
-  // third card
-  [
+ 
     {
       title: 'Areas of Interest',
       subtitle: '',
       equipment: '',
-      pic1: codesmith,
+      pic1: interest3d,
       pic2: codesmith2,
       // pic3: egyptWine,
       pic1StyleOverrides: {
-        objectFit: 'contain',
+        // objectFit: 'contain',
         // transform: 'scale(2)',
         // backgroundColor: 'red',
         // opacity: .2
@@ -431,22 +441,25 @@ export const SINGLE_CARD_DATA = [
       title: 'What I can bring',
       subtitle: 'diverse background',
       equipment: '',
-      pic1: aws,
-      pic2: biomek2,
+      pic1: mosaic,
+      pic2: dna,
       pic1StyleOverrides: {
-        objectFit: 'contain',
-        // transform: 'scale(2)',
+        // objectFit: 'contain',
+        transform: 'scale(1.5)',
         // backgroundColor: 'red',
         // opacity: .2
       },
       pic2StyleOverrides: {
-        objectFit: 'contain',
+        // opacity: .2
+        filter: 'grayscale(80%)',
+
+        // objectFit: 'contain',
         // transform: 'scale(2)',
         // backgroundColor: 'red',
         // opacity: .2
       },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
+      // pic1ImageCaption: 'remote instruction.',
+      // pic2ImageCaption: '3 months',
       text: [
         <>
           dedication, attention to detail, emphasis on open communication. i
@@ -461,16 +474,18 @@ export const SINGLE_CARD_DATA = [
       title: 'environment',
       subtitle: 'culture',
       equipment: '',
-      pic1: aws,
-      pic2: biomek2,
+      pic1: bubbleDark,
+      pic2: genencor4,
       pic1StyleOverrides: {
         objectFit: 'contain',
-        // transform: 'scale(2)',
+        transform: 'scale(2.5)',
         // backgroundColor: 'red',
         // opacity: .2
       },
       pic2StyleOverrides: {
-        objectFit: 'contain',
+        objectPosition: 'top',
+        filter: 'brightness(1.2)'
+        // objectFit: 'contain',
         // transform: 'scale(2)',
         // backgroundColor: 'red',
       },
@@ -479,7 +494,7 @@ export const SINGLE_CARD_DATA = [
       text: [
         <>
           I love an open, inclusive, and engaging work culture. I worked in the
-          Bay Area during my time in biotech and enjoyed it. I hope to be based
+          San Francisco Bay Area during my time in biotech and enjoyed it. I hope to be based
           in California, Colorado, or Washington.
         </>,
         <></>,

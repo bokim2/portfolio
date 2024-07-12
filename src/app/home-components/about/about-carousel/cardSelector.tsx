@@ -9,7 +9,7 @@ type TCardSelector = {
 };
 
 // const SELECTOR_OPTIONS = ['past', 'present', 'future'];
-const SELECTOR_OPTIONS = ['origins', 'current', 'next'];
+const SELECTOR_OPTIONS = ['origins', 'current'];
 
 export default function CardSelector({
   selectedCardIndex,
