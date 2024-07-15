@@ -18,6 +18,9 @@ import genencor2 from '@/../public/images/progressive/genencor3.jpg';
 import egyptWine from '@/../public/images/carousel/egyptWine.jpg';
 import background from '@/../public/images/carousel/background.jpg';
 
+import spotfireJH1 from '@/../public/images/carousel/spotfireJH1.jpg';
+import benchlingNotebook from '@/../public/images/carousel/benchlingNotebook.jpg';
+
 import biostatB from '@/../public/images/carousel/biostatB.jpg';
 import biostatBY from '@/../public/images/carousel/biostatBY.jpg';
 import mfcs from '@/../public/images/carousel/mfcs.jpg';
@@ -140,6 +143,53 @@ export const SINGLE_CARD_DATA = [
       ],
     },
     {
+      title: 'Data management software',
+      subtitle: 'Spotfire - Data visualization',
+      equipment: 'Spotfire',
+      pic1: spotfireJH1,
+      pic2: benchlingNotebook,
+      pic1ImageCaption:
+        'Spotfire, a favorite data visualization tool for many scientists (other than excel, still).  ',
+      pic2ImageCaption:
+        'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need',
+      text: [
+        <>
+          Spotfire... the software that got me interested in software.
+          Surprisingly, graphing experimental data to this day is often done in
+          excel. Spotfire changed the game on this with this with an intuitive
+          user interface and easy to apply filters and groupings. It is similar
+          to Tableu but much easier to use for scientists.{' '}
+        </>,
+
+        ,
+      ],
+    },
+    {
+      title: 'Data management software',
+      subtitle: 'Benchling - Data recording and tracking',
+      equipment: 'Benchling',
+      pic1: benchlingNotebook,
+      pic2: benchlingNotebook,
+      pic1ImageCaption: '',
+      pic2ImageCaption:
+        'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need.',
+      text: [
+        <>
+          Before Benchling, I used a different electronic lab notebook. It was
+          convenient because there was no need for carbon copy lab notebooks
+          (check this out, it is ancient).
+        </>,
+        <>
+          But until benchling, the database and laboratory notebook and strain
+          information had not all been centralized in the way that I wish it had
+          been. It has been amazing to see that it is finally being consolidated
+          / integrated in a way that is usable.
+        </>,
+
+        ,
+      ],
+    },
+    {
       title: 'Automation',
       subtitle: 'Biomek liquid handler',
       equipment: '',
@@ -173,6 +223,9 @@ export const SINGLE_CARD_DATA = [
     },
 
     {
+      title: 'Evolution of Bioreactors',
+      subtitle: 'Dasgip - parallel system',
+      equipment: '',
       pic1: dasgip,
       pic2: dasgipSw,
       pic1StyleOverrides: {
@@ -183,9 +236,75 @@ export const SINGLE_CARD_DATA = [
         objectFit: 'contain',
       },
       pic2StyleOverrides: {},
+      pic1ImageCaption: 'parallel bioreactor',
+      pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
+      text: [
+        <>
+          The Dasgip bioreactor is the industry standard for lab-scale
+          benchscale fermentations. It was where we started seeing better UI and
+          allowed convenient control of multiple bioreactors through one
+          controller.{' '}
+        </>,
+      ],
     },
-    { pic1: biolector1, pic2: MF_biolector_feed_profile },
-    { pic1: ambr250, pic2: operizBM },
+    {
+      title: 'Evolution of Bioreactors',
+      subtitle: 'Biolector - miniturized fermentation',
+      equipment: '',
+      pic1: biolector1,
+      pic2: MF_biolector_feed_profile,
+      pic1StyleOverrides: {
+        // objectFit: 'contain',
+        filter: 'brightness(1.05)',
+        // transform: 'scale(1.25)',
+
+        // objectFit: 'contain',
+      },
+      pic2StyleOverrides: {},
+      pic1ImageCaption:
+        'less aeration, less feeding, lower cell density, lower product formation',
+      pic2ImageCaption:
+        'still, much better than using microtiter plates  which have no pH control, no controlled feeding.',
+      text: [
+        <>
+          The Biolector attempts to solve the problem with Bioreactor
+          fermentations, that it is very hands on and requires a lot of
+          resources.
+        </>,
+        <>
+          With the Biolector, you can get to much higher cell densities and
+          product formation, resulting in better breakout in performance than in
+          microtiter plates.
+        </>,
+      ],
+    },
+    {
+      title: 'Evolution of Bioreactors',
+      subtitle: 'Ambr250 - full feature miniturized fermentation',
+      equipment: '',
+      pic1: ambr250,
+      pic2: operizBM,
+      pic1StyleOverrides: {
+        // objectFit: 'contain',
+        filter: 'brightness(1.05)',
+        // transform: 'scale(1.25)',
+
+        // objectFit: 'contain',
+      },
+      pic2StyleOverrides: {},
+      pic1ImageCaption:
+        'the new industry standard in screening',
+      pic2ImageCaption:
+        'software that is intuitive and set up for DOE.',
+      text: [
+        <>
+         The Ambr250 is single-use and only 250mL in vessel size.  
+        </>,
+        <>
+
+        </>,
+      ],
+    },
     {
       pic1: sufDeflated,
       pic2: sufProfile,

@@ -5,7 +5,6 @@ import styles from './resume.module.scss';
 import { FaCaretDown, FaExternalLinkSquareAlt } from 'react-icons/fa';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import { FaDroplet } from 'react-icons/fa6';
 import {
   PiCaretDoubleDownThin,
   PiCaretDoubleUpThin,
@@ -13,9 +12,11 @@ import {
 } from 'react-icons/pi';
 import { useInView } from 'react-intersection-observer';
 import { MdOutlineBiotech, MdOutlineScience } from 'react-icons/md';
+import { FaDroplet } from 'react-icons/fa6';
 import { SiMoleculer } from 'react-icons/si';
 import { GiMolecule } from 'react-icons/gi';
 import Overlay from '@/components/overlay/overlay';
+import { RiTestTubeFill } from 'react-icons/ri';
 
 type TresumeData = {
   title: string;
@@ -100,6 +101,31 @@ const resumeData: TresumeData[] = [
     ],
     imagePath: '/images/experience/rediscope-team.jpg',
     imageStyle: { objectFit: 'contain' },
+  },
+  {
+    title: 'This Portfolio',
+    link: '',
+    type: 'A frontend heavy experiment',
+    // summary: 'I wanted to have fun and explore with this portfolio. I wanted to experiment and explore further with three.js, framer motion, and other libraries.  Design, visual hiarchy, and typography was also something I wanted think about and consider.',
+    date: '2024',
+    intro: ``,
+    techStack: [
+      'Next.js',
+      'React',
+      'Typescript',
+      'Framer Motion',
+      'Three.js',
+      'React Three Drei',
+      'Sass',
+      // '',
+    ],
+    description: [
+      // 'Frontend heavy experiment',
+      'I wanted to have fun and explore with this portfolio. I wanted to experiment and explore further with three.js, framer motion, and other libraries.',
+      'Design, visual hiarchy, and typography was also something I wanted think about and consider.',
+    ],
+    // imagePath: '/images/experience/portfolio.jpg',
+    imageStyle: { objectFit: 'cover' },
   },
   {
     title: 'Scientist',
@@ -455,6 +481,7 @@ function ToggleIcon({
             {listIndex == 3 && <PiDnaFill size={24} />}
             {listIndex == 4 && <SiMoleculer size={24} />}
             {listIndex == 5 && <GiMolecule size={24} />}
+            {listIndex == 6 && <RiTestTubeFill size={24} />}
           </motion.div>
         ) : (
           <motion.div
