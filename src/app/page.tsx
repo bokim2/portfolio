@@ -45,7 +45,7 @@ export default function Home() {
     <main className={`${styles.main}`} id="homePage">
       {/* <Bio />
       <Skills/> */}
-      <WorkIntro />
+      {/* <WorkIntro /> */}
       <About />
 
       {/* <ParallaxGallery /> */}

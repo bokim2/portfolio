@@ -15,11 +15,14 @@ import styles from '../about-carousel/aboutCarousel.module.scss';
 
 import genencorFun from '@/../public/images/carousel/1.jpg';
 import genencor2 from '@/../public/images/progressive/genencor3.jpg';
-import egyptWine from '@/../public/images/carousel/egyptWine.jpg';
+
 import background from '@/../public/images/carousel/background.jpg';
 
 import spotfireJH1 from '@/../public/images/carousel/spotfireJH1.jpg';
+import spotfireFilters from '@/../public/images/carousel/spotfireFilters.jpg';
+import spotfireGIF from '@/../public/images/carousel/spotfireGIF.gif';
 import benchlingNotebook from '@/../public/images/carousel/benchlingNotebook.jpg';
+import benchlingGIF from '@/../public/images/carousel/benchlingGIF.gif';
 
 import biostatB from '@/../public/images/carousel/biostatB.jpg';
 import biostatBY from '@/../public/images/carousel/biostatBY.jpg';
@@ -41,6 +44,7 @@ import ambr1 from '@/../public/images/carousel/ambr1.jpg';
 import ambr2 from '@/../public/images/carousel/ambr2.jpg';
 
 import suf from '@/../public/images/carousel/suf.jpg';
+import sufGIFShort from '@/../public/images/carousel/sufGIFShort.gif';
 import suf300 from '@/../public/images/carousel/suf300.jpg';
 import sufDeflated from '@/../public/images/carousel/sufDeflated.jpg';
 import suf2 from '@/../public/images/carousel/suf2.jpg';
@@ -146,8 +150,8 @@ export const SINGLE_CARD_DATA = [
       title: 'Data management software',
       subtitle: 'Spotfire - Data visualization',
       equipment: 'Spotfire',
-      pic1: spotfireJH1,
-      pic2: benchlingNotebook,
+      pic1: spotfireGIF,
+      pic2: spotfireFilters,
       pic1ImageCaption:
         'Spotfire, a favorite data visualization tool for many scientists (other than excel, still).  ',
       pic2ImageCaption:
@@ -168,11 +172,23 @@ export const SINGLE_CARD_DATA = [
       title: 'Data management software',
       subtitle: 'Benchling - Data recording and tracking',
       equipment: 'Benchling',
-      pic1: benchlingNotebook,
+      pic1: benchlingGIF,
       pic2: benchlingNotebook,
       pic1ImageCaption: '',
       pic2ImageCaption:
         'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need.',
+        pic1StyleOverrides: {
+          // transform: 'scale(2)',
+          // backgroundColor: 'red',
+          // opacity: .2
+          objectFit: 'contain',
+        },
+        pic2StyleOverrides: {
+          // transform: 'scale(2)',
+          // objectFit: 'contain',
+          // backgroundColor: 'red',
+          // opacity: .2
+        },
       text: [
         <>
           Before Benchling, I used a different electronic lab notebook. It was
@@ -329,10 +345,10 @@ export const SINGLE_CARD_DATA = [
       title: 'Evolution of Bioreactors',
       subtitle: 'Thermo fisher SUF - single-use fermentation',
       equipment: '',
-      pic1: sufDeflated,
+      pic1: sufGIFShort,
       pic2: sufProfile,
       pic1StyleOverrides: {
-        filter: 'brightness(1.5)',
+        // filter: 'brightness(1.5)',
       },
       pic2StyleOverrides: {
         filter: 'brightness(1.2)',
