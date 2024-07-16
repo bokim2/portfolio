@@ -88,7 +88,7 @@ type TSlide = {
   pic2StyleOverrides?: CSSProperties;
   pic1ImageCaption?: string;
   pic2ImageCaption?: string;
-  text?: string[];
+  text?: (string | JSX.Element)[];
 };
 
 `
@@ -158,7 +158,7 @@ export const SINGLE_CARD_DATA = [
           Surprisingly, graphing experimental data to this day is often done in
           excel. Spotfire changed the game on this with this with an intuitive
           user interface and easy to apply filters and groupings. It is similar
-          to Tableu but much easier to use for scientists.{' '}
+          to Tableau but much easier to use for scientists.{' '}
         </>,
 
         ,
@@ -219,7 +219,17 @@ export const SINGLE_CARD_DATA = [
       pic2: mfcs,
       pic1ImageCaption: 'standard 2L bioreactor',
       pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
-      text: [<></>],
+      text: [
+        <>
+          The Biostat B is the work horse. It is an older model that is tried
+          and true. The software used to create fermentation recipes is not easy
+          to use.{' '}
+        </>,
+        <>
+          It is a bit before my time in terms of implementing this system, the
+          legends say that it is not user friendly.{' '}
+        </>,
+      ],
     },
 
     {
@@ -245,11 +255,15 @@ export const SINGLE_CARD_DATA = [
           allowed convenient control of multiple bioreactors through one
           controller.{' '}
         </>,
+        <>
+          But clearly, there were improvements yet to come since the UI was
+          split up, one bioreactor at a time for some parts, not for others.
+        </>,
       ],
     },
     {
       title: 'Evolution of Bioreactors',
-      subtitle: 'Biolector - miniturized fermentation',
+      subtitle: 'Biolector - miniturized / simplified fermentation',
       equipment: '',
       pic1: biolector1,
       pic2: MF_biolector_feed_profile,
@@ -276,6 +290,10 @@ export const SINGLE_CARD_DATA = [
           product formation, resulting in better breakout in performance than in
           microtiter plates.
         </>,
+        <>
+          Recipe controls were simplified (less fine-grain control) compared to a "real" bioreactor. It
+          made sense given the growth conditions.  
+        </>,
       ],
     },
     {
@@ -292,20 +310,25 @@ export const SINGLE_CARD_DATA = [
         // objectFit: 'contain',
       },
       pic2StyleOverrides: {},
-      pic1ImageCaption:
-        'the new industry standard in screening',
-      pic2ImageCaption:
-        'software that is intuitive and set up for DOE.',
+      pic1ImageCaption: 'the new industry standard in screening',
+      pic2ImageCaption: 'software that is intuitive and set up for DOE.',
       text: [
         <>
-         The Ambr250 is single-use and only 250mL in vessel size.  
+          The Ambr250 is single-use and only 250mL in vessel size. It is geared
+          for high-throughput and can be set up to control the fermentation
+          using variables that can be entered in a columnar format.
         </>,
         <>
-
+          It makes designing experiments to examine effects of specific
+          variables very convenient, without having to re-write or modify the
+          fermentation recipe.
         </>,
       ],
     },
     {
+      title: 'Evolution of Bioreactors',
+      subtitle: 'Thermo fisher SUF - single-use fermentation',
+      equipment: '',
       pic1: sufDeflated,
       pic2: sufProfile,
       pic1StyleOverrides: {
@@ -314,6 +337,14 @@ export const SINGLE_CARD_DATA = [
       pic2StyleOverrides: {
         filter: 'brightness(1.2)',
       },
+      pic1ImageCaption: 'a 30L fermentation bag',
+      pic2ImageCaption: 'this system is set up to handle GMP.',
+      text: [
+        <>
+          software is designed to handle 1 reactor at a time. legacy software,
+          but the hardware is very new.
+        </>,
+      ],
     },
   ],
 
