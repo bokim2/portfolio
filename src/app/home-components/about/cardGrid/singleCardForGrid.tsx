@@ -291,7 +291,7 @@ export const SINGLE_CARD_DATA = [
           microtiter plates.
         </>,
         <>
-          Recipe controls were simplified (less fine-grain control) compared to a "real" bioreactor. It
+          Recipe controls were simplified (less fine-grain control) compared to a &quot;real&quot; bioreactor. It
           made sense given the growth conditions.  
         </>,
       ],
