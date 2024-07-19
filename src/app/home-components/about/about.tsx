@@ -17,31 +17,31 @@ import CardSelector from './about-carousel/cardSelector';
 import { useAnimation } from 'framer-motion';
 
 
-type T_ABOUT_INTRO = React.ReactNode[];
+// type T_ABOUT_INTRO = React.ReactNode[];
 
-const ABOUT_INTRO= [
-  <>
-    <h2>Origins</h2>
-    <ul>
-      <li>what i did in biotech</li>
-      <li>cool equipment and software that got me interested in software engineering</li>
-    </ul>
-  </>,
-    <>
-    <h2>current</h2>
-    <ul>
-      <li>what ive been working on, portfolio, AWS cert, projects</li>
-      <li>where i hope to be, what type of role</li>
-    </ul>
-  </>,
-      <>
-      <h2>next</h2>
-      <ul>
-        <li>my interests in software developement</li>
-        <li>cool equipment and software that got me interested in software engineering</li>
-      </ul>
-    </>,
-];
+// const ABOUT_INTRO= [
+//   <>
+//     <h2>Origins</h2>
+//     <ul>
+//       <li>what i did in biotech</li>
+//       <li>cool equipment and software that got me interested in software engineering</li>
+//     </ul>
+//   </>,
+//     <>
+//     <h2>current</h2>
+//     <ul>
+//       <li>what ive been working on, portfolio, AWS cert, projects</li>
+//       <li>where i hope to be, what type of role</li>
+//     </ul>
+//   </>,
+//       <>
+//       <h2>next</h2>
+//       <ul>
+//         <li>my interests in software developement</li>
+//         <li>cool equipment and software that got me interested in software engineering</li>
+//       </ul>
+//     </>,
+// ];
 
 export default function About() {
   const { activeSection, setActiveSection, ref } =
@@ -61,15 +61,7 @@ export default function About() {
       console.log('entering settimeout');
       setSelectedCardIndex(selectedIndex);
       setSelectedCardReady(true);
-    }, 500);
-    // if (aboutRef.current) {
-    //   aboutRef.current.scrollIntoView({behavior: 'smooth'})
-
-    //   setSelectedCardIndex(selectedIndex);
-    //   aboutRef.current.addEventListener('scrollend', ()=>{
-    //     setSelectedCardReady(true)
-    //   }, {once: true})
-    // }
+    }, 1000);
   }
 
   return (
@@ -79,10 +71,11 @@ export default function About() {
           id="beforeAbout"
           className={styles.beforeAbout}
           style={{ backgroundColor: 'blue', height: '10px', width: '10px' }}
-        /> <CardSelector
+        /> 
+        {/* <CardSelector
           selectedCardIndex={selectedCardIndex}
           handleSelectorChange={handleSelectorChange}
-        />
+        /> */}
         
         <div className={styles.beforeCardSpacer}>
           <h1>About</h1>
@@ -93,7 +86,7 @@ export default function About() {
            return  <div key={i}>{text}</div>
           })} */}
 
-          {selectedCardIndex !== null && <div key={selectedCardIndex}>{ABOUT_INTRO[selectedCardIndex]}</div>}
+          {/* {selectedCardIndex !== null && <div key={selectedCardIndex}>{ABOUT_INTRO[selectedCardIndex]}</div>} */}
         </div>
         <Wrapper additionalClasses={`wrapper mobileLessPadding`}>
           {/* <Link href="/experience">

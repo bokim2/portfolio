@@ -6,6 +6,7 @@ import styles from '../about.module.scss';
 import SingleCardForGrid, { SINGLE_CARD_DATA } from './singleCardForGrid';
 import CardSelector from '../about-carousel/cardSelector';
 import { AnimatePresence, motion } from 'framer-motion';
+import CardDeck from './cardDeck';
 
 type TaboutCarousel = {
   selectedCardIndex: number | null;
@@ -22,6 +23,12 @@ export default function CardGrid({
   //   setSelectedCardIndex(selectedIndex);
   // }
 
+  function scrollToSection(id: string) {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   useEffect(() => {
     if (selectedCardIndex) {
       console.log('selectedCardIndex', selectedCardIndex);
@@ -34,27 +41,39 @@ export default function CardGrid({
   return (
     <AnimatePresence>
       <motion.div
-      initial={{y: -30, opacity: 0}}
-      animate={{y: 0, opacity: 1}}
-      exit={{y: -30, opacity: 0}}
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -30, opacity: 0 }}
         className={styles.cardGrid}
         // style={{backgroundColor: 'red'}}
       >
         {/* <CardSelector selectedCardIndex={selectedCardIndex} 
       handleSelectorChange={handleSelectorChange}/> */}
-        {selectedCardIndex !== null &&
-          Array.from({
-            length: SINGLE_CARD_DATA[selectedCardIndex]?.length,
-          }).map((activeIndex, i) => {
-            return (
-              <SingleCardForGrid
-                key={i}
-                item={SINGLE_CARD_DATA[selectedCardIndex]}
-                activeIndex={i}
-                cardIndex={0}
-              />
-            );
-          })}
+        {/* entire decks of cards */}
+        {SINGLE_CARD_DATA.map((deck, i) => {
+          return (
+            <>
+              <motion.header
+                onClick={() => {
+                  handleSelectorChange(i);
+                  scrollToSection('beforeAbout');
+                }}
+                initial={false}
+                animate={{
+                  backgroundColor: selectedCardIndex === i ? 'red' : 'blue',
+                }}
+                // onClick
+              >
+                {SINGLE_CARD_DATA[i][0]?.section}
+                {SINGLE_CARD_DATA[i][0]?.intro}
+              </motion.header>
+
+              {selectedCardIndex === i && (
+                <CardDeck selectedCardIndex={selectedCardIndex} />
+              )}
+            </>
+          );
+        })}
       </motion.div>
     </AnimatePresence>
 

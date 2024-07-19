@@ -82,6 +82,8 @@ import operizBM from '@/../public/images/carousel/operizBM.jpg';
 import CardControls from '../about-carousel/cardControls';
 
 type TSlide = {
+  section?: string ;
+  intro: string | JSX.Element;
   title?: string;
   subtitle?: string;
   equipment?: string;
@@ -105,7 +107,19 @@ sweetener naturally derived from the stevia plant.
 
 export const SINGLE_CARD_DATA = [
   [
-    {
+    {section: 'origin',
+      intro: (
+        <>
+          <h2>Origins</h2>
+          <ul>
+            <li>what i did in biotech</li>
+            <li>
+              cool equipment and software that got me interested in software
+              engineering
+            </li>
+          </ul>
+        </>
+      ),
       title: 'the journey up to this point',
       subtitle: 'biotech',
       equipment: '',
@@ -177,18 +191,18 @@ export const SINGLE_CARD_DATA = [
       pic1ImageCaption: '',
       pic2ImageCaption:
         'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need.',
-        pic1StyleOverrides: {
-          // transform: 'scale(2)',
-          // backgroundColor: 'red',
-          // opacity: .2
-          objectFit: 'contain',
-        },
-        pic2StyleOverrides: {
-          // transform: 'scale(2)',
-          // objectFit: 'contain',
-          // backgroundColor: 'red',
-          // opacity: .2
-        },
+      pic1StyleOverrides: {
+        // transform: 'scale(2)',
+        // backgroundColor: 'red',
+        // opacity: .2
+        objectFit: 'contain',
+      },
+      pic2StyleOverrides: {
+        // transform: 'scale(2)',
+        // objectFit: 'contain',
+        // backgroundColor: 'red',
+        // opacity: .2
+      },
       text: [
         <>
           Before Benchling, I used a different electronic lab notebook. It was
@@ -307,8 +321,9 @@ export const SINGLE_CARD_DATA = [
           microtiter plates.
         </>,
         <>
-          Recipe controls were simplified (less fine-grain control) compared to a &quot;real&quot; bioreactor. It
-          made sense given the growth conditions.  
+          Recipe controls were simplified (less fine-grain control) compared to
+          a &quot;real&quot; bioreactor. It made sense given the growth
+          conditions.
         </>,
       ],
     },
@@ -366,7 +381,19 @@ export const SINGLE_CARD_DATA = [
 
   // second card
   [
-    {
+    {section: 'current',
+      intro: (
+        <>
+          <h2>next</h2>
+          <ul>
+            <li>my interests in software developement</li>
+            <li>
+              cool equipment and software that got me interested in software
+              engineering
+            </li>
+          </ul>
+        </>
+      ),
       title: 'Bootcamp',
       subtitle: 'Codesmith',
       equipment: '',
@@ -535,7 +562,7 @@ export const SINGLE_CARD_DATA = [
       ],
     },
   ],
-  [],
+
 ] as TSlide[][];
 
 const slideVariants = {
@@ -548,12 +575,14 @@ type TCard = {
   item: (typeof SINGLE_CARD_DATA)[number];
   activeIndex: number;
   cardIndex: number;
+  selectedCardIndex: (number | null);
 };
 
 export default function SingleCardForGrid({
   item,
   cardIndex,
   activeIndex,
+  selectedCardIndex,
 }: TCard) {
   // const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
