@@ -16,7 +16,6 @@ import CardGrid from './cardGrid/cardGrid';
 import CardSelector from './about-carousel/cardSelector';
 import { useAnimation } from 'framer-motion';
 
-
 // type T_ABOUT_INTRO = React.ReactNode[];
 
 // const ABOUT_INTRO= [
@@ -54,38 +53,45 @@ export default function About() {
 
   async function scrollToTop() {}
 
-  function handleSelectorChange(selectedIndex: number) {
-    setSelectedCardReady(false);
-    console.log('in handleSelectorChange');
-    setTimeout(() => {
-      console.log('entering settimeout');
-      setSelectedCardIndex(selectedIndex);
-      setSelectedCardReady(true);
-    }, 1000);
+  function handleSelectorChange(clickedCardIndex: number) {
+    // setSelectedCardReady(false);
+    // console.log('in handleSelectorChange');
+    // setTimeout(() => {
+    //   console.log('entering settimeout');
+    //   if (selectedCardIndex !== clickedCardIndex) {
+    //     setSelectedCardIndex(clickedCardIndex);
+    //   } else {
+    //     setSelectedCardIndex(null);
+    //   }
+    //   setSelectedCardReady(true);
+    // }, 1000);
+          if (selectedCardIndex !== clickedCardIndex) {
+        setSelectedCardIndex(clickedCardIndex);
+      } else {
+        setSelectedCardIndex(null);
+      }
   }
 
   return (
     <>
       <div className={styles.about} id="about">
-       <div
+        <div
           id="beforeAbout"
           className={styles.beforeAbout}
           style={{ backgroundColor: 'blue', height: '10px', width: '10px' }}
-        /> 
+        />
         {/* <CardSelector
           selectedCardIndex={selectedCardIndex}
           handleSelectorChange={handleSelectorChange}
         /> */}
-        
+
         <div className={styles.beforeCardSpacer}>
           <h1>About</h1>
           this section is more just for fun, so feel free to check it out or
           skip it.
-
           {/* {ABOUT_INTRO?.map((text, i)=> {
            return  <div key={i}>{text}</div>
           })} */}
-
           {/* {selectedCardIndex !== null && <div key={selectedCardIndex}>{ABOUT_INTRO[selectedCardIndex]}</div>} */}
         </div>
         <Wrapper additionalClasses={`wrapper mobileLessPadding`}>

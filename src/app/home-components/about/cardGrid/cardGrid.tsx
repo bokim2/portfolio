@@ -53,12 +53,13 @@ export default function CardGrid({
         {SINGLE_CARD_DATA.map((deck, i) => {
           return (
             <>
-              <motion.header
+              <motion.header   
+              initial={false}
                 onClick={() => {
                   handleSelectorChange(i);
                   scrollToSection('beforeAbout');
                 }}
-                initial={false}
+             
                 animate={{
                   backgroundColor: selectedCardIndex === i ? 'red' : 'blue',
                 }}
@@ -69,6 +70,7 @@ export default function CardGrid({
               </motion.header>
 
               {selectedCardIndex === i && (
+                
                 <CardDeck selectedCardIndex={selectedCardIndex} />
               )}
             </>

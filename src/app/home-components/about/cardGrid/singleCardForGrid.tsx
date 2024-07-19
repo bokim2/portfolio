@@ -701,7 +701,7 @@ export default function SingleCardForGrid({
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic1`}
                         className={styles.cardImageContainer}
-                        initial={{ opacity: 1, x: '0%' }}
+                        initial={{ opacity: 1, x: '0%', height: 'auto'}}
                         animate={{
                           opacity: isHovered ? 0 : 1,
                           x: isHovered ? '-100%' : '0%',
