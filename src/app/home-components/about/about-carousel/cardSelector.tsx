@@ -48,7 +48,7 @@ export default function CardSelector({
             // e.preventDefault();
             // e.stopPropagation();
             // console.log('before scrolling to about')
-            scrollToSection('beforeAbout');
+            // scrollToSection('beforeAbout');
             // console.log('after scrolling to about')
 
             handleSelectorChange(i);

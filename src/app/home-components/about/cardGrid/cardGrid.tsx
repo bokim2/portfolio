@@ -11,9 +11,11 @@ import CardDeck from './cardDeck';
 type TaboutCarousel = {
   selectedCardIndex: number | null;
   handleSelectorChange: (selectedIndex: number) => void;
+  selectedCardReady: Boolean;
 };
 
 export default function CardGrid({
+  selectedCardReady,
   selectedCardIndex,
   handleSelectorChange,
 }: TaboutCarousel) {
@@ -53,13 +55,12 @@ export default function CardGrid({
         {SINGLE_CARD_DATA.map((deck, i) => {
           return (
             <>
-              <motion.header   
-              initial={false}
+              <motion.header
+                initial={false}
                 onClick={() => {
                   handleSelectorChange(i);
-                  scrollToSection('beforeAbout');
+                  // scrollToSection('beforeAbout');
                 }}
-             
                 animate={{
                   backgroundColor: selectedCardIndex === i ? 'red' : 'blue',
                 }}
@@ -69,10 +70,11 @@ export default function CardGrid({
                 {SINGLE_CARD_DATA[i][0]?.intro}
               </motion.header>
 
-              {selectedCardIndex === i && (
-                
-                <CardDeck selectedCardIndex={selectedCardIndex} />
-              )}
+              <AnimatePresence>
+                {selectedCardIndex === i && selectedCardReady && (
+                  <CardDeck selectedCardIndex={selectedCardIndex} />
+                )}
+              </AnimatePresence>
             </>
           );
         })}

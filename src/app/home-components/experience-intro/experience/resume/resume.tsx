@@ -102,31 +102,7 @@ const resumeData: TresumeData[] = [
     imagePath: '/images/experience/rediscope-team.jpg',
     imageStyle: { objectFit: 'contain' },
   },
-  {
-    title: 'This Portfolio',
-    link: '',
-    type: 'A frontend heavy experiment',
-    // summary: 'I wanted to have fun and explore with this portfolio. I wanted to experiment and explore further with three.js, framer motion, and other libraries.  Design, visual hiarchy, and typography was also something I wanted think about and consider.',
-    date: '2024',
-    intro: ``,
-    techStack: [
-      'Next.js',
-      'React',
-      'Typescript',
-      'Framer Motion',
-      'Three.js',
-      'React Three Drei',
-      'Sass',
-      // '',
-    ],
-    description: [
-      // 'Frontend heavy experiment',
-      'I wanted to have fun and explore with this portfolio. I wanted to experiment and explore further with three.js, framer motion, and other libraries.',
-      'Design, visual hiarchy, and typography was also something I wanted think about and consider.',
-    ],
-    // imagePath: '/images/experience/portfolio.jpg',
-    imageStyle: { objectFit: 'cover' },
-  },
+ 
   {
     title: 'Scientist',
     secondaryTitle: 'Senior RA',
@@ -201,6 +177,31 @@ const resumeData: TresumeData[] = [
     ],
     imagePath: '/images/progressive/genencor1.jpg',
     imageStyle: { objectFit: 'cover', objectPosition: '0% 20%' },
+  },
+  {
+    title: 'This Portfolio',
+    link: '',
+    type: 'A frontend heavy experiment',
+    // summary: 'I wanted to have fun and explore with this portfolio. I wanted to experiment and explore further with three.js, framer motion, and other libraries.  Design, visual hiarchy, and typography was also something I wanted think about and consider.',
+    date: '2024',
+    intro: ``,
+    techStack: [
+      'Next.js',
+      'React',
+      'Typescript',
+      'Framer Motion',
+      'Three.js',
+      'React Three Drei',
+      'Sass',
+      // '',
+    ],
+    description: [
+      // 'Frontend heavy experiment',
+      'I wanted to have fun and explore with this portfolio. I wanted to experiment and explore further with three.js, framer motion, and other libraries.',
+      'Design, visual hiarchy, and typography was also something I wanted think about and consider.',
+    ],
+    // imagePath: '/images/experience/portfolio.jpg',
+    imageStyle: { objectFit: 'cover' },
   },
 ];
 
@@ -375,7 +376,8 @@ export default function Resume() {
                   {toggleResumeDetails ? (
                     <div className={`${styles.resumeDetails}`}>
                       <motion.ul
-                        layout
+                      key="resumelist"
+                        // layout
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}

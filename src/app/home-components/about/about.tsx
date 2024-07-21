@@ -140,12 +140,13 @@ export default function About() {
           selectedCardIndex={selectedCardIndex}
           handleSelectorChange={handleSelectorChange}
           />} */}
-          {selectedCardReady && (
+          {/* {selectedCardReady && ( */}
             <CardGrid
+            selectedCardReady={selectedCardReady}
               selectedCardIndex={selectedCardIndex}
               handleSelectorChange={handleSelectorChange}
             />
-          )}
+          {/* )} */}
         </Wrapper>
         {/* <AboutCarousel /> */}
         <Wrapper>
