@@ -45,9 +45,9 @@ import { useAnimation } from 'framer-motion';
 export default function About() {
   const { activeSection, setActiveSection, ref } =
     useUpdateActiveSection('about');
-  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
+  // const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
 
-  const [selectedCardReady, setSelectedCardReady] = useState<boolean>(true);
+  // const [selectedCardReady, setSelectedCardReady] = useState<boolean>(true);
   // const controls = useAnimation();
   // const aboutRef = useRef<HTMLDivElement>(null);
 
@@ -65,11 +65,11 @@ export default function About() {
     //   }
     //   setSelectedCardReady(true);
     // }, 1000);
-          if (selectedCardIndex !== clickedCardIndex) {
-        setSelectedCardIndex(clickedCardIndex);
-      } else {
-        setSelectedCardIndex(null);
-      }
+      //     if (selectedCardIndex !== clickedCardIndex) {
+      //   setSelectedCardIndex(clickedCardIndex);
+      // } else {
+      //   setSelectedCardIndex(null);
+      // }
   }
 
   return (
@@ -142,9 +142,9 @@ export default function About() {
           />} */}
           {/* {selectedCardReady && ( */}
             <CardGrid
-            selectedCardReady={selectedCardReady}
-              selectedCardIndex={selectedCardIndex}
-              handleSelectorChange={handleSelectorChange}
+            // selectedCardReady={selectedCardReady}
+            //   selectedCardIndex={selectedCardIndex}
+              // handleSelectorChange={handleSelectorChange}
             />
           {/* )} */}
         </Wrapper>

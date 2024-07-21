@@ -1,3 +1,6 @@
+// NOT USED, WILL DELETE
+
+
 import Image, { StaticImageData } from 'next/image';
 import { CSSProperties, useEffect, useState } from 'react';
 

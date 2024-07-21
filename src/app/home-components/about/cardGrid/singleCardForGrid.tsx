@@ -82,7 +82,7 @@ import operizBM from '@/../public/images/carousel/operizBM.jpg';
 import CardControls from '../about-carousel/cardControls';
 
 type TSlide = {
-  section?: string ;
+  section?: string;
   intro: string | JSX.Element;
   title?: string;
   subtitle?: string;
@@ -107,7 +107,8 @@ sweetener naturally derived from the stevia plant.
 
 export const SINGLE_CARD_DATA = [
   [
-    {section: 'origin',
+    {
+      section: 'origin',
       intro: (
         <>
           <h2>Origins</h2>
@@ -381,7 +382,8 @@ export const SINGLE_CARD_DATA = [
 
   // second card
   [
-    {section: 'current',
+    {
+      section: 'current',
       intro: (
         <>
           <h2>next</h2>
@@ -562,7 +564,6 @@ export const SINGLE_CARD_DATA = [
       ],
     },
   ],
-
 ] as TSlide[][];
 
 const slideVariants = {
@@ -575,16 +576,17 @@ type TCard = {
   item: (typeof SINGLE_CARD_DATA)[number];
   activeIndex: number;
   cardIndex: number;
-  selectedCardIndex: (number | null);
+  isOpen: Boolean;
+  // selectedCardIndex: number | null;
 };
 
 export default function SingleCardForGrid({
   item,
   cardIndex,
   activeIndex,
-  selectedCardIndex,
-}: TCard) {
-  // const [activeIndex, setActiveIndex] = useState(0);
+  isOpen
+}: // selectedCardIndex,
+TCard) {
   const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
   const [isClicked, setIsClicked] = useState<'left' | 'right' | null>(null);
   const [scrollCardImgTriggered, setScrollCardImgTriggered] =
@@ -596,10 +598,6 @@ export default function SingleCardForGrid({
     offset: ['start end', 'end start'],
   });
 
-  // useEffect(() => {
-  // console.log(i)
-  // }, [i])
-
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     console.log('Page scroll: ', latest);
     if (latest >= 0.5 && !scrollCardImgTriggered) {
@@ -607,23 +605,6 @@ export default function SingleCardForGrid({
       setScrollCardImgTriggered(true);
     }
   });
-
-  function handleIndexChange(incrementValue: number) {
-    //   console.log('incrementValue', incrementValue, 'activeIndex', activeIndex);
-    //   if (incrementValue > 0) {
-    //     if (activeIndex >= item?.length - 1) {
-    //       setActiveIndex(0);
-    //       return;
-    //     }
-    //     setActiveIndex((prev) => prev + incrementValue);
-    //   } else {
-    //     if (activeIndex <= 0) {
-    //       setActiveIndex(item.length - 1);
-    //       return;
-    //     }
-    //     setActiveIndex((prev) => prev + incrementValue);
-    //   }
-  }
 
   return (
     <div className={styles.card}>
@@ -664,7 +645,7 @@ export default function SingleCardForGrid({
 
           <div
             className={`${styles.cardColumn} ${styles.imageColumn}`}
-            onClick={() => handleIndexChange(1)}
+            // onClick={() => handleIndexChange(1)}
           >
             {item?.length > 0 ? (
               <>
@@ -701,7 +682,7 @@ export default function SingleCardForGrid({
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic1`}
                         className={styles.cardImageContainer}
-                        initial={{ opacity: 1, x: '0%', height: 'auto'}}
+                        initial={{ opacity: 1, x: '0%', height: 'auto' }}
                         animate={{
                           opacity: isHovered ? 0 : 1,
                           x: isHovered ? '-100%' : '0%',
@@ -772,7 +753,7 @@ export default function SingleCardForGrid({
         <motion.div className={styles.cardInner}>
           <div
             className={`${styles.cardColumn} ${styles.imageColumn}`}
-            onClick={() => handleIndexChange(-1)}
+            // onClick={() => handleIndexChange(-1)}
           >
             {item?.length > 0 ? (
               <>
@@ -785,10 +766,6 @@ export default function SingleCardForGrid({
                     }}
                     className={`${styles.cardImageContainer} imgBorderRadius`}
                     ref={scrollCardRef}
-                    // onMouseEnter={() => {
-                    //   setIsHovered('left');
-                    // }}
-                    // onMouseLeave={() => setIsHovered(null)}
                     onClick={() => {
                       isHovered === null
                         ? setIsHovered('left')
@@ -800,9 +777,7 @@ export default function SingleCardForGrid({
                     }}
                     onMouseDown={() => setIsClicked('left')}
                     onMouseUp={() => setIsClicked(null)}
-                    // whileHover={{'.pic2': {opacity: 1}}}
                   >
-                    {/* {!isHovered ? ( */}
                     <AnimatePresence initial={false}>
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic1_even`}
@@ -885,7 +860,6 @@ export default function SingleCardForGrid({
                     <p key={i} className={`${styles.textParagraphs} large`}>
                       {singleParagraph}
                     </p>
-                    {/* {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />} */}
                   </>
                 ))}
               </div>
@@ -904,218 +878,6 @@ export default function SingleCardForGrid({
           </div>
         </motion.div>
       )}
-
-      {/* <AnimatePresence> */}
-      {/* <div className={`${styles.imageDots}`}>
-        {item?.map((count, i) =>
-          activeIndex == i ? (
-            <motion.div
-              key={`active-${i}`}
-              // initial={{ scale: 1 }}
-              // animate={{ scale: 1 }}
-              whileHover={{ scale: 1.35 }}
-              // transition={{ duration: 0.2 }}
-            >
-              <GoDotFill onClick={() => setActiveIndex(i)} />
-            </motion.div>
-          ) : (
-            <motion.div
-              key={`inactive${i}`}
-              // initial={{ scale: 1 }}
-              // animate={{ scale: 1 }}
-              whileHover={{ scale: 1.35 }}
-              // transition={{ duration: 0.2 }}
-            >
-              <GoDot onClick={() => setActiveIndex(i)} />
-            </motion.div>
-          )
-        )}
-      </div> */}
-      {/* </AnimatePresence> */}
     </div>
   );
 }
-
-// {
-//   title: 'Self-learning',
-//   subtitle: '',
-//   equipment: '',
-//   pic1: codesmith,
-//   pic2: codesmith2,
-//   // pic3: egyptWine,
-//   pic1StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic2StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic1ImageCaption: 'remote instruction.',
-//   pic2ImageCaption: '3 months',
-//   text: [
-//     <>
-//       started looking at backend, started learning python for algos. but
-//       eventually backed off to work on frontend to build a portfolio. was
-//       surprised to find that i really enjoyed frontend, and stayed there for
-//       a while.
-//       {/* <em>
-//         <b> full stack</b>
-//       </em> */}
-//     </>,
-//     <></>,
-//   ],
-// },
-// {
-//   title: 'Why software engineering',
-//   subtitle: '',
-//   equipment: '',
-//   pic1: codesmith,
-//   pic2: codesmith2,
-//   // pic3: egyptWine,
-//   pic1StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic2StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic1ImageCaption: 'remote instruction.',
-//   pic2ImageCaption: '3 months',
-//   text: [
-//     <>
-//       my favorite part of working in biotech in the bay area was getting to
-//       work with cutting edge equipment and software and also seeing the
-//       iteration and progression of these tools over time.
-//       {/* <em>
-//         <b> full stack</b>
-//       </em> */}
-//     </>,
-//     <>
-//       After a decade in biotech, I have worked with most of the industry
-//       standard tools in my area of specialization and developments in this
-//       area is slower (game changing new tools every couple of years) than
-//       you would find in a industry like tech.
-//     </>,
-//   ],
-// },
-
-// {
-//   title: 'bioreactors - their role I',
-//   subtitle: 'a testing platform',
-//   equipment: '',
-//   pic1: manyBioreactors,
-//   pic2: dna,
-//   // pic3: egyptWine,
-//   pic1StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic2StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic1ImageCaption: 'remote instruction.',
-//   pic2ImageCaption: '3 months',
-//   text: [
-//     <>
-//       Over time, there has been more and more emphasis on throughput and
-//       miniaturization in the fermentation space. This is because a large
-//       part of bioreactor usage is for screening strains / variants with the
-//       same fermentation recipe.
-//       {/* <em>
-//         <b> full stack</b>
-//       </em> */}
-//     </>,
-//     <>
-//       In my opinion, a lot of the focus in biotech is more in molecular
-//       biology / strain engineering these days. After all, you can not make a
-//       bad strain produce a lot of product, no matter what you do in
-//       fermentation.
-//     </>,
-//   ],
-// },
-
-// {
-//   title: 'bioreactors - their role II',
-//   subtitle: 'a industrial scale model',
-//   equipment: '',
-//   pic1: commercialScale,
-//   pic2: codesmith2,
-//   // pic3: egyptWine,
-//   pic1StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic2StyleOverrides: {
-//     objectFit: 'contain',
-//     // transform: 'scale(2)',
-//     // backgroundColor: 'red',
-//     // opacity: .2
-//   },
-//   pic1ImageCaption: 'remote instruction.',
-//   pic2ImageCaption: '3 months',
-//   text: [
-//     <>
-//       serious constraints due to what is possible at industrial scale.
-//       Commercial scale plants often have poorer control over conditions than
-//       bench scale, ex: poorer mixing, temperature control.
-//       {/* <em>
-//         <b> full stack</b>
-//       </em> */}
-//     </>,
-//     <>
-//       cost has taken center stage. biotech processes are expensive!
-//       experimenting with media composition is limited, whatever goes in
-//       costs $$, or may need to be removed at the end of the process (or can
-//       interfere with purification). they say 90% of biotech production cost
-//       is in the recovery / filtration process.
-//     </>,
-//   ],
-// },
-// {
-//   title: 'Evolution of Bioreactors',
-//   subtitle: 'Satorius Biostat B',
-//   equipment: '',
-//   pic1: biostatB,
-//   pic2: mfcs,
-//   pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
-//   pic2ImageCaption: 'MFCS software - difficult to set up or modify',
-//   text: [<></>],
-// },
-
-// { pic1: dasgip, pic2: dasgipSw },
-// { pic1: biolector1, pic2: biolector2 },
-// { pic1: ambr250, pic2: ambr250Sw },
-// { pic1: suf, pic2: sufSw1 },
-
-// {
-//   title: 'Evolution of Bioreactors',
-//   subtitle: 'Satorius Biostat B',
-//   equipment: '',
-//   pic1: biostatB,
-//   pic2: mfcs,
-//   pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
-//   pic2ImageCaption: 'MFCS software - difficult to set up or modify',
-//   text: [<></>],
-// },
-
-// { pic1: dasgip, pic2: dasgipSw },
-// { pic1: biolector1, pic2: biolector2 },
-// { pic1: ambr250, pic2: ambr250Sw },
-// { pic1: suf, pic2: sufSw1 },
