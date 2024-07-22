@@ -126,18 +126,11 @@ export const SINGLE_CARD_DATA = [
       equipment: '',
       pic1: fermAmyrisBM,
       pic2: background,
-      // pic3: egyptWine,
       pic1StyleOverrides: {
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
         objectFit: 'contain',
       },
       pic2StyleOverrides: {
-        // transform: 'scale(2)',
         objectFit: 'contain',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic1ImageCaption:
         'My first job, I worked on enzymes for biofuel production.',
@@ -193,17 +186,9 @@ export const SINGLE_CARD_DATA = [
       pic2ImageCaption:
         'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need.',
       pic1StyleOverrides: {
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
         objectFit: 'contain',
       },
-      pic2StyleOverrides: {
-        // transform: 'scale(2)',
-        // objectFit: 'contain',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
+      pic2StyleOverrides: {},
       text: [
         <>
           Before Benchling, I used a different electronic lab notebook. It was
@@ -270,7 +255,6 @@ export const SINGLE_CARD_DATA = [
       pic1: dasgip,
       pic2: dasgipSw,
       pic1StyleOverrides: {
-        // objectFit: 'contain',
         filter: 'brightness(1.05)',
         transform: 'scale(1.25)',
 
@@ -299,11 +283,7 @@ export const SINGLE_CARD_DATA = [
       pic1: biolector1,
       pic2: MF_biolector_feed_profile,
       pic1StyleOverrides: {
-        // objectFit: 'contain',
         filter: 'brightness(1.05)',
-        // transform: 'scale(1.25)',
-
-        // objectFit: 'contain',
       },
       pic2StyleOverrides: {},
       pic1ImageCaption:
@@ -335,11 +315,7 @@ export const SINGLE_CARD_DATA = [
       pic1: ambr250,
       pic2: operizBM,
       pic1StyleOverrides: {
-        // objectFit: 'contain',
         filter: 'brightness(1.05)',
-        // transform: 'scale(1.25)',
-
-        // objectFit: 'contain',
       },
       pic2StyleOverrides: {},
       pic1ImageCaption: 'the new industry standard in screening',
@@ -363,9 +339,7 @@ export const SINGLE_CARD_DATA = [
       equipment: '',
       pic1: sufGIFShort,
       pic2: sufProfile,
-      pic1StyleOverrides: {
-        // filter: 'brightness(1.5)',
-      },
+      pic1StyleOverrides: {},
       pic2StyleOverrides: {
         filter: 'brightness(1.2)',
       },
@@ -401,19 +375,11 @@ export const SINGLE_CARD_DATA = [
       equipment: '',
       pic1: codesmith,
       pic2: rediscopeZ,
-      // pic3: egyptWine,
       pic1StyleOverrides: {
         objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic2StyleOverrides: {
-        // transform: 'scale(1.5)',
         objectPosition: 'center right',
-        // objectFit: 'contain',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic1ImageCaption: 'remote instruction.',
       pic2ImageCaption: '3 months',
@@ -440,15 +406,9 @@ export const SINGLE_CARD_DATA = [
       pic2: awsVPN,
       pic1StyleOverrides: {
         objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic2StyleOverrides: {
         objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic1ImageCaption: 'remote instruction.',
       pic2ImageCaption: '3 months',
@@ -470,18 +430,9 @@ export const SINGLE_CARD_DATA = [
       equipment: '',
       pic1: interest3d,
       pic2: spotfireEX,
-      // pic3: egyptWine,
-      pic1StyleOverrides: {
-        // objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
-      },
+      pic1StyleOverrides: {},
       pic2StyleOverrides: {
         objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic1ImageCaption: 'remote instruction.',
       pic2ImageCaption: '3 months',
@@ -490,9 +441,6 @@ export const SINGLE_CARD_DATA = [
           open to a lot. it could be cool to work on things like technical
           software, data visualization (because how data is visualized really
           matters!), 3D, etc.
-          {/* <em>
-            <b> full stack</b>
-          </em> */}
         </>,
         <>
           I do believe in trying things out and seeing what the best fit is.{' '}
@@ -506,22 +454,11 @@ export const SINGLE_CARD_DATA = [
       pic1: mosaic,
       pic2: dna,
       pic1StyleOverrides: {
-        // objectFit: 'contain',
         transform: 'scale(1.5)',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic2StyleOverrides: {
-        // opacity: .2
         filter: 'grayscale(80%)',
-
-        // objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
-      // pic1ImageCaption: 'remote instruction.',
-      // pic2ImageCaption: '3 months',
       text: [
         <>
           dedication, attention to detail, emphasis on open communication. i
@@ -541,15 +478,10 @@ export const SINGLE_CARD_DATA = [
       pic1StyleOverrides: {
         objectFit: 'contain',
         transform: 'scale(2.5)',
-        // backgroundColor: 'red',
-        // opacity: .2
       },
       pic2StyleOverrides: {
         objectPosition: 'top',
         filter: 'brightness(1.05)',
-        // objectFit: 'contain',
-        // transform: 'scale(2)',
-        // backgroundColor: 'red',
       },
       pic1ImageCaption: 'remote instruction.',
       pic2ImageCaption: '3 months',
@@ -577,16 +509,14 @@ type TCard = {
   activeIndex: number;
   cardIndex: number;
   isOpen: Boolean;
-  // selectedCardIndex: number | null;
 };
 
 export default function SingleCardForGrid({
   item,
   cardIndex,
   activeIndex,
-  isOpen
-}: // selectedCardIndex,
-TCard) {
+  isOpen,
+}: TCard) {
   const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
   const [isClicked, setIsClicked] = useState<'left' | 'right' | null>(null);
   const [scrollCardImgTriggered, setScrollCardImgTriggered] =
@@ -607,7 +537,7 @@ TCard) {
   });
 
   return (
-    <div className={styles.card}>
+    <motion.div className={styles.card}>
       {/* odd pictures on card */}
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>
@@ -629,7 +559,7 @@ TCard) {
                   </>
                 ))}
               </div>
-              {/* second pic */}
+
               {item?.[activeIndex]?.pic3 && (
                 <div className={styles.cardImageContainerSecondary}>
                   <Image
@@ -643,10 +573,7 @@ TCard) {
             </div>
           </div>
 
-          <div
-            className={`${styles.cardColumn} ${styles.imageColumn}`}
-            // onClick={() => handleIndexChange(1)}
-          >
+          <div className={`${styles.cardColumn} ${styles.imageColumn}`}>
             {item?.length > 0 ? (
               <>
                 <div className={styles.imageAndCaptionContainer}>
@@ -664,10 +591,6 @@ TCard) {
                         ? setIsHovered('right')
                         : setIsHovered(null);
                     }}
-                    // onMouseEnter={() => {
-                    //   setIsHovered('right');
-                    // }}
-                    // onMouseLeave={() => setIsHovered(null)}
                     whileTap={{
                       boxShadow: '2px 4px 7px var(--clr-accent-3)',
                       transform: 'scale(.98)',
@@ -676,7 +599,6 @@ TCard) {
                       setIsClicked('right');
                     }}
                     onMouseUp={() => setIsClicked(null)}
-                    // whileHover={{'.pic2': {opacity: 1}}}
                   >
                     <AnimatePresence>
                       <motion.div
@@ -733,8 +655,8 @@ TCard) {
                         />
                       </motion.div>
                     </AnimatePresence>
-                  </motion.div>
-
+                  </motion.div>{' '}
+                  //cardImageContainer
                   {!isHovered ? (
                     <p className={'imageCaption'}>
                       {item?.[activeIndex]?.pic1ImageCaption}
@@ -748,7 +670,7 @@ TCard) {
               </>
             ) : null}
           </div>
-        </motion.div>
+        </motion.div> // cardInner odd
       ) : (
         <motion.div className={styles.cardInner}>
           <div
@@ -804,7 +726,6 @@ TCard) {
                           // key={i}
                         />
                       </motion.div>
-                      {/* ) : ( */}
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic2_even`}
                         className={styles.cardImageContainer}
@@ -812,7 +733,6 @@ TCard) {
                         animate={{
                           opacity: isHovered ? 1 : 0,
                           x: isHovered ? '0%' : '-100%',
-                          // backgroundColor: 'red',
                           transition: { duration: 0.5 },
                         }}
                         style={{
@@ -830,7 +750,6 @@ TCard) {
                         />
                       </motion.div>
                     </AnimatePresence>
-                    {/* )} */}
                   </motion.div>
                   {!isHovered ? (
                     <p className={'imageCaption'}>
@@ -863,8 +782,19 @@ TCard) {
                   </>
                 ))}
               </div>
+
+            </div>
+          </div>
+        </motion.div>
+      )
+      }
+    </motion.div>  // card
+  );
+}
+
+
               {/* second pic */}
-              {item?.[activeIndex]?.pic3 && (
+              {/* {item?.[activeIndex]?.pic3 && (
                 <div className={styles.cardImageContainerSecondary}>
                   <Image
                     src={item?.[activeIndex]?.pic3 as StaticImageData}
@@ -873,11 +803,4 @@ TCard) {
                     style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
                   />
                 </div>
-              )}
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </div>
-  );
-}
+              )} */}

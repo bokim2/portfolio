@@ -21,7 +21,7 @@ export default function CardGrid({}: TaboutCarousel) {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <motion.div layout
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -30, opacity: 0 }}
