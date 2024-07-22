@@ -670,7 +670,7 @@ export default function SingleCardForGrid({
               </>
             ) : null}
           </div>
-        </motion.div> // cardInner odd
+        </motion.div> 
       ) : (
         <motion.div className={styles.cardInner}>
           <div
@@ -788,19 +788,7 @@ export default function SingleCardForGrid({
         </motion.div>
       )
       }
-    </motion.div>  // card
+    </motion.div>  
   );
 }
 
-
-              {/* second pic */}
-              {/* {item?.[activeIndex]?.pic3 && (
-                <div className={styles.cardImageContainerSecondary}>
-                  <Image
-                    src={item?.[activeIndex]?.pic3 as StaticImageData}
-                    alt={item?.[activeIndex]?.title as string}
-                    layout="fill"
-                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                  />
-                </div>
-              )} */}
