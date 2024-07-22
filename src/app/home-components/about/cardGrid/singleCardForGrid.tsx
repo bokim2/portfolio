@@ -622,9 +622,9 @@ export default function SingleCardForGrid({
                           src={item?.[activeIndex]?.pic1}
                           alt={item?.[activeIndex]?.title as string}
                           layout="fill"
-                          //   objectFit="cover"
+                        
                           style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                          // key={`${cardIndex}_${activeIndex}_pic1`}
+                          key={`${cardIndex}_${activeIndex}_pic1`}
                         />
                       </motion.div>
 
@@ -651,7 +651,7 @@ export default function SingleCardForGrid({
                           alt={item?.[activeIndex]?.title as string}
                           layout="fill"
                           style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                          // key={`${cardIndex}_${activeIndex}_pic2`}
+                          key={`${cardIndex}_${activeIndex}_pic2`}
                         />
                       </motion.div>
                     </AnimatePresence>
@@ -675,7 +675,7 @@ export default function SingleCardForGrid({
         <motion.div className={styles.cardInner}>
           <div
             className={`${styles.cardColumn} ${styles.imageColumn}`}
-            // onClick={() => handleIndexChange(-1)}
+         
           >
             {item?.length > 0 ? (
               <>
@@ -721,9 +721,9 @@ export default function SingleCardForGrid({
                           src={item?.[activeIndex]?.pic1}
                           alt={item?.[activeIndex]?.title as string}
                           layout="fill"
-                          //   objectFit="cover"
+                      
                           style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                          // key={i}
+                      
                         />
                       </motion.div>
                       <motion.div
