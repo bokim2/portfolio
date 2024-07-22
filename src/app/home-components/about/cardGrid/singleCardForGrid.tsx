@@ -52,7 +52,7 @@ import sufProfile from '@/../public/images/carousel/sufProfile.jpg';
 import sufSw2 from '@/../public/images/carousel/sufSw2.jpg';
 import MF_thermo_suf from '@/../public/images/carousel/MF_thermo_suf.jpg';
 
-// Current CARD
+
 import codesmith from '@/../public/images/carousel/current/codesmith.jpg';
 import codesmith2 from '@/../public/images/carousel/current/codesmith2.jpg';
 import rediscopeSH from '@/../public/images/carousel/current/rediscopeSH.jpg';
@@ -656,7 +656,7 @@ export default function SingleCardForGrid({
                       </motion.div>
                     </AnimatePresence>
                   </motion.div>{' '}
-                  //cardImageContainer
+              
                   {!isHovered ? (
                     <p className={'imageCaption'}>
                       {item?.[activeIndex]?.pic1ImageCaption}
