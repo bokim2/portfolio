@@ -17,8 +17,8 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
           onClick={() => {
             setIsOpen((prev) => !prev);
           }}
+          // needs hex or variable for color transition
           animate={{
-            // needs hex or variable for color transition
             backgroundColor: !isOpen ? '#FF0088' : '#0055FF',
             transition: { duration: 2 },
           }}
