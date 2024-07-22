@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import SingleCardForGrid, { SINGLE_CARD_DATA } from './singleCardForGrid';
 
-// type TCardDeck = { selectedCardIndex: number | null };
+
 type TCardDeck = { deckIndex: number };
 
 export default function CardDeck({ deckIndex }: TCardDeck) {
@@ -17,7 +17,6 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
           onClick={() => {
             setIsOpen((prev) => !prev);
           }}
-          // needs hex or variable for color transition
           animate={{
             backgroundColor: !isOpen ? '#FF0088' : '#0055FF',
             transition: { duration: 2 },
@@ -66,7 +65,6 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
           )}
         </AnimatePresence>
       </motion.section>
-      //{' '}
     </AnimatePresence>
   );
 }
