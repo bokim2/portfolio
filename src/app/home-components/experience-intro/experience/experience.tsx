@@ -22,7 +22,8 @@ export default function Experience() {
 
   return (
     // <main className={styles.main}>
-    <Wrapper additionalClasses='wider'>
+    <Wrapper 
+    >
       <div className={styles.columnsContainer}>
         {isClient &&
         typeof window !== 'undefined' &&

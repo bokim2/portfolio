@@ -1,3 +1,5 @@
+
+
 .resumeSection {
   // padding-right: 5vw;
   max-width: 800px;
@@ -130,27 +132,39 @@
 }
 
 .educationCertifications {
-  @media (max-width: 800px) {
+
+  display: flex;
+    flex-direction: column;
     margin-inline: auto;
     padding-right: 0rem;
-    width: 90%;
+    // width: 90%;
+    gap: 2.5rem;
+    margin-top: 5rem;
+    
+    @media (max-width: 800px) {
+      gap: 1.5rem;
+      margin-top: 1rem;
+    
   }
 }
 
 .education {
   display: flex;
   flex-direction: column;
-  // gap: 1rem;
-  margin-block: 5rem;
+  gap: .25rem;
+  // margin-block: 5rem;
   // flex-wrap: wrap;
+  
 }
 
 .certifications {
   display: flex;
   flex-direction: column;
   // gap: 1rem;
-  margin-block: 5rem;
+  // margin-block: 5rem;
 }
+
+
 
 // utility classes
 
@@ -228,10 +242,10 @@
 
 .projectTechContainer {
   // background-color: lavender;
-  margin-block: .5rem;
+  margin-block: 1rem;
 
   @media (max-width: 800px) {
-    // margin-block: .625rem;
+    margin-block: .625rem;
   }
 
   ul {

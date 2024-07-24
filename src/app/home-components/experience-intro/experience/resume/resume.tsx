@@ -330,7 +330,7 @@ export default function Resume() {
                       {date}
                     </h6>
                   </div>
-                  <h4 style={{ marginBottom: '0.125rem' }}>{type}</h4>
+                  <h4 style={{ marginBottom: '0.25rem' }}>{type}</h4>
                   <h5>{summary}</h5>
                   {group && (
                     <h6 className={`${styles.noMargin} fontWeight400`}>
@@ -516,13 +516,13 @@ function EducationCertifications() {
   return (
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
-        <h2 className={`marginSmall`}>Education</h2>
-        <h3>University of California, Los Angeles</h3>
-        <h4 className={''}>Bachelor of Science in Chemical Engineering</h4>
+        {/* <h2 className={`marginSmall`}>EDUCATION</h2> */}
+        <h3 >University of California, Los Angeles</h3>
+        <h4 className={''} style={{color: 'var(--text-1)'}}>Bachelor of Science in Chemical Engineering</h4>
       </div>
       <div className={`${styles.certifications}`}>
-        <h2 className={`marginSmall`}>Professional Certifications</h2>
-        <h3>AWS Solutions Architect Associate (SAA-C03)</h3>
+        {/* <h2 className={`marginSmall`}>Professional Certifications</h2> */}
+        <h3 style={{lineHeight: 1.4}}>AWS Solutions Architect Associate (SAA-C03)</h3>
         <h5>Valid until June 07, 2026</h5>
       </div>
     </div>

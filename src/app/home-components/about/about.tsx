@@ -75,11 +75,11 @@ export default function About() {
   return (
     <>
       <div className={styles.about} id="about">
-        <div
+        {/* <div
           id="beforeAbout"
           className={styles.beforeAbout}
           style={{ backgroundColor: 'blue', height: '10px', width: '10px' }}
-        />
+        /> */}
         {/* <CardSelector
           selectedCardIndex={selectedCardIndex}
           handleSelectorChange={handleSelectorChange}

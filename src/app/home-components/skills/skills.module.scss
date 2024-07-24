@@ -1,9 +1,10 @@
 .skills {
   display: flex;
   justify-content: center;
-  // background-color: red;
+//   background-color: red;
   width: 100%;
   margin-bottom: 10vh;
+
 
   // li {
   //     display: flex;
@@ -19,12 +20,13 @@
 
 .areas {
   display: flex;
-  gap: 10vw;
+//   gap: 10vw;
+width: 80%;
   text-align: center;
-  // justify-content: center;
+  justify-content: space-around;
 
   @media (max-width: 800px) {
-    gap: 5vw;
+    width: 90%;
   }
 }
 
