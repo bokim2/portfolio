@@ -1,15 +1,31 @@
 .skills {
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    // background-color: red;
     width: 100%;
+    margin-bottom: 10vh;
+
+    // li {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     // align-items: ;
+    // }
 
 }
 
 .areas {
     display: flex;
-    
+    gap: 10vw;
+    text-align: center;
+    // justify-content: center;
 }
 
 .area {
-    min-width: 20vw;
-    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    // min-width: 20vw;
+    // max-width: 100px;
 }

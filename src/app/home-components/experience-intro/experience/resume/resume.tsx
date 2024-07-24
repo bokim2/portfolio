@@ -91,6 +91,8 @@ const resumeData: TresumeData[] = [
       'Node-Redis',
       'Docker',
       'AWS',
+      'Elastic Beanstalk',
+      'Route53'
     ],
     description: [
       'Designed live metrics visualization with customizable data collection intervals and ability to set a maximum number of visualized data points for enhanced data resolution.',

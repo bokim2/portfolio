@@ -133,8 +133,8 @@ export const SINGLE_CARD_DATA = [
         objectFit: 'contain',
       },
       pic1ImageCaption:
-        'My first job, I worked on enzymes for biofuel production.',
-      pic2ImageCaption: 'Fermentation - not beer.',
+        'cane syrup to non-nutritive sweetner.',
+      pic2ImageCaption: 'My biotech experience in the Bay Area.',
       text: [
         <>
           My primary area of specialization was upstream process development,
@@ -163,7 +163,7 @@ export const SINGLE_CARD_DATA = [
       pic1ImageCaption:
         'Spotfire, a favorite data visualization tool for many scientists (other than excel, still).  ',
       pic2ImageCaption:
-        'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need',
+        'filtering and grouping for easy visualization',
       text: [
         <>
           Spotfire... the software that got me interested in software.
@@ -182,7 +182,7 @@ export const SINGLE_CARD_DATA = [
       equipment: 'Benchling',
       pic1: benchlingGIF,
       pic2: benchlingNotebook,
-      pic1ImageCaption: '',
+      pic1ImageCaption: 'Benchling, an all in one platform for scientific research and collaboration',
       pic2ImageCaption:
         'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need.',
       pic1StyleOverrides: {
@@ -262,7 +262,7 @@ export const SINGLE_CARD_DATA = [
       },
       pic2StyleOverrides: {},
       pic1ImageCaption: 'parallel bioreactor',
-      pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
+      pic2ImageCaption: 'Dasgip software - better UI and partially optimized for controlling multiple reactors',
       text: [
         <>
           The Dasgip bioreactor is the industry standard for lab-scale
@@ -278,7 +278,7 @@ export const SINGLE_CARD_DATA = [
     },
     {
       title: 'Evolution of Bioreactors',
-      subtitle: 'Biolector - miniturized / simplified fermentation',
+      subtitle: 'Microfluidics - miniturization / simplified fermentation',
       equipment: '',
       pic1: biolector1,
       pic2: MF_biolector_feed_profile,
@@ -287,7 +287,7 @@ export const SINGLE_CARD_DATA = [
       },
       pic2StyleOverrides: {},
       pic1ImageCaption:
-        'less aeration, less feeding, lower cell density, lower product formation',
+        'biolector - less aeration, less feeding, lower cell density, lower product formation',
       pic2ImageCaption:
         'still, much better than using microtiter plates  which have no pH control, no controlled feeding.',
       text: [
@@ -319,7 +319,7 @@ export const SINGLE_CARD_DATA = [
       },
       pic2StyleOverrides: {},
       pic1ImageCaption: 'the new industry standard in screening',
-      pic2ImageCaption: 'software that is intuitive and set up for DOE.',
+      pic2ImageCaption: 'software that is intuitive and set up for DOE (Design of Experiments).',
       text: [
         <>
           The Ambr250 is single-use and only 250mL in vessel size. It is geared
@@ -364,8 +364,7 @@ export const SINGLE_CARD_DATA = [
           <ul>
             <li>my interests in software developement</li>
             <li>
-              cool equipment and software that got me interested in software
-              engineering
+what i have done so far and what i am interested in
             </li>
           </ul>
         </>

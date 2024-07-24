@@ -8,10 +8,10 @@ const skillsData = [
       'React',
       'Next.js',
       'Redux',
-      'Framer Motion',
       'Sass',
-      'Tailwind',
-      'Three.js',
+      'Framer Motion',
+      'Tanstack Query',
+
     ],
   },
   {
