@@ -52,11 +52,11 @@ export default function Bio() {
 
   return (
     <>
-      <div className={styles.animationHome}>
+      {/* <div className={styles.animationHome}>
         {isClient &&
           typeof window !== 'undefined' &&
           WebGL.isWebGLAvailable() && <AnimationHome />}
-      </div>
+      </div> */}
       <Wrapper backgroundColor="">
         <section className={styles.bio} id="bio" ref={ref}>
           <div className={styles.headshotImgOuterContainer}>

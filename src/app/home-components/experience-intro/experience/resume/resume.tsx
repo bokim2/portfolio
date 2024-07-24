@@ -244,7 +244,7 @@ export default function Resume() {
 
   return (
     // <Wrapper>
-    <>
+    <div className={styles.resume}>
       <AnimatePresence>
         {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
       </AnimatePresence>
@@ -426,7 +426,7 @@ export default function Resume() {
       </motion.section>
       <EducationCertifications />
       {/* </Wrapper> */}
-    </>
+    </div>
   );
 }
 

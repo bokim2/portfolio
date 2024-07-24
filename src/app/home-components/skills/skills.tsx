@@ -35,7 +35,7 @@ export default function Skills() {
 {skillsData.map((area, i)=> {
     return (
         <li key={i} className={styles.area}>
-            <h3>{area.area}</h3>
+            <h3 className={styles.title}>{area.area}</h3>
             <ul>
                 {area.skills.map((el, i)=> {
                     return (

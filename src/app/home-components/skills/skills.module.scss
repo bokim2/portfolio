@@ -1,31 +1,44 @@
 .skills {
-    display: flex;
-    justify-content: center;
-    // background-color: red;
-    width: 100%;
-    margin-bottom: 10vh;
+  display: flex;
+  justify-content: center;
+  // background-color: red;
+  width: 100%;
+  margin-bottom: 10vh;
 
-    // li {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     // align-items: ;
-    // }
+  // li {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     // align-items: ;
 
+  @media (max-width: 800px) {
+    font-size: 0.7rem;
+  }
+  // }
 }
 
 .areas {
-    display: flex;
-    gap: 10vw;
-    text-align: center;
-    // justify-content: center;
+  display: flex;
+  gap: 10vw;
+  text-align: center;
+  // justify-content: center;
+
+  @media (max-width: 800px) {
+    gap: 5vw;
+  }
 }
 
 .area {
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-    // min-width: 20vw;
-    // max-width: 100px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  // min-width: 20vw;
+  // max-width: 100px;
+}
+
+.title {
+  @media (max-width: 800px) {
+    font-size: .9rem;
+  }
 }
