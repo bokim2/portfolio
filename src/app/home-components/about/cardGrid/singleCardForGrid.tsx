@@ -52,7 +52,6 @@ import sufProfile from '@/../public/images/carousel/sufProfile.jpg';
 import sufSw2 from '@/../public/images/carousel/sufSw2.jpg';
 import MF_thermo_suf from '@/../public/images/carousel/MF_thermo_suf.jpg';
 
-
 import codesmith from '@/../public/images/carousel/current/codesmith.jpg';
 import codesmith2 from '@/../public/images/carousel/current/codesmith2.jpg';
 import rediscopeSH from '@/../public/images/carousel/current/rediscopeSH.jpg';
@@ -132,8 +131,7 @@ export const SINGLE_CARD_DATA = [
       pic2StyleOverrides: {
         objectFit: 'contain',
       },
-      pic1ImageCaption:
-        'cane syrup to non-nutritive sweetner.',
+      pic1ImageCaption: 'cane syrup to non-nutritive sweetner.',
       pic2ImageCaption: 'My biotech experience in the Bay Area.',
       text: [
         <>
@@ -162,8 +160,7 @@ export const SINGLE_CARD_DATA = [
       pic2: spotfireFilters,
       pic1ImageCaption:
         'Spotfire, a favorite data visualization tool for many scientists (other than excel, still).  ',
-      pic2ImageCaption:
-        'filtering and grouping for easy visualization',
+      pic2ImageCaption: 'filtering and grouping for easy visualization',
       text: [
         <>
           Spotfire... the software that got me interested in software.
@@ -182,7 +179,8 @@ export const SINGLE_CARD_DATA = [
       equipment: 'Benchling',
       pic1: benchlingGIF,
       pic2: benchlingNotebook,
-      pic1ImageCaption: 'Benchling, an all in one platform for scientific research and collaboration',
+      pic1ImageCaption:
+        'Benchling, an all in one platform for scientific research and collaboration',
       pic2ImageCaption:
         'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need.',
       pic1StyleOverrides: {
@@ -262,7 +260,8 @@ export const SINGLE_CARD_DATA = [
       },
       pic2StyleOverrides: {},
       pic1ImageCaption: 'parallel bioreactor',
-      pic2ImageCaption: 'Dasgip software - better UI and partially optimized for controlling multiple reactors',
+      pic2ImageCaption:
+        'Dasgip software - better UI and partially optimized for controlling multiple reactors',
       text: [
         <>
           The Dasgip bioreactor is the industry standard for lab-scale
@@ -319,7 +318,8 @@ export const SINGLE_CARD_DATA = [
       },
       pic2StyleOverrides: {},
       pic1ImageCaption: 'the new industry standard in screening',
-      pic2ImageCaption: 'software that is intuitive and set up for DOE (Design of Experiments).',
+      pic2ImageCaption:
+        'software that is intuitive and set up for DOE (Design of Experiments).',
       text: [
         <>
           The Ambr250 is single-use and only 250mL in vessel size. It is geared
@@ -363,9 +363,7 @@ export const SINGLE_CARD_DATA = [
           <h2>next</h2>
           <ul>
             <li>my interests in software developement</li>
-            <li>
-what i have done so far and what i am interested in
-            </li>
+            <li>what i have done so far and what i am interested in</li>
           </ul>
         </>
       ),
@@ -529,16 +527,14 @@ export default function SingleCardForGrid({
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     console.log('Page scroll: ', latest);
-    if (latest >= 0.5 && !scrollCardImgTriggered) {
+    if (latest >= 0.6 && !scrollCardImgTriggered) {
       setIsHovered('right');
       setScrollCardImgTriggered(true);
     }
   });
 
   return (
-    <motion.div className={styles.card}
-    initial={{height: "auto"}}
-    >
+    <motion.div className={styles.card} initial={{ height: 'auto' }}>
       {/* odd pictures on card */}
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>
@@ -608,10 +604,10 @@ export default function SingleCardForGrid({
                         initial={{ opacity: 1, x: '0%', height: 'auto' }}
                         animate={{
                           opacity: isHovered ? 0 : 1,
-                          x: isHovered ? '-100%' : '0%',
+                          x: isHovered ? '-2%' : '0%',
                         }}
-                        exit={{ opacity: 0, x: '-100%' }}
-                        transition={{ duration: 0.5 }}
+                        exit={{ opacity: 0, x: '-2%' }}
+                        transition={{ duration: .7 }}
                         style={{
                           position: 'absolute',
                           width: '100%',
@@ -623,7 +619,6 @@ export default function SingleCardForGrid({
                           src={item?.[activeIndex]?.pic1}
                           alt={item?.[activeIndex]?.title as string}
                           layout="fill"
-                        
                           style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
                           key={`${cardIndex}_${activeIndex}_pic1`}
                         />
@@ -635,9 +630,10 @@ export default function SingleCardForGrid({
                         initial={{ opacity: 0, x: '100%' }}
                         animate={{
                           opacity: isHovered ? 1 : 0,
-                          x: isHovered ? '0%' : '100%',
+                          x: isHovered ? '0%' : '2%',
                           transition: {
-                            duration: 0.5,
+                            duration: .8,
+                            delay: .4
                           },
                         }}
                         style={{
@@ -657,7 +653,6 @@ export default function SingleCardForGrid({
                       </motion.div>
                     </AnimatePresence>
                   </motion.div>{' '}
-              
                   {!isHovered ? (
                     <p className={'imageCaption'}>
                       {item?.[activeIndex]?.pic1ImageCaption}
@@ -671,13 +666,10 @@ export default function SingleCardForGrid({
               </>
             ) : null}
           </div>
-        </motion.div> 
+        </motion.div>
       ) : (
         <motion.div className={styles.cardInner}>
-          <div
-            className={`${styles.cardColumn} ${styles.imageColumn}`}
-         
-          >
+          <div className={`${styles.cardColumn} ${styles.imageColumn}`}>
             {item?.length > 0 ? (
               <>
                 <div className={styles.imageAndCaptionContainer}>
@@ -708,8 +700,8 @@ export default function SingleCardForGrid({
                         initial={{ opacity: 1, x: '0%' }}
                         animate={{
                           opacity: isHovered ? 0 : 1,
-                          x: isHovered ? '100%' : '0%',
-                          transition: { duration: 0.5 },
+                          x: isHovered ? '2%' : '0%',
+                          transition: { duration: 0.7 },
                         }}
                         style={{
                           position: 'absolute',
@@ -722,19 +714,17 @@ export default function SingleCardForGrid({
                           src={item?.[activeIndex]?.pic1}
                           alt={item?.[activeIndex]?.title as string}
                           layout="fill"
-                      
                           style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                      
                         />
                       </motion.div>
                       <motion.div
                         key={`${cardIndex}_${activeIndex}_pic2_even`}
                         className={styles.cardImageContainer}
-                        initial={{ opacity: 0, x: '-100%' }}
+                        initial={{ opacity: 0, x: '100%' }}
                         animate={{
                           opacity: isHovered ? 1 : 0,
-                          x: isHovered ? '0%' : '-100%',
-                          transition: { duration: 0.5 },
+                          x: isHovered ? '0%' : '-2%',
+                          transition: { duration: 0.8, delay: .4 },
                         }}
                         style={{
                           position: 'absolute',
@@ -783,13 +773,10 @@ export default function SingleCardForGrid({
                   </>
                 ))}
               </div>
-
             </div>
           </div>
         </motion.div>
-      )
-      }
-    </motion.div>  
+      )}
+    </motion.div>
   );
 }
-

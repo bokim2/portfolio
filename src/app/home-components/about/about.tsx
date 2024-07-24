@@ -73,7 +73,7 @@ export default function About() {
   }
 
   return (
-    <>
+    <Wrapper>
       <div className={styles.about} id="about">
         {/* <div
           id="beforeAbout"
@@ -94,7 +94,7 @@ export default function About() {
           })} */}
           {/* {selectedCardIndex !== null && <div key={selectedCardIndex}>{ABOUT_INTRO[selectedCardIndex]}</div>} */}
         </div>
-        <Wrapper additionalClasses={`wrapper mobileLessPadding`}>
+        {/* <Wrapper additionalClasses={`wrapper mobileLessPadding`}> */}
           {/* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>
         </Link>
@@ -147,13 +147,13 @@ export default function About() {
               // handleSelectorChange={handleSelectorChange}
             />
           {/* )} */}
-        </Wrapper>
+        {/* </Wrapper> */}
         {/* <AboutCarousel /> */}
-        <Wrapper>
+        {/* <Wrapper>
           <BiotechSoftware />
           <ThisPortfolio />
-        </Wrapper>
+        </Wrapper> */}
       </div>
-    </>
+    </Wrapper>
   );
 }

@@ -4,9 +4,9 @@
   width: 100%;
   position: relative;
   display: flex;
-  gap: 25%;
+  // gap: 25%;
   // align-items: center;
-  // justify-content: space-between;
+  justify-content: space-between;
 
   @media (max-width: 800px) {
     // gap: 0%;

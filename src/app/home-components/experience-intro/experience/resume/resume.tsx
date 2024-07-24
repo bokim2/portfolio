@@ -517,18 +517,20 @@ function EducationCertifications() {
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
         {/* <h2 className={`marginSmall`}>EDUCATION</h2> */}
-        <h3 style={{ lineHeight: 1.2 }}>
-          University of California, Los Angeles
+        <h3 style={{ lineHeight: 1.3 }}>
+          UCLA
         </h3>
-        <h4 className={''} style={{ color: 'var(--text-1)', lineHeight: 1.2 }}>
+        <h4 className={''} style={{ color: 'var(--text-1)', lineHeight: 1.3 }}>
           Bachelor of Science in Chemical Engineering
         </h4>
       </div>
       <div className={`${styles.certifications}`}>
         {/* <h2 className={`marginSmall`}>Professional Certifications</h2> */}
-        <h3 style={{ lineHeight: 1.2 }}>
-          AWS Solutions Architect Associate (SAA-C03)
-        </h3>
+        <h3 style={{ lineHeight: 1.3 }}>
+          AWS </h3>
+          <h4 style={{ lineHeight: 1.3 }}>
+          Solutions Architect Associate (SAA-C03)
+        </h4>
         <h5>Valid until June 07, 2026</h5>
       </div>
     </div>
