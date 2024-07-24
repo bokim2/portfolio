@@ -92,7 +92,7 @@ const resumeData: TresumeData[] = [
       'Docker',
       'AWS',
       'Elastic Beanstalk',
-      'Route53'
+      'Route53',
     ],
     description: [
       'Designed live metrics visualization with customizable data collection intervals and ability to set a maximum number of visualized data points for enhanced data resolution.',
@@ -104,7 +104,7 @@ const resumeData: TresumeData[] = [
     imagePath: '/images/experience/rediscope-team.jpg',
     imageStyle: { objectFit: 'contain' },
   },
- 
+
   {
     title: 'Scientist',
     secondaryTitle: 'Senior RA',
@@ -378,7 +378,7 @@ export default function Resume() {
                   {toggleResumeDetails ? (
                     <div className={`${styles.resumeDetails}`}>
                       <motion.ul
-                      key="resumelist"
+                        key="resumelist"
                         // layout
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -517,12 +517,18 @@ function EducationCertifications() {
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
         {/* <h2 className={`marginSmall`}>EDUCATION</h2> */}
-        <h3 >University of California, Los Angeles</h3>
-        <h4 className={''} style={{color: 'var(--text-1)'}}>Bachelor of Science in Chemical Engineering</h4>
+        <h3 style={{ lineHeight: 1.2 }}>
+          University of California, Los Angeles
+        </h3>
+        <h4 className={''} style={{ color: 'var(--text-1)', lineHeight: 1.2 }}>
+          Bachelor of Science in Chemical Engineering
+        </h4>
       </div>
       <div className={`${styles.certifications}`}>
         {/* <h2 className={`marginSmall`}>Professional Certifications</h2> */}
-        <h3 style={{lineHeight: 1.4}}>AWS Solutions Architect Associate (SAA-C03)</h3>
+        <h3 style={{ lineHeight: 1.2 }}>
+          AWS Solutions Architect Associate (SAA-C03)
+        </h3>
         <h5>Valid until June 07, 2026</h5>
       </div>
     </div>

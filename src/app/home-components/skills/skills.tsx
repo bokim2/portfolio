@@ -1,4 +1,4 @@
-
+import Wrapper from '@/components/wrapper/wrapper';
 import styles from './skills.module.scss';
 
 const skillsData = [
@@ -11,7 +11,6 @@ const skillsData = [
       'Sass',
       'Framer Motion',
       'Tanstack Query',
-
     ],
   },
   {
@@ -30,24 +29,23 @@ const skillsData = [
 
 export default function Skills() {
   return (
-    <div className={styles.skills}>
-      <ul className={styles.areas}>
-{skillsData.map((area, i)=> {
-    return (
-        <li key={i} className={styles.area}>
-            <h3 className={styles.title}>{area.area}</h3>
-            <ul>
-                {area.skills.map((el, i)=> {
-                    return (
-                        <li key={i}>{el}</li>
-                    )
-                })}
-            </ul>
-        </li>
-    )
-})}
-
-      </ul>
-    </div>
+    <Wrapper >
+      <div className={styles.skills}>
+        <ul className={styles.areas}>
+          {skillsData.map((area, i) => {
+            return (
+              <li key={i} className={styles.area}>
+                <h3 className={styles.title}>{area.area}</h3>
+                <ul>
+                  {area.skills.map((el, i) => {
+                    return <li key={i}>{el}</li>;
+                  })}
+                </ul>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </Wrapper>
   );
 }

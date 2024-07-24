@@ -1,7 +1,4 @@
-.main {
-  padding-top: 7vh;
-  // background-color: red;
-}
+
 
 .columnsContainer {
   width: 100%;
@@ -9,12 +6,13 @@
   display: flex;
   gap: 25%;
   // align-items: center;
-  justify-content: center;
+  // justify-content: space-between;
 
   @media (max-width: 800px) {
     // gap: 0%;
     // width: 100%;
     flex-direction: column;
+    
   }
 }
 
