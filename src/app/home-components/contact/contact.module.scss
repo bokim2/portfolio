@@ -113,7 +113,7 @@
   }
 }
 
-.contactQuote {
+.contactEmail {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -121,6 +121,17 @@
   // gap: 0.25rem;
   color: var(--text-5);
   font-weight: 400;
+
+  a {
+    text-decoration: none;
+    color: var(--clr-accent-4);
+    // border-bottom: 2px solid transparent
+  }
+
+  a:hover {
+    // border-bottom-color: currentColor;
+
+  }
 
   @media (max-width: 800px) {
     margin-top: 0rem;

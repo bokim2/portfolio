@@ -34,22 +34,21 @@ export default function Contact() {
     useUpdateActiveSection('contact');
 
   return (
-    <Wrapper >
+    <Wrapper>
       <section className={styles.contact} id="contact" ref={ref}>
-        <div className={styles.headshotImgOuterContainer}>
-        
-        </div>
+        <div className={styles.headshotImgOuterContainer}></div>
 
         <div className={styles.contactAbout}>
           <div className={styles.contactTitleContainer}>
-            <h2 className={`animatedH2 animated`}>Contact</h2>
+            <h2 className={``}>Contact</h2>
             <h3 className={styles.contactRole}>Bo Kim</h3>
 
             <p className={`${styles.contactParagraph} large`}>
               {"If you think I'd be a good fit for your team,"}
             </p>
-            <h4 className={styles.contactQuote}>
-              bokim.ce@gmail.com
+            <h4 className={styles.contactEmail}>
+              <motion.a whileHover={{fontWeight: 500, }}
+              href="mailto:bokim.ce@gmail.com">bokim.ce@gmail.com</motion.a>
             </h4>
           </div>
         </div>

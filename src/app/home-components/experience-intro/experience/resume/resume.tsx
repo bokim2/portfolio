@@ -18,6 +18,9 @@ import { GiMolecule } from 'react-icons/gi';
 import Overlay from '@/components/overlay/overlay';
 import { RiTestTubeFill } from 'react-icons/ri';
 
+import ucla from '@/../public/images/experience/ucla.png';
+import aws from '@/../public/images/experience/aws.png';
+
 type TresumeData = {
   title: string;
   summary?: string;
@@ -255,7 +258,7 @@ export default function Resume() {
         // animate={controls}
         // initial={{ opacity: 1 }}
       >
-        <h2 className={`animatedH2 animated`}>Experience</h2>
+        <h2 className={``}>Experience</h2>
         <motion.ul className={`${styles.resumeUl}`}>
           {resumeData.map(
             (
@@ -517,18 +520,44 @@ function EducationCertifications() {
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
         {/* <h2 className={`marginSmall`}>EDUCATION</h2> */}
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Image
+            src={ucla}
+            alt="ucla logo"
+            style={{ width: '20%', height: 'auto' }}
+          />
+        </div>
         <h3 style={{ lineHeight: 1.3 }}>
-          UCLA
+          University of California Los Angeles
         </h3>
-        <h4 className={''} style={{ color: 'var(--text-1)', lineHeight: 1.3 }}>
-          Bachelor of Science in Chemical Engineering
+
+        <h4 className={''} style={{ lineHeight: 1.3 }}>
+          B.S. Chemical Engineering
         </h4>
       </div>
       <div className={`${styles.certifications}`}>
         {/* <h2 className={`marginSmall`}>Professional Certifications</h2> */}
-        <h3 style={{ lineHeight: 1.3 }}>
-          AWS </h3>
-          <h4 style={{ lineHeight: 1.3 }}>
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Image
+            src={aws}
+            alt="aws logo"
+            style={{ width: '20%', height: 'auto' }}
+          />
+        </div>
+        <h3 style={{ lineHeight: 1.3 }}>AWS </h3>
+        <h4 style={{ lineHeight: 1.3 }}>
           Solutions Architect Associate (SAA-C03)
         </h4>
         <h5>Valid until June 07, 2026</h5>

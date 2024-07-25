@@ -296,13 +296,13 @@ export const SINGLE_CARD_DATA = [
           resources.
         </>,
         <>
-          With the Biolector, you can get to much higher cell densities and
+          Although much less than with fully featured bioreactors, with the Biolector, you can get to much higher cell densities and
           product formation, resulting in better breakout in performance than in
           microtiter plates.
         </>,
         <>
           Recipe controls were simplified (less fine-grain control) compared to
-          a &quot;real&quot; bioreactor. It made sense given the growth
+          a &quot;real&quot; bioreactor. It makes sense given the growth
           conditions.
         </>,
       ],

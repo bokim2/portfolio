@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* <ParallaxGallery /> */}
       {/* <ProjectsIntro /> */}
-      {/* <Contact /> */}
+      <Contact />
 
       {/* <div className={styles.container}>
         hello

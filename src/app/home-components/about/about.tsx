@@ -86,7 +86,7 @@ export default function About() {
         /> */}
 
         <div className={styles.beforeCardSpacer}>
-          <h1>About</h1>
+          <h2>About</h2>
           this section is more just for fun, so feel free to check it out or
           skip it.
           {/* {ABOUT_INTRO?.map((text, i)=> {
