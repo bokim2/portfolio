@@ -520,47 +520,53 @@ function EducationCertifications() {
     <div className={`${styles.educationCertifications}`}>
       <div className={`${styles.education}`}>
         {/* <h2 className={`marginSmall`}>EDUCATION</h2> */}
+        <div className={styles.titleAndLogo}>
+          <h3 style={{ lineHeight: 1.3 }}>
+            University of California Los Angeles
+          </h3>
+
+          <h4 className={''} style={{ lineHeight: 1.3 }}>
+            B.S. Chemical Engineering
+          </h4>
+        </div>
         <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-          }}
+        className={styles.logoContainer}
+          // style={{
+          //   position: 'relative',
+          //   width: '30%',
+          //   // height: '100%',
+          // }}
         >
           <Image
             src={ucla}
             alt="ucla logo"
-            style={{ width: '20%', height: 'auto' }}
+            // style={{ width: '100%', height: 'auto' }}
           />
         </div>
-        <h3 style={{ lineHeight: 1.3 }}>
-          University of California Los Angeles
-        </h3>
-
-        <h4 className={''} style={{ lineHeight: 1.3 }}>
-          B.S. Chemical Engineering
-        </h4>
       </div>
       <div className={`${styles.certifications}`}>
         {/* <h2 className={`marginSmall`}>Professional Certifications</h2> */}
-        <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          <Image
-            src={aws}
-            alt="aws logo"
-            style={{ width: '20%', height: 'auto' }}
-          />
+
+        <div className={styles.titleAndLogo}>
+          <h3 style={{ lineHeight: 1.3 }}>AWS </h3>
+
+          <h4 style={{ lineHeight: 1.3 }}>Solutions Architect Associate</h4>
+          <h5>Valid until June 07, 2026</h5>
         </div>
-        <h3 style={{ lineHeight: 1.3 }}>AWS </h3>
-        <h4 style={{ lineHeight: 1.3 }}>
-          Solutions Architect Associate (SAA-C03)
-        </h4>
-        <h5>Valid until June 07, 2026</h5>
+          <div
+          className={styles.logoContainer}
+            style={{
+              position: 'relative',
+              width: '30%',
+              // height: '100%',
+            }}
+          >
+            <Image
+              src={aws}
+              alt="aws logo"
+              // style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
       </div>
     </div>
   );
