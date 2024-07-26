@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
-import styles from './experienceAnimation.module.scss';
+import styles from '../experience.module.scss';
 
 const Scene = dynamic(() => import('./scene'), {
   loading: () => <div className={`${styles.animationHomeLoaderContainer}`} >Loading...</div>,

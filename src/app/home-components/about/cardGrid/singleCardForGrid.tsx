@@ -165,7 +165,9 @@ export const SINGLE_CARD_DATA = [
         <>
           Spotfire... the software that got me interested in software.
           Surprisingly, graphing experimental data to this day is often done in
-          excel. Spotfire changed the game on this with this with an intuitive
+          excel. </>,
+          
+          <>Spotfire changed the game on this with this with an intuitive
           user interface and easy to apply filters and groupings. It is similar
           to Tableau but much easier to use for scientists.{' '}
         </>,
@@ -235,13 +237,13 @@ export const SINGLE_CARD_DATA = [
       pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
       text: [
         <>
-          The Biostat B is the work horse. It is an older model that is tried
-          and true. The software used to create fermentation recipes is not easy
+          The Biostat B is a work horse. It is an older model that is tried
+          and true. However, the software used to create fermentation recipes for it is not easy
           to use.{' '}
         </>,
         <>
           It is a bit before my time in terms of implementing this system, the
-          legends say that it is not user friendly.{' '}
+          legends say that it is not user friendly.  {' '}
         </>,
       ],
     },
@@ -451,10 +453,13 @@ export const SINGLE_CARD_DATA = [
       pic1: mosaic,
       pic2: dna,
       pic1StyleOverrides: {
-        transform: 'scale(1.5)',
+        objectFit: 'cover', 
+        // objectPosition: '9% 50%',
+        transform: 'scale(1.5) translateX(-.81%)',
+        // objectPosition: '135% 50%',
       },
       pic2StyleOverrides: {
-        filter: 'grayscale(80%)',
+        filter: 'grayscale(80%) brightness(80%)',
       },
       text: [
         <>
@@ -647,7 +652,7 @@ export default function SingleCardForGrid({
                           src={item?.[activeIndex]?.pic2 as StaticImageData}
                           alt={item?.[activeIndex]?.title as string}
                           layout="fill"
-                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
+                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {} }
                           key={`${cardIndex}_${activeIndex}_pic2`}
                         />
                       </motion.div>

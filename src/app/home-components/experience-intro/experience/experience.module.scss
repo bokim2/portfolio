@@ -178,3 +178,23 @@
   // align-self: flex-end;
 }
 
+
+
+
+.experienceAnimationContainer {
+    
+  top: 0rem;
+  position: sticky;
+  height: 100vh;
+  // background-color: pink;
+  // width: 50%;
+  width: 100%;
+  
+  @media(max-width: 800px) {
+      margin-top: 7vh;
+      background-color: rgba(var(--clr-main-3));
+      position: fixed;
+      z-index: 10;
+      height: 30svh;
+    }
+}
