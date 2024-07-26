@@ -57,24 +57,27 @@
 }
 
 .titleContainer {
+  
   display: flex;
+  align-items: flex-end;
   gap: 0.5rem;
 }
 
 .secondaryTitle {
-  margin-bottom: 0.25rem;
+  // margin-bottom: 0.25rem;
   color: var(--text-2);
   font-weight: 300;
   font-size: 1rem;
 
-  /* line-height: 1.7; */
+  // /* line-height: 1.7; */
 
-  @media (max-width: 800px) {
-    margin-bottom: 0.25rem;
-    font-size: 0.925rem;
-    /* line-height: 1.25; */
-  }
+  // @media (max-width: 800px) {
+  //   // margin-bottom: 0.25rem;
+  //   font-size: 0.925rem;
+  //   /* line-height: 1.25; */
+  // }
 }
+
 
 .titleColumns {
   display: flex;
@@ -88,7 +91,16 @@
   }
 }
 
+.type {
+  margin-bottom: .3rem;
+
+  @media (max-width: 800px){
+    margin-bottom: .25rem;
+  }
+}
+
 .experienceTitle {
+  
   color: var(--text-6);
   /* font-weight: 375; */
   // font-weight: 00;

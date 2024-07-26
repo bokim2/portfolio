@@ -44,11 +44,11 @@ const resumeData: TresumeData[] = [
     link: 'https://www.seedflask.com',
     type: 'Solo Project',
     date: '2023 - 2024',
-    intro: `Web app for recording and visualizing scientific data. Capture
+    intro: `Store
     strain information, start flasks, and view previous
    growth curves to plan sample times, create sample schedules,
-   save time with the dilution calculator. Securely log in
-   with Auth0 (Google or GitHub) to observe and save your data.`,
+  save time with the dilution calculator.\u00A0 Securely log in
+   with Auth0 (Google or GitHub) to store and observe your data.`,
     techStack: [
       'Typescript',
       'React',
@@ -78,9 +78,9 @@ const resumeData: TresumeData[] = [
     type: 'Open Source Project',
     summary: 'Redis Metrics Visualization Web App',
     date: '2022 - 2023',
-    intro: `An open-source Redis database metrics visualization tool. Use the
+    intro: `An open-source Redis database metrics visualization tool.\u00A0 Use the
     customizable data collection intervals and visualized data points for
-    enhanced data resolution. Containerized using Docker and deployed using AWS.`,
+    enhanced data resolution.\u00A0 Containerized using Docker and deployed using AWS.`,
     techStack: [
       'React',
       'React Router',
@@ -333,7 +333,7 @@ export default function Resume() {
                       {date}
                     </h6>
                   </div>
-                  <h4 style={{ marginBottom: '0.25rem' }}>{type}</h4>
+                  <h4 className={styles.type}>{type}</h4>
                   <h5>{summary}</h5>
                   {group && (
                     <h6 className={`${styles.noMargin} fontWeight400`}>
@@ -530,7 +530,7 @@ function EducationCertifications() {
           </h4>
         </div>
         <div
-        className={styles.logoContainer}
+          className={styles.logoContainer}
           // style={{
           //   position: 'relative',
           //   width: '30%',
@@ -553,20 +553,20 @@ function EducationCertifications() {
           <h4 style={{ lineHeight: 1.3 }}>Solutions Architect Associate</h4>
           <h5>Valid until June 07, 2026</h5>
         </div>
-          <div
+        <div
           className={styles.logoContainer}
-            style={{
-              position: 'relative',
-              width: '30%',
-              // height: '100%',
-            }}
-          >
-            <Image
-              src={aws}
-              alt="aws logo"
-              // style={{ width: '100%', height: 'auto' }}
-            />
-          </div>
+          style={{
+            position: 'relative',
+            width: '30%',
+            // height: '100%',
+          }}
+        >
+          <Image
+            src={aws}
+            alt="aws logo"
+            // style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
       </div>
     </div>
   );
