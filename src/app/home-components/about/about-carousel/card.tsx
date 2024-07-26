@@ -122,7 +122,7 @@ export const CARD_DATA = [
       pic1: biostatB,
       pic2: mfcs,
       pic1ImageCaption: 'standard 2L bioreactor - not the original, but close',
-      pic2ImageCaption: 'MFCS software - difficult to set up or modify',
+      pic2ImageCaption: 'software for control - difficult to set up or modify',
       text: [
      <>
 
