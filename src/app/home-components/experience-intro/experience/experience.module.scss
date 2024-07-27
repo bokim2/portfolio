@@ -4,12 +4,12 @@
   width: 100%;
   position: relative;
   display: flex;
-  // gap: 25%;
+  gap: 10%;
   // align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
 
   @media (max-width: 800px) {
-    // gap: 0%;
+    gap: 0%;
     // width: 100%;
     flex-direction: column;
     
@@ -17,18 +17,19 @@
 }
 
 .column {
-  // width: 50vw;
-  flex: 0 0 45%;
+  width: 50%;
+  // flex: 0 0 44%;
   // padding-right: 5vw;
   // max-width: 600px;
 
   @media (max-width: 800px) {
     flex: auto;
-    width: 100%;
+    width: 90%;
   }
 }
 
 .bioreactorColumn {
+  // width: 100%;
   @media (max-width: 800px) {
     display: none;
   }
