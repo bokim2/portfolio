@@ -12,9 +12,9 @@ import {
   // PerspectiveCamera,
 } from '@react-three/drei';
 import { PerspectiveCamera } from 'three';
-import { useMotionValue, useSpring } from 'framer-motion';
+import { MotionValue, useMotionValue, useScroll, useSpring } from 'framer-motion';
 
-export default function Scene() {
+export default function Scene({experienceScrollYProgress}: {experienceScrollYProgress: MotionValue<number>}) {
   function CameraHelper() {
     const camera = new PerspectiveCamera(60, 1, 1, 3);
     return (
@@ -48,8 +48,18 @@ export default function Scene() {
     return () => window.removeEventListener('mousemove', manageMouseMovement);
   }, []);
 
+  // const scene = useRef<HTMLCanvasElement| null>(null)
+  // const {scrollYProgress} = useScroll({
+  //   target: scene, 
+  //   offset: ['start end', 'end start'],
+  // });
+
+  const scrollYProgress = 12;
+
   return (
-    <Canvas shadows>
+    <Canvas shadows 
+    // ref={scene}
+    >
       <ambientLight intensity={0.1} />
       <directionalLight position={[-5, -5, 5]} intensity={0.1} />
 
@@ -61,7 +71,7 @@ export default function Scene() {
       {/* <OrbitControls enableZoom={false}/> */}
       <OrbitControls />
       {/* <ScrollControls pages={3} damping={0.25}> */}
-      <Model mouse={smoothMouse}/>
+      <Model mouse={smoothMouse} bioreactorRotationY={experienceScrollYProgress}/>
       {/* <Model mouse={mouse}/> */}
       {/* </ScrollControls> */}
     </Canvas>

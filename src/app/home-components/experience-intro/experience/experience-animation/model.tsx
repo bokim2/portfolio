@@ -32,7 +32,13 @@ type Tmouse = {
   y: MotionValue<number>;
 };
 
-export default function Model({ mouse }: { mouse: Tmouse }) {
+type TModel = {
+  mouse: Tmouse;
+  bioreactorRotationY: MotionValue<number>;
+};
+
+
+export default function Model({ mouse, bioreactorRotationY }: TModel) {
   const { size } = useThree();
   const meshRef = useRef<Mesh>(null);
   const group = useRef<Group>(null);
@@ -51,6 +57,9 @@ export default function Model({ mouse }: { mouse: Tmouse }) {
     if (meshRef.current) {
       const scale = size.width / 5000; // Adjust scale factor as needed
       meshRef.current.scale.set(scale, scale, scale);
+
+      const rotationY = bioreactorRotationY.get()
+      meshRef.current.rotation.z = rotationY *5
     }
   });
 
@@ -81,6 +90,7 @@ export default function Model({ mouse }: { mouse: Tmouse }) {
           fov={75}
           near={0.1}
           far={50000}
+          
         />
 
         <directionalLight
@@ -108,6 +118,8 @@ export default function Model({ mouse }: { mouse: Tmouse }) {
           position={[0.5, -5, 0]}
           rotation-x={-Math.PI / 2}
           scale={[0.1, 0.1, 0.1]}
+          // rotation-z={bioreactorRotationY.to((value)=> value *100)}
+          
         />
 
         <motion.mesh

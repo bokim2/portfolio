@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 import WebGL from 'three/addons/capabilities/WebGL.js';
@@ -10,6 +10,7 @@ import Resume from './resume/resume';
 import { PerspectiveCamera } from '@react-three/drei';
 import Wrapper from '@/components/wrapper/wrapper';
 import dynamic from 'next/dynamic';
+import { useScroll } from 'framer-motion';
 
 const ExperienceAnimation = dynamic(
   () => import('./experience-animation/index'),
@@ -47,12 +48,18 @@ export default function Experience() {
     setIsClient(true);
   }, []);
 
+  const experienceContainer = useRef<HTMLDivElement| null>(null)
+  const {scrollYProgress} = useScroll({
+    target: experienceContainer, 
+    offset: ['start end', 'end start'],
+  });
+
   // need to put placeholder image if webgl is not available
 
   return (
     // <main className={styles.main}>
-    <Wrapper>
-      <div className={styles.columnsContainer}>
+    <Wrapper >
+      <div className={styles.columnsContainer} ref={experienceContainer}>
         {isClient &&
         typeof window !== 'undefined' &&
         WebGL.isWebGLAvailable() ? (
@@ -60,7 +67,7 @@ export default function Experience() {
           //   className={`${styles.column} ${styles.bioreactorOuterContainer}`}
           // >
           <div className={`${styles.column} ${styles.bioreactorColumn}`}>
-            <ExperienceAnimation />
+            <ExperienceAnimation scrollYProgress={scrollYProgress}/>
           </div>
         ) : (
           // </div>
