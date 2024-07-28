@@ -10,7 +10,7 @@ import Resume from './resume/resume';
 import { PerspectiveCamera } from '@react-three/drei';
 import Wrapper from '@/components/wrapper/wrapper';
 import dynamic from 'next/dynamic';
-import { useScroll } from 'framer-motion';
+import { useScroll, useSpring } from 'framer-motion';
 
 const ExperienceAnimation = dynamic(
   () => import('./experience-animation/index'),
@@ -53,6 +53,7 @@ export default function Experience() {
     target: experienceContainer, 
     offset: ['start end', 'end start'],
   });
+  const smoothScrollYProgress = useSpring(scrollYProgress, {damping: 20})
 
   // need to put placeholder image if webgl is not available
 
@@ -67,7 +68,7 @@ export default function Experience() {
           //   className={`${styles.column} ${styles.bioreactorOuterContainer}`}
           // >
           <div className={`${styles.column} ${styles.bioreactorColumn}`}>
-            <ExperienceAnimation scrollYProgress={scrollYProgress}/>
+            <ExperienceAnimation scrollYProgress={smoothScrollYProgress}/>
           </div>
         ) : (
           // </div>
