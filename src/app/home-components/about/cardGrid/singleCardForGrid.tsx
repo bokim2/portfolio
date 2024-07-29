@@ -153,7 +153,7 @@ export const SINGLE_CARD_DATA = [
       ],
     },
     {
-      title: 'Data management software',
+      title: 'Data analysis software',
       subtitle: 'Spotfire - Data visualization',
       equipment: 'Spotfire',
       pic1: spotfireGIF,
@@ -165,11 +165,13 @@ export const SINGLE_CARD_DATA = [
         <>
           Spotfire... the software that got me interested in software.
           Surprisingly, graphing experimental data to this day is often done in
-          excel. </>,
-          
-          <>Spotfire changed the game on this with this with an intuitive
-          user interface and easy to apply filters and groupings. It is similar
-          to Tableau but much easier to use for scientists.{' '}
+          excel.{' '}
+        </>,
+
+        <>
+          Spotfire changed the game on this with this with an intuitive user
+          interface and easy to apply filters and groupings. It is similar to
+          Tableau but much easier to use for scientists.{' '}
         </>,
 
         ,
@@ -177,31 +179,40 @@ export const SINGLE_CARD_DATA = [
     },
     {
       title: 'Data management software',
-      subtitle: 'Benchling - Data recording and tracking',
+      subtitle: 'Benchling - Electronic lab notebook',
       equipment: 'Benchling',
       pic1: benchlingGIF,
       pic2: benchlingNotebook,
       pic1ImageCaption:
         'Benchling, an all in one platform for scientific research and collaboration',
       pic2ImageCaption:
-        'Benchling, they came on the scene relatively recently but are implementing a lot of the features that we need.',
+        'Laboratory notebook templates - for unified data entry and organization.',
       pic1StyleOverrides: {
         objectFit: 'contain',
       },
       pic2StyleOverrides: {},
       text: [
         <>
-          Before Benchling, I used a different electronic lab notebook. It was
-          convenient because there was no need for carbon copy lab notebooks
+          Before Benchling, I used a much simpler electronic lab notebook. It
+          was convenient because there was no need for carbon copy lab notebooks
           (check this out, it is ancient).
         </>,
         <>
-          But until benchling, the database and laboratory notebook and strain
-          information had not all been centralized in the way that I wish it had
-          been. It has been amazing to see that it is finally being consolidated
-          / integrated in a way that is usable.
+          While there are other big players like Sapio Biosciences in the space
+          that integrate strain information, experimental data, and lab notebook
+          functions, I specifically worked with Benchling implementation on the
+          client-side.
         </>,
-
+        //   <>
+        //   Before Benchling, I used a different
+        //   electronic lab notebook. It was convenient because there was no need
+        //   for carbon copy lab notebooks (check this out, it is ancient).
+        // </>,
+        // <>
+        //   Until recently, no polished product centralized both database and
+        //   laboratory notebook functions. While there are other big players in the space like Sapio Biosciences, I specifically worked with Benchling
+        //   implementation on the client-side.
+        // </>,
         ,
       ],
     },
@@ -237,13 +248,13 @@ export const SINGLE_CARD_DATA = [
       pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
       text: [
         <>
-          The Biostat B is a work horse. It is an older model that is tried
-          and true. However, the software used to create fermentation recipes for it is not easy
-          to use.{' '}
+          The Biostat B is a work horse. It is an older model that is tried and
+          true. However, the software used to create fermentation recipes for it
+          is not easy to use.{' '}
         </>,
         <>
           It is a bit before my time in terms of implementing this system, the
-          legends say that it is not user friendly.  {' '}
+          legends say that it is not user friendly.{' '}
         </>,
       ],
     },
@@ -298,8 +309,9 @@ export const SINGLE_CARD_DATA = [
           resources.
         </>,
         <>
-          Although much less than with fully featured bioreactors, with the Biolector, you can get to much higher cell densities and
-          product formation, resulting in better breakout in performance than in
+          Although much less than with fully featured bioreactors, with the
+          Biolector, you can get to much higher cell densities and product
+          formation, resulting in better breakout in performance than in
           microtiter plates.
         </>,
         <>
@@ -349,8 +361,14 @@ export const SINGLE_CARD_DATA = [
       pic2ImageCaption: 'this system is set up to handle GMP.',
       text: [
         <>
-          software is designed to handle 1 reactor at a time. legacy software,
+         The SUF software is designed to manage a single reactor at a time and is built on the mature DeltaV platform, 
           but the hardware is very new.
+        </>,
+        <>
+          The single use fermentation vessel (a plastic bag in this case) has
+          become more popular in recent years due to issues with contamination,
+          longer turn-around time, resource consumption with traditional
+          systems.{' '}
         </>,
       ],
     },
@@ -380,8 +398,8 @@ export const SINGLE_CARD_DATA = [
       pic2StyleOverrides: {
         objectPosition: 'center right',
       },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
+      pic1ImageCaption: '',
+      pic2ImageCaption: '',
       text: [
         <>
           At the bootcamp, I was exposed to pieces of how to put a basic web
@@ -392,8 +410,9 @@ export const SINGLE_CARD_DATA = [
           , React, Redux, Express, MongoDB, Postgres.
         </>,
         <>
-          I knew once I was done with the bootcamp, that I had a long way to go,
-          and was excited to start self-learning.
+          After the 3 months, it was apparent that I had only scratched the
+          surface of full stack development. I committed to self-directed
+          learning to build a more comprehensive skill set.
         </>,
       ],
     },
@@ -409,16 +428,24 @@ export const SINGLE_CARD_DATA = [
       pic2StyleOverrides: {
         objectFit: 'contain',
       },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
+      pic1ImageCaption: '',
+      pic2ImageCaption: '',
       text: [
         <>
-          Studying to pass the exam took a couple months. At the end of the
-          process, I was able to understand more about system design and the
-          bottlenecks in current infrastructures and things that had be created
-          to compensate those areas (ex: Cloudfront, ).{' '}
+          {/* Studying to pass the exam took a couple months.  */}
+          At the end of the process, I had a better understanding of system
+          design and the weaknesses, costs, and bottlenecks in current
+          infrastructures and solutions that had be created to compensate those
+          areas (ex: database replication, storage tiers, CDN, etc).{' '}
         </>,
-        <></>,
+        <>
+          It was fun to learn about the issues related to scaling up, clearly
+          different from biotech but the same result.{' '}
+        </>,
+        <>
+          &ldquo;If it doesn&apos;t scale, it doesn&apos;t work.&ldquo; -
+          Someone Somewhere{' '}
+        </>,
         ,
       ],
     },
@@ -433,17 +460,23 @@ export const SINGLE_CARD_DATA = [
       pic2StyleOverrides: {
         objectFit: 'contain',
       },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
+      pic1ImageCaption: '',
+      pic2ImageCaption: '',
       text: [
         <>
-          open to a lot. it could be cool to work on things like technical
+          Open to a lot. It could be cool to work on things like technical
           software, data visualization (because how data is visualized really
           matters!), 3D, etc.
         </>,
         <>
-          I do believe in trying things out and seeing what the best fit is.{' '}
+          I believe that applications should be purposeful, intuitive, and
+          aligned with their original intent. The practical value and the
+          overall user experience of an application are my primary drivers and
+          motivation.
         </>,
+        // I believe in trying things out and seeing what the best fit is.{' '}
+        // I subscribe to the belief that applications should be purposeful,
+        //   intuitive, and relevant to its originial intention.  The practical value and the user experience of the application is my primary driver and what I get the most energy and motivation from.
       ],
     },
     {
@@ -453,7 +486,7 @@ export const SINGLE_CARD_DATA = [
       pic1: mosaic,
       pic2: dna,
       pic1StyleOverrides: {
-        objectFit: 'cover', 
+        objectFit: 'cover',
         // objectPosition: '9% 50%',
         transform: 'scale(1.5) translateX(-.81%)',
         // objectPosition: '135% 50%',
@@ -463,10 +496,10 @@ export const SINGLE_CARD_DATA = [
       },
       text: [
         <>
-          dedication, attention to detail, emphasis on open communication. i
+          Dedication, attention to detail, emphasis on open communication. I
           believe in Kaizen, continuous improvement.
         </>,
-        <>also hope to bring a unique perspective from my time in biotech.</>,
+        <>I also hope to bring a unique perspective from my time in biotech.</>,
         ,
       ],
     },
@@ -485,15 +518,15 @@ export const SINGLE_CARD_DATA = [
         objectPosition: 'top',
         filter: 'brightness(1.05)',
       },
-      pic1ImageCaption: 'remote instruction.',
-      pic2ImageCaption: '3 months',
+      pic1ImageCaption: '',
+      pic2ImageCaption: '',
       text: [
         <>
-          I love an open, inclusive, and engaging work culture. I worked in the
-          San Francisco Bay Area during my time in biotech and enjoyed it. I
+          I love an open, inclusive, and engaging work culture. I was based in
+          the San Francisco Bay Area during my time in biotech and enjoyed it. I
           hope to be based in California, Colorado, or Washington.
         </>,
-        <></>,
+        // <></>,
         ,
       ],
     },
@@ -612,7 +645,7 @@ export default function SingleCardForGrid({
                           x: isHovered ? '-2%' : '0%',
                         }}
                         exit={{ opacity: 0, x: '-2%' }}
-                        transition={{ duration: .7 }}
+                        transition={{ duration: 0.7 }}
                         style={{
                           position: 'absolute',
                           width: '100%',
@@ -637,8 +670,8 @@ export default function SingleCardForGrid({
                           opacity: isHovered ? 1 : 0,
                           x: isHovered ? '0%' : '2%',
                           transition: {
-                            duration: .8,
-                            delay: .4
+                            duration: 0.8,
+                            delay: 0.4,
                           },
                         }}
                         style={{
@@ -652,7 +685,7 @@ export default function SingleCardForGrid({
                           src={item?.[activeIndex]?.pic2 as StaticImageData}
                           alt={item?.[activeIndex]?.title as string}
                           layout="fill"
-                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {} }
+                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
                           key={`${cardIndex}_${activeIndex}_pic2`}
                         />
                       </motion.div>
@@ -729,7 +762,7 @@ export default function SingleCardForGrid({
                         animate={{
                           opacity: isHovered ? 1 : 0,
                           x: isHovered ? '0%' : '-2%',
-                          transition: { duration: 0.8, delay: .4 },
+                          transition: { duration: 0.8, delay: 0.4 },
                         }}
                         style={{
                           position: 'absolute',

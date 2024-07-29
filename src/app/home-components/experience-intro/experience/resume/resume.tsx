@@ -202,8 +202,8 @@ const resumeData: TresumeData[] = [
     ],
     description: [
       // 'Frontend heavy experiment',
-      'I wanted to have fun and explore with this portfolio. I wanted to experiment and explore further with three.js, framer motion, and other libraries.',
-      'Design, visual hiarchy, and typography was also something I wanted think about and consider.',
+      'I wanted to have fun and explore with frontend in this portfolio and experiment further with three.js, framer motion, and other libraries.',
+      'Design, visual hierarchy, and typography were also aspects I wanted to consider and explore in greater depth while building out the site.',
     ],
     // imagePath: '/images/experience/portfolio.jpg',
     imageStyle: { objectFit: 'cover' },
