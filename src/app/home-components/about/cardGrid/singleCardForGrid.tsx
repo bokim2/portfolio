@@ -358,7 +358,7 @@ export const SINGLE_CARD_DATA = [
         filter: 'brightness(1.2)',
       },
       pic1ImageCaption: 'a 30L fermentation bag',
-      pic2ImageCaption: 'this system is set up to handle GMP.',
+      pic2ImageCaption: 'this system is set up to handle GMP (Good Manufacturing Practice).',
       text: [
         <>
          The SUF software is designed to manage a single reactor at a time and is built on the mature DeltaV platform, 

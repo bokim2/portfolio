@@ -195,7 +195,7 @@ const resumeData: TresumeData[] = [
       'React',
       'Typescript',
       'Framer Motion',
-      'Three.js',
+      'React Three Fiber',
       'React Three Drei',
       'Sass',
       // '',

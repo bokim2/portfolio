@@ -121,6 +121,7 @@ export default function Model({ mouse, bioreactorRotationY }: TModel) {
           // rotation-z={bioreactorRotationY.to((value)=> value *100)}
           
         />
+        {/* <Text>hello testing</Text> */}
 
         <motion.mesh
           castShadow
