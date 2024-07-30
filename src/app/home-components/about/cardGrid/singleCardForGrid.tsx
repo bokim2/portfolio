@@ -248,7 +248,7 @@ export const SINGLE_CARD_DATA = [
       pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
       text: [
         <>
-          The Biostat B is a work horse. It is an older model that is tried and
+          The Biostat B is a work horse. It is an older system that is tried and
           true. However, the software used to create fermentation recipes for it
           is not easy to use.{' '}
         </>,
@@ -283,7 +283,7 @@ export const SINGLE_CARD_DATA = [
           controller.{' '}
         </>,
         <>
-          But clearly, there were improvements yet to come since the UI was
+          But there were improvements yet to come since the UI was
           split up, one bioreactor at a time for some parts, not for others.
         </>,
       ],
@@ -410,9 +410,7 @@ export const SINGLE_CARD_DATA = [
           , React, Redux, Express, MongoDB, Postgres.
         </>,
         <>
-          After the 3 months, it was apparent that I had only scratched the
-          surface of full stack development. I committed to self-directed
-          learning to build a more comprehensive skill set.
+    While the bootcamp provided a base understanding, three months were not enough to fully grasp full stack development (maybe that&apos;s a life-long journey). I committed to self-directed learning to build a more comprehensive skill set.
         </>,
       ],
     },
@@ -439,7 +437,7 @@ export const SINGLE_CARD_DATA = [
           areas (ex: database replication, storage tiers, CDN, etc).{' '}
         </>,
         <>
-          It was fun to learn about the issues related to scaling up, clearly
+          It was fun to learn about the issues related to scaling up, vastly
           different from biotech but the same result.{' '}
         </>,
         <>
