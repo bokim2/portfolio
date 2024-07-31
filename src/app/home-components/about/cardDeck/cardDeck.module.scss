@@ -1,0 +1,353 @@
+$card-inline-padding: clamp(3vw, 3rem, 4vw);
+
+// aboutCarousel
+
+.aboutCarousel {
+  margin-block: 5rem;
+  width: 100%;
+}
+
+// card selector
+
+.cardSelector {
+  position: sticky;
+  background-color: rgba(var(--clr-main-2));
+  // margin-top: 10vh;
+  top: 7vh;
+  z-index: 15;
+  // height: 100vh;
+
+  // top: 0;
+  // left: 50%;
+  // left: 2.5vw;
+  // width: 100vw;
+  // margin-left: 2.5vw;
+  // max-height: 90vh;
+
+  // transform: translateY(-50%);
+  display: flex;
+  // flex-direction: column;
+  // flex-direction: row-reverse;
+  justify-content: center;
+  // align-items: center;
+  width: 100%;
+  gap: 2vw;
+  // transform: rotate(-90deg);
+
+  // margin-block: 2vh;
+
+  // &:hover {
+  //   transform: translateY(-50%) scale(1.3);
+  // }
+}
+
+.innerCardSelector {
+  display: absolute;
+  height: 90vh;
+  top: 50%;
+}
+
+.cardSelectorOptions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10ch;
+  aspect-ratio: 1 / 1;
+  border: 5px solid pink;
+  border-radius: 9999vw;
+}
+
+// card deck accordian toggle - button
+
+.cardDeckToggle {
+  height: 30vh;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.innerCardDeckToggle {
+  background-color: rosybrown;
+  height: 100%;
+  // border-bottom: 5px solid black;
+}
+
+
+// card
+
+.card {
+  // background-color: aquamarine;
+  // border: 5px solid green;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+
+  @media (max-width: 800px) {
+    padding-bottom: 1rem;
+
+    &:nth-of-type(even) .cardInner {
+      display: flex;
+      flex-direction: column !important;
+      // background-color: blue;
+    }
+
+    &:nth-of-type(odd) .cardInner {
+      display: flex;
+      flex-direction: column-reverse !important;
+      // background-color: red;
+    }
+  }
+}
+
+.cardInner {
+  padding: calc($card-inline-padding) $card-inline-padding
+    calc($card-inline-padding * 1.25) $card-inline-padding;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3vw, 4rem, 5vw);
+  width: 100%;
+
+  // margin-bottom: 2vh;
+
+  @media (max-width: 800px) {
+    // display: block;
+    // display: flex;
+    // &:nth-of-type(odd) {
+    //   display: flex;
+    //   flex-direction: column-reverse !important;
+    //   background-color: red;
+    // }
+
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 1fr;
+    // max-height: 90vh;
+    // gap: 55vh;
+    // padding: 0;
+  }
+}
+
+.cardControls {
+  position: absolute;
+  // position: relative;
+  // height: 100%;
+  // height: 100px;
+  // background-color: red;
+  // width: 100%;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 10px;
+  margin-inline: 1vw;
+}
+
+.cardTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  // padding-left: $card-inline-padding;
+  // padding-top: $card-inline-padding;
+
+  @media (max-width: 800px) {
+    margin-top: 2vh;
+    gap: 0;
+  }
+}
+
+.cardColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+
+  @media (max-width: 800px) {
+    // gap: 40vh;
+    // display: block;
+  }
+}
+
+.cardSubtitle {
+  font-weight: 700;
+}
+
+// .cardTitles, .cardTextContainer {
+//   // font-size: ;
+//   // margin-block: 2vh;
+//   @media (max-width: 800px) {
+//   //  width: 50%;
+//   padding-inline: 5vw;
+//   }
+// }
+
+.cardTextAndSecondImage {
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2vh;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.textParagraphs {
+  // display: flex;
+  // flex-direction: column;
+  // gap: 10em;
+  margin-bottom: 1rem;
+}
+
+.imageColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: min(1vh, 1vw);
+}
+
+.imageAndCaptionContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    gap: 0;
+  }
+}
+
+.cardImageContainer {
+  position: relative;
+  // border: 10px solid red;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  z-index: 10;
+// background-color: red;
+  // width: 15vw;
+  // height: 30vh;
+  width: 100%;
+  // height: 100%;
+  aspect-ratio: 6/4;
+
+  img {
+    // object-fit: cover;
+    object-fit: cover;
+  }
+
+  // .pic2 {
+  //   opacity: 0;
+  // }
+
+  @media (max-width: 800px) {
+    // pointer-events: none;
+  }
+}
+
+// .cardImageContainer:hover .pic2 {
+//   opacity: 1;
+// }
+
+.pic1,
+.pic2 {
+  // transition: opacity 0.5s;
+}
+
+.cardImageContainerSecondary {
+  flex-grow: 1;
+  min-height: 100px;
+  aspect-ratio: 12/4;
+  //  border: 5px solid blue;
+  //  padding: 5px;
+  //  height: 100px;
+  // height: 10%;
+  // aspect-ratio: 6/4;
+  position: relative;
+  // border: 4px solid yellow;
+  // cursor: pointer;
+
+  // width: 60%;
+
+  // aspect-ratio: 6/4;
+
+  img {
+    object-fit: cover;
+    // object-fit: contain;
+  }
+
+  @media (max-width: 800px) {
+    // to hide second picture on mobile
+    // display: none;
+  }
+}
+
+.arrowLeftContainer {
+  position: absolute;
+  z-index: 10;
+  width: 50%;
+  height: 100%;
+  // background-color: red;
+}
+
+.arrowRightContainer {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  // background-color: yellow;
+
+  @media (max-width: 800px) {
+    z-index: 11;
+  }
+}
+
+.arrowWrapper {
+  bottom: min(0.5rem, 1vh);
+  position: absolute;
+  //   width: 10vw;
+  //   z-index: 10;
+  // top: 50%;
+  // bottom: 0;
+  // transform: translateY(-50%);
+  cursor: pointer;
+
+  &.right {
+    right: 80%;
+  }
+
+  &.left {
+    left: 80%;
+  }
+
+  @media (max-width: 800px) {
+    &.right {
+      right: 40%;
+    }
+
+    &.left {
+      left: 40%;
+    }
+  }
+}
+
+.imageArrows {
+}
+
+.imageDots {
+  position: absolute;
+  bottom: min(0.5rem, 1vh);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+  // width: 100%;
+  cursor: pointer;
+  display: flex;
+}

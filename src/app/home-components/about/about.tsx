@@ -1,7 +1,7 @@
 'use client';
 import Wrapper from '@/components/wrapper/wrapper';
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import styles from './about.module.scss';
 import Image from 'next/image';
@@ -12,9 +12,10 @@ import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 import BiotechSoftware from './biotechSoftware';
 import ThisPortfolio from './thisPortfolio';
 import AboutCarousel from './about-carousel/aboutCarousel';
-import CardGrid from './cardGrid/cardGrid';
 import CardSelector from './about-carousel/cardSelector';
 import { useAnimation } from 'framer-motion';
+import { SINGLE_CARD_DATA } from './cardDeck/singleCardForGrid';
+import CardDeck from './cardDeck/cardDeck';
 
 // type T_ABOUT_INTRO = React.ReactNode[];
 
@@ -45,57 +46,86 @@ import { useAnimation } from 'framer-motion';
 export default function About() {
   const { activeSection, setActiveSection, ref } =
     useUpdateActiveSection('about');
-  // const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
-
-  // const [selectedCardReady, setSelectedCardReady] = useState<boolean>(true);
-  // const controls = useAnimation();
-  // const aboutRef = useRef<HTMLDivElement>(null);
-
-  async function scrollToTop() {}
-
-  function handleSelectorChange(clickedCardIndex: number) {
-    // setSelectedCardReady(false);
-    // console.log('in handleSelectorChange');
-    // setTimeout(() => {
-    //   console.log('entering settimeout');
-    //   if (selectedCardIndex !== clickedCardIndex) {
-    //     setSelectedCardIndex(clickedCardIndex);
-    //   } else {
-    //     setSelectedCardIndex(null);
-    //   }
-    //   setSelectedCardReady(true);
-    // }, 1000);
-      //     if (selectedCardIndex !== clickedCardIndex) {
-      //   setSelectedCardIndex(clickedCardIndex);
-      // } else {
-      //   setSelectedCardIndex(null);
-      // }
-  }
 
   return (
     <Wrapper>
       <div className={styles.about} id="about">
-        {/* <div
-          id="beforeAbout"
-          className={styles.beforeAbout}
-          style={{ backgroundColor: 'blue', height: '10px', width: '10px' }}
-        /> */}
-        {/* <CardSelector
-          selectedCardIndex={selectedCardIndex}
-          handleSelectorChange={handleSelectorChange}
-        /> */}
-
         <div className={styles.beforeCardSpacer}>
           <h2>About</h2>
           this section is more just for fun, so feel free to check it out or
           skip it.
-          {/* {ABOUT_INTRO?.map((text, i)=> {
-           return  <div key={i}>{text}</div>
-          })} */}
-          {/* {selectedCardIndex !== null && <div key={selectedCardIndex}>{ABOUT_INTRO[selectedCardIndex]}</div>} */}
         </div>
-        {/* <Wrapper additionalClasses={`wrapper mobileLessPadding`}> */}
-          {/* <Link href="/experience">
+
+        <AnimatePresence>
+          <motion.div
+            layout
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -30, opacity: 0 }}
+            className={styles.cardGrid}
+          >
+            {SINGLE_CARD_DATA.map((deck, deckIndex) => {
+              return (
+                <>
+                  <AnimatePresence>
+                    <CardDeck deckIndex={deckIndex} />
+                  </AnimatePresence>
+                </>
+              );
+            })}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </Wrapper>
+  );
+}
+
+{
+  /* <div
+          id="beforeAbout"
+          className={styles.beforeAbout}
+          style={{ backgroundColor: 'blue', height: '10px', width: '10px' }}
+        /> */
+}
+{
+  /* <CardSelector
+          selectedCardIndex={selectedCardIndex}
+          handleSelectorChange={handleSelectorChange}
+        /> */
+}
+
+// const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(0);
+
+// const [selectedCardReady, setSelectedCardReady] = useState<boolean>(true);
+// const controls = useAnimation();
+// const aboutRef = useRef<HTMLDivElement>(null);
+
+async function scrollToTop() {}
+
+function handleSelectorChange(clickedCardIndex: number) {
+  // setSelectedCardReady(false);
+  // console.log('in handleSelectorChange');
+  // setTimeout(() => {
+  //   console.log('entering settimeout');
+  //   if (selectedCardIndex !== clickedCardIndex) {
+  //     setSelectedCardIndex(clickedCardIndex);
+  //   } else {
+  //     setSelectedCardIndex(null);
+  //   }
+  //   setSelectedCardReady(true);
+  // }, 1000);
+  //     if (selectedCardIndex !== clickedCardIndex) {
+  //   setSelectedCardIndex(clickedCardIndex);
+  // } else {
+  //   setSelectedCardIndex(null);
+  // }
+}
+
+{
+  /* <Wrapper additionalClasses={`wrapper mobileLessPadding`}> */
+}
+{
+  /* <Link href="/experience">
         <h2 className={`animatedH2 animated`}>About</h2>
         </Link>
         <section className={styles.experience} ref={ref}>
@@ -134,26 +164,37 @@ export default function About() {
         </p>
         </div>
         </div>
-      </section> */}
+      </section> */
+}
 
-          {/* {<CardGrid
+{
+  /* {<CardGrid
           selectedCardIndex={selectedCardIndex}
           handleSelectorChange={handleSelectorChange}
-          />} */}
-          {/* {selectedCardReady && ( */}
-            <CardGrid
+          />} */
+}
+{
+  /* {selectedCardReady && ( */
+}
+{
+  /* <CardGrid
             // selectedCardReady={selectedCardReady}
             //   selectedCardIndex={selectedCardIndex}
               // handleSelectorChange={handleSelectorChange}
-            />
-          {/* )} */}
-        {/* </Wrapper> */}
-        {/* <AboutCarousel /> */}
-        {/* <Wrapper>
+            /> */
+}
+{
+  /* )} */
+}
+{
+  /* </Wrapper> */
+}
+{
+  /* <AboutCarousel /> */
+}
+{
+  /* <Wrapper>
           <BiotechSoftware />
           <ThisPortfolio />
-        </Wrapper> */}
-      </div>
-    </Wrapper>
-  );
+        </Wrapper> */
 }

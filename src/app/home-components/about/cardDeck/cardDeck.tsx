@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import SingleCardForGrid, { SINGLE_CARD_DATA } from './singleCardForGrid';
-
+import CardDeckToggle from './cardDeckToggle';
 
 type TCardDeck = { deckIndex: number };
 
@@ -11,20 +11,11 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
   return (
     <AnimatePresence initial={false}>
       <motion.section layout>
-        <motion.header
-          key="header"
-          initial={false}
-          onClick={() => {
-            setIsOpen((prev) => !prev);
-          }}
-          animate={{
-            backgroundColor: !isOpen ? '#FF0088' : '#0055FF',
-            transition: { duration: 2 },
-          }}
-        >
-          {SINGLE_CARD_DATA[deckIndex]?.[0]?.section}
-          {SINGLE_CARD_DATA[deckIndex]?.[0]?.intro}
-        </motion.header>
+        <CardDeckToggle
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          deckIndex={deckIndex}
+        />
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -56,7 +47,6 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
                       item={SINGLE_CARD_DATA[deckIndex]}
                       activeIndex={i}
                       cardIndex={0}
-                      isOpen={isOpen}
                     />
                   </>
                 );

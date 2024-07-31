@@ -11,8 +11,7 @@ import {
 } from 'framer-motion';
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs';
 import { GoDot, GoDotFill } from 'react-icons/go';
-import styles from '../about-carousel/aboutCarousel.module.scss';
-
+import styles from './cardDeck.module.scss';
 import genencorFun from '@/../public/images/carousel/1.jpg';
 import genencor2 from '@/../public/images/progressive/genencor3.jpg';
 
@@ -79,6 +78,8 @@ import industrialBioBM from '@/../public/images/carousel/industrialBioBM.jpg';
 import operizBM from '@/../public/images/carousel/operizBM.jpg';
 
 import CardControls from '../about-carousel/cardControls';
+import CardTextColumn from './cardTextColumn';
+import CardImageColumn from './cardImageColumn';
 
 type TSlide = {
   section?: string;
@@ -283,8 +284,8 @@ export const SINGLE_CARD_DATA = [
           controller.{' '}
         </>,
         <>
-          But there were improvements yet to come since the UI was
-          split up, one bioreactor at a time for some parts, not for others.
+          But there were improvements yet to come since the UI was split up, one
+          bioreactor at a time for some parts, not for others.
         </>,
       ],
     },
@@ -358,11 +359,12 @@ export const SINGLE_CARD_DATA = [
         filter: 'brightness(1.2)',
       },
       pic1ImageCaption: 'a 30L fermentation bag',
-      pic2ImageCaption: 'this system is set up to handle GMP (Good Manufacturing Practice).',
+      pic2ImageCaption:
+        'this system is set up to handle GMP (Good Manufacturing Practice).',
       text: [
         <>
-         The SUF software is designed to manage a single reactor at a time and is built on the mature DeltaV platform, 
-          but the hardware is very new.
+          The SUF software is designed to manage a single reactor at a time and
+          is built on the mature DeltaV platform, but the hardware is very new.
         </>,
         <>
           The single use fermentation vessel (a plastic bag in this case) has
@@ -410,7 +412,10 @@ export const SINGLE_CARD_DATA = [
           , React, Redux, Express, MongoDB, Postgres.
         </>,
         <>
-    While the bootcamp provided a base understanding, three months were not enough to fully grasp full stack development (maybe that&apos;s a life-long journey). I committed to self-directed learning to build a more comprehensive skill set.
+          While the bootcamp provided a base understanding, three months were
+          not enough to fully grasp full stack development (maybe that&apos;s a
+          life-long journey). I committed to self-directed learning to build a
+          more comprehensive skill set.
         </>,
       ],
     },
@@ -537,18 +542,16 @@ const slideVariants = {
   exit: { x: '-100%', opacity: 0 },
 };
 
-type TCard = {
+export type TCard = {
   item: (typeof SINGLE_CARD_DATA)[number];
   activeIndex: number;
   cardIndex: number;
-  isOpen: Boolean;
 };
 
 export default function SingleCardForGrid({
   item,
   cardIndex,
   activeIndex,
-  isOpen,
 }: TCard) {
   const [isHovered, setIsHovered] = useState<'left' | 'right' | null>(null);
   const [isClicked, setIsClicked] = useState<'left' | 'right' | null>(null);
@@ -575,241 +578,44 @@ export default function SingleCardForGrid({
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>
           <div className={styles.cardColumn}>
-            <div className={styles.cardTitles}>
-              <h3>{item?.[activeIndex]?.title ?? ''}</h3>
-              <p className={`xlarge ${styles.cardSubtitle}`}>
-                {item?.[activeIndex]?.subtitle ?? ''}
-              </p>
-            </div>
-            <div className={`${styles.cardTextAndSecondImage}`}>
-              <div className={`${styles.cardTextContainer}`}>
-                {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
-                  <>
-                    <p key={i} className={`large`}>
-                      {singleParagraph}
-                    </p>
-                    {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />}
-                  </>
-                ))}
-              </div>
-
-              {item?.[activeIndex]?.pic3 && (
-                <div className={styles.cardImageContainerSecondary}>
-                  <Image
-                    src={item?.[activeIndex]?.pic3 as StaticImageData}
-                    alt={item?.[activeIndex]?.title as string}
-                    layout="fill"
-                    style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                  />
-                </div>
-              )}
-            </div>
+            <CardTextColumn
+              item={item}
+              cardIndex={cardIndex}
+              activeIndex={activeIndex}
+            />
           </div>
 
           <div className={`${styles.cardColumn} ${styles.imageColumn}`}>
-            {item?.length > 0 ? (
-              <>
-                <div className={styles.imageAndCaptionContainer}>
-                  <motion.div
-                    key={`${cardIndex}_${activeIndex}`}
-                    initial={{ transform: 'scale(1)' }}
-                    whileHover={{
-                      boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
-                      transform: 'scale(1.02)',
-                    }}
-                    className={`${styles.cardImageContainer} imgBorderRadius`}
-                    ref={scrollCardRef}
-                    onClick={() => {
-                      isHovered === null
-                        ? setIsHovered('right')
-                        : setIsHovered(null);
-                    }}
-                    whileTap={{
-                      boxShadow: '2px 4px 7px var(--clr-accent-3)',
-                      transform: 'scale(.98)',
-                    }}
-                    onMouseDown={() => {
-                      setIsClicked('right');
-                    }}
-                    onMouseUp={() => setIsClicked(null)}
-                  >
-                    <AnimatePresence>
-                      <motion.div
-                        key={`${cardIndex}_${activeIndex}_pic1`}
-                        className={styles.cardImageContainer}
-                        initial={{ opacity: 1, x: '0%', height: 'auto' }}
-                        animate={{
-                          opacity: isHovered ? 0 : 1,
-                          x: isHovered ? '-2%' : '0%',
-                        }}
-                        exit={{ opacity: 0, x: '-2%' }}
-                        transition={{ duration: 0.7 }}
-                        style={{
-                          position: 'absolute',
-                          width: '100%',
-                          height: '100%',
-                        }}
-                      >
-                        <Image
-                          className={styles.pic1}
-                          src={item?.[activeIndex]?.pic1}
-                          alt={item?.[activeIndex]?.title as string}
-                          layout="fill"
-                          style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                          key={`${cardIndex}_${activeIndex}_pic1`}
-                        />
-                      </motion.div>
-
-                      <motion.div
-                        key={`${cardIndex}_${activeIndex}_pic2`}
-                        className={styles.cardImageContainer}
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{
-                          opacity: isHovered ? 1 : 0,
-                          x: isHovered ? '0%' : '2%',
-                          transition: {
-                            duration: 0.8,
-                            delay: 0.4,
-                          },
-                        }}
-                        style={{
-                          position: 'absolute',
-                          width: '100%',
-                          height: '100%',
-                        }}
-                      >
-                        <Image
-                          className={styles.pic2}
-                          src={item?.[activeIndex]?.pic2 as StaticImageData}
-                          alt={item?.[activeIndex]?.title as string}
-                          layout="fill"
-                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                          key={`${cardIndex}_${activeIndex}_pic2`}
-                        />
-                      </motion.div>
-                    </AnimatePresence>
-                  </motion.div>{' '}
-                  {!isHovered ? (
-                    <p className={'imageCaption'}>
-                      {item?.[activeIndex]?.pic1ImageCaption}
-                    </p>
-                  ) : (
-                    <p className={'imageCaption'}>
-                      {item?.[activeIndex]?.pic2ImageCaption}
-                    </p>
-                  )}
-                </div>
-              </>
-            ) : null}
+            <CardImageColumn
+              item={item}
+              cardIndex={cardIndex}
+              activeIndex={activeIndex}
+              isHovered={isHovered}
+              setIsHovered={setIsHovered}
+              ref={scrollCardRef}
+            />
           </div>
         </motion.div>
       ) : (
+        // Even cards
         <motion.div className={styles.cardInner}>
           <div className={`${styles.cardColumn} ${styles.imageColumn}`}>
-            {item?.length > 0 ? (
-              <>
-                <div className={styles.imageAndCaptionContainer}>
-                  <motion.div
-                    initial={{ transform: 'scale(1)' }}
-                    whileHover={{
-                      boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
-                      transform: 'scale(1.02)',
-                    }}
-                    className={`${styles.cardImageContainer} imgBorderRadius`}
-                    ref={scrollCardRef}
-                    onClick={() => {
-                      isHovered === null
-                        ? setIsHovered('left')
-                        : setIsHovered(null);
-                    }}
-                    whileTap={{
-                      boxShadow: '-2px 4px 7px var(--clr-accent-3)',
-                      transform: 'scale(.98)',
-                    }}
-                    onMouseDown={() => setIsClicked('left')}
-                    onMouseUp={() => setIsClicked(null)}
-                  >
-                    <AnimatePresence initial={false}>
-                      <motion.div
-                        key={`${cardIndex}_${activeIndex}_pic1_even`}
-                        className={styles.cardImageContainer}
-                        initial={{ opacity: 1, x: '0%' }}
-                        animate={{
-                          opacity: isHovered ? 0 : 1,
-                          x: isHovered ? '2%' : '0%',
-                          transition: { duration: 0.7 },
-                        }}
-                        style={{
-                          position: 'absolute',
-                          width: '100%',
-                          height: '100%',
-                        }}
-                      >
-                        <Image
-                          className={styles.pic1}
-                          src={item?.[activeIndex]?.pic1}
-                          alt={item?.[activeIndex]?.title as string}
-                          layout="fill"
-                          style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
-                        />
-                      </motion.div>
-                      <motion.div
-                        key={`${cardIndex}_${activeIndex}_pic2_even`}
-                        className={styles.cardImageContainer}
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{
-                          opacity: isHovered ? 1 : 0,
-                          x: isHovered ? '0%' : '-2%',
-                          transition: { duration: 0.8, delay: 0.4 },
-                        }}
-                        style={{
-                          position: 'absolute',
-                          width: '100%',
-                          height: '100%',
-                        }}
-                      >
-                        <Image
-                          className={styles.pic2}
-                          src={item?.[activeIndex]?.pic2 as StaticImageData}
-                          alt={item?.[activeIndex]?.title as string}
-                          layout="fill"
-                          style={item?.[activeIndex]?.pic2StyleOverrides ?? {}}
-                        />
-                      </motion.div>
-                    </AnimatePresence>
-                  </motion.div>
-                  {!isHovered ? (
-                    <p className={'imageCaption'}>
-                      {item?.[activeIndex]?.pic1ImageCaption}
-                    </p>
-                  ) : (
-                    <p className={'imageCaption'}>
-                      {item?.[activeIndex]?.pic2ImageCaption}
-                    </p>
-                  )}
-                </div>
-              </>
-            ) : null}
+            <CardImageColumn
+              item={item}
+              cardIndex={cardIndex}
+              activeIndex={activeIndex}
+              isHovered={isHovered}
+              setIsHovered={setIsHovered}
+              ref={scrollCardRef}
+            />
           </div>
 
           <div className={styles.cardColumn}>
-            <div className={styles.cardTitles}>
-              <h3>{item?.[activeIndex]?.title ?? ''}</h3>
-              <p className={`xlarge ${styles.cardSubtitle}`}>
-                {item?.[activeIndex]?.subtitle ?? ''}
-              </p>
-            </div>
-            <div className={`${styles.cardTextAndSecondImage}`}>
-              <div className={`${styles.cardTextContainer}`}>
-                {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
-                  <>
-                    <p key={i} className={`${styles.textParagraphs} large`}>
-                      {singleParagraph}
-                    </p>
-                  </>
-                ))}
-              </div>
-            </div>
+            <CardTextColumn
+              item={item}
+              cardIndex={cardIndex}
+              activeIndex={activeIndex}
+            />
           </div>
         </motion.div>
       )}
