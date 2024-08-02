@@ -120,11 +120,13 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 .leftBorderAnimation {
   opacity: 0;
   position: absolute;
-  inset: calc(var(--deckPadding)/2);
-  padding: calc(var(--deckPadding));
+  // inset: calc(var(--deckPadding)/2);
+  inset: 0;
+  // margin: calc(var(--deckPadding));
+  // padding: calc(var(--deckPadding));
   // background-color: pink;
   border-radius: var(--borderRadius);
-  border: 2px solid purple;
+  border: 2px solid rgba(128, 0, 128, .1);
 }
 
 .leftTopCorner {
@@ -135,7 +137,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   position: relative;
   // margin: calc(var(--deckPadding));
   // height: 1px;
-  border: 1px solid rgb(0, 0, 0, .5);
+  border: 1px solid rgb(0, 0, 0, .1);
 }
 
 

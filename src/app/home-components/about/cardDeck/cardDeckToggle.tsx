@@ -1,6 +1,13 @@
 'use client';
 import React, { useRef } from 'react';
-import { motion, useAnimate, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import {
+  motion,
+  useAnimate,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from 'framer-motion';
 
 import styles from './cardDeck.module.scss';
 import { SINGLE_CARD_DATA } from './singleCardForGrid';
@@ -16,7 +23,7 @@ type TCardDeckToggle = {
 const CARD_DECK_TOGGLE_INFO = [
   {
     cardDeckToggle: {
-      title: 'Origins',
+      title: 'Origin',
       bulletPoints: [
         'what i did in biotech',
         'cool equipment and software that got me interested in software engineering',
@@ -27,7 +34,6 @@ const CARD_DECK_TOGGLE_INFO = [
     cardDeckToggle: {
       title: 'Next',
       bulletPoints: [
-        'what i did in biotech',
         'my interests in software developement',
         'what i have done so far and what i am interested in',
       ],
@@ -53,8 +59,6 @@ export default function CardDeckToggle({
   //   [0, 1],
   //   ['polygon(0 0, 35% 0, 0 0, 0 30%)', 'polygon(0 0, 35% 0, 21% 17%, 0 30%)']
   // );
-
-
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -96,8 +100,18 @@ export default function CardDeckToggle({
   };
 
   // border animations on card
-const leftBorderRef = useRef<HTMLDivElement | null>(null)
-const isInView = useInView(leftBorderRef, {once: true})
+  const leftBorderRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(leftBorderRef, { once: true });
+
+  const cardDeckToggleVariants = {
+    animate: {
+      backgroundColor: !isOpen
+        ? 'rgba(206, 209, 226, .3)'
+        : 'rgba(161, 101, 73, .1)',
+      transition: { duration: 1 },
+      // width: !isOpen ?  '30%' :  '100%',
+    },
+  };
 
   return (
     <motion.header
@@ -112,11 +126,8 @@ const isInView = useInView(leftBorderRef, {once: true})
       onClick={() => {
         setIsOpen((prev) => !prev);
       }}
-      animate={{
-        backgroundColor: !isOpen ? '#979AAA' : '#0055FF',
-        transition: { duration: 2 },
-        // width: !isOpen ?  '30%' :  '100%',
-      }}
+      animate="animate"
+      variants={cardDeckToggleVariants}
       // style={{opacity: .2}}
     >
       {/* <motion.div className={styles.innerCardDeckToggle}>
@@ -125,11 +136,9 @@ const isInView = useInView(leftBorderRef, {once: true})
 
       <motion.div
         className={`${styles.innerCardDeckToggle}`}
-        animate={{
-          backgroundColor: !isOpen ? '#979AAA' : '#0055FF',
-          transition: { duration: 2 },
-          // width: !isOpen ?  '30%' :  '100%',
-        }}
+        // animate='animate'
+        animate="animate"
+        variants={cardDeckToggleVariants}
       >
         <h2>{CARD_DECK_TOGGLE_INFO[deckIndex]?.cardDeckToggle?.title}</h2>
         <ul>
@@ -155,13 +164,19 @@ const isInView = useInView(leftBorderRef, {once: true})
           //   ],
           //   transition: { duration: 10 },
           // }}
-          initial='initial'
+          initial="initial"
           animate={isInView ? 'animate' : 'initial'}
-          variants={{ initial: { opacity: 0, clipPath: 'polygon(0 0, 0% 0, 0 0, 0 0%)'  }, animate: { opacity: 1,  clipPath: [
+          variants={{
+            initial: { opacity: 0, clipPath: 'polygon(0 0, 0% 0, 0 0, 0 0%)' },
+            animate: {
+              opacity: 1,
+              clipPath: [
                 'polygon(0 0, 0% 0, 0 0, 0 0%)',
                 'polygon(0 0, 35% 0, 21% 17%, 0 30%)',
-              ]
-            , transition: { duration: 5 } } }}
+              ],
+              transition: { duration: 2 },
+            },
+          }}
 
           // animate={{
           //   clipPath: leftClipPathTransformed,
