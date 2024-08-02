@@ -60,17 +60,101 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 // card deck accordian toggle - button
 
 .cardDeckToggle {
-  height: 30vh;
-  padding: 2rem;
+  --deckPadding: 2rem;
+  --borderRadius: 5px;
+
+  position: relative;
+  
+  display: grid;
+  place-items: center;
+  // display: flex;
+  // align-items: center;
+  // justify-items: center;
+
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateY(5deg);
+  // padding: var(--deckPadding);
+
+  border-radius: var(--borderRadius);
+  height: max(300px, 30vh);
   margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1),
+    0 12px 24px rgba(0, 0, 0, 0.1);
+
+  // padding: calc(var(--deckPadding) * 2);
 }
+
+// .sibling {
+//   // padding: var(--deckPadding);
+//   position: absolute;
+//   // inset: 0;
+// }
 
 .innerCardDeckToggle {
-  background-color: rosybrown;
-  height: 100%;
+  // position: relative;
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // transform-style: preserve-3d;
+  // transform: translateZ(20px);
+  inset: calc(var(--deckPadding) );
+  padding: calc(var(--deckPadding));
+  // background-color: rgba(var(--clr-main-2));
+  border-radius: var(--borderRadius);
+  // height: 80%;
   // border-bottom: 5px solid black;
+
+  // ::after{
+
+  //   content: '';
+  //   position: absolute;
+  //   inset: 1rem;
+  //   // background-color: yellow;
+  //   border: 2px solid purple;
+  //   border-radius: calc(var(--borderRadius)/1.5);
+  // }
 }
 
+.leftBorderAnimation {
+  opacity: 0;
+  position: absolute;
+  inset: calc(var(--deckPadding)/2);
+  padding: calc(var(--deckPadding));
+  // background-color: pink;
+  border-radius: var(--borderRadius);
+  border: 2px solid purple;
+}
+
+.leftTopCorner {
+  // position: absolute;
+  margin: calc(var(--deckPadding));
+  justify-self: flex-end;
+  align-self: flex-start;
+  position: relative;
+  // margin: calc(var(--deckPadding));
+  // height: 1px;
+  border: 1px solid rgb(0, 0, 0, .5);
+}
+
+
+.movingIcon {
+  position: absolute;
+  transform-style: preserve-3d;
+  // transform: translateZ(200px);
+  // inset: 0;
+  border-radius: 99999vh;
+  top: 10%;
+  right: 10%;
+  z-index: 1000;
+  height: 100px;
+  aspect-ratio: 1/1;
+  // background-color: red;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+}
 
 // card
 
@@ -230,7 +314,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   z-index: 10;
-// background-color: red;
+  // background-color: red;
   // width: 15vw;
   // height: 30vh;
   width: 100%;

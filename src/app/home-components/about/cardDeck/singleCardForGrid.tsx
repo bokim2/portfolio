@@ -108,19 +108,20 @@ sweetener naturally derived from the stevia plant.
 export const SINGLE_CARD_DATA = [
   [
     {
-      section: 'origin',
-      intro: (
-        <>
-          <h2>Origins</h2>
-          <ul>
-            <li>what i did in biotech</li>
-            <li>
-              cool equipment and software that got me interested in software
-              engineering
-            </li>
-          </ul>
-        </>
-      ),
+      // section: 'origin',
+      // intro: (
+      //   <>
+      //     <h2>Origins</h2>
+      //     <ul>
+      //       <li>what i did in biotech</li>
+      //       <li>
+      //         cool equipment and software that got me interested in software
+      //         engineering
+      //       </li>
+      //     </ul>
+      //   </>
+      // ),
+     
       title: 'the journey up to this point',
       subtitle: 'biotech',
       equipment: '',
@@ -379,16 +380,17 @@ export const SINGLE_CARD_DATA = [
   // second card
   [
     {
-      section: 'current',
-      intro: (
-        <>
-          <h2>next</h2>
-          <ul>
-            <li>my interests in software developement</li>
-            <li>what i have done so far and what i am interested in</li>
-          </ul>
-        </>
-      ),
+      // section: 'current',
+      // intro: (
+      //   <>
+      //     <h2>next</h2>
+      //     <ul>
+      //       <li>my interests in software developement</li>
+      //       <li>what i have done so far and what i am interested in</li>
+      //     </ul>
+      //   </>
+      // ),
+      
       title: 'Bootcamp',
       subtitle: 'Codesmith',
       equipment: '',
