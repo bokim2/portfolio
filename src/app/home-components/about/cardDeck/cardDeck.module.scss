@@ -126,18 +126,18 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // padding: calc(var(--deckPadding));
   // background-color: pink;
   border-radius: var(--borderRadius);
-  border: 2px solid rgba(128, 0, 128, .1);
+  border: 2px solid rgba(128, 0, 128, .2);
 }
 
 .leftTopCorner {
   // position: absolute;
   margin: calc(var(--deckPadding));
   justify-self: flex-end;
-  align-self: flex-start;
+  align-self: flex-end;
   position: relative;
   // margin: calc(var(--deckPadding));
   // height: 1px;
-  border: 1px solid rgb(0, 0, 0, .1);
+  border: 1px solid rgba(128, 0, 128, .2);
 }
 
 

@@ -8,12 +8,13 @@ import Gallery from '../components/gallery/gallery';
 import LoaderPage from '@/components/loaderPage/loaderPage';
 import { useMotionValue, useSpring } from 'framer-motion';
 import Bio from './home-components/bio/bio';
-import WorkIntro from './home-components/experience-intro';
+// import WorkIntro from './home-components/experience-intro';
 
 import Contact from './home-components/contact/contact';
 import About from './home-components/about/about';
 import ParallaxGallery from './home-components/parallax-gallery/parallaxGallery';
 import Skills from './home-components/skills/skills';
+import Experience from './home-components/experience/experience';
 
 const imagesAndBackgrounds = [
   {
@@ -43,9 +44,10 @@ export default function Home() {
 
   return (
     <main className={`${styles.main}`} id="homePage">
-      {/* <Bio />
+      <Bio />
       <Skills />
-      <WorkIntro /> */}
+      {/* <WorkIntro /> */}
+      <Experience />
       <About />
 
       {/* <ParallaxGallery /> */}

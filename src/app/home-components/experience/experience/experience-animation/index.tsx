@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
-import styles from '../experience.module.scss';
+import styles from '../../experience.module.scss';
 import { MotionValue } from 'framer-motion';
 import TextOverlay from './textOverlay';
 

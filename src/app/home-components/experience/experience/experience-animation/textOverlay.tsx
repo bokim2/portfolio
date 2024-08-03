@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from '../experience.module.scss'
+import styles from '../../experience.module.scss'
 import { MotionValue, motion } from 'framer-motion'
 
 

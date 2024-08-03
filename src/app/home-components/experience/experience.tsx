@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import styles from './experience.module.scss';
-import BiotechSoftware from '../../about/biotechSoftware';
-import Resume from './resume/resume';
+import BiotechSoftware from '../about/biotechSoftware';
+import Resume from './experience/resume/resume';
 // import ExperienceAnimation from './experience-animation';
 import { PerspectiveCamera } from '@react-three/drei';
 import Wrapper from '@/components/wrapper/wrapper';
@@ -13,7 +13,7 @@ import dynamic from 'next/dynamic';
 import { useScroll, useSpring } from 'framer-motion';
 
 const ExperienceAnimation = dynamic(
-  () => import('./experience-animation/index'),
+  () => import('./experience/experience-animation/index'),
   {
     ssr: false,
     loading: () => (
@@ -48,18 +48,18 @@ export default function Experience() {
     setIsClient(true);
   }, []);
 
-  const experienceContainer = useRef<HTMLDivElement| null>(null)
-  const {scrollYProgress} = useScroll({
-    target: experienceContainer, 
+  const experienceContainer = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: experienceContainer,
     offset: ['start end', 'end start'],
   });
-  const smoothScrollYProgress = useSpring(scrollYProgress, {damping: 20})
+  const smoothScrollYProgress = useSpring(scrollYProgress, { damping: 20 });
 
   // need to put placeholder image if webgl is not available
 
   return (
     // <main className={styles.main}>
-    <Wrapper >
+    <Wrapper>
       <div className={styles.columnsContainer} ref={experienceContainer}>
         {isClient &&
         typeof window !== 'undefined' &&
@@ -68,7 +68,7 @@ export default function Experience() {
           //   className={`${styles.column} ${styles.bioreactorOuterContainer}`}
           // >
           <div className={`${styles.column} ${styles.bioreactorColumn}`}>
-            <ExperienceAnimation scrollYProgress={smoothScrollYProgress}/>
+            <ExperienceAnimation scrollYProgress={smoothScrollYProgress} />
           </div>
         ) : (
           // </div>
