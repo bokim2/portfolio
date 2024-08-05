@@ -47,12 +47,12 @@ export default function Home() {
       <Bio />
       <Skills />
       {/* <WorkIntro /> */}
-      <Experience />
-      <About />
+      {/* <Experience /> */}
+      {/* <About /> */}
 
       {/* <ParallaxGallery /> */}
       {/* <ProjectsIntro /> */}
-      <Contact />
+      {/* <Contact /> */}
 
       {/* <div className={styles.container}>
         hello

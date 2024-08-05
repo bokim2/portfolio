@@ -77,13 +77,37 @@ const SKILLS_DATA: TSkill[] = [
 ];
 
 export default function Skills() {
+  const staggerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
   return (
     <Wrapper>
       <div className={styles.skills}>
-        <ul className={styles.areas}>
-          {SKILLS_DATA.map((area, i) => {
+        <motion.ul
+          className={styles.areas}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.5,
+              },
+            },
+          }}
+        >
+          {SKILLS_DATA.map((area, skillsIndex) => {
             return (
-              <li key={i} className={styles.area}>
+              <motion.li key={skillsIndex} className={styles.area}>
                 <h3 className={styles.title}>{area.skillArea}</h3>
 
                 <div className={styles.textAndIcon}>
@@ -119,27 +143,71 @@ export default function Skills() {
                     );
                   })}
                 </ul> */}
-                  <ul>
-                    {area.skills.map((skill, i) => {
+                  <motion.ul
+                    // variants={staggerVariants}
+                    // initial='hidden'
+                    // whileInView='visible'
+                    // viewport={{once: true, amount: .2}}
+                    variants={{
+                      hidden: { opacity: 0 },
+                      visible: {
+                        opacity: 1,
+                        transition: {
+                          staggerChildren: 0.5,
+                          // delay: 0.3 + 0.15 * skillsIndex,
+                        },
+                      },
+                    }}
+                  >
+                    {area.skills.map((skill, skillIndex) => {
                       const skillName = Object.keys(skill)[0];
                       const Icon = skill[skillName];
                       return (
-                        <li key={i} className={styles.singleSkill}>
-                          <div className={styles.text} key={`text_${i}`}>
+                        <li key={skillIndex} className={styles.singleSkill}>
+                          <motion.div
+                            className={styles.text}
+                            key={`text_${skillIndex}`}
+                            initial={{ opacity: 0 }}
+                            variants={{
+                              hidden: { opacity: 0 },
+                              visible: {
+                                opacity: 1,
+                                // color: '#AA4A44',
+                                transition: {
+                                  // staggerChildren: 0.1,
+                                  // delay: 1
+                                },
+                              },
+                            }}
+                          >
                             {Object.keys(skill)[0]}
-                          </div>
-                          <div className={styles.icon} key={`icon_${i}`}>
+                          </motion.div>
+                          <motion.div
+                            className={styles.icon}
+                            key={`icon_${skillIndex}`}
+                            variants={{
+                              hidden: { opacity: 1 },
+                              visible: {
+                                opacity: 0,
+                                // color: '#AA4A44',
+                                transition: {
+                                  // staggerChildren: 0.1,
+                                  // delay: 1
+                                },
+                              },
+                            }}
+                          >
                             <Icon />
-                          </div>
+                          </motion.div>
                         </li>
                       );
                     })}
-                  </ul>
+                  </motion.ul>
                 </div>
-              </li>
+              </motion.li>
             );
           })}
-        </ul>
+        </motion.ul>
       </div>
     </Wrapper>
   );
