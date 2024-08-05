@@ -71,9 +71,7 @@ width: 100%;
 //   background-color: red;
 // }
 
-.singleSkill {
-  position: relative;
-}
+
 
 .textAndIcon {
   // background-color: red;
@@ -86,9 +84,15 @@ width: 100%;
 
 }
 
+.singleSkill {
+  position: relative;
+  overflow: hidden;
+}
+
 .icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  inset: 0;
 }
