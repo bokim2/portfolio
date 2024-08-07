@@ -369,7 +369,7 @@ export default function Resume() {
 
                   {techStack && (
                     <div className={styles.projectTechContainer}>
-                      <ul>
+                      <ul >
                         {techStack.map((tech, i) => (
                           <li key={i}>{tech}</li>
                         ))}

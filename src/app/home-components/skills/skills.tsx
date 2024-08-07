@@ -28,6 +28,7 @@ import {
 } from 'react-icons/si';
 import { TbBrandFramerMotion } from 'react-icons/tb';
 import { IconType } from 'react-icons';
+import { GoGear } from 'react-icons/go';
 
 type Skill = {
   [key: string]: IconType;
@@ -68,7 +69,7 @@ const SKILLS_DATA: TSkill[] = [
       { Express: SiExpress },
       { PostgreSQL: SiPostgresql },
       { MongoDB: SiMongodb },
-      { 'RESTful API': FaNodeJs },
+      { 'RESTful API': GoGear },
     ],
   },
   {
@@ -117,23 +118,25 @@ export default function Skills() {
               <motion.li key={skillsIndex} className={styles.area}>
                 <h3 className={styles.title}>{area.skillArea}</h3>
                 <div className={styles.textAndIcon}>
-                  <motion.ul>
+                  <motion.ul className={styles.skillsUl}>
                     {area.skills.map((skill, skillIndex) => {
                       const skillName = Object.keys(skill)[0];
                       const Icon = skill[skillName];
                       return (
+                        
                         <motion.li
                           key={skillIndex}
                           className={styles.singleSkill}
                           initial="initial"
                           whileHover="hovered"
-                          transition= {{staggerChildren: 0.1}}
-                        >
+                          transition= {{staggerChildren: 0.03}}
+                          >
+                        <div className={styles.skillWrapper}>
                           <div
                             className={styles.text}
                             key={`text_${skillIndex}`}
-                           
-                          >
+                            
+                            >
                             {skillName.split('').map((letter, i) => {
                               return (
                                 <motion.span className={styles.letter} key={i} 
@@ -141,8 +144,8 @@ export default function Skills() {
                                 variants={{
                                   initial: { y: 0 },
                                   hovered: {
-                                    y: '-100%',
-                                   
+                                    y: '-200%',
+                                    
                                   },
                                 }}
                                 >
@@ -156,11 +159,13 @@ export default function Skills() {
                             key={`icon_${skillIndex}`}
                             variants={{
                               initial: { y: '100%' },
-                              hovered: { y: 0, transition: { delay: 0.5 } },
+                              hovered: { y:'0%', transition: { delay: 0.4 } },
                             }}
-                          >
+                            style={{padding: '.3rem'}}
+                            >
                             <Icon />
                           </motion.div>
+                    </div>
                         </motion.li>
                       );
                     })}
