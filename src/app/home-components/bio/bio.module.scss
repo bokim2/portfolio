@@ -2,7 +2,7 @@
 
 .bio {
   // padding-top: 10vh;
-// position: relative;
+position: relative;
   width: 100%;
   // min-height: 86vh;
   // padding-inline: 20vw;
@@ -26,7 +26,8 @@
   flex: 2;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   // line-height: 2;
 
   @media (max-width: 800px) {
@@ -108,6 +109,14 @@
   @media (max-width: 800px) {
     padding-top: 0.5rem;
   }
+}
+
+.moleculesBtnGroup {
+display: grid;
+padding-top: 5%;
+padding-bottom: 15%;
+place-content: center;
+grid-template-columns: repeat(5, 15%);
 }
 
 .bioQuote {

@@ -51,6 +51,10 @@ width: 100%;
   // gap: 5rem;
   // min-width: 20vw;
   // max-width: 100px; 
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(auto-fill, minmax(24vw, 1fr));
+  }
 }
 
 .title {

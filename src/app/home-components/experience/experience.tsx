@@ -73,7 +73,25 @@ export default function Experience() {
         ) : (
           // </div>
           <div className={styles.column}>
-            put placeholder image for when webGL is not working
+             <div
+        className={`${styles.experienceAnimationContainer} ${styles.bioreactorColumn}`}
+        style={{
+          paddingTop: '14vh',
+          transform: 'scale(1.2) translateX(10%)',
+        }}
+      >
+        <img
+          src="/images/experience/bioreactorPlaceholder.jpg"
+          alt="bioreactor"
+          style={{
+            // marginTop: '30vh',
+            objectFit: 'cover',
+            // border: '10px solid red',
+            // background: 'yellow',
+            // width: '100%',
+          }}
+        ></img>
+      </div>
           </div>
         )}
 
