@@ -164,7 +164,7 @@ export default function Bio() {
                   // <div className={styles.moleculeBtn} key={idx}>
                   //   one
                   // </div>
-                  <AnimatePresence>
+                  <AnimatePresence key={idx}>
                     <Molecule
                       index={idx}
                       key={idx}
