@@ -96,7 +96,7 @@ export default function Skills() {
   };
 
   return (
-    <Wrapper>
+    <Wrapper additionalClasses='inner'>
       <div className={styles.skills}>
         <motion.ul
           className={styles.areas}

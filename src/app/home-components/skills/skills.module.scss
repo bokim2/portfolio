@@ -2,9 +2,11 @@
   // position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 //   background-color: red;
-  width: 100%;
-//   margin-block: 2rem;
+width: 100%;
+  // width: max(1400px, 100%);
+  // padding-inline: 15%;
 //   margin-bottom: 10vh;
 
 
@@ -22,12 +24,14 @@
 
 .areas {
   display: flex;
+  justify-content: center;
+  // align-items: center;
 
   
 //   gap: 10vw;
 width: 100%;
   text-align: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   // justify-content: flex-start;
   align-items: flex-start;
   
@@ -40,7 +44,7 @@ width: 100%;
 .area {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));

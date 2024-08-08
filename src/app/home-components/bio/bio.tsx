@@ -21,6 +21,7 @@ import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/app/context/activeSection';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 import LaboratoryAnimation from './laboratory-animation';
+import Molecules from './molecules/molecules';
 // import AnimationHome from '../animation-home';
 
 const imageVariants = {
@@ -74,10 +75,9 @@ export default function Bio() {
                 // objectFit="cover"
                 // objectPosition="top"
                 priority
-
                 style={{
-                  objectFit: "cover",
-                  objectPosition: "top"
+                  objectFit: 'cover',
+                  objectPosition: 'top',
                 }}
                 // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -85,6 +85,7 @@ export default function Bio() {
           </div>
 
           <div className={styles.bioAbout}>
+            
             <div className={styles.bioTitleContainer}>
               <h1 className={styles.bioName}>Bo Kim</h1>
               <h2 className={styles.bioRole}>
@@ -96,7 +97,7 @@ export default function Bio() {
                   {`I'm a full-stack developer and former fermentation scientist (no, not beer, find out which molecules!).  
                 `}
                 </p>
-{/* 
+                {/* 
                 <p className={`${styles.bioParagraph} large`}>
                   {`I'm JavaScript centric currently but am always looking to expand my
                   technical skills. `}
@@ -124,6 +125,7 @@ export default function Bio() {
               </h4> */}
             </div>
           </div>
+            <Molecules/>
         </section>
 
         {/* <div className = {styles.animationHome}>

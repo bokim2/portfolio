@@ -187,12 +187,13 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   // width: 30%;
 
   img {
     // width: 100%;
     aspect-ratio: initial;
-    
+    object-fit: contain;
     height: 2.5rem;
     width: auto;
   }
