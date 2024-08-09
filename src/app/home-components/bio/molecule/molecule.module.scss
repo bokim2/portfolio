@@ -1,0 +1,12 @@
+
+.moleculeBtn {
+    --size: 5vw;
+
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background-color: red;
+    border-radius: 99999vw;
+
+    
+}

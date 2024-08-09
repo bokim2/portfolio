@@ -1,31 +1,43 @@
-
 import React from 'react';
-import {motion} from 'framer-motion';
-import styles from './molecule.module.scss'
+import { motion } from 'framer-motion';
+import styles from './molecule.module.scss';
 
 type Tmolecule = {
-  index: number | null;
-  setActiveMoleculeIdx: React.Dispatch<React.SetStateAction<number | null>>;
+  index: number ;
+  setActiveMoleculeIdx: React.Dispatch<React.SetStateAction<number >>;
   activeMoleculeIdx: number | null;
+  handleSelectMolecule: (index: number ) => void;
+  xPosition: string;
+  yPosition: string;
 };
 
 export default function Molecule({
   index,
   setActiveMoleculeIdx,
   activeMoleculeIdx,
+  handleSelectMolecule,
+  xPosition,
+  yPosition,
+
 }: Tmolecule) {
-  const handleSelectMolecule = (index: number | null) => {
-    if(index == null){
-      setTimeout(()=>setActiveMoleculeIdx(null), 1000)
-    } else {
-    setActiveMoleculeIdx(index);
-    }
-  };
-
-  return <motion.div key={index}
-
-  onMouseOver={()=>handleSelectMolecule(index)}
-    onMouseLeave={()=>handleSelectMolecule(null)}>
-1
-  </motion.div>;
+  return (
+    <motion.div
+    style={{ left: xPosition, top: yPosition }}
+    className={`${styles.moleculeBtn}`}
+      key={index}
+      whileHover={{scale: 1.2}}
+      whileTap={{scale: 0.9}}
+      onMouseOver={(e) => {
+        e.stopPropagation();
+        handleSelectMolecule(index);
+      }}
+      onClick={(e) => {
+        e.stopPropagation();
+        handleSelectMolecule(index);
+      }}
+      // onMouseLeave={() => handleSelectMolecule(null)}
+    >
+      
+    </motion.div>
+  );
 }

@@ -22,6 +22,7 @@ import { useActiveSectionContext } from '@/app/context/activeSection';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 import LaboratoryAnimation from './laboratory-animation';
 import Molecule from './molecule/molecule';
+import Molecules from './molecule/molecules';
 // import AnimationHome from '../animation-home';
 
 const imageVariants = {
@@ -74,7 +75,7 @@ export const MOLECULES_DATA = [
 
 export default function Bio() {
   const [isClient, setIsClient] = useState(false);
-  const [activeMoleculeIdx, setActiveMoleculeIdx] = useState<number | null>(1);
+  const [activeMoleculeIdx, setActiveMoleculeIdx] = useState<number>(1);
 
   useEffect(() => {
     setIsClient(true);
@@ -95,16 +96,29 @@ export default function Bio() {
   const { activeSection, setActiveSection, ref } =
     useUpdateActiveSection('bio');
 
+  const handleSelectMolecule = (index: number) => {
+    setActiveMoleculeIdx(index);
+  };
+
   return (
     <>
       <Wrapper backgroundColor="">
-        <section className={styles.bio} id="bio" ref={ref}>
-          <motion.div className={styles.headshotImgOuterContainer}
-          key={`headshotImgOuterContainer_${activeMoleculeIdx}`}
+        <section
+          className={styles.bio}
+          id="bio"
+          ref={ref}
+          //  onClick={(e)=>{
 
-          initial={{ opacity: 0.4 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
+          // handleSelectMolecule(null)}}
+          //  onMouseLeave={()=>handleSelectMolecule(null)}
+        >
+          <motion.div
+            className={styles.headshotImgOuterContainer}
+            // key={`headshotImgOuterContainer_${activeMoleculeIdx}`}
+
+            initial={{ opacity: 0.4 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
           >
             <motion.div
               className={`${styles.headshotImgContainer} imgBorderRadius`}
@@ -112,72 +126,84 @@ export default function Bio() {
               initial="initial"
               animate="animate"
             >
-              {activeMoleculeIdx == null ? (
-                <Image
-                  className={`${styles.headshotImg} `}
-                  src={headshotImg}
-                  alt="background"
-                  layout="fill"
-                  // objectFit="cover"
-                  // objectPosition="top"
-                  priority
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'top',
-                  }}
-                  // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              ) : (
+              {/* {activeMoleculeIdx == null ? ( */}
+              <Image
+                className={`${styles.headshotImg} `}
+                src={headshotImg}
+                alt="background"
+                layout="fill"
+                // objectFit="cover"
+                // objectPosition="top"
+                priority
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'top',
+                }}
+                // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              {/* ) : (
                 <div>{MOLECULES_DATA?.[activeMoleculeIdx]?.molecule}</div>
-              )}
+              )} */}
             </motion.div>
           </motion.div>
 
           <motion.div
-          key={`bioAbout_${activeMoleculeIdx}`}
+            // key={`bioAbout_${activeMoleculeIdx}`}
             className={styles.bioAbout}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            {activeMoleculeIdx == null ? (
-              <div className={styles.bioTitleContainer}>
-                <h1 className={styles.bioName}>Bo Kim</h1>
-                <h2 className={styles.bioRole}>
-                  Software Engineer{' '}
-                  <span className={styles.scientistTitle}>& Scientist</span>
-                </h2>
-                <div>
-                  <p className={`${styles.bioParagraph} large`}>
-                    {`I'm a full-stack developer and former fermentation scientist (no, not beer, find out which molecules!).  
+            {/* {activeMoleculeIdx == null ? ( */}
+            <div className={styles.bioTitleContainer}>
+              <h1 className={styles.bioName}>Bo Kim</h1>
+              <h2 className={styles.bioRole}>
+                Software Engineer{' '}
+                <span className={styles.scientistTitle}>& Scientist</span>
+              </h2>
+              <div>
+                <p className={`${styles.bioParagraph} large`}>
+                  {`I'm a full-stack developer and former fermentation scientist (no, not beer, find out which molecules!).  
                 `}
-                  </p>
-                </div>
+                </p>
               </div>
-            ) : (
+            </div>
+            {/* ) : (
               <div>{MOLECULES_DATA?.[activeMoleculeIdx]?.description}</div>
-            )}
+            )} */}
 
             <div className={styles.moleculesBtnGroup}>
               {MOLECULES_DATA.map((molecule, idx) => {
+                const xPosition = `${idx * 10}%`;
+                const yPosition = `${idx * 10}%`;
                 return (
                   // <div className={styles.moleculeBtn} key={idx}>
                   //   one
                   // </div>
                   <AnimatePresence key={idx}>
                     <Molecule
+             
                       index={idx}
                       key={idx}
+                      // style={}
                       setActiveMoleculeIdx={setActiveMoleculeIdx}
                       activeMoleculeIdx={activeMoleculeIdx}
+                      handleSelectMolecule={handleSelectMolecule}
+                      xPosition={xPosition}
+                      yPosition={'100%'}
+
                     />
                   </AnimatePresence>
                 );
               })}
             </div>
           </motion.div>
-          {/* <Molecules /> */}
         </section>
+        <Molecules
+          setActiveMoleculeIdx={setActiveMoleculeIdx}
+          activeMoleculeIdx={activeMoleculeIdx}
+          handleSelectMolecule={handleSelectMolecule}
+        />
       </Wrapper>
     </>
   );

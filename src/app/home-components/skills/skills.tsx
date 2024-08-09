@@ -8,7 +8,7 @@ import {
   FaAws,
   FaFigma,
   FaDocker,
-  FaNodeJs,
+  FaNode,
   FaPython,
 } from 'react-icons/fa';
 import { RiNextjsFill } from 'react-icons/ri';
@@ -65,7 +65,7 @@ const SKILLS_DATA: TSkill[] = [
   {
     skillArea: 'Backend',
     skills: [
-      { 'Node.js': FaNodeJs },
+      { 'Node.js': FaNode },
       { Express: SiExpress },
       { PostgreSQL: SiPostgresql },
       { MongoDB: SiMongodb },
