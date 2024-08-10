@@ -29,6 +29,7 @@ position: relative;
   flex-direction: column;
   justify-content: space-between;
   // line-height: 2;
+  gap: 1rem;
 
   @media (max-width: 800px) {
     // line-height: 1;
@@ -75,7 +76,7 @@ position: relative;
 .bioTitleContainer {
   display: flex;
   flex-direction: column;
-  // gap: 0.5rem;
+  gap: 0rem;
   // padding-block: 1rem;
 
   @media (max-width: 800px) {
@@ -104,21 +105,27 @@ position: relative;
 }
 
 .bioParagraph {
-  padding-top: 1rem;
+  // padding-top: 1rem;
 
   @media (max-width: 800px) {
-    padding-top: 0.5rem;
+    // padding-top: 0.5rem;
   }
 }
 
 .moleculesBtnGroup {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
 // display: grid;
 
 // place-content: center;
 // grid-template-columns: repeat(5, 15%);
-position: absolute;
-inset: 0;
-// background-color: pink;
+// position: absolute;
+// inset: 0;
+background-color: pink;
 }
 
 .bioQuote {

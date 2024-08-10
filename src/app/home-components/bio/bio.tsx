@@ -17,12 +17,14 @@ import headshotImg from '../../../../public/images/intro/headshot.png';
 import styles from './bio.module.scss';
 import Wrapper from '@/components/wrapper/wrapper';
 import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
+// import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/app/context/activeSection';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
 import LaboratoryAnimation from './laboratory-animation';
-import Molecule from './molecule/molecule';
-import Molecules from './molecule/molecules';
+import Molecule from './molecule/moleculeBtn';
+import Molecules from './molecule/moleculesDescription';
+import MoleculeBtn from './molecule/moleculeBtn';
+import MoleculeDescription from './molecule/moleculesDescription';
 // import AnimationHome from '../animation-home';
 
 const imageVariants = {
@@ -34,8 +36,7 @@ export const MOLECULES_DATA = [
   {
     molecule: 'recombinant human interleukin-10 fusion protein',
     traditionalSource: '',
-    description:
-      'AMT-101 is a recombinant fusion protein that is designed to leverage the anti-inflammatory properties of human interleukin-10 (IL-10). IL-10 is a cytokine with potent anti-inflammatory effects, playing a crucial role in regulating the immune system&quote;s response to inflammation and infection. In the context of AMT-101, this protein is used therapeutically to target specific inflammatory conditions.',
+    description: `AMT-101 is a recombinant fusion protein that is designed to leverage the anti-inflammatory properties of human interleukin-10 (IL-10). IL-10 is a cytokine with potent anti-inflammatory effects, playing a crucial role in regulating the immune system's response to inflammation and infection. In the context of AMT-101, this protein is used therapeutically to target specific inflammatory conditions.`,
   },
   {
     molecule: 'rebM',
@@ -68,8 +69,7 @@ export const MOLECULES_DATA = [
   {
     molecule: 'Human milk oligosaccharides (HMOs)',
     traditionalSource: '',
-    description:
-      'complex carbohydrates that are naturally found in human breast milk. They are the third largest solid component in human milk after lactose and fat. They serve several crucial functions, primarily related to the development of the infant&quote;s immune system and gut microbiota',
+    description: `complex carbohydrates that are naturally found in human breast milk. They are the third largest solid component in human milk after lactose and fat. They serve several crucial functions, primarily related to the development of the infant's immune system and gut microbiota`,
   },
 ];
 
@@ -167,39 +167,37 @@ export default function Bio() {
                 `}
                 </p>
               </div>
-            </div>
-            {/* ) : (
-              <div>{MOLECULES_DATA?.[activeMoleculeIdx]?.description}</div>
-            )} */}
-
-            <div className={styles.moleculesBtnGroup}>
-              {MOLECULES_DATA.map((molecule, idx) => {
-                const xPosition = `${idx * 10}%`;
-                const yPosition = `${idx * 10}%`;
-                return (
-                  // <div className={styles.moleculeBtn} key={idx}>
-                  //   one
-                  // </div>
-                  <AnimatePresence key={idx}>
-                    <Molecule
-             
+              </div>
+              <div className={styles.moleculesBtnGroup}>
+                {/* <AnimatePresence > */}
+                {MOLECULES_DATA.map((molecule, idx) => {
+                  // const xPosition = `${idx * 10}%`;
+                  // const yPosition = `${idx * 10}%`;
+                  return (
+                    // <div className={styles.moleculeBtn} key={idx}>
+                    //   one
+                    // </div>
+                    <MoleculeBtn
                       index={idx}
                       key={idx}
                       // style={}
                       setActiveMoleculeIdx={setActiveMoleculeIdx}
                       activeMoleculeIdx={activeMoleculeIdx}
                       handleSelectMolecule={handleSelectMolecule}
-                      xPosition={xPosition}
-                      yPosition={'100%'}
-
+                      // xPosition={xPosition}
+                      // yPosition={'100%'}
                     />
-                  </AnimatePresence>
-                );
-              })}
-            </div>
+                  );
+                })}
+                {/* </AnimatePresence> */}
+              </div>
+         
+            {/* ) : (
+              <div>{MOLECULES_DATA?.[activeMoleculeIdx]?.description}</div>
+            )} */}
           </motion.div>
         </section>
-        <Molecules
+        <MoleculeDescription
           setActiveMoleculeIdx={setActiveMoleculeIdx}
           activeMoleculeIdx={activeMoleculeIdx}
           handleSelectMolecule={handleSelectMolecule}

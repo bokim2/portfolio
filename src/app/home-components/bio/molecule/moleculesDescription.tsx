@@ -14,7 +14,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/app/context/activeSection';
 import { useUpdateActiveSection } from '@/app/lib/custom-hooks';
-import Molecule from './molecule';
+import Molecule from './moleculeBtn';
 import { MOLECULES_DATA } from '../bio';
 
 // import AnimationHome from '../animation-home';
@@ -68,14 +68,16 @@ const imageVariants = {
 // ];
 
 type Tmolecules = {
-  setActiveMoleculeIdx: React.Dispatch<React.SetStateAction<number >>;
+  setActiveMoleculeIdx: React.Dispatch<React.SetStateAction<number>>;
   activeMoleculeIdx: number;
-  handleSelectMolecule: (index: number ) => void;
+  handleSelectMolecule: (index: number) => void;
 };
 
-export default function Molecules({  setActiveMoleculeIdx,
+export default function MoleculeDescription({
+  setActiveMoleculeIdx,
   activeMoleculeIdx,
-  handleSelectMolecule, }: Tmolecules) {
+  handleSelectMolecule,
+}: Tmolecules) {
   const [isClient, setIsClient] = useState(false);
   // const [activeMoleculeIdx, setActiveMoleculeIdx] = useState<number>(1);
 
@@ -119,14 +121,14 @@ export default function Molecules({  setActiveMoleculeIdx,
           //  onMouseLeave={()=>handleSelectMolecule(null)}
         >
           <motion.div
-            className={styles.moleculesOuterContainer}
+            className={styles.moleculesDescriptionOuterContainer}
             key={`moleculesOuterContainer_${activeMoleculeIdx}`}
             initial={{ opacity: 0.4 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
             <motion.div
-              className={`${styles.moleculesContainer} imgBorderRadius`}
+              className={`${styles.moleculesDescriptionContainer} imgBorderRadius`}
               variants={imageVariants}
               initial="initial"
               animate="animate"
@@ -136,15 +138,14 @@ export default function Molecules({  setActiveMoleculeIdx,
             </motion.div>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             key={`moleculeAbout_${activeMoleculeIdx}`}
             className={styles.bioAbout}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            
-            {/* <div className={styles.moleculesBtnGroup}>
+            <div className={styles.moleculesBtnGroup}>
               {MOLECULES_DATA.map((molecule, idx) => {
                 return (
                   // <div className={styles.moleculeBtn} key={idx}>
@@ -161,8 +162,8 @@ export default function Molecules({  setActiveMoleculeIdx,
                   </AnimatePresence>
                 );
               })}
-            </div> */}
-          </motion.div>
+            </div>
+          </motion.div> */}
           {/* <Molecules /> */}
         </section>
       </Wrapper>
