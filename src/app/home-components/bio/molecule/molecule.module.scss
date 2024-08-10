@@ -1,20 +1,25 @@
-.moleculeBtnContainer {
-    background-color: yellow;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+// molecule button
 
+.moleculeBtnContainer {
+  background-color: yellow;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .moleculeBtn {
-    --size: 2vw;
+  --size: 1rem;
+  height: 2rem;
+  // position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: blue;
+  border-radius: 99999vw;
+}
 
-    // position: absolute;
-    width: var(--size);
-    height: var(--size);
-    background-color: blue;
-    border-radius: 99999vw;
+// molecule description
 
-
+.moleculeDescription {
+  padding-block: 2rem;
 }

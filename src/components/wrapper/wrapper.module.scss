@@ -69,3 +69,24 @@
     padding-inline: min(2.5vh, 2.5vw);
   }
 }
+
+.capped {
+  width: 100%;
+  max-width: 1000px;
+  padding-inline: min(10vh, 10vw);
+  margin-block: 5rem;
+  // background-color: blue;
+
+  @media (max-width: 1000px) {
+    // width: 90%;
+
+    // padding-inline: 2.5rem;
+    padding-inline: min(5vh, 5vw);
+  }
+  
+  @media (max-width: 800px) {
+    // width: 90%;
+    margin-block: 1rem;
+    // padding-inline: 1.5rem;
+  }
+}

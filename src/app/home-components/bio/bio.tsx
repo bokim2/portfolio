@@ -102,7 +102,7 @@ export default function Bio() {
 
   return (
     <>
-      <Wrapper backgroundColor="">
+      <Wrapper backgroundColor="" additionalClasses='capped'>
         <section
           className={styles.bio}
           id="bio"
