@@ -64,15 +64,15 @@ export default function About() {
             exit={{ y: -30, opacity: 0 }}
             className={styles.cardGrid}
           >
-            {SINGLE_CARD_DATA.map((deck, deckIndex) => {
-              return (
-                <>
-                  <AnimatePresence>
+            <AnimatePresence>
+              {SINGLE_CARD_DATA.map((deck, deckIndex) => {
+                return (
+                  <>
                     <CardDeck deckIndex={deckIndex} />
-                  </AnimatePresence>
-                </>
-              );
-            })}
+                  </>
+                );
+              })}
+            </AnimatePresence>
           </motion.div>
         </AnimatePresence>
       </div>

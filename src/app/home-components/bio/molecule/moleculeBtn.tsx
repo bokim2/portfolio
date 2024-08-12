@@ -51,8 +51,8 @@ Tmolecule) {
         className={`${styles.moleculeBtn}`}
         key={index}
         animate={{
-          backgroundColor: activeMoleculeIdx == index ? '#1eff00' : '#f0a062',
-          y: isHovered ? '-80%' : '0%',
+          backgroundColor: activeMoleculeIdx == index ? '#1eff00' : '#B8C6DB',
+          y: isHovered ? '-60%' : '0%',
           scale: isHovered ? 1.2 : 1,
         }}
         transition={{

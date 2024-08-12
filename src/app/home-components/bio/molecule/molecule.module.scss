@@ -1,7 +1,7 @@
 // molecule button
 
 .moleculeBtnContainer {
-  --size: 1rem;
+  --size: .75rem;
   --height: 3rem;
   position: relative;
 //   background-color: yellow;
@@ -20,7 +20,7 @@
     // top: 0;
     width: calc(var(--size) * 1.25);
     // height: var(--height);
-    background-color: #B8C6DB;
+ background-color: rgba(var(--clr-main-2), .8);
     // border-radius: 99999vw;
   }
 
@@ -50,6 +50,12 @@
 
   @media (max-width: 800px) {
     padding-block: 1rem;
-    min-height: 30vh;
+    // min-height: 20vh;
   }
+}
+
+.moleculeDescriptionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
 }

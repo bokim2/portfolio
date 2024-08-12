@@ -96,12 +96,12 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>((props, ref) 
               </motion.div>
             </AnimatePresence>
           </motion.div>
-          {!isHovered ? (
-            <p className={'imageCaption'}>
+          { !isHovered ? (
+           item?.[activeIndex]?.pic1ImageCaption && (<p className={'imageCaption'}>
               {item?.[activeIndex]?.pic1ImageCaption}
-            </p>
+            </p>)
           ) : (
-            <p className={'imageCaption'}>
+            item?.[activeIndex]?.pic2ImageCaption && <p className={'imageCaption'}>
               {item?.[activeIndex]?.pic2ImageCaption}
             </p>
           )}

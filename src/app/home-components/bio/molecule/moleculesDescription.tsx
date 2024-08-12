@@ -85,13 +85,16 @@ export default function MoleculeDescription({
           transition={{ duration: 1.5 }}
         >
           <motion.div
-            className={`${styles.descriptionContainer} imgBorderRadius`}
+            className={`${styles.moleculeDescriptionContainer} imgBorderRadius`}
             variants={imageVariants}
             initial="initial"
             animate="animate"
           >
-            <div>{MOLECULES_DATA?.[activeMoleculeIdx]?.molecule}</div>
-            <div>{MOLECULES_DATA?.[activeMoleculeIdx]?.description}</div>
+           
+              <p>{MOLECULES_DATA?.[activeMoleculeIdx]?.molecule}</p>
+       
+              <p>{MOLECULES_DATA?.[activeMoleculeIdx]?.description}</p>
+        
           </motion.div>
         </motion.div>
 

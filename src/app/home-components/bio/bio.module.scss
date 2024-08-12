@@ -124,6 +124,7 @@ position: relative;
 
 .moleculesBtnGroup {
   width: 100%;
+  max-width: 450px;
   height: 2rem;
   display: flex;
   justify-content: space-around;
@@ -135,7 +136,7 @@ position: relative;
 // grid-template-columns: repeat(5, 15%);
 // position: absolute;
 // inset: 0;
-background-color: #DEE2EA;
+background-color: rgba(var(--clr-main-2), .4);
 border-radius: 5px;
 }
 

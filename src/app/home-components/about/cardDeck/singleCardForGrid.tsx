@@ -196,7 +196,7 @@ export const SINGLE_CARD_DATA = [
       text: [
         <>
           Before Benchling, I used a much simpler electronic lab notebook. It
-          was convenient because there was no need for carbon copy lab notebooks
+          was convenient because there was no need for glue sticks or carbon copy lab notebooks
           (check this out, it is ancient).
         </>,
         <>
@@ -615,7 +615,7 @@ export default function SingleCardForGrid({
             />
           </div>
 
-          <div className={styles.cardColumn}>
+          <div className={`${styles.cardColumn} ${styles.textColumn}`}>
             <CardTextColumn
               item={item}
               cardIndex={cardIndex}

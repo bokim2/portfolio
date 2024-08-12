@@ -1,5 +1,15 @@
 $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
+.cardsSingleDeck {
+  display: flex;
+  // background-color: lightblue;
+  flex-direction: column;
+  gap: .25rem;
+  // margin-block: 1rem;
+}
+
+
+
 // aboutCarousel
 
 .aboutCarousel {
@@ -190,13 +200,13 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
 .cardInner {
   padding: calc($card-inline-padding) $card-inline-padding
-    calc($card-inline-padding * 1.25) $card-inline-padding;
+    calc($card-inline-padding ) $card-inline-padding;
   flex: 1;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
   gap: clamp(3vw, 4rem, 5vw);
   width: 100%;
 
@@ -238,6 +248,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   display: flex;
   flex-direction: column;
   gap: 1vh;
+  
   // padding-left: $card-inline-padding;
   // padding-top: $card-inline-padding;
 
@@ -271,6 +282,8 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 //   }
 // }
 
+
+
 .cardTextAndSecondImage {
   // background-color: red;
   display: flex;
@@ -279,21 +292,38 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   gap: 2vh;
   align-items: center;
   flex-grow: 1;
+
 }
 
-.textParagraphs {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 10em;
-  margin-bottom: 1rem;
+// .textParagraphs {
+//   // display: flex;
+//   // flex-direction: column;
+//   // gap: 10em;
+//   // margin-bottom: 1rem;
+// }
+
+.singleParagraph {
+  line-height: 1.8;
 }
 
 .imageColumn {
+  flex-basis: 40%;
+  flex-grow: 0;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: min(1vh, 1vw);
+}
+
+.textColumn {
+  // flex-basis: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
 }
 
 .imageAndCaptionContainer {

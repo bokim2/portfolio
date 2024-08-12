@@ -1,7 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+
+import styles from './cardDeck.module.scss';
 import SingleCardForGrid, { SINGLE_CARD_DATA } from './singleCardForGrid';
+
+
 import CardDeckToggle from './cardDeckToggle';
 
 type TCardDeck = { deckIndex: number };
@@ -19,6 +23,7 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+            className={styles.cardsSingleDeck}
               key="content"
               initial="collapsed"
               animate="open"
