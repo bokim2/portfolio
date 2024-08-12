@@ -162,8 +162,8 @@ export default function Bio() {
                 <span className={styles.scientistTitle}>& Scientist</span>
               </h2>
               <div>
-                <p className={`${styles.bioParagraph} large`}>
-                  {`I'm a full-stack developer and former fermentation scientist (no, not beer, find out which molecules!).  
+                <p className={`${styles.bioParagraph} `}>
+                  {`I'm a full-stack developer and former fermentation scientist (no, not beer, find out what molecules!).  
                 `}
                 </p>
               </div>

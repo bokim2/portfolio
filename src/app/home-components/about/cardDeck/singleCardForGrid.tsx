@@ -121,7 +121,7 @@ export const SINGLE_CARD_DATA = [
       //     </ul>
       //   </>
       // ),
-     
+
       title: 'the journey up to this point',
       subtitle: 'biotech',
       equipment: '',
@@ -390,7 +390,7 @@ export const SINGLE_CARD_DATA = [
       //     </ul>
       //   </>
       // ),
-      
+
       title: 'Bootcamp',
       subtitle: 'Codesmith',
       equipment: '',
@@ -448,9 +448,12 @@ export const SINGLE_CARD_DATA = [
           different from biotech but the same result.{' '}
         </>,
         <>
-          &ldquo;If it doesn&apos;t scale, it doesn&apos;t work.&ldquo; -
-          Someone Somewhere{' '}
+          &ldquo;If it doesn&apos;t scale, it doesn&apos;t work.&ldquo;
+          <p>
+            <i>{` - someone somewhere`}</i>
+          </p>
         </>,
+
         ,
       ],
     },

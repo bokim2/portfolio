@@ -39,6 +39,7 @@ Tmolecule) {
       onMouseOut={() => {
         setIsHovered(false);
       }}
+      
       onClick={(e) => {
         e.stopPropagation();
         setIsHovered(true);
@@ -55,8 +56,8 @@ Tmolecule) {
           scale: isHovered ? 1.2 : 1,
         }}
         transition={{
-          duration: isHovered ? .15 : .6,
-          ease: 'easeInOut',
+          duration: isHovered ? .25 : .6,
+          ease: isHovered ? 'easeOut' : 'easeInOut',
         }}
         // variants={{
         //   initial: {
