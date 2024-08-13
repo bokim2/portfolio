@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import { createRef, useEffect, useRef, useState } from 'react';
 
+import {motion} from 'framer-motion';
+
 import Gallery from '../components/gallery/gallery';
 
 import LoaderPage from '@/components/loaderPage/loaderPage';
@@ -43,7 +45,7 @@ export default function Home() {
   };
 
   return (
-    <main className={`${styles.main}`} id="homePage">
+    <motion.main className={`${styles.main}`} id="homePage" layout>
       <Bio />
       <Skills />
       {/* <WorkIntro /> */}
@@ -77,6 +79,6 @@ export default function Home() {
           );
         })}
       </div> */}
-    </main>
+    </motion.main>
   );
 }

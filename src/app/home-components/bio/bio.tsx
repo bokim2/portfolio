@@ -41,8 +41,7 @@ export const MOLECULES_DATA = [
   {
     molecule: 'rebM',
     traditionalSource: 'stevia plant',
-    description:
-      'rebM is a steviol glycoside that is found in the stevia plant. It is a natural sweetener that is 200 times sweeter than sugar.',
+    description: `Rebaudioside M (rebM) is a zero-calorie sweetener that is traditionally derived from the Stevia plant. It is a natural sweetener that is 200 times sweeter than sugar.  Unlike traditional sugars, rebM is not metabolized by the body, allowing for reduced sugar intake`,
   },
   {
     molecule: 'farnesane',
@@ -53,12 +52,12 @@ export const MOLECULES_DATA = [
   {
     molecule: 'alpha-amylase',
     traditionalSource: '',
-    description: '.',
+    description: `α-Amylase is essential in fuel ethanol production and laundry detergents. It employs endo-hydrolytic activity to cleave internal α-1,4-glycosidic linkages in starch, breaking down large polysaccharides into smaller sugars. This step is crucial in ethanol production, as yeast cannot ferment large sugar molecules directly. In detergents, α-amylase enhances stain removal by degrading starch-based residues.`,
   },
   {
     molecule: 'gluco-amylase',
     traditionalSource: '',
-    description: '.',
+    description: `Glucoamylase plays a key role in fuel ethanol production by breaking down starch into glucose through exo-hydrolytic cleavage of α-1,4-glycosidic and α-1,6-glycosidic linkages. Yeast can directly ferment glucose, as well as simple sugars like maltose, into ethanol, making glucoamylase essential for maximizing ethanol yield.`,
   },
   {
     molecule: 'CBD',
@@ -102,7 +101,7 @@ export default function Bio() {
 
   return (
     <>
-      <Wrapper backgroundColor="" additionalClasses='capped'>
+      <Wrapper backgroundColor="" additionalClasses="capped noBtmMargin">
         <section
           className={styles.bio}
           id="bio"
@@ -167,41 +166,43 @@ export default function Bio() {
                 `}
                 </p>
               </div>
-              </div>
-              <div className={styles.moleculesBtnGroup}>
-                {/* <AnimatePresence > */}
-                {MOLECULES_DATA.map((molecule, idx) => {
-                  // const xPosition = `${idx * 10}%`;
-                  // const yPosition = `${idx * 10}%`;
-                  return (
-                    // <div className={styles.moleculeBtn} key={idx}>
-                    //   one
-                    // </div>
-                    <MoleculeBtn
-                      index={idx}
-                      key={idx}
-                      // style={}
-                      setActiveMoleculeIdx={setActiveMoleculeIdx}
-                      activeMoleculeIdx={activeMoleculeIdx}
-                      handleSelectMolecule={handleSelectMolecule}
-                      // xPosition={xPosition}
-                      // yPosition={'100%'}
-                    />
-                  );
-                })}
-                {/* </AnimatePresence> */}
-              </div>
-         
+            </div>
+            <div className={styles.moleculesBtnGroup}>
+              {/* <AnimatePresence > */}
+              {MOLECULES_DATA.map((molecule, idx) => {
+                // const xPosition = `${idx * 10}%`;
+                // const yPosition = `${idx * 10}%`;
+                return (
+                  // <div className={styles.moleculeBtn} key={idx}>
+                  //   one
+                  // </div>
+                  <MoleculeBtn
+                    index={idx}
+                    key={idx}
+                    // style={}
+                    setActiveMoleculeIdx={setActiveMoleculeIdx}
+                    activeMoleculeIdx={activeMoleculeIdx}
+                    handleSelectMolecule={handleSelectMolecule}
+                    // xPosition={xPosition}
+                    // yPosition={'100%'}
+                  />
+                );
+              })}
+              {/* </AnimatePresence> */}
+            </div>
+
             {/* ) : (
               <div>{MOLECULES_DATA?.[activeMoleculeIdx]?.description}</div>
             )} */}
           </motion.div>
         </section>
-        <MoleculeDescription
-          setActiveMoleculeIdx={setActiveMoleculeIdx}
-          activeMoleculeIdx={activeMoleculeIdx}
-          handleSelectMolecule={handleSelectMolecule}
-        />
+  
+          <MoleculeDescription
+            setActiveMoleculeIdx={setActiveMoleculeIdx}
+            activeMoleculeIdx={activeMoleculeIdx}
+            handleSelectMolecule={handleSelectMolecule}
+          />
+   
       </Wrapper>
     </>
   );

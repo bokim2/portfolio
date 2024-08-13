@@ -116,27 +116,18 @@ export default function CardDeckToggle({
   return (
     <motion.header
       className={styles.cardDeckToggle}
-      // style={{
-      //   rotateX,
-      //   rotateY,
-      // }}
       onMouseMove={handleMouseMove}
       key="header"
-      // initial={{ width: '30%' }}
       onClick={() => {
         setIsOpen((prev) => !prev);
       }}
       animate="animate"
       variants={cardDeckToggleVariants}
-      // style={{opacity: .2}}
     >
-      {/* <motion.div className={styles.innerCardDeckToggle}>
-        {SINGLE_CARD_DATA[deckIndex]?.[0]?.intro}
-      </motion.div> */}
+
 
       <motion.div
         className={`${styles.innerCardDeckToggle}`}
-        // animate='animate'
         animate="animate"
         variants={cardDeckToggleVariants}
       >
@@ -152,18 +143,6 @@ export default function CardDeckToggle({
         <motion.div
           className={styles.leftBorderAnimation}
           ref={leftBorderRef}
-          // initial={{ clipPath: 'polygon(0 0, 0% 0, 0 0, 0 0%)' }}
-          // animate={{
-          //   clipPath: 'polygon(0 0, 35% 0, 21% 17%, 0 30%)',
-          // }}
-
-          // animate={{
-          //   clipPath: [
-          //     'polygon(0 0, 0% 0, 0 0, 0 0%)',
-          //     'polygon(0 0, 35% 0, 21% 17%, 0 30%)',
-          //   ],
-          //   transition: { duration: 10 },
-          // }}
           initial="initial"
           animate={isInView ? 'animate' : 'initial'}
           variants={{
@@ -178,10 +157,6 @@ export default function CardDeckToggle({
             },
           }}
 
-          // animate={{
-          //   clipPath: leftClipPathTransformed,
-          //   // transition: { duration: 1 },
-          // }}
         ></motion.div>
       </motion.div>
 
@@ -190,7 +165,6 @@ export default function CardDeckToggle({
         className={`${styles.leftTopCorner} ${styles.sibling}`}
         variants={{
           initial: { width: '0%' },
-          // animate: {width: widthTransformed},
         }}
         style={{ width: widthTransformed }}
       ></motion.div>

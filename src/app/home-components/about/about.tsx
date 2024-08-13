@@ -56,7 +56,7 @@ export default function About() {
           skip it.
         </div>
 
-        <AnimatePresence>
+        {/* <AnimatePresence> */}
           <motion.div
             layout
             initial={{ y: -30, opacity: 0 }}
@@ -68,13 +68,13 @@ export default function About() {
               {SINGLE_CARD_DATA.map((deck, deckIndex) => {
                 return (
                   <>
-                    <CardDeck deckIndex={deckIndex} />
+                    <CardDeck key={deckIndex} deckIndex={deckIndex} />
                   </>
                 );
               })}
             </AnimatePresence>
           </motion.div>
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
       </div>
     </Wrapper>
   );

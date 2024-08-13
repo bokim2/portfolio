@@ -96,8 +96,8 @@ export default function Skills() {
   };
 
   return (
-    <Wrapper additionalClasses='inner'>
-      <div className={styles.skills}>
+    // <Wrapper additionalClasses="inner">
+      <motion.div className={styles.skills} layout>
         <motion.ul
           className={styles.areas}
           initial="hidden"
@@ -123,49 +123,51 @@ export default function Skills() {
                       const skillName = Object.keys(skill)[0];
                       const Icon = skill[skillName];
                       return (
-                        
                         <motion.li
                           key={skillIndex}
                           className={styles.singleSkill}
                           initial="initial"
                           whileHover="hovered"
-                          transition= {{staggerChildren: 0.03}}
-                          >
-                        <div className={styles.skillWrapper}>
-                          <div
-                            className={styles.text}
-                            key={`text_${skillIndex}`}
-                            
+                          transition={{ staggerChildren: 0.03 }}
+                        >
+                          <div className={styles.skillWrapper}>
+                            <div
+                              className={styles.text}
+                              key={`text_${skillIndex}`}
                             >
-                            {skillName.split('').map((letter, i) => {
-                              return (
-                                <motion.span className={styles.letter} key={i} 
-                                style={{display: 'inline-block'}}
-                                variants={{
-                                  initial: { y: 0 },
-                                  hovered: {
-                                    y: '-200%',
-                                    
-                                  },
-                                }}
-                                >
-                                  {letter}
-                                </motion.span>
-                              );
-                            })}
+                              {skillName.split('').map((letter, i) => {
+                                return (
+                                  <motion.span
+                                    className={styles.letter}
+                                    key={i}
+                                    style={{ display: 'inline-block' }}
+                                    variants={{
+                                      initial: { y: 0 },
+                                      hovered: {
+                                        y: '-200%',
+                                      },
+                                    }}
+                                  >
+                                    {letter}
+                                  </motion.span>
+                                );
+                              })}
+                            </div>
+                            <motion.div
+                              className={styles.icon}
+                              key={`icon_${skillIndex}`}
+                              variants={{
+                                initial: { y: '100%' },
+                                hovered: {
+                                  y: '0%',
+                                  transition: { delay: 0.4 },
+                                },
+                              }}
+                              style={{ padding: '.3rem' }}
+                            >
+                              <Icon />
+                            </motion.div>
                           </div>
-                          <motion.div
-                            className={styles.icon}
-                            key={`icon_${skillIndex}`}
-                            variants={{
-                              initial: { y: '100%' },
-                              hovered: { y:'0%', transition: { delay: 0.4 } },
-                            }}
-                            style={{padding: '.3rem'}}
-                            >
-                            <Icon />
-                          </motion.div>
-                    </div>
                         </motion.li>
                       );
                     })}
@@ -175,7 +177,7 @@ export default function Skills() {
             );
           })}
         </motion.ul>
-      </div>
-    </Wrapper>
+      </motion.div>
+    // </Wrapper>
   );
 }

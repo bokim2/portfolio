@@ -1,25 +1,15 @@
 .skills {
-  // position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-//   background-color: red;
-width: 100%;
-  // width: max(1400px, 100%);
-  // padding-inline: 15%;
-//   margin-bottom: 10vh;
 
-
-  // li {
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     // align-items: ;
+  width: 100%;
+  // padding-block: 3vh 6vh;
 
   @media (max-width: 800px) {
     font-size: 0.7rem;
   }
-  // }
+
 }
 
 .areas {
@@ -27,14 +17,12 @@ width: 100%;
   justify-content: center;
   // align-items: center;
 
-  
-//   gap: 10vw;
-width: 100%;
+  //   gap: 10vw;
+  width: 100%;
   text-align: center;
   // justify-content: space-between;
   // justify-content: flex-start;
   align-items: flex-start;
-  
 
   @media (max-width: 800px) {
     // width: 100%;
@@ -50,7 +38,7 @@ width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
   // gap: 5rem;
   // min-width: 20vw;
-  // max-width: 100px; 
+  // max-width: 100px;
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(auto-fill, minmax(24vw, 1fr));
@@ -58,9 +46,9 @@ width: 100%;
 }
 
 .title {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   @media (max-width: 800px) {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -82,31 +70,25 @@ width: 100%;
 //   background-color: red;
 // }
 
-
-
 .textAndIcon {
   // background-color: red;
   // position: relative;
   // overflow: hidden;
-
 }
 
 .text {
-
 }
 
 .skillsUl {
-//   display: flex;
-// flex-direction: column;
+  //   display: flex;
+  // flex-direction: column;
 
-
-//   background-color: pink;
+  //   background-color: pink;
 }
 
 .skillWrapper {
-
   // padding: 1rem;
-  padding: .1rem;
+  padding: 0.1rem;
   position: relative;
   overflow: hidden;
 }
