@@ -59,17 +59,17 @@ export const MOLECULES_DATA = [
     traditionalSource: '',
     description: `Glucoamylase plays a key role in fuel ethanol production by breaking down starch into glucose through exo-hydrolytic cleavage of α-1,4-glycosidic and α-1,6-glycosidic linkages. Yeast can directly ferment glucose, as well as simple sugars like maltose, into ethanol, making glucoamylase essential for maximizing ethanol yield.`,
   },
-  {
+    {
+    molecule: 'Human milk oligosaccharides (HMOs)',
+    traditionalSource: '',
+    description: `complex carbohydrates that are naturally found in human breast milk. They are the third largest solid component in human milk after lactose and fat. They serve several crucial functions, primarily related to the development of the infant's immune system and gut microbiota`,
+  },{
     molecule: 'CBD',
     traditionalSource: '',
     description:
       'is one of the many active compounds found in the Cannabis sativa plant. Unlike tetrahydrocannabinol (THC), which is the main psychoactive compound in cannabis and CBD is not psychoactive',
   },
-  {
-    molecule: 'Human milk oligosaccharides (HMOs)',
-    traditionalSource: '',
-    description: `complex carbohydrates that are naturally found in human breast milk. They are the third largest solid component in human milk after lactose and fat. They serve several crucial functions, primarily related to the development of the infant's immune system and gut microbiota`,
-  },
+
 ];
 
 export default function Bio() {

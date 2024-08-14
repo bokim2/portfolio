@@ -46,7 +46,7 @@
   padding-block: 2rem;
   padding-top: 1rem;
 
-  min-height: 25vh;
+  min-height: clamp(20vh, 15rem, 40vh);
 
   @media (max-width: 800px) {
     min-height: auto;

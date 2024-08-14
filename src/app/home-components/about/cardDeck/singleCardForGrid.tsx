@@ -247,7 +247,7 @@ export const SINGLE_CARD_DATA = [
       pic1: biostatBY,
       pic2: mfcs,
       pic1ImageCaption: 'standard 2L bioreactor',
-      pic2ImageCaption: 'MFCS software - difficult to set up or modify recipes',
+      pic2ImageCaption: 'Biostat bioreactor control software - difficult to set up or modify recipes',
       text: [
         <>
           The Biostat B is a work horse. It is an older system that is tried and

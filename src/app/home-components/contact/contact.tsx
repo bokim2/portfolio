@@ -36,11 +36,11 @@ export default function Contact() {
   return (
     <Wrapper>
       <section className={styles.contact} id="contact" ref={ref}>
-        <div className={styles.headshotImgOuterContainer}></div>
+        {/* <div className={styles.headshotImgOuterContainer}></div> */}
 
         <div className={styles.contactAbout}>
           <div className={styles.contactTitleContainer}>
-            <h2 className={``}>Contact</h2>
+            <h2 className={``}>Get In Touch</h2>
             <h3 className={styles.contactRole}>Bo Kim</h3>
 
             <p className={`${styles.contactParagraph} large`}>
