@@ -540,7 +540,7 @@ function EducationCertifications() {
           <Image
             src={ucla}
             alt="ucla logo"
-            // style={{ width: '100%', height: 'auto' }}
+            style={{ width: '85%', height: 'auto' }}
           />
         </div>
       </div>
@@ -564,7 +564,7 @@ function EducationCertifications() {
           <Image
             src={aws}
             alt="aws logo"
-            // style={{ width: '100%', height: 'auto' }}
+            style={{ width: '90%', height: 'auto' }}
           />
         </div>
       </div>

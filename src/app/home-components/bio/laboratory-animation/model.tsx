@@ -12,17 +12,17 @@ import { Group, MeshPhysicalMaterial } from 'three';
 import React, { useEffect, useRef } from 'react';
 
 // useGLTF.preload('/images/3d/laboratory.glb')
-useGLTF.preload('/images/3d/bioreactor.glb');
+// useGLTF.preload('/images/3d/bioreactor.glb');
 
 export default function Model() {
   const group = useRef<Group>(null);
   const { animations: laboratoryAnimations, scene: laboratoryScene } = useGLTF('/images/3d/laboratory.glb') as any;
-  const {
-    nodes,
-    materials,
-    animations: bioreactorAnimations,
-    scene: bioreactorScene,
-  } = useGLTF('/images/3d/bioreactor.glb') as any;
+  // const {
+  //   nodes,
+  //   materials,
+  //   animations: bioreactorAnimations,
+  //   scene: bioreactorScene,
+  // } = useGLTF('/images/3d/bioreactor.glb') as any;
 
   const { actions, clips } = useAnimations(
     laboratoryAnimations,
@@ -50,12 +50,12 @@ export default function Model() {
         near={0.1}
         far={50000}
       />
-      <primitive
+      {/* <primitive
         object={bioreactorScene}
         position={[1, 5, 20]}
         rotation-x={-Math.PI / 2}
         scale={[0.1, 0.1, 0.1]}
-      />
+      /> */}
       <primitive object={laboratoryScene} position={[1, 5, 5]}   scale={[30, 30, 30]} />
     </group>
   );

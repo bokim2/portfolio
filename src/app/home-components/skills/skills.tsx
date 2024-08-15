@@ -29,6 +29,7 @@ import {
 import { TbBrandFramerMotion } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 import { GoGear } from 'react-icons/go';
+import { useState } from 'react';
 
 type Skill = {
   [key: string]: IconType;
@@ -77,14 +78,15 @@ const SKILLS_DATA: TSkill[] = [
     skills: [
       { JavaScript: SiJavascript },
       { TypeScript: SiTypescript },
-      { HTML: SiHtml5 },
-      { CSS: SiCss3 },
+      { HTML5: SiHtml5 },
+      { CSS3: SiCss3 },
       { Python: FaPython },
     ],
   },
 ];
 
 export default function Skills() {
+  const [iconToggle, setIconToggle] = useState(false);
   const staggerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -97,7 +99,9 @@ export default function Skills() {
 
   return (
     // <Wrapper additionalClasses="inner">
-      <motion.div className={styles.skills} layout>
+      <motion.div className={styles.skills} layout
+      onClick={(prev) => setIconToggle(!prev)}
+      >
         <motion.ul
           className={styles.areas}
           initial="hidden"
@@ -128,6 +132,7 @@ export default function Skills() {
                           className={styles.singleSkill}
                           initial="initial"
                           whileHover="hovered"
+                      
                           transition={{ staggerChildren: 0.03 }}
                         >
                           <div className={styles.skillWrapper}>
@@ -153,6 +158,7 @@ export default function Skills() {
                                 );
                               })}
                             </div>
+                            
                             <motion.div
                               className={styles.icon}
                               key={`icon_${skillIndex}`}
@@ -163,6 +169,7 @@ export default function Skills() {
                                   transition: { delay: 0.4 },
                                 },
                               }}
+                        
                               style={{ padding: '.3rem' }}
                             >
                               <Icon />
