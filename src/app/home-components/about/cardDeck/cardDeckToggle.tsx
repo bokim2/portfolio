@@ -113,12 +113,15 @@ export default function CardDeckToggle({
     },
   };
 
+
+
   return (
     <motion.header
       className={styles.cardDeckToggle}
       onMouseMove={handleMouseMove}
       key="header"
-      onClick={() => {
+      onClick={(e) => {
+        e.stopPropagation()
         setIsOpen((prev) => !prev);
       }}
       animate="animate"

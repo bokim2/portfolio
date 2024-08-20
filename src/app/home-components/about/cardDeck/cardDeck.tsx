@@ -1,10 +1,9 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import styles from './cardDeck.module.scss';
 import SingleCardForGrid, { SINGLE_CARD_DATA } from './singleCardForGrid';
-
 import CardDeckToggle from './cardDeckToggle';
 
 type TCardDeck = { deckIndex: number };
@@ -14,36 +13,29 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
   const outsideCardDeckRef = useRef<HTMLDivElement>(null);
   const singleCardDeckRef = useRef<HTMLDivElement>(null);
 
-function handleClickOutside (event: MouseEvent) {
-  if(outsideCardDeckRef.current && outsideCardDeckRef.current.contains(event.target as Node) 
-  && singleCardDeckRef && !singleCardDeckRef.current?.contains(event.target as Node)) {
-    setIsOpen(false)
-  }
-}
-
-useEffect(()=> {
-  document.addEventListener('mousedown', handleClickOutside)
-
-  return ()=> {
-    document.removeEventListener('mousedown', handleClickOutside)
-  }
-},[])
+  // Handle click inside the container, close deck if clicked outside
+  const handleClick = (event: React.MouseEvent) => {
+    // Check if the clicked target is inside the deck
+    if (
+      singleCardDeckRef.current &&
+      !singleCardDeckRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  };
 
   return (
     <motion.div
-    layout
+      layout
       ref={outsideCardDeckRef}
       key={'outsideCardDeckRef'}
       className={styles.cardDeckWrapper}
-      // initial={{ height: 'auto' }}
-      // animate={{ height: 'auto' }}
+      onClick={handleClick} // Attach the click handler directly to the wrapper
     >
       <AnimatePresence initial={false}>
         <motion.section
-          // layout
           className={styles.cardDeckInnerWrapper}
           key={deckIndex}
-          // ref={outsideCardDeckRef}
         >
           <CardDeckToggle
             isOpen={isOpen}
@@ -53,7 +45,7 @@ useEffect(()=> {
           <AnimatePresence>
             {isOpen && (
               <motion.div
-              ref={singleCardDeckRef}
+                ref={singleCardDeckRef}
                 className={styles.cardsSingleDeck}
                 key="content"
                 initial="collapsed"
@@ -75,18 +67,14 @@ useEffect(()=> {
               >
                 {Array.from({
                   length: SINGLE_CARD_DATA[deckIndex]?.length,
-                }).map((activeIndex, i) => {
-                  return (
-                    <>
-                      <SingleCardForGrid
-                        key={i}
-                        item={SINGLE_CARD_DATA[deckIndex]}
-                        activeIndex={i}
-                        cardIndex={0}
-                      />
-                    </>
-                  );
-                })}
+                }).map((activeIndex, i) => (
+                  <SingleCardForGrid
+                    key={i}
+                    item={SINGLE_CARD_DATA[deckIndex]}
+                    activeIndex={i}
+                    cardIndex={0}
+                  />
+                ))}
               </motion.div>
             )}
           </AnimatePresence>
