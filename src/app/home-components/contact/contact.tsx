@@ -57,8 +57,8 @@ export default function Contact() {
             {/* <p className={`${styles.contactParagraph} large`}>
               {"Whether you think I'd be a great fit for your team, or you're curious to learn more about my work, feel free to reach out via LinkedIn or send me an email.  "}
             </p> */}
-
-            <p className={`${styles.contactRole}  large`}>Bo Kim</p>
+{/* 
+            <p className={`${styles.contactRole}  large`}>Bo Kim</p> */}
 
             <div className={styles.singleContact}>
               <motion.a

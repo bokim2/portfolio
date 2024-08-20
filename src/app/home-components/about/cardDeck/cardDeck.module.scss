@@ -1,14 +1,24 @@
 $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
+.cardDeckWrapper {
+  width: 100%;
+}
+
+.cardDeckInnerWrapper {
+  width: 100%;
+  max-width: 1400px;
+  padding-inline: min(10vh, 10vw);
+  margin: 0 auto;
+}
+
 .cardsSingleDeck {
+  // max-width: 1400px;
   display: flex;
   // background-color: lightblue;
   flex-direction: column;
-  gap: .25rem;
+  gap: 0.25rem;
   // margin-block: 1rem;
 }
-
-
 
 // aboutCarousel
 
@@ -74,7 +84,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   --borderRadius: 5px;
 
   position: relative;
-  
+
   display: grid;
   place-items: center;
   // display: flex;
@@ -111,7 +121,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // transform: translate(-50%, -50%);
   // transform-style: preserve-3d;
   // transform: translateZ(20px);
-  inset: calc(var(--deckPadding) );
+  inset: calc(var(--deckPadding));
   padding: calc(var(--deckPadding));
   // background-color: rgba(var(--clr-main-2));
   border-radius: var(--borderRadius);
@@ -138,7 +148,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // padding: calc(var(--deckPadding));
   // background-color: pink;
   border-radius: var(--borderRadius);
-  border: 2px solid rgba(128, 0, 128, .2);
+  border: 2px solid rgba(128, 0, 128, 0.2);
 }
 
 .leftTopCorner {
@@ -149,9 +159,8 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   position: relative;
   // margin: calc(var(--deckPadding));
   // height: 1px;
-  border: 1px solid rgba(128, 0, 128, .2);
+  border: 1px solid rgba(128, 0, 128, 0.2);
 }
-
 
 .movingIcon {
   position: absolute;
@@ -202,7 +211,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
 .cardInner {
   padding: calc($card-inline-padding) $card-inline-padding
-    calc($card-inline-padding ) $card-inline-padding;
+    calc($card-inline-padding) $card-inline-padding;
   flex: 1;
   display: flex;
   // flex-direction: column;
@@ -250,7 +259,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   display: flex;
   flex-direction: column;
   gap: 1vh;
-  
+
   // padding-left: $card-inline-padding;
   // padding-top: $card-inline-padding;
 
@@ -284,8 +293,6 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 //   }
 // }
 
-
-
 .cardTextAndSecondImage {
   // background-color: red;
   display: flex;
@@ -294,7 +301,6 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   gap: 2vh;
   align-items: center;
   flex-grow: 1;
-
 }
 
 // .textParagraphs {

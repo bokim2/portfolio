@@ -47,18 +47,19 @@ export default function About() {
   const { activeSection, setActiveSection, ref } =
     useUpdateActiveSection('about');
 
-  return (
-    <Wrapper>
+  return (<>
       <div className={styles.about} id="about">
+    <Wrapper>
         <div className={styles.beforeCardSpacer}>
           <h2>About</h2>
           this section is more just for fun, so feel free to check it out or
           skip it.
         </div>
 
+        </Wrapper>
         {/* <AnimatePresence> */}
           <motion.div
-            layout
+            // layout
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -30, opacity: 0 }}
@@ -76,7 +77,7 @@ export default function About() {
           </motion.div>
         {/* </AnimatePresence> */}
       </div>
-    </Wrapper>
+              </>
   );
 }
 
