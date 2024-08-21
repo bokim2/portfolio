@@ -196,8 +196,8 @@ export const SINGLE_CARD_DATA = [
       text: [
         <>
           Before Benchling, I used a much simpler electronic lab notebook. It
-          was convenient because there was no need for glue sticks or carbon copy lab notebooks
-          (check this out, it is ancient).
+          was convenient because there was no need for glue sticks or carbon
+          copy lab notebooks (check this out, it is ancient).
         </>,
         <>
           While there are other big players like Sapio Biosciences in the space
@@ -247,7 +247,8 @@ export const SINGLE_CARD_DATA = [
       pic1: biostatBY,
       pic2: mfcs,
       pic1ImageCaption: 'standard 2L bioreactor',
-      pic2ImageCaption: 'Biostat bioreactor control software - difficult to set up or modify recipes',
+      pic2ImageCaption:
+        'Biostat bioreactor control software - difficult to set up or modify recipes',
       text: [
         <>
           The Biostat B is a work horse. It is an older system that is tried and
@@ -578,8 +579,7 @@ export default function SingleCardForGrid({
   });
 
   return (
-    <motion.div className={styles.card} initial={{ height: 'auto' }}
-    layout>
+    <motion.div className={styles.card} initial={{ height: 'auto' }}>
       {/* odd pictures on card */}
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>

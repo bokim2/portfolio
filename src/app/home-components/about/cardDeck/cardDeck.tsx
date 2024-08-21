@@ -42,7 +42,7 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
           <AnimatePresence>
             {isOpen && (
               <motion.div
-                layout
+                // layout
                 ref={singleCardDeckRef}
                 className={styles.cardsSingleDeck}
                 key="content"

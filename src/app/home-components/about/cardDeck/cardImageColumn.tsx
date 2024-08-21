@@ -23,7 +23,7 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>((props, ref) 
     <>
       {item?.length > 0 ? (
         <div className={styles.imageAndCaptionContainer}>
-          <motion.div
+          <motion.div layout
             key={`${cardIndex}_${activeIndex}`}
             initial={{ transform: 'scale(1)' }}
             whileHover={{
