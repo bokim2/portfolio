@@ -10,10 +10,10 @@ export default function CardTextColumn({
   activeIndex,
 }: TCard) {
   return (
-    <>
+    <div className={styles.cardTextColumn}>
       <div className={styles.cardTitles}>
-        <h3>{item?.[activeIndex]?.title ?? ''}</h3>
-        <p className={`xlarge ${styles.cardSubtitle}`}>
+        <h3 style={{marginBottom: 0}}>{item?.[activeIndex]?.title ?? ''}</h3>
+        <p className={` ${styles.cardSubtitle}`}>
           {item?.[activeIndex]?.subtitle ?? ''}
         </p>
       </div>
@@ -38,6 +38,6 @@ export default function CardTextColumn({
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

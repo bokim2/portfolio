@@ -298,14 +298,15 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 .cardTitles {
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  gap: .4rem;
+  padding-bottom: 1rem;
 
   // padding-left: $card-inline-padding;
   // padding-top: $card-inline-padding;
 
   @media (max-width: 800px) {
     margin-top: 2vh;
-    gap: 0;
+    gap: 0.25rem;
   }
 }
 
@@ -321,7 +322,14 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 }
 
 .cardSubtitle {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  // padding-bottom: .5rem;
+
+  @media (max-width: 800px) {
+    font-size: 1rem;
+  }
 }
 
 // .cardTitles, .cardTextContainer {
@@ -333,12 +341,22 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 //   }
 // }
 
+
+// card text column
+
+.cardTextColumn {
+  @media (max-width: 800px) {
+    margin-top: .75rem;
+
+  }
+
+}
+
 .cardTextAndSecondImage {
-  // background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2vh;
+  gap: .5rem;
   align-items: center;
   flex-grow: 1;
 }
@@ -351,7 +369,12 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 // }
 
 .singleParagraph {
-  line-height: 1.8;
+  line-height: 1.5;
+
+  @media (max-width: 800px) {
+    font-size: .9rem;
+    line-height: 1.5;
+  }
 }
 
 .imageColumn {
@@ -412,6 +435,9 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
   @media (max-width: 800px) {
     // pointer-events: none;
+    width: 95%;
+
+
   }
 }
 

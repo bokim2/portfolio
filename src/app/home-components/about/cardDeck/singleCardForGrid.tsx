@@ -176,7 +176,6 @@ export const SINGLE_CARD_DATA = [
           Tableau but much easier to use for scientists.{' '}
         </>,
 
-        ,
       ],
     },
     {
@@ -215,7 +214,7 @@ export const SINGLE_CARD_DATA = [
         //   laboratory notebook functions. While there are other big players in the space like Sapio Biosciences, I specifically worked with Benchling
         //   implementation on the client-side.
         // </>,
-        ,
+
       ],
     },
     {
@@ -237,7 +236,7 @@ export const SINGLE_CARD_DATA = [
           handling capabilities.
         </>,
 
-        ,
+        
       ],
     },
     {
@@ -393,7 +392,7 @@ export const SINGLE_CARD_DATA = [
       // ),
 
       title: 'Bootcamp',
-      subtitle: 'Codesmith',
+      subtitle: 'codesmith',
       equipment: '',
       pic1: codesmith,
       pic2: rediscopeZ,
@@ -424,7 +423,7 @@ export const SINGLE_CARD_DATA = [
     },
     {
       title: 'AWS',
-      subtitle: 'Solutions Architect Associate',
+      subtitle: 'solutions architect associate',
       equipment: '',
       pic1: aws,
       pic2: awsVPN,
@@ -455,7 +454,7 @@ export const SINGLE_CARD_DATA = [
           </p>
         </>,
 
-        ,
+      
       ],
     },
 
@@ -509,12 +508,12 @@ export const SINGLE_CARD_DATA = [
           believe in Kaizen, continuous improvement.
         </>,
         <>I also hope to bring a unique perspective from my time in biotech.</>,
-        ,
+        
       ],
     },
 
     {
-      title: 'environment',
+      title: 'Environment',
       subtitle: 'culture',
       equipment: '',
       pic1: bubbleDark,
