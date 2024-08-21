@@ -361,7 +361,7 @@ export const SINGLE_CARD_DATA = [
       },
       pic1ImageCaption: 'a 30L fermentation bag',
       pic2ImageCaption:
-        'this system is set up to handle GMP (Good Manufacturing Practice).',
+        'this system is set up to handle GMP (Good Manufacturing Practices).',
       text: [
         <>
           The SUF software is designed to manage a single reactor at a time and

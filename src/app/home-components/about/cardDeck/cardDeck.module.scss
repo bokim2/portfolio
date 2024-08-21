@@ -233,7 +233,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   border-radius: 10px;
 
   @media (max-width: 800px) {
-    padding-bottom: 1rem;
+    // padding-bottom: 1rem;
 
     &:nth-of-type(even) .cardInner {
       display: flex;
@@ -251,7 +251,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
 .cardInner {
   padding: calc($card-inline-padding) $card-inline-padding
-    calc($card-inline-padding) $card-inline-padding;
+    calc($card-inline-padding ) $card-inline-padding;
   flex: 1;
   display: flex;
   // flex-direction: column;
@@ -264,6 +264,8 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // margin-bottom: 2vh;
 
   @media (max-width: 800px) {
+    padding: calc($card-inline-padding) $card-inline-padding
+    calc($card-inline-padding *.5) $card-inline-padding;
     // display: block;
     // display: flex;
     // &:nth-of-type(odd) {
@@ -356,7 +358,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: .5rem;
+  // gap: .5rem;
   align-items: center;
   flex-grow: 1;
 }
@@ -367,6 +369,18 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 //   // gap: 10em;
 //   // margin-bottom: 1rem;
 // }
+
+.cardTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .25rem;
+
+  @media (max-width: 800px) {
+    gap: .25rem;
+  }
+}
 
 .singleParagraph {
   line-height: 1.5;
@@ -439,6 +453,13 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
 
   }
+}
+
+.imageCaptionContainer {
+  min-height: 4rem;
+  width: 95%;
+  // background-color: red;
+
 }
 
 // .cardImageContainer:hover .pic2 {
