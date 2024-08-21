@@ -578,7 +578,8 @@ export default function SingleCardForGrid({
   });
 
   return (
-    <motion.div className={styles.card} initial={{ height: 'auto' }}>
+    <motion.div className={styles.card} initial={{ height: 'auto' }}
+    layout>
       {/* odd pictures on card */}
       {activeIndex % 2 !== 0 ? (
         <motion.div className={styles.cardInner}>

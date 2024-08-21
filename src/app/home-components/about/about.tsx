@@ -49,7 +49,7 @@ export default function About() {
 
   return (<>
       <div className={styles.about} id="about">
-    <Wrapper>
+    <Wrapper additionalClasses='noMarginBlock'>
         <div className={styles.beforeCardSpacer}>
           <h2>About</h2>
           this section is more just for fun, so feel free to check it out or

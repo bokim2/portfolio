@@ -9,6 +9,21 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   max-width: 1400px;
   padding-inline: min(10vh, 10vw);
   margin: 0 auto;
+
+
+  @media (max-width: 1000px) {
+    // width: 90%;
+
+    // padding-inline: 2.5rem;
+    padding-inline: min(5vh, 5vw);
+  }
+  
+  @media (max-width: 800px) {
+    // width: 90%;
+    // padding-inline: min(10vh, 10vw);
+    margin-block: .25rem;
+    // padding-inline: 1.5rem;
+  }
 }
 
 .cardsSingleDeck {
@@ -97,15 +112,17 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // padding: var(--deckPadding);
 
   border-radius: var(--borderRadius);
-  height: max(300px, 30vh);
+  // min-height: max(250px, 20vh);
+  min-height: 100px;
   margin-bottom: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1),
     0 12px 24px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 800px) {
-    --deckPadding: 1.25rem;
+    --deckPadding: .0;
   }
 }
+
 
 // .sibling {
 //   // padding: var(--deckPadding);
@@ -114,8 +131,10 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 // }
 
 .innerCardDeckToggle {
-  // position: relative;
-  position: absolute;
+  position: relative;
+  width:  calc(100% - var(--deckPadding) * 2);
+  transform: translateX(calc(-1 * var(--deckPadding)));
+  // position: absolute;
   // top: 50%;
   // left: 50%;
   // transform: translate(-50%, -50%);
@@ -125,18 +144,19 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   padding: calc(var(--deckPadding));
   // background-color: rgba(var(--clr-main-2));
   border-radius: var(--borderRadius);
-  // height: 80%;
-  // border-bottom: 5px solid black;
 
-  // ::after{
+  @media (max-width: 800px) {
+    padding: .75rem;
+  }
 
-  //   content: '';
-  //   position: absolute;
-  //   inset: 1rem;
-  //   // background-color: yellow;
-  //   border: 2px solid purple;
-  //   border-radius: calc(var(--borderRadius)/1.5);
-  // }
+}
+
+.cardDeckToggleTitle {
+  padding-bottom: .5rem;
+
+  @media (max-width: 800px) {
+    padding-bottom: .25rem;
+  }
 }
 
 .leftBorderAnimation {
@@ -151,7 +171,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   border: 2px solid rgba(128, 0, 128, 0.2);
 }
 
-.leftTopCorner {
+.rightBottomLine {
   // position: absolute;
   margin: calc(var(--deckPadding));
   justify-self: flex-end;
@@ -160,6 +180,10 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // margin: calc(var(--deckPadding));
   // height: 1px;
   border: 1px solid rgba(128, 0, 128, 0.2);
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
 
 .movingIcon {
@@ -168,15 +192,31 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // transform: translateZ(200px);
   // inset: 0;
   border-radius: 99999vh;
-  top: 10%;
-  right: 10%;
+  top: calc(var(--deckPadding)* 1.5);
+  right: calc(var(--deckPadding) * 1.5);
   z-index: 1000;
-  height: 100px;
+  // height: 100px;
   aspect-ratio: 1/1;
   // background-color: red;
   display: grid;
   place-items: center;
   font-size: 2rem;
+
+  @media (max-width: 800px){
+    --deckPadding: .5rem;
+    top: calc(var(--deckPadding)* 1.5);
+    right: calc(var(--deckPadding) * 1.5);
+    // top: 5%;
+    // right: 5%;
+  }
+}
+
+.bullet {
+  margin-top: .5rem;
+
+  @media (max-width: 800px) {
+    margin: .5rem;
+  }
 }
 
 // card

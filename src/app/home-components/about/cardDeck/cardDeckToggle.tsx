@@ -25,7 +25,7 @@ const CARD_DECK_TOGGLE_INFO = [
     cardDeckToggle: {
       title: 'Origin',
       bulletPoints: [
-        'what i did in biotech',
+        'what I did in biotech',
         'cool equipment and software that got me interested in software engineering',
       ],
     },
@@ -35,7 +35,7 @@ const CARD_DECK_TOGGLE_INFO = [
       title: 'Next',
       bulletPoints: [
         'my interests in software developement',
-        'what i have done so far and what i am interested in',
+        'what I have done so far and what I am interested in',
       ],
     },
   },
@@ -46,9 +46,9 @@ export default function CardDeckToggle({
   setIsOpen,
   deckIndex,
 }: TCardDeckToggle) {
-  const leftTopCornerRef = useRef<HTMLDivElement>(null);
+  const rightBottomLineRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: leftTopCornerRef,
+    target: rightBottomLineRef,
     offset: ['start .7', 'end .5'],
   });
 
@@ -134,11 +134,11 @@ export default function CardDeckToggle({
         animate="animate"
         variants={cardDeckToggleVariants}
       >
-        <h2>{CARD_DECK_TOGGLE_INFO[deckIndex]?.cardDeckToggle?.title}</h2>
-        <ul>
+        <h2 className={styles.cardDeckToggleTitle}>{CARD_DECK_TOGGLE_INFO[deckIndex]?.cardDeckToggle?.title}</h2>
+        <ul className={styles.bulletpointsUl}>
           {CARD_DECK_TOGGLE_INFO[deckIndex]?.cardDeckToggle?.bulletPoints.map(
             (bullet, i) => {
-              return <li key={i}>{bullet}</li>;
+              return <li key={i} className={styles.bullet}>{bullet}</li>;
             }
           )}
         </ul>
@@ -164,8 +164,8 @@ export default function CardDeckToggle({
       </motion.div>
 
       <motion.div
-        ref={leftTopCornerRef}
-        className={`${styles.leftTopCorner} ${styles.sibling}`}
+        ref={rightBottomLineRef}
+        className={`${styles.rightBottomLine} ${styles.sibling}`}
         variants={{
           initial: { width: '0%' },
         }}

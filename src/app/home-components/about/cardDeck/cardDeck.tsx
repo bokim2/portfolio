@@ -33,10 +33,7 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
       onClick={handleClick} // Attach the click handler directly to the wrapper
     >
       <AnimatePresence initial={false}>
-        <motion.section
-          className={styles.cardDeckInnerWrapper}
-          key={deckIndex}
-        >
+        <motion.section className={styles.cardDeckInnerWrapper} key={deckIndex}>
           <CardDeckToggle
             isOpen={isOpen}
             setIsOpen={setIsOpen}
@@ -45,6 +42,7 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
           <AnimatePresence>
             {isOpen && (
               <motion.div
+                layout
                 ref={singleCardDeckRef}
                 className={styles.cardsSingleDeck}
                 key="content"
@@ -53,14 +51,20 @@ export default function CardDeck({ deckIndex }: TCardDeck) {
                 exit="collapsed"
                 variants={{
                   open: {
-                    opacity: 1,
+                    opacity: [0, .2, 1],
                     height: 'auto',
-                    transition: { opacity: { duration: 1 } },
+                    transition: {
+                      height: { duration: 0.1 },
+                      opacity: { duration: 0.3, delay: 0.1 },
+                    },
                   },
                   collapsed: {
-                    opacity: 0,
+                    opacity: [.05, .01, 0],
                     height: 0,
-                    transition: { opacity: { duration: 0.1 } },
+                    transition: {
+                      height: { duration: 0.1 },
+                      opacity: { duration: 0.1, delay: 0 },
+                    },
                   },
                 }}
                 transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
