@@ -22,6 +22,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
     // width: 90%;
     // padding-inline: min(10vh, 10vw);
     margin-block: .25rem;
+    padding-inline: .5rem;
     // padding-inline: 1.5rem;
   }
 }
@@ -233,6 +234,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   border-radius: 10px;
 
   @media (max-width: 800px) {
+    box-shadow: none;
     // padding-bottom: 1rem;
 
     &:nth-of-type(even) .cardInner {
@@ -265,8 +267,8 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
   @media (max-width: 800px) {
    
-      padding: calc($card-inline-padding * 2) $card-inline-padding
-    calc($card-inline-padding * 2) $card-inline-padding;
+      padding: calc($card-inline-padding * 2) calc($card-inline-padding / 2) 
+    calc($card-inline-padding * 2) calc($card-inline-padding / 2) ;
     gap: 0rem;
   }
 }
