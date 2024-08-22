@@ -264,6 +264,9 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // margin-bottom: 2vh;
 
   @media (max-width: 800px) {
+   
+      padding: calc($card-inline-padding * 2) $card-inline-padding
+    calc($card-inline-padding * 2) $card-inline-padding;
     gap: 0rem;
   }
 }
@@ -295,7 +298,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   @media (max-width: 800px) {
     // gap: .5rem;
     padding-bottom: .4rem;
-    margin-top: 2vh;
+    // margin-top: 2vh;
     gap: 0.25rem;
   }
 }
@@ -379,8 +382,9 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   padding: .5rem .25rem;
 
   @media (max-width: 800px) {
-    background-color: red;
-    gap: .325rem;
+    justify-content: flex-start;
+    background-color: pink;
+    gap: 0rem;
     padding-bottom: .95rem;
   }
 }
