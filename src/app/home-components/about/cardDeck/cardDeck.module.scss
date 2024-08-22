@@ -264,21 +264,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // margin-bottom: 2vh;
 
   @media (max-width: 800px) {
-    padding: calc($card-inline-padding) $card-inline-padding
-    calc($card-inline-padding *.5) $card-inline-padding;
-    // display: block;
-    // display: flex;
-    // &:nth-of-type(odd) {
-    //   display: flex;
-    //   flex-direction: column-reverse !important;
-    //   background-color: red;
-    // }
-
-    // grid-template-columns: 1fr;
-    // grid-template-rows: 1fr 1fr;
-    // max-height: 90vh;
-    // gap: 55vh;
-    // padding: 0;
+    gap: 0rem;
   }
 }
 
@@ -307,17 +293,20 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   // padding-top: $card-inline-padding;
 
   @media (max-width: 800px) {
+    gap: .675rem;
+    padding-bottom: .4rem;
     margin-top: 2vh;
-    gap: 0.25rem;
+    // gap: 0.25rem;
   }
 }
 
 .cardColumn {
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  // gap: 1vh;
 
   @media (max-width: 800px) {
+    // gap: .5rem;
     // gap: 40vh;
     // display: block;
   }
@@ -331,6 +320,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
   @media (max-width: 800px) {
     font-size: 1rem;
+    line-height: 1.375;
   }
 }
 
@@ -348,7 +338,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
 
 .cardTextColumn {
   @media (max-width: 800px) {
-    margin-top: .75rem;
+    // margin-top: .75rem;
 
   }
 
@@ -378,7 +368,8 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   padding: .5rem .25rem;
 
   @media (max-width: 800px) {
-    gap: .25rem;
+    gap: .325rem;
+    padding-bottom: .75rem;
   }
 }
 
@@ -386,7 +377,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   line-height: 1.5;
 
   @media (max-width: 800px) {
-    font-size: .9rem;
+    font-size: .875rem;
     line-height: 1.5;
   }
 }

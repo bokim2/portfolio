@@ -122,8 +122,8 @@ export const SINGLE_CARD_DATA = [
       //   </>
       // ),
 
-      title: 'the journey up to this point',
-      subtitle: 'biotech',
+      title: 'The journey up to this point',
+      subtitle: 'Biotech',
       equipment: '',
       pic1: fermAmyrisBM,
       pic2: background,
@@ -535,7 +535,7 @@ export const SINGLE_CARD_DATA = [
           hope to be based in California, Colorado, or Washington.
         </>,
         // <></>,
-        ,
+        
       ],
     },
   ],

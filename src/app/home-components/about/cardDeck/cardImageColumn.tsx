@@ -98,19 +98,21 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
                 </motion.div>
               </AnimatePresence>
             </motion.div>
-            <motion.div className={styles.imageCaptionContainer}>
-              {!isHovered
-                ? item?.[activeIndex]?.pic1ImageCaption && (
-                    <p className={'imageCaption'}>
-                      {item?.[activeIndex]?.pic1ImageCaption}
-                    </p>
-                  )
-                : item?.[activeIndex]?.pic2ImageCaption && (
-                    <p className={'imageCaption'}>
-                      {item?.[activeIndex]?.pic2ImageCaption}
-                    </p>
-                  )}
-            </motion.div>
+            {/* {activeIndex == 0 && (
+              <motion.div className={styles.imageCaptionContainer}>
+                {!isHovered
+                  ? item?.[activeIndex]?.pic1ImageCaption && (
+                      <p className={'imageCaption'}>
+                        {item?.[activeIndex]?.pic1ImageCaption}
+                      </p>
+                    )
+                  : item?.[activeIndex]?.pic2ImageCaption && (
+                      <p className={'imageCaption'}>
+                        {item?.[activeIndex]?.pic2ImageCaption}
+                      </p>
+                    )}
+              </motion.div>
+            )} */}
           </div>
         ) : null}
       </>
