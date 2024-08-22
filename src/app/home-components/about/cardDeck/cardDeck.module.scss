@@ -382,9 +382,8 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   padding: .5rem .25rem;
 
   @media (max-width: 800px) {
-    justify-content: flex-start;
-    background-color: pink;
-    gap: 0rem;
+    // background-color: red;
+    gap: .5rem;
     padding-bottom: .95rem;
   }
 }

@@ -23,7 +23,7 @@ export default function CardTextColumn({
           {item?.[activeIndex]?.text?.map((singleParagraph, i) => (
             <>
               <p key={i} className={styles.singleParagraph}>{singleParagraph}</p>
-              {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />}
+              {/* {i < (item?.[activeIndex]?.text?.length ?? 0) - 1 && <br />} */}
             </>
           ))}
         </div>
