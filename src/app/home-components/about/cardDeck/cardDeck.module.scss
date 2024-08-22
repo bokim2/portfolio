@@ -379,6 +379,7 @@ $card-inline-padding: clamp(3vw, 3rem, 4vw);
   padding: .5rem .25rem;
 
   @media (max-width: 800px) {
+    background-color: red;
     gap: .325rem;
     padding-bottom: .95rem;
   }
