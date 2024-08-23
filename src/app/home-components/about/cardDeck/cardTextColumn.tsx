@@ -13,7 +13,7 @@ export default function CardTextColumn({
     <div className={styles.cardTextColumn}>
       <div className={styles.cardTitles}>
         <h3 className={styles.cardTitle}
-        style={{marginBottom: 0}}>{item?.[activeIndex]?.title ?? ''}</h3>
+        >{item?.[activeIndex]?.title ?? ''}</h3>
         <p className={` ${styles.cardSubtitle}`}>
           {item?.[activeIndex]?.subtitle ?? ''}
         </p>

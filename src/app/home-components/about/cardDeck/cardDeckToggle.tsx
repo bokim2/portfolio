@@ -134,7 +134,7 @@ export default function CardDeckToggle({
         animate="animate"
         variants={cardDeckToggleVariants}
       >
-        <h2 className={styles.cardDeckToggleTitle}>{CARD_DECK_TOGGLE_INFO[deckIndex]?.cardDeckToggle?.title}</h2>
+        <h3 className={styles.cardDeckToggleTitle}>{CARD_DECK_TOGGLE_INFO[deckIndex]?.cardDeckToggle?.title}</h3>
         <ul className={styles.bulletpointsUl}>
           {CARD_DECK_TOGGLE_INFO[deckIndex]?.cardDeckToggle?.bulletPoints.map(
             (bullet, i) => {
