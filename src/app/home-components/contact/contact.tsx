@@ -1,4 +1,5 @@
-import React, { createRef, useEffect } from 'react';
+'use client';
+import React, { createRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import headshotImg from '../../../../public/images/intro/headshot.png';
 
@@ -17,6 +18,7 @@ import emailIcon from '@/../public/images/icons/linkedin.png';
 import { FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import AnimationHome from '../bio/animation-home';
+import { WebGL } from 'three/examples/jsm/Addons.js';
 
 const imageVariants = {
   initial: { filter: 'sepia(100%)' },
@@ -40,13 +42,22 @@ export default function Contact() {
   const { activeSection, setActiveSection, ref } =
     useUpdateActiveSection('contact');
 
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+      setIsClient(true);
+    }, []);
+
   return (
+    
     <section className={styles.contact} id="contact" ref={ref}>
       <Wrapper additionalClasses='noMarginBlock'>
+      <div className={styles.contactOuter}>
+
       <div className={styles.contactInner}>
         <div className={styles.headshotImgOuterContainer}>
           <h2 className={`${styles.contactTitle}`}>Contact</h2>
-          <p className={`${styles.contactSubtitle} `}>{`Let's build together`}</p>
+          <p className={`${styles.contactSubtitle} subTitlePaddingLeft-small`}>{`Let's build together`}</p>
         </div>
 
         <div className={`${styles.contacts} subTitlePaddingLeft`}>
@@ -70,11 +81,17 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      </div>
       </Wrapper>
 
+{isClient && typeof window !== 'undefined' && WebGL.isWebGLAvailable() ?
       <div className={styles.flaskAnimation}>
         <AnimationHome />
       </div>
+      : 
+      <></>
+
+}
     </section>
   );
 }

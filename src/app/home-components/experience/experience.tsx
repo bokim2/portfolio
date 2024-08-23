@@ -6,7 +6,6 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 import styles from './experience.module.scss';
 import BiotechSoftware from '../about/biotechSoftware';
 import Resume from './experience/resume/resume';
-// import ExperienceAnimation from './experience-animation';
 import { PerspectiveCamera } from '@react-three/drei';
 import Wrapper from '@/components/wrapper/wrapper';
 import dynamic from 'next/dynamic';

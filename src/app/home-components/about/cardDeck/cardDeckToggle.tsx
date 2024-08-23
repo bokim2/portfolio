@@ -35,7 +35,7 @@ const CARD_DECK_TOGGLE_INFO = [
       title: 'Next',
       bulletPoints: [
         'my interests in software developement',
-        'what I have done so far and what I am interested in',
+        `what I have done so far and and areas I’m looking to further explore`,
       ],
     },
   },
