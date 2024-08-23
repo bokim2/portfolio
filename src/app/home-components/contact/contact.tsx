@@ -51,8 +51,8 @@ export default function Contact() {
   return (
     
     <section className={styles.contact} id="contact" ref={ref}>
-      <Wrapper additionalClasses='noMarginBlock'>
-      {/* <div className={styles.contactOuter}> */}
+      {/* <Wrapper additionalClasses='noMarginBlock'> */}
+      <div className={styles.contactOuter}>
 
       <div className={styles.contactInner}>
         <div className={styles.headshotImgOuterContainer}>
@@ -81,8 +81,8 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      {/* </div> */}
-      </Wrapper>
+      </div>
+      {/* </Wrapper> */}
 
 {isClient && typeof window !== 'undefined' && WebGL.isWebGLAvailable() ?
       <div className={styles.flaskAnimation}>

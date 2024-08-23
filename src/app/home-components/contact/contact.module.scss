@@ -27,10 +27,34 @@
   }
 }
 
+.contactOuter {
+  // z-index: -1000;
+  width: 100%;
+  max-width: 1400px;
+  padding-inline: min(10vh, 10vw);
+  margin-block: 0rem;
+  background-color: blue;
+
+  @media (max-width: 1000px) {
+    // width: 90%;
+
+    // padding-inline: 2.5rem;
+    padding-inline: min(5vh, 5vw);
+  }
+  
+  @media (max-width: 800px) {
+    // width: 90%;
+    margin-block: 0rem;
+    // padding-inline: 1.5rem;
+  }
+}
+
 .contactInner {
+  position: absolute;
   width: fit-content;
+  z-index: 10000;
   max-width: 100%;
-  // background-color: red;
+  background-color: red;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -78,6 +102,6 @@
 .flaskAnimation {
 position: absolute;
 inset: 0;
-z-index: -1;
+// z-index: 1;
 opacity: .2;
 }
