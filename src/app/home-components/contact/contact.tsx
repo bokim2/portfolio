@@ -89,7 +89,7 @@ export default function Contact() {
         <AnimationHome />
       </div>
       : 
-      <></>
+      <div className={styles.noAnimation}></div>
 
 }
     </section>
