@@ -85,6 +85,7 @@ export default function Contact() {
       {/* </Wrapper> */}
 
 {isClient && typeof window !== 'undefined' && WebGL.isWebGLAvailable() ?
+
       <div className={styles.flaskAnimation}>
         <AnimationHome />
       </div>

@@ -1,6 +1,5 @@
 // use grid - contact is inside the Home component and the grid is the entire screen MINUS the nav bar
 
-
 .contact {
   // margin-top: 20vh;
   position: relative;
@@ -45,7 +44,7 @@
     // padding-inline: 2.5rem;
     padding-inline: min(5vh, 5vw);
   }
-  
+
   @media (max-width: 800px) {
     // width: 90%;
     margin-block: 0rem;
@@ -66,11 +65,9 @@
   // padding-bottom: 20vh;
 }
 
-
 .contactTitle {
   color: var(--text-12);
   margin-bottom: 1rem;
-
 
   @media (max-width: 800px) {
     margin-bottom: 0.75rem;
@@ -86,7 +83,7 @@
   // padding-bottom: .5rem;
 
   @media (max-width: 800px) {
-    font-size: .95rem;
+    font-size: 0.95rem;
     line-height: 1.375;
   }
 }
@@ -96,19 +93,19 @@
 }
 
 .singleContact {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
-
-
 .flaskAnimation {
-position: absolute;
-inset: 0;
-// z-index: 1;
-opacity: .2;
+  position: absolute;
+  inset: 0;
+  // z-index: 1;
+  opacity: 0.2;
 }
 
 .noAnimation {
+  position: absolute;
+  inset: 0;
   height: 40vh;
   width: 100vw;
 }
