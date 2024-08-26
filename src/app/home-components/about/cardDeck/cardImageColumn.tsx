@@ -20,6 +20,11 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
     // Destructure props
     const { item, cardIndex, activeIndex, isHovered, setIsHovered } = props;
 
+const isGif = (url: StaticImageData): Boolean => {
+return url.src.endsWith('.gif');
+}
+
+
     return (
       <>
         {item?.length > 0 ? (
@@ -61,7 +66,7 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
                 >
                   <Image
                     className={styles.pic1}
-                    placeholder="blur"
+                    placeholder = {!isGif(item?.[activeIndex]?.pic1) ? 'blur' : undefined}
                     src={item?.[activeIndex]?.pic1}
                     alt={item?.[activeIndex]?.title as string}
                     layout="fill"
