@@ -108,20 +108,6 @@ sweetener naturally derived from the stevia plant.
 export const SINGLE_CARD_DATA = [
   [
     {
-      // section: 'origin',
-      // intro: (
-      //   <>
-      //     <h2>Origins</h2>
-      //     <ul>
-      //       <li>what i did in biotech</li>
-      //       <li>
-      //         cool equipment and software that got me interested in software
-      //         engineering
-      //       </li>
-      //     </ul>
-      //   </>
-      // ),
-
       title: 'The journey up to this point',
       subtitle: 'Biotech',
       equipment: '',
@@ -175,7 +161,6 @@ export const SINGLE_CARD_DATA = [
           interface and easy to apply filters and groupings. It is similar to
           Tableau but much easier to use for scientists.{' '}
         </>,
-
       ],
     },
     {
@@ -214,7 +199,6 @@ export const SINGLE_CARD_DATA = [
         //   laboratory notebook functions. While there are other big players in the space like Sapio Biosciences, I specifically worked with Benchling
         //   implementation on the client-side.
         // </>,
-
       ],
     },
     {
@@ -235,8 +219,6 @@ export const SINGLE_CARD_DATA = [
           with miniturized fermentation systems and bioreactors with liquid
           handling capabilities.
         </>,
-
-        
       ],
     },
     {
@@ -453,8 +435,6 @@ export const SINGLE_CARD_DATA = [
             <i>{` - someone somewhere`}</i>
           </p>
         </>,
-
-      
       ],
     },
 
@@ -508,7 +488,6 @@ export const SINGLE_CARD_DATA = [
           believe in Kaizen, continuous improvement.
         </>,
         <>I also hope to bring a unique perspective from my time in biotech.</>,
-        
       ],
     },
 
@@ -535,7 +514,6 @@ export const SINGLE_CARD_DATA = [
           hope to be based in California, Colorado, or Washington.
         </>,
         // <></>,
-        
       ],
     },
   ],

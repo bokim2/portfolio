@@ -25,10 +25,8 @@ import amyris from '@/../public/images/progressive/amyris.jpg';
 import calysta from '@/../public/images/progressive/calysta.jpg';
 import genencor from '@/../public/images/progressive/genencor1.jpg';
 
-
 import ucla from '@/../public/images/experience/ucla.png';
 import aws from '@/../public/images/experience/aws.png';
-
 
 type TresumeData = {
   title: string;
@@ -375,11 +373,12 @@ export default function Resume() {
                       // ease: 'backInOut'}}
                     >
                       <Image
-                      placeholder='blur'
+                        placeholder="blur"
+                        priority={false}
+                        loading="lazy"
                         src={staticImportImage}
                         alt={imagePath}
-                        fill
-                        priority
+                        layout="fill"
                         style={imageStyle || { width: '100%' }}
                       />
                     </motion.div>
@@ -387,7 +386,7 @@ export default function Resume() {
 
                   {techStack && (
                     <div className={styles.projectTechContainer}>
-                      <ul >
+                      <ul>
                         {techStack.map((tech, i) => (
                           <li key={i}>{tech}</li>
                         ))}
@@ -555,11 +554,7 @@ function EducationCertifications() {
           //   // height: '100%',
           // }}
         >
-          <Image
-            src={ucla}
-            alt="ucla logo"
-         
-          />
+          <Image src={ucla} alt="ucla logo" />
         </div>
       </div>
       <div className={`${styles.certifications}`}>
@@ -579,11 +574,7 @@ function EducationCertifications() {
             // height: '100%',
           }}
         >
-          <Image
-            src={aws}
-            alt="aws logo"
-            style={{ }}
-          />
+          <Image src={aws} alt="aws logo" style={{}} />
         </div>
       </div>
     </div>

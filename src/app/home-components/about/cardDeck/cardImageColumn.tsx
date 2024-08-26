@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction, forwardRef } from 'react';
+'use client';
+import React, { Dispatch, SetStateAction, forwardRef, useState } from 'react';
 import { TCard } from './singleCardForGrid';
 import Image, { StaticImageData } from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -20,10 +21,11 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
     // Destructure props
     const { item, cardIndex, activeIndex, isHovered, setIsHovered } = props;
 
-const isGif = (url: StaticImageData): Boolean => {
-return url.src.endsWith('.gif');
-}
+    const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
+    const isGif = (url: StaticImageData): Boolean => {
+      return url.src.endsWith('.gif');
+    };
 
     return (
       <>
@@ -53,7 +55,7 @@ return url.src.endsWith('.gif');
                   className={styles.cardImageContainer}
                   initial={{ opacity: 1, x: '0%', height: 'auto' }}
                   animate={{
-                    opacity: isHovered ? 0 : 1,
+                    opacity: imageLoaded ? (isHovered ? 0 : 1) : 0.5,
                     x: isHovered ? '-2%' : '0%',
                   }}
                   exit={{ opacity: 0, x: '-2%' }}
@@ -66,12 +68,15 @@ return url.src.endsWith('.gif');
                 >
                   <Image
                     className={styles.pic1}
-                    placeholder = {!isGif(item?.[activeIndex]?.pic1) ? 'blur' : undefined}
+                    placeholder={
+                      !isGif(item?.[activeIndex]?.pic1) ? 'blur' : undefined
+                    }
                     src={item?.[activeIndex]?.pic1}
                     alt={item?.[activeIndex]?.title as string}
                     layout="fill"
                     style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
                     key={`${cardIndex}_${activeIndex}_pic1`}
+                    onLoadingComplete={()=> setImageLoaded(true)}
                   />
                 </motion.div>
 

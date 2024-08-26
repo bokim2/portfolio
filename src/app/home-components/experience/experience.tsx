@@ -11,6 +11,8 @@ import Wrapper from '@/components/wrapper/wrapper';
 import dynamic from 'next/dynamic';
 import { useScroll, useSpring } from 'framer-motion';
 
+import bioreactorPlaceholder from '@/../public/images/experience/bioreactorPlaceholder.jpg';
+
 const ExperienceAnimation = dynamic(
   () => import('./experience/experience-animation/index'),
   {
@@ -23,17 +25,19 @@ const ExperienceAnimation = dynamic(
           transform: 'scale(1.2) translateX(10%)',
         }}
       >
-        <img
-          src="/images/experience/bioreactorPlaceholder.jpg"
+        <Image
+          src={bioreactorPlaceholder}
+          placeholder="blur"
+          layout='fill'
           alt="bioreactor"
           style={{
             // marginTop: '30vh',
-            objectFit: 'cover',
+            objectFit: 'contain',
             // border: '10px solid red',
             // background: 'yellow',
             // width: '100%',
           }}
-        ></img>
+        ></Image>
       </div>
     ),
   }
@@ -72,25 +76,28 @@ export default function Experience() {
         ) : (
           // </div>
           <div className={styles.column}>
-             <div
-        className={`${styles.experienceAnimationContainer} ${styles.bioreactorColumn}`}
-        style={{
-          paddingTop: '14vh',
-          transform: 'scale(1.2) translateX(10%)',
-        }}
-      >
-        <img
-          src="/images/experience/bioreactorPlaceholder.jpg"
-          alt="bioreactor"
-          style={{
-            // marginTop: '30vh',
-            objectFit: 'cover',
-            // border: '10px solid red',
-            // background: 'yellow',
-            // width: '100%',
-          }}
-        ></img>
-      </div>
+            <div
+              className={`${styles.experienceAnimationContainer} ${styles.bioreactorColumn}`}
+              style={{
+                paddingTop: '14vh',
+                transform: 'scale(1.2) translateX(10%)',
+              }}
+            >
+              <Image
+                src={bioreactorPlaceholder}
+                placeholder="blur"
+                layout="fill"
+                alt="bioreactor"
+                style={{
+                  // marginTop: '30vh',
+                  objectFit: 'contain',
+                  
+                  // border: '10px solid red',
+                  // background: 'yellow',
+                  // width: '100%',
+                }}
+              ></Image>
+            </div>
           </div>
         )}
 
