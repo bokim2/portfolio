@@ -61,6 +61,7 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
                 >
                   <Image
                     className={styles.pic1}
+                    placeholder="blur"
                     src={item?.[activeIndex]?.pic1}
                     alt={item?.[activeIndex]?.title as string}
                     layout="fill"

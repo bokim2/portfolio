@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './resume.module.scss';
 import { FaCaretDown, FaExternalLinkSquareAlt } from 'react-icons/fa';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import {
   PiCaretDoubleDownThin,
   PiCaretDoubleUpThin,
@@ -18,8 +18,17 @@ import { GiMolecule } from 'react-icons/gi';
 import Overlay from '@/components/overlay/overlay';
 import { RiTestTubeFill } from 'react-icons/ri';
 
+import seedFlask from '@/../public/images/projects/seed_flask_d1.jpg';
+import rediscope from '@/../public/images/experience/rediscope-team.jpg';
+import amt from '@/../public/images/progressive/amt.jpg';
+import amyris from '@/../public/images/progressive/amyris.jpg';
+import calysta from '@/../public/images/progressive/calysta.jpg';
+import genencor from '@/../public/images/progressive/genencor1.jpg';
+
+
 import ucla from '@/../public/images/experience/ucla.png';
 import aws from '@/../public/images/experience/aws.png';
+
 
 type TresumeData = {
   title: string;
@@ -34,6 +43,7 @@ type TresumeData = {
   intro?: string;
   description: string[];
   imagePath?: string;
+  staticImportImage?: StaticImageData;
   imageStyle?: any;
 };
 
@@ -70,6 +80,7 @@ const resumeData: TresumeData[] = [
       'Leveraged React’s Context API to store application data to directly access and update state without manually passing information through the component tree at each level.  Reduced code complexity and simplified state management, resulting in intuitive data flow.',
     ],
     imagePath: '/images/projects/seed_flask_d1.jpg',
+    staticImportImage: seedFlask,
     imageStyle: { objectFit: 'contain' },
   },
   {
@@ -105,6 +116,7 @@ const resumeData: TresumeData[] = [
       'Developed under tech accelerator OSLabs (opensourcelabs.io). ',
     ],
     imagePath: '/images/experience/rediscope-team.jpg',
+    staticImportImage: rediscope,
     imageStyle: { objectFit: 'contain' },
   },
 
@@ -123,6 +135,7 @@ const resumeData: TresumeData[] = [
       'Led development and testing in a staging environment and completed the migration of configurations (schemas, team structures, notebook templates, etc.) into the production environment.  ',
     ],
     imagePath: '/images/progressive/amt.jpg',
+    staticImportImage: amt,
     imageStyle: { objectFit: 'cover' },
   },
   {
@@ -139,6 +152,7 @@ const resumeData: TresumeData[] = [
       'Screening and Process Development:  Use of Biolector Pro for strain evaluations and process optimization.  This system utilizes microfluidic plates, provides online measurements of biomass, fluorescence, pH and DO controls feeding rates through micro-valves and microfluidic-channels.  ',
     ],
     imagePath: '/images/progressive/amyris.jpg',
+    staticImportImage: amyris,
     imageStyle: { objectPosition: 'top right', objectFit: 'cover' },
   },
   {
@@ -155,6 +169,7 @@ const resumeData: TresumeData[] = [
       'Optimized strain evaluation across various small-scale formats (microtiter plates, serum bottles, flasks) for growth and lactate production.  Improved growth rates and titer across formats by 2-3X, allowing for improved breakout in performance.  Reduced microtiter plate standard deviation and increased dynamic range of testing.  ',
     ],
     imagePath: '/images/progressive/calysta.jpg',
+    staticImportImage: calysta,
     imageStyle: { objectFit: 'cover' },
   },
   {
@@ -181,6 +196,7 @@ const resumeData: TresumeData[] = [
       'Completed SSF shake flask scale up to 1 liter DASGIP bioreactor crossover.  Modeling applications to mimic anaerobic conditions observed in industry enabled determination of industry relevant breakout in fermentation performance. ',
     ],
     imagePath: '/images/progressive/genencor1.jpg',
+    staticImportImage: genencor,
     imageStyle: { objectFit: 'cover', objectPosition: '0% 20%' },
   },
   {
@@ -275,6 +291,7 @@ export default function Resume() {
                 techStack,
                 description,
                 imagePath,
+                staticImportImage,
                 imageStyle,
               },
               i
@@ -350,7 +367,7 @@ export default function Resume() {
                   {intro && <p className={``}>{intro}</p>}
 
                   {/* <div> */}
-                  {imagePath && (
+                  {imagePath && staticImportImage && (
                     <motion.div
                       className={` ${styles.experienceImageContainer} imgBorderRadius`}
                       // whileHover={{scale: 1.03}}
@@ -358,7 +375,8 @@ export default function Resume() {
                       // ease: 'backInOut'}}
                     >
                       <Image
-                        src={imagePath}
+                      placeholder='blur'
+                        src={staticImportImage}
                         alt={imagePath}
                         fill
                         priority

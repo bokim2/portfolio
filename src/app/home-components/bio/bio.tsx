@@ -128,6 +128,7 @@ export default function Bio() {
               {/* {activeMoleculeIdx == null ? ( */}
               <Image
                 className={`${styles.headshotImg} `}
+                placeholder='blur'
                 src={headshotImg}
                 alt="background"
                 layout="fill"
