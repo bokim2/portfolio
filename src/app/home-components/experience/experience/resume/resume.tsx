@@ -379,6 +379,7 @@ export default function Resume() {
                         src={staticImportImage}
                         alt={imagePath}
                         layout="fill"
+                        sizes="(max-width: 800px) 90vw, 40vw"
                         style={imageStyle || { width: '100%' }}
                       />
                     </motion.div>

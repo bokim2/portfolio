@@ -74,9 +74,10 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
                     src={item?.[activeIndex]?.pic1}
                     alt={item?.[activeIndex]?.title as string}
                     layout="fill"
+                    sizes="(max-width: 800px) 80vw, 40vw"
                     style={item?.[activeIndex]?.pic1StyleOverrides ?? {}}
                     key={`${cardIndex}_${activeIndex}_pic1`}
-                    onLoadingComplete={()=> setImageLoaded(true)}
+                    onLoadingComplete={() => setImageLoaded(true)}
                   />
                 </motion.div>
 

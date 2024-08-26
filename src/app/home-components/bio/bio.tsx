@@ -132,6 +132,7 @@ export default function Bio() {
                 src={headshotImg}
                 alt="background"
                 layout="fill"
+                sizes="800px"
                 // objectFit="cover"
                 // objectPosition="top"
                 priority
