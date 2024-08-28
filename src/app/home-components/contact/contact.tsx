@@ -57,7 +57,7 @@ export default function Contact() {
       <div className={styles.contactInner}>
         <div className={styles.headshotImgOuterContainer}>
           <h2 className={`${styles.contactTitle}`}>Contact</h2>
-          <p className={`${styles.contactSubtitle} subTitlePaddingLeft-small`}>{`Let's build together`}</p>
+          <p className={`${styles.contactSubtitle} subTitlePaddingLeft-small`}>{`Let's build`}</p>
         </div>
 
         <div className={`${styles.contacts} subTitlePaddingLeft`}>

@@ -22,15 +22,11 @@
   --clr-main-2: 238, 238, 245; /* slightly darker than nav, profile pic background */
   --clr-main-3: 255, 255, 255; /* background - white-ish */
 
-  
-  --clr-accent-1: #FF0000;  /* onClick highlight */
-  --clr-accent-2: #FFA500;  /* onHover */
-  --clr-accent-3: #7d7e82;  /* onClick shadow */
-  --clr-accent-4: #0044cc;  /* onClick shadow */
-  --clr-accent-5: #F7CC54;  /* onClick shadow */
-
-
-
+  --clr-accent-1: #ff0000; /* onClick highlight */
+  --clr-accent-2:#E0E3FF; /* onHover */
+  --clr-accent-3: #7d7e82; /* onClick shadow */
+  --clr-accent-4: #0044cc; /* onClick shadow */
+  --clr-accent-5: #f7cc54; /* onClick shadow */
 
   --max-width: 1100px;
   --border-radius: 12px;
@@ -246,7 +242,7 @@ h2 {
   /* line-height: 2; */
 
   &.marginSmall {
-    margin-bottom: 1.rem;
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 800px) {
@@ -473,9 +469,9 @@ img {
 }
 
 .subTitlePaddingLeft {
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     padding-left: 0.25rem;
   }
 }
@@ -483,7 +479,7 @@ img {
 .subTitlePaddingLeft-small {
   padding-left: 0.25rem;
 
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     padding-left: 0.125rem;
   }
 }
@@ -524,4 +520,3 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .animated: none !important;
 }
-

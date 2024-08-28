@@ -6,19 +6,17 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import styles from './cardDeck.module.scss';
 
-// Extend TCard with isHovered and setIsHovered
+
 type TCardImageColumnProps = TCard & {
   isHovered: 'left' | 'right' | null;
   setIsHovered: Dispatch<SetStateAction<'left' | 'right' | null>>;
 };
 
-// Define the type for the ref
 type RefType = HTMLDivElement;
 
-// Define the CardImageColumn component with forwardRef
+
 const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
   (props, ref) => {
-    // Destructure props
     const { item, cardIndex, activeIndex, isHovered, setIsHovered } = props;
 
     const [imageLoaded, setImageLoaded] = useState<boolean>(false);
@@ -36,11 +34,11 @@ const CardImageColumn = forwardRef<RefType, TCardImageColumnProps>(
               key={`${cardIndex}_${activeIndex}`}
               initial={{ transform: 'scale(1)' }}
               whileHover={{
-                boxShadow: '0.25px 0.25px 3px var(--clr-accent-2)',
+                boxShadow: '0.25px 0.25px 10px var(--clr-accent-2)',
                 transform: 'scale(1.02)',
               }}
               className={`${styles.cardImageContainer} imgBorderRadius`}
-              ref={ref} // Correctly assigned ref
+              ref={ref} 
               onClick={() => {
                 isHovered === null ? setIsHovered('right') : setIsHovered(null);
               }}
