@@ -7,8 +7,8 @@ import './globals.css';
 import Menu from '../components/menu/menu';
 import SectionsNav from '@/components/sectionsNav/sectionsNav';
 import ActiveSectionContextProvider from './context/activeSection';
-import Loading from './loading';
-import SimpleTestLoader from '@/components/loaders/simpleTestLoader';
+import HomeLoader from '@/components/loaders/home-loader/HomeLoader';
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,10 +28,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ActiveSectionContextProvider>
           <Menu />
-          <SimpleTestLoader />
-          <Suspense fallback={<Loading />}>
+          <HomeLoader />
+          {/* <Suspense fallback={<Loading />}> */}
             <main>{children}</main>
-          </Suspense>
+          {/* </Suspense> */}
           {/* {children} */}
           {/* <div> */}
           {/* </div> */}

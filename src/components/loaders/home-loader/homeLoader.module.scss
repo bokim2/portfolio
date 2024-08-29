@@ -1,0 +1,45 @@
+$loaderContainer: 10rem;
+
+.homeLoader {
+    position: absolute;
+    z-index: 10;
+  padding: 7svh;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(var(--clr-main-3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loaderContainer {
+//   position: relative;
+  height: $loaderContainer;
+  width: $loaderContainer;
+  background-color: rgba(var(--clr-main-1), .5);
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: inset 1px 1px 7px rgba(var(--clr-main-2), 0.1);
+}
+
+.loaderSingleUnit {
+  height: 10px;
+  width: calc(#{$loaderContainer} / 50);
+  background-color: var(--text-13);
+  border-radius: 50%;
+  
+  animation: bounce 1.15s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-10);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
