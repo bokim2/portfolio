@@ -42,6 +42,7 @@ export default function HomeLoader() {
             animate={{ opacity: 0 }}
             exit={{ opacity: 0, transition: { duration: 0.5, delay: .2 } }}
             transition={{ duration: 0.5 }}
+            onAnimationComplete={()=> setLoaderActive(false)}
           >
             <motion.div className={`${styles.loaderContainer} imgBorderRadius`}>
               {loaderUnits.map((loader, i) => {
